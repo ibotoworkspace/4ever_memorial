@@ -79,8 +79,14 @@ class AdminController extends Controller
     {
         $modules[] = [
 
-            'url' => 'admin/users',
+            'url' => 'admin/user',
             'title' => 'Users ',
+
+        ];
+        $modules[] = [
+
+            'url' => 'admin/template',
+            'title' => 'Template ',
 
         ];
         
