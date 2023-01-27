@@ -73,7 +73,7 @@
                         <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span> </a>
                       </li>
                       <li id="3">
-                        <a href="{!!asset('user/')!!}"><span>CREATE A MEMORIAL</span> </a>
+                      <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
                       </li>
                       <li id="4">
                         <a href="{!!asset('user/')!!}"><span>PLANS & FEATURES</span> </a>
@@ -361,7 +361,7 @@
                       <a href=""><span>ABOUT</span> </a>
                     </li>
                     <li id="3">
-                      <a href=""><span>CREATE A MEMORIAL</span> </a>
+                    <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
                     </li>
                     <li id="4">
                       <a href=""><span>PLANS 7& FEATURES</span> </a>
