@@ -3,6 +3,7 @@
 
 <head>
   <title>4Year Project</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -72,13 +73,13 @@
                         <a href="aboutus.html"><span>ABOUT</span> </a>
                       </li>
                       <li id="3">
-                        <a href=""><span>CREATE A MEMORIAL</span> </a>
+                        <a href="#"><span>CREATE A MEMORIAL</span> </a>
                       </li>
                       <li id="4">
-                        <a href=""><span>PLANS & FEATURES</span> </a>
+                        <a href="#"><span>PLANS & FEATURES</span> </a>
                       </li>
                       <li id="5">
-                        <a href=""><span>TESTIMONIALS</span> </a>
+                        <a href="#"><span>TESTIMONIALS</span> </a>
                       </li>
                       <li id="6">
                         <a href="blog.html"><span>BLOG</span> </a>
