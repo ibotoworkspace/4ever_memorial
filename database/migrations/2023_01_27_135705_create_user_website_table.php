@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->nullable()->default(0);
             $table->bigInteger('website_user_id')->nullable()->default(0);
-            $table->bigInteger('website_template_id')->nullable()->default(0);
             $table->longText('website_html')->nullable()->default(0);
             $table->text('website_variable')->nullable()->default(null);
+            $table->bigInteger('website_template_id')->nullable()->default(0);
             $table->string('tribute')->nullable()->default(null);
             $table->softDeletes();
             $table->timestamps();
