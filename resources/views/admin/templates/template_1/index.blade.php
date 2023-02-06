@@ -30,7 +30,7 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <link rel="stylesheet" href="{!!asset('user_templates/template_1/css/style.css')!!}" />
-    
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
@@ -85,7 +85,7 @@
                 <button class="tablinks" onclick="openCity(event, 'Life')">
                   LIFE
                 </button>
-                <button class="tablinks" onclick="openCity(event, 'Gallary')">
+                <button class="tablinks" onclick="openCity(event, 'Gallary') ,openpic(event, 'photo')">
                   GALLERY
                 </button>
                 <button class="tablinks" onclick="openCity(event, 'stories')">
@@ -93,7 +93,7 @@
                 </button>
               </div>
               <div id="About" class="tabcontent">
-                
+
                  <h3 class="about_heading">Let the memory of Anthony be with us forever.</h3>
                  <p><ul class="li_txt">
                     <li>18 years old</li>
@@ -171,14 +171,14 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                         </div>
                         <div class="lev_tri">
                             <h3>Leave a Tribute</h3>
                             <div class="icon_list">
                                <div class="cand"><img src="{!!asset('user_templates/template_1/images/candle_blu.png')!!}"   alt="relative"></div>
                                <div class="flower"> <img src="{!!asset('user_templates/template_1/images/flower_blu.png')!!}"  alt="relative"></div>
-                               <div class="feather"><img src="{!!asset('user_templates/template_1/images/feather_blu.png')!!}"  alt="relative"></div> 
+                               <div class="feather"><img src="{!!asset('user_templates/template_1/images/feather_blu.png')!!}"  alt="relative"></div>
                             </div>
                             <div class="txt_ara">
                                 <textarea name="tribute" id="" cols="86" placeholder="Add your tribute here" rows="6"></textarea>
@@ -196,7 +196,7 @@
                         <span class="badge badge-secondary">New</span>
                     </div>
                     <ul class="reviewSection">
-                       
+
                         <li>
                             <h3>Anthony’s Birth</h3>
                             </li>
@@ -220,13 +220,13 @@
 
               <div id="Gallary" class="tabcontent">
                 <div class="reviewBox">
-                 
+
                   <div class="tab_gal">
                     <button class="tab_gallinks" onclick="openpic(event, 'photo')" id="defaultOpen">photo</button>
                     <button class="tab_gallinks" onclick="openpic(event, 'video')">video</button>
                     <button class="tab_gallinks" onclick="openpic(event, 'Audio')">Audio</button>
                   </div>
-                  
+
                   <div id="photo" class="tab_galcontent">
                     <div class="flx">
                     <div class="gall_top_bttn">
@@ -299,13 +299,13 @@
 
 
 
-              
+
                   <p class="fdgsdf">Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..</p>
                   </div>
-                  
+
                   <div id="video" class="tab_galcontent">
                     <div class="flx">
-                   
+
                     <div class="gall_top_bttn">
                       <div class="flx">
                         <div class="ply_bttn">
@@ -367,10 +367,10 @@
 
 
 
-              
+
                   <p class="fdgsdf">Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..</p>
                   </div>
-                  
+
                   <div id="Audio" class="tab_galcontent">
                     <div class="audio_icon">
                       <i class="fa fa-microphone" aria-hidden="true"></i>
@@ -383,16 +383,16 @@
                       <div class="aud_box">
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
                         <p>From Your Device</p>
-                        
+
                       </div>
 
                     </div>
                   </div>
-                  
-                 
-              
-                  
-                  
+
+
+
+
+
                 </div>
               </div>
               <div id="stories" class="tabcontent">
@@ -401,7 +401,7 @@
                   <p>Share a special moment from Anthony's life</p>
 
                   <div class="stor_bttn">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>_Write a story                    
+                    <i class="fa fa-pencil" aria-hidden="true"></i>_Write a story
                   </div>
                 </div>
                 </div>
@@ -410,7 +410,7 @@
                     January 21 . by Alexa Zelaya</p>
                     <img src="{!!asset('user_templates/template_1/images/baby_cot.png')!!}" alt="relative">
                     <div class="story_para">
-                      <p>3rd floor of the library was always our go to if we wanted to "study" (aka gossip haha.) We shared so many nice chats here and always wanted to reserve a study room but we were always too lazy to do that. We'd find an empty one but then get kicked out like 10 minutes later after someone who actually reserved it came in. All the memories at school hold a special place in my heart. I walk past the places we would hang out and think about everything. I am glad we went from high school to college. I am so grateful I got to spend my first quarter of college with someone as amazing as you, Anthony. 
+                      <p>3rd floor of the library was always our go to if we wanted to "study" (aka gossip haha.) We shared so many nice chats here and always wanted to reserve a study room but we were always too lazy to do that. We'd find an empty one but then get kicked out like 10 minutes later after someone who actually reserved it came in. All the memories at school hold a special place in my heart. I walk past the places we would hang out and think about everything. I am glad we went from high school to college. I am so grateful I got to spend my first quarter of college with someone as amazing as you, Anthony.
                       </p>
                       <div class="whole">
                         <div class="flx">
@@ -444,7 +444,7 @@
             <div class="face_share">
               <div class="fb_icon">
                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
-              </div>      
+              </div>
                 <div class="fb_share_par"> <p>Share on Facebook</p> </div>
             </div>
             <div class="rightBoxArea NotiPref">
@@ -493,7 +493,7 @@
             </div>
             <div class="view_sec">
               <div class="flx">
-                  <div class="viw_icon"> 
+                  <div class="viw_icon">
                     <i class="fa fa-eye" aria-hidden="true"></i>
                   </div>
                 <div class="viw_para">
@@ -507,7 +507,7 @@
                     <i class="fa fa-globe" aria-hidden="true"></i>
                   </div>
                   <div class="wrld_par"> Open access</div>
-                 
+
                </div>
           </div>
         </div>
@@ -528,7 +528,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="links">
-                        <a href="">Memorial Websites</a> 
+                        <a href="">Memorial Websites</a>
                         <a href="">Affiliate</a>
                         <a href="">Resources</a>
                         <a href="">Terms of Use</a>
@@ -561,6 +561,7 @@
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
+
   }
   document.getElementById("defaultOpen").click();
 </script>
@@ -581,4 +582,3 @@
   document.getElementById("defaultOpen").click();
 
   </script>
-     

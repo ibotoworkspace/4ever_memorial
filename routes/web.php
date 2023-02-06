@@ -17,54 +17,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 // Route::get('admin/login', 'Admin\AdminController@index');
 // Route::post('admin/checklogin', 'Admin\AdminController@checklogin');
 // Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
 // Route::get('logout', 'AdminController@logout')->name('logout');
 
-Route::get(
-    '/admin/login',
-    [AdminController::class, 'index']
-)->name('admin.index');
+Route::get( '/admin/login',[AdminController::class, 'index'])->name('admin.index');
 
-Route::post(
-    '/admin/checklogin',
-    [AdminController::class, 'checklogin']
-)->name('admin.checklogin');
-Route::get(
-    '/admin/dashboard',
-    [AdminController::class, 'dashboard']
-)->name('dashboard');
-Route::get(
-    '/admin/logout',
-    [AdminController::class, 'logout']
-)->name('admin.logout');
+Route::post('/admin/checklogin', [AdminController::class, 'checklogin'])->name('admin.checklogin');
+Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/admin/logout',[AdminController::class, 'logout'])->name('admin.logout');
 
 //////////////user
 
-Route::get(
-    '/user',
-    [User_UserController::class, 'index']
-)->name('user.index');
-
-Route::get(
-    '/user/aboutus',
-    [User_UserController::class, 'aboutus']
-)->name('user.aboutus');
-
-Route::get(
-    '/user/contactus',
-    [User_UserController::class, 'contactus']
-)->name('user.contactus');
-
-Route::get(
-    '/user/blog',
-    [User_UserController::class, 'blog']
-)->name('user.blog');
-
+Route::get('/', [User_UserController::class, 'index'])->name('user.index');
+Route::get('/user/aboutus',[User_UserController::class, 'aboutus'])->name('user.aboutus');
+Route::get('/user/testimonials',[User_UserController::class, 'testimonials'])->name('user.testimonials');
+Route::get('/user/contactus',[User_UserController::class, 'contactus'])->name('user.contactus');
+Route::get('/user/blog',[User_UserController::class, 'blog'])->name('user.blog');
 Route::get('template',[Admin_UserController::class, 'template']);
 
 

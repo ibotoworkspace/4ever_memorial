@@ -15,6 +15,9 @@ class UserController extends Controller
     public function aboutus(){
         return view('user.aboutus');
     }
+    public function testimonials(){
+        return view('user.testimonials');
+    }
     public function contactus(){
         return view('user.contactus');
     }
@@ -22,7 +25,7 @@ class UserController extends Controller
         return view('user.blog');
     }
     public function template(){
-        $template  = ModelsTemplate::find(1);
-        return view('user.template',compact('template'));
+        // $template  = ModelsTemplate::find(1);
+        // return view('user.template',compact('template'));
     }
 }
