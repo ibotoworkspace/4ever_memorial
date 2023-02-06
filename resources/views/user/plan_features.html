@@ -35,7 +35,40 @@
                     <div class="col-sm-4">
                         <div class="topicons">
                             <i class="fa fa-user-plus" aria-hidden="true"> Registration</i>
-                            <i class="fa fa-sign-in" aria-hidden="true"> Sign In</i>
+                            <i class="fa fa-sign-in" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign
+                                In</i>
+                
+                
+                
+                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header modhead">
+                                      <h5 class="modal-title" id="exampleModalLongTitle">Sign in With Your Email</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="signmodaldata">
+                                        <form>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Enter Your Email address :</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                              aria-describedby="emailHelp" placeholder="email address">
+                                          </div>
+                                          <div class="form-group form-check labelgroup">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label labelcd" for="exampleCheck1">I am visiting for the first
+                                              time.</label>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary mosubclick">Submit</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
