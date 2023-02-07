@@ -20,7 +20,7 @@ h4 {
     background-image: url(../images/testi.jpg);
     background-position: 100%;
     background-size: cover;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
 }
 .testdataa {
     -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
@@ -80,7 +80,7 @@ h4 {
     .testdataarea {
         padding: 25px;
     }
-    .testdataa {      
+    .testdataa {
         margin-bottom: 30px;
     }
 }
