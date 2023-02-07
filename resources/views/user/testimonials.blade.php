@@ -23,7 +23,7 @@
                 <div class="row hidden-xs">
                     <div class="col-sm-4">
                         <div class="logoarea">
-                            <img src="{!!asset(' images/logo.png')!!}" class="img-responsive">
+                            <img src="{!!asset('images/logo.png')!!}" class="img-responsive">
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -82,7 +82,7 @@
                     <div class="row">
                         <div class="col-sm-2 col-xs-12 visible-xs">
                             <div class="logoArea">
-                                <a href="/"><img src="{!!asset(' images/logo.png')!!}" class="img-responsive"></a>
+                                <a href="/"><img src="{!!asset('images/logo.png')!!}" class="img-responsive"></a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-xs-12">
@@ -100,27 +100,27 @@
                                     <div class="navbar-collapse nav-collapse collapse">
                                         <ul class="nav navbar-nav navmenu">
                                             <li id="1">
-                                                <a href="index.html"><span>HOME</span> </a>
+                                              <a href="{!!asset('/')!!}"><span>HOME</span></a>
                                             </li>
                                             <li id="2">
-                                                <a href="aboutus.html"><span>ABOUT</span> </a>
+                                              <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span></a>
                                             </li>
                                             <li id="3">
-                                                <a href="memorial.html"><span>CREATE A MEMORIAL</span> </a>
+                                            <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
                                             </li>
                                             <li id="4">
-                                                <a href="plan_features.html"><span>PLANS & FEATURES</span> </a>
+                                              <a href="{!!asset('user/plans')!!}"><span>PLANS & FEATURES</span> </a>
                                             </li>
                                             <li id="5">
-                                                <a href="testimonials.html"><span>TESTIMONIALS</span> </a>
+                                              <a href="{!!asset('user/testimonials')!!}"><span>TESTIMONIALS</span> </a>
                                             </li>
                                             <li id="6">
-                                                <a href="blog.html"><span>BLOG</span> </a>
+                                              <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
                                             </li>
                                             <li id="7">
-                                                <a href="contactus.html"><span>CONTACT</span> </a>
+                                              <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                             </li>
-                                        </ul>
+                                          </ul>
                                     </div>
                                 </div>
                             </nav>
@@ -146,7 +146,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="testdataa">
-                            <img src="{!!asset(' images/quote.png')!!}" class="img-responsive">
+                            <img src="{!!asset('images/quote.png')!!}" class="img-responsive">
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                                 tincidunt ut laoreet dolore magna aliquam
                                 erat volutpat. Ut wisi enim ad minim veniam,
@@ -161,7 +161,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="testdataa">
-                            <img src="{!!asset(' images/quote.png')!!}" class="img-responsive">
+                            <img src="{!!asset('images/quote.png')!!}" class="img-responsive">
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                                 tincidunt ut laoreet dolore magna aliquam
                                 erat volutpat. Ut wisi enim ad minim veniam,
@@ -204,36 +204,36 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="footerlogo">
-                            <img src="{!!asset(' images/footer-logo.png')!!}" class="img-responsive">
+                            <img src="{!!asset('images/footer-logo.png')!!}" class="img-responsive">
                             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                             <div class="fotermenu">
                                 <div class="navbar-collapse nav-collapse collapse fomen">
-                                    <ul class="nav navbar-nav fomenu">
+                                    <ul class="nav navbar-nav navmenu">
                                         <li id="1">
-                                            <a href=""><span>HOME</span> </a>
+                                          <a href="{!!asset('/')!!}"><span>HOME</span></a>
                                         </li>
                                         <li id="2">
-                                            <a href=""><span>ABOUT</span> </a>
+                                          <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span></a>
                                         </li>
                                         <li id="3">
-                                            <a href=""><span>CREATE A MEMORIAL</span> </a>
+                                        <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
                                         </li>
                                         <li id="4">
-                                            <a href=""><span>PLANS 7& FEATURES</span> </a>
+                                          <a href="{!!asset('user/plans')!!}"><span>PLANS & FEATURES</span> </a>
                                         </li>
                                         <li id="5">
-                                            <a href=""><span>TESTIMONIALS</span> </a>
+                                          <a href="{!!asset('user/testimonials')!!}"><span>TESTIMONIALS</span> </a>
                                         </li>
                                         <li id="6">
-                                            <a href=""><span>BLOG</span> </a>
+                                          <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
                                         </li>
                                         <li id="7">
-                                            <a href=""><span>CONTACT</span> </a>
+                                          <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                         </li>
-                                    </ul>
+                                      </ul>
                                 </div>
                             </div>
                         </div>

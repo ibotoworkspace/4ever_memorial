@@ -18,6 +18,9 @@ class UserController extends Controller
     public function testimonials(){
         return view('user.testimonials');
     }
+    public function plans(){
+        return view('user.plan_features');
+    }
     public function contactus(){
         return view('user.contactus');
     }

@@ -39,9 +39,9 @@
                             <i class="fa fa-user-plus" aria-hidden="true"> Registration</i>
                             <i class="fa fa-sign-in" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign
                                 In</i>
-                
-                
-                
+
+
+
                               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -101,27 +101,27 @@
                                     <div class="navbar-collapse nav-collapse collapse">
                                         <ul class="nav navbar-nav navmenu">
                                             <li id="1">
-                                                <a href="{!!asset('user/')!!}"><span>HOME</span> </a>
+                                              <a href="{!!asset('/')!!}"><span>HOME</span></a>
                                             </li>
                                             <li id="2">
-                                                <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span> </a>
+                                              <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span></a>
                                             </li>
                                             <li id="3">
-                                                <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
+                                            <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
                                             </li>
                                             <li id="4">
-                                                <a href="{!!asset('user/')!!}"><span>PLANS & FEATURES</span> </a>
+                                              <a href="{!!asset('user/plans')!!}"><span>PLANS & FEATURES</span> </a>
                                             </li>
                                             <li id="5">
-                                                <a href="{!!asset('user/')!!}"><span>TESTIMONIALS</span> </a>
+                                              <a href="{!!asset('user/testimonials')!!}"><span>TESTIMONIALS</span> </a>
                                             </li>
                                             <li id="6">
-                                                <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
+                                              <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
                                             </li>
                                             <li id="7">
-                                                <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
+                                              <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                             </li>
-                                        </ul>
+                                          </ul>
                                     </div>
                                 </div>
                             </nav>
@@ -184,29 +184,29 @@
                             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                             <div class="fotermenu">
                                 <div class="navbar-collapse nav-collapse collapse fomen">
-                                    <ul class="nav navbar-nav fomenu">
+                                    <ul class="nav navbar-nav navmenu">
                                         <li id="1">
-                                            <a href="{!!asset('user/')!!}"><span>HOME</span> </a>
+                                          <a href="{!!asset('/')!!}"><span>HOME</span></a>
                                         </li>
                                         <li id="2">
-                                            <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span> </a>
+                                          <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span></a>
                                         </li>
-                                        <li id="3">                                            
-                                            <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
+                                        <li id="3">
+                                        <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
                                         </li>
                                         <li id="4">
-                                            <a href="{!!asset('user/')!!}"><span>PLANS & FEATURES</span> </a>
+                                          <a href="{!!asset('user/plans')!!}"><span>PLANS & FEATURES</span> </a>
                                         </li>
                                         <li id="5">
-                                            <a href="{!!asset('user/')!!}"><span>TESTIMONIALS</span> </a>
+                                          <a href="{!!asset('user/testimonials')!!}"><span>TESTIMONIALS</span> </a>
                                         </li>
                                         <li id="6">
-                                            <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
+                                          <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
                                         </li>
                                         <li id="7">
-                                            <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
+                                          <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                         </li>
-                                    </ul>
+                                      </ul>
                                 </div>
                             </div>
                         </div>
