@@ -3,7 +3,7 @@
 
 <head>
     <title>4Year Project</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{!!asset('images/images2/favicon.png')!!}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{!!asset(' images/favicon.png')!!}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
                 <div class="row hidden-xs">
                     <div class="col-sm-4">
                         <div class="logoarea">
-                            <img src="{!!asset('images/images2/logo.png')!!}" class="img-responsive">
+                            <img src="{!!asset(' images/logo.png')!!}" class="img-responsive">
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -82,7 +82,7 @@
                     <div class="row">
                         <div class="col-sm-2 col-xs-12 visible-xs">
                             <div class="logoArea">
-                                <a href="/"><img src="{!!asset('images/images2/logo.png')!!}" class="img-responsive"></a>
+                                <a href="/"><img src="{!!asset(' images/logo.png')!!}" class="img-responsive"></a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-xs-12">
@@ -146,7 +146,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="testdataa">
-                            <img src="{!!asset('images/images2/quote.png')!!}" class="img-responsive">
+                            <img src="{!!asset(' images/quote.png')!!}" class="img-responsive">
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                                 tincidunt ut laoreet dolore magna aliquam
                                 erat volutpat. Ut wisi enim ad minim veniam,
@@ -161,7 +161,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="testdataa">
-                            <img src="{!!asset('images/images2/quote.png')!!}" class="img-responsive">
+                            <img src="{!!asset(' images/quote.png')!!}" class="img-responsive">
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                                 tincidunt ut laoreet dolore magna aliquam
                                 erat volutpat. Ut wisi enim ad minim veniam,
@@ -204,7 +204,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="footerlogo">
-                            <img src="{!!asset('images/images2/footer-logo.png')!!}" class="img-responsive">
+                            <img src="{!!asset(' images/footer-logo.png')!!}" class="img-responsive">
                             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
