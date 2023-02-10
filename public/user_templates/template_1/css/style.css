@@ -73,7 +73,7 @@
     color: #062745;
 
 }
-  
+
   /* Change background color of buttons on hover */
   .tab button:hover {
     color: #062745;
@@ -81,7 +81,7 @@
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
-  
+
   /* Create an active/current tablink class */
   .tab button.active {
     background-color: #f7f5e6;
@@ -90,7 +90,7 @@
     color: solid;
     border-bottom-color: #f7f5e6;
   }
-  
+
   /* Style the tab content */
   .tabcontent {
     display: none;
@@ -108,11 +108,12 @@
     margin-top: 50px;
 }
 
-.back_sec{
-background-color: #f7f5e6;
+.back_sec {
+    background-color: #f7f5e6;
+    padding-bottom: 80px;
 }
 .li_txt{
-    padding-left: 90px; 
+    padding-left: 90px;
     color: #275d7d;
     font-weight: 600;
 }
@@ -453,7 +454,7 @@ body{
 }
 
 body {font-family: Arial;}
-                  
+
 /* Style the tab_gal */
 .tab_gal {
   overflow: hidden;
