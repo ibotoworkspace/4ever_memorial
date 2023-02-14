@@ -23,6 +23,8 @@ class TemplateHelper
         $gallery_video = $temp_json->gallery_video;
         $stories = $temp_json->stories;
         $gal_main = $template->gallery;
+        $life_main = $template->life;
+        $story_main = $template->stories;
         // dd($gal_main);
 
         $html = str_replace('{!$!memorial_user.full_name!$!}',$memorial_user->full_name,$html);
@@ -61,6 +63,8 @@ class TemplateHelper
         // $html = str_replace('{!$!stories.details_show!$!}',$stories->details_show,$html);
 
         $html = str_replace('{!$!Gallary_tributes_main!$!}',$gal_main,$html);
+        $html = str_replace('{!$!life_main!$!}',$life_main,$html);
+        $html = str_replace('{!$!Gallary_stories_main!$!}',$story_main,$html);
 
 
 

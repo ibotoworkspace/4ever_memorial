@@ -43,6 +43,7 @@ class TemplateController extends Controller
         $temp->tribute = $this->web_tribute();
         $temp->stories = $this->web_stories();
         $temp->gallery = $this->web_gallery();
+        $temp->life = $this->web_life();
         return $temp;
     }
 
@@ -403,13 +404,6 @@ class TemplateController extends Controller
         ';
 
     }
-    public function web_life(){
-        return '
-
-        ';
-
-    }
-
     public function web_gallery(){
         return '
         <div id="Gallary" class="tabcontent">
@@ -592,6 +586,34 @@ class TemplateController extends Controller
                                 </div>
                             </div>
 
+        ';
+    }
+    public function web_life(){
+        return '
+        <div id="Life" class="tabcontent">
+                                <div class="reviewBox">
+                                    <ul class="reviewSection">
+
+                                        <li>
+                                            <h3>{!$!memorial_user.name!$!}’s Birth</h3>
+                                        </li>
+                                    </ul>
+                                    <div class="baby">
+                                        <img src="{!!asset(\'user_templates/template_1/images/baby_cot.png\')!!}" alt="">
+                                    </div>
+                                    <p class="fdgsdf">{!$!life.details_show!$!}</p>
+                                    <div class="whole">
+                                        <div class="flx">
+                                            <div class="share">
+                                                <i class="fa fa-share-alt-square" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="chr_p">
+                                                Share
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
         ';
     }
 
