@@ -99,21 +99,21 @@ class TemplateSeeder extends Seeder
                                         <button class="tablinks" onclick="openCity(event, \'Life\')">
                                             LIFE
                                         </button>
-                                        <button class="tablinks" onclick="openCity(event, \'Gallary\') ,openpic(event, \'photo\')">
-                                            GALLERY
+                                        <button class="tablinks" onclick="openCity(event, \'gallary\') ,openpic(event, \'photo\')">
+                                            gallery
                                         </button>
                                         <button class="tablinks" onclick="openCity(event, \'stories\')">
                                             STORIES
                                         </button>
                                     </div>
-                                    {!$!Gallary_tributes_main!$!}
+                                    {!$!gallary_tributes_main!$!}
 
 
 
                                     {!$!life_main!$!}
 
 
-                                    <div id="Gallary" class="tabcontent">
+                                    <div id="gallary" class="tabcontent">
                                         <div class="reviewBox">
 
                                             <div class="tab_gal">
@@ -122,14 +122,14 @@ class TemplateSeeder extends Seeder
                                                 <button class="tab_gallinks" onclick="openpic(event, \'video\')">video</button>
                                                 <button class="tab_gallinks" onclick="openpic(event, \'Audio\')">Audio</button>
                                             </div>
-                                            {!$!Gallary_photos_main!$!}
-                                            {!$!Gallary_video_main!$!}
-                                            {!$!Gallary_audio_main!$!}
+                                            {!$!gallary_photos_main!$!}
+                                            {!$!gallary_video_main!$!}
+                                            {!$!gallary_audio_main!$!}
 
 
                                         </div>
                                     </div>
-                                    {!$!Gallary_stories_main!$!}
+                                    {!$!gallary_stories_main!$!}
 
 
 
@@ -317,6 +317,7 @@ class TemplateSeeder extends Seeder
                 "image": "http://localhost/4_ever_memories/public/user_templates/template_1/images/profile_pic.jpg"
               },
               "user_memorial_tribute": "<h3 class=\"about_heading\">Let the memory of Anthony be with us forever.</h3><p><ul class=\"li_txt\"><li>18 years old</li><li>Born on September 1, 2004 in San Dimas, California, United States</li><li>Passed away on December 11, 2022 in United States</li></ul></p><p class=\"abt_txt\">This memorial website was created in memory of our beloved son,Anthony Bouslaiby, 18 years old, born on September 1, 2004, and passed away onDecember 11, 2022. He will be with us forever, and we will never stop loving him. Idecided to start this website to celebrate his life. Even though he wasn\'t with us as long as he should\'ve been, he has touched so many lives and was so loved. I hope you all will contribute to this page, with picture, videos, and stories. I was so touched by all the memories left in the memory jar at the luncheon. Please feel free to add more, as they may come to you, because that\'s all we have left once a loved one leaves us. We all appreciate the love you showed Anthony for however long you may have known him. Thank you all!<br> Angela (his mom) <br> P.S. Please let me know if you have any probelms uploading etc. You can click on a  photo to see the caption. </p>",
+              "tribute_html":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{{type}}\"></li> <li> <h3>Maria Nashed</h3> <h5>January 23</h5><p>Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better... <a href=\"#\">read more</a></p> </li></ul></div>",
               "tributes": [
                 {
                   "user_id": "03",
