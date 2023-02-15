@@ -99,8 +99,8 @@ class TemplateController extends Controller
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="cover_head">
-                                    <h1>{{memorial_user.full_name}}</h1>
-                                    <h1>{{memorial_user.birth}} - {{memorial_user.death}}</h1>
+                                    <h1>{!!{memorial_user_var.full_name_var}!!}</h1>
+                                    <h1>{!!{memorial_user.birth}!!} - {!!{memorial_user.death}!!}</h1>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -132,11 +132,11 @@ class TemplateController extends Controller
                                                 STORIES
                                             </button>
                                         </div>
-                                        {{gallary_tributes_main}}
+                                        {!!{gallary_tributes_main}!!}
 
 
 
-                                        {{life_main}}
+                                        {!!{life_main}!!}
 
 
                                         <div id="Gallary" class="tabcontent">
@@ -148,14 +148,14 @@ class TemplateController extends Controller
                                                     <button class="tab_gallinks" onclick="openpic(event, \'video\')">video</button>
                                                     <button class="tab_gallinks" onclick="openpic(event, \'Audio\')">Audio</button>
                                                 </div>
-                                                {{Gallary_photos_main}}
-                                                {{Gallary_video_main}}
-                                                {{Gallary_audio_main}}
+                                                {!!{Gallary_photos_main}!!}
+                                                {!!{Gallary_video_main}!!}
+                                                {!!{Gallary_audio_main}!!}
 
 
                                             </div>
                                         </div>
-                                        {{Gallary_stories_main}}
+                                        {!!{Gallary_stories_main}!!}
 
 
 
@@ -165,7 +165,7 @@ class TemplateController extends Controller
                                     <div class="rightBoxArea familyFriend">
                                         <ul>
                                             <li>
-                                                <h3>Invite {{memorial_user.name}}\'s family and friends</h3>
+                                                <h3>Invite {!!{memorial_user.name}!!}\'s family and friends</h3>
                                             </li>
                                             <li><i class="fa fa-user-plus" aria-hidden="true"></i></li>
                                         </ul>
@@ -192,11 +192,11 @@ class TemplateController extends Controller
                                     </div>
                                     <div class="rightBoxArea RecentUpdate">
                                         <h3>Recent updates</h3>
-                                        {{recent_updates_html_show}}
+                                        {!!{recent_updates_html_show}!!}
                                     </div>
                                     <div class="rightBoxArea NotiPref">
                                         <h4>This website is administered by:
-                                            {{owner_user.name}}
+                                            {!!{owner_user.name}!!}
                                         </h4>
                                     </div>
                                     <div class="view_sec">
@@ -205,7 +205,7 @@ class TemplateController extends Controller
                                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                             </div>
                                             <div class="viw_para">
-                                                {{total_views}} Views
+                                                {!!{total_views}!!} Views
                                             </div>
                                         </div>
                                         <hr>
@@ -312,7 +312,7 @@ class TemplateController extends Controller
                   "image": "'.$public_path.'user_templates/template_1/images/profile_pic.jpg"
                 },
               "total_views": 90,
-              "recent_updates_html_show": "<h5>{{date}}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{{message}}</li></ul>",
+              "recent_updates_html_show": "<h5>{!!{date}!!}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{message}!!}</li></ul>",
               "recent_updates_html_show_values": [
                 {
                   "date": "February 2",
@@ -441,15 +441,15 @@ class TemplateController extends Controller
                                         </div>
                                         <div class="gallery">
                                             <div class="col-md-3 pic_gal_img">
-                                                <img src="{{gallery.image_show}}"
+                                                <img src="{!!{gallery.image_show}!!}"
                                                     alt="">
                                             </div>
                                             <div class="col-md-3 pic_gal_img">
-                                                <img src="{{gallery.image_show}}"
+                                                <img src="{!!{gallery.image_show}!!}"
                                                     alt="">
                                             </div>
                                             <div class="col-md-3 pic_gal_img">
-                                                <img src="{{gallery.image_show}}"
+                                                <img src="{!!{gallery.image_show}!!}"
                                                     alt="">
                                             </div>
                                         </div>
@@ -472,15 +472,15 @@ class TemplateController extends Controller
                                         </div>
                                         <div class="gallery">
                                             <div class="col-md-3 pic_gal_img">
-                                                <img src="{{gallery_video.image_show}}"
+                                                <img src="{!!{gallery_video.image_show}!!}"
                                                     alt="">
                                             </div>
                                             <div class="col-md-3 pic_gal_img">
-                                                <img src="{{gallery_video.image_show}}"
+                                                <img src="{!!{gallery_video.image_show}!!}"
                                                     alt="">
                                             </div>
                                             <div class="col-md-3 pic_gal_img">
-                                                <img src="{{gallery_video.image_show}}"
+                                                <img src="{!!{gallery_video.image_show}!!}"
                                                     alt="">
                                             </div>
                                         </div>
@@ -518,14 +518,14 @@ class TemplateController extends Controller
     public function web_tribute(){
         return '
         <div id="About" class="tabcontent">
-                                {{user_memorial_tribute}}
+                                {!!{user_memorial_tribute}!!}
                                 <div class="tributes">
                                     <h1>Tributes</h1>
                                     <button class="bt_trei"><i class="fa fa-pencil" aria-hidden="true"></i>_ Leave a
                                         Tribute</button>
                                 </div>
                                 <div class="tribute_blk">
-                                    {{tributes}}
+                                    {!!{tributes}!!}
 
                                 </div>
                                 <div class="lev_tri">
@@ -558,7 +558,7 @@ class TemplateController extends Controller
         <div id="stories" class="tabcontent">
                                 <div class="add_stor">
                                     <div class="flx">
-                                        <p>Share a special moment from {{memorial_user.name}}\'s life</p>
+                                        <p>Share a special moment from {!!{memorial_user.name}!!}\'s life</p>
 
                                         <div class="stor_bttn">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>_Write a story
@@ -566,11 +566,11 @@ class TemplateController extends Controller
                                     </div>
                                 </div>
                                 <div class="story_tab">
-                                    <p> {{stories.date_show}} . by {{stories.user_name_show}}</p>
-                                    <img src="{{stories.image_show}}"
+                                    <p> {!!{stories.date_show}!!} . by {!!{stories.user_name_show}!!}</p>
+                                    <img src="{!!{stories.image_show}!!}"
                                         alt="relative">
                                     <div class="story_para">
-                                        <p>{{stories.details_show}}
+                                        <p>{!!{stories.details_show}!!}
                                         </p>
                                         <div class="whole">
                                             <div class="flx">
@@ -595,13 +595,13 @@ class TemplateController extends Controller
                                     <ul class="reviewSection">
 
                                         <li>
-                                            <h3>{{memorial_user.name}}’s Birth</h3>
+                                            <h3>{!!{memorial_user.name}!!}’s Birth</h3>
                                         </li>
                                     </ul>
                                     <div class="baby">
                                         <img src="{!!asset(\'user_templates/template_1/images/baby_cot.png\')!!}" alt="">
                                     </div>
-                                    <p class="fdgsdf">{{life.details_show}}</p>
+                                    <p class="fdgsdf">{!!{life.details_show}!!}</p>
                                     <div class="whole">
                                         <div class="flx">
                                             <div class="share">
@@ -618,9 +618,9 @@ class TemplateController extends Controller
     }
     public function variable_html(){
         return'
-        "tribute_html_var":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{{tributes_arr.type}}\"></li> <li> <h3>{{tributes_arr.user_name_show}}</h3> <h5>{{tributes_arr.date_show}}</h5><p>{{tributes_arr.details_show}}</p> </li></ul></div>",
-        "recent_updates_html_show": "<h5>{{date}}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{{message}}</li></ul>",
-        "user_memorial_tribute": "<h3 class=\"about_heading\">Let the memory of {{memorial_user.name}} be with us forever.</h3><p><ul class=\"li_txt\"><li>18 years old</li><li>Born on September 1, 2004 in San Dimas, California, United States</li><li>Passed away on December 11, 2022 in United States</li></ul></p><p class=\"abt_txt\">This memorial website was created in memory of our beloved son,Anthony Bouslaiby, 18 years old, born on September 1, 2004, and passed away onDecember 11, 2022. He will be with us forever, and we will never stop loving him. Idecided to start this website to celebrate his life. Even though he wasnt with us as long as he shouldve been, he has touched so many lives and was so loved. I hope you all will contribute to this page, with picture, videos, and stories. I was so touched by all the memories left in the memory jar at the luncheon. Please feel free to add more, as they may come to you, because thats all we have left once a loved one leaves us. We all appreciate the love you showed Anthony for however long you may have known him. Thank you all!<br> Angela (his mom) <br> P.S. Please let me know if you have any probelms uploading etc. You can click on a  photo to see the caption. </p>",
+        "tribute_html_arr":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{!!{tributes_arr.type}!!}\"></li> <li> <h3>{!!{tributes_arr.user_name_show}!!}</h3> <h5>{!!{tributes_arr.date_show}!!}</h5><p>{!!{tributes_arr.details_show}!!}</p> </li></ul></div>",
+        "recent_updates_show_html_arr": "<h5>{!!{date}!!}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{message}!!}</li></ul>",
+        "user_memorial_tribute_var": "<h3 class=\"about_heading\">Let the memory of {!!{memorial_user.name}!!} be with us forever.</h3><p><ul class=\"li_txt\"><li>18 years old</li><li>Born on September 1, 2004 in San Dimas, California, United States</li><li>Passed away on December 11, 2022 in United States</li></ul></p><p class=\"abt_txt\">This memorial website was created in memory of our beloved son,Anthony Bouslaiby, 18 years old, born on September 1, 2004, and passed away onDecember 11, 2022. He will be with us forever, and we will never stop loving him. Idecided to start this website to celebrate his life. Even though he wasnt with us as long as he shouldve been, he has touched so many lives and was so loved. I hope you all will contribute to this page, with picture, videos, and stories. I was so touched by all the memories left in the memory jar at the luncheon. Please feel free to add more, as they may come to you, because thats all we have left once a loved one leaves us. We all appreciate the love you showed Anthony for however long you may have known him. Thank you all!<br> Angela (his mom) <br> P.S. Please let me know if you have any probelms uploading etc. You can click on a  photo to see the caption. </p>",
 
         ';
     }
