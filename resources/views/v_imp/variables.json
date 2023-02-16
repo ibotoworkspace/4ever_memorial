@@ -3,31 +3,31 @@
         "owner_user_var": [
             {
                 "id": "03",
-                "name": "Anthony",
-                "full_name": "Anthony Joseph Bouslaiby",
-                "birth": "2004",
-                "death": "2022",
-                "father_name": "Anthony Father",
-                "image": "http://localhost/4_ever_memories/public/user_templates/template_1/images/profile_pic.jpg"
+                "name_var": "Anthony",
+                "full_name_var": "Anthony Joseph Bouslaiby",
+                "birth_var": "2004",
+                "death_var": "2022",
+                "father_name_var": "Anthony Father",
+                "image_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/profile_pic.jpg"
             }
         ],
         "total_views_var": 90,
         "recent_updates_html_show": "<h5>{{date}}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{{message}}</li></ul>",
         "recent_updates_html_show_values_arr": [
             {
-                "date": "February 2",
-                "type": "tribute",
-                "number": 1
+                "date_var": "February 2",
+                "type_var": "tribute",
+                "number_var": 1
             },
             {
-                "date": "February 3",
-                "type": "photos",
-                "number": 3
+                "date_var": "February 3",
+                "type_var": "photos",
+                "number_var": 3
             },
             {
-                "date": "February 4",
-                "type": "tribute",
-                "number": 2
+                "date_var": "February 4",
+                "type_var": "tribute",
+                "number_var": 2
             }
         ],
         "memorial_user_var":{
@@ -46,62 +46,66 @@
         "tributes_arr": [
             {
                 "user_id": "03",
-                "user_name_show": "Maria Nashed",
-                "type": "flower",
-                "date_show": "January 23",
-                "details_show": "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.",
-                "date": "23/01/1990",
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/profile_pic.jpg"
+                "user_name_show_var": "Maria Nashed",
+                "type_var": "flower",
+                "date_show_var": "January 23",
+                "details_show_var": "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.",
+                "date_var": "23/01/1990",
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/profile_pic.jpg"
             },
             {
 
                 "user_id": 1,
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/candel.png",
-                "user_name_show": "Norice Mazmanian",
-                "type": "candle",
-                "date_show": "January 22",
-                "details_show": "I remember one day after my bone marrow transplant. I was staying at my daughters house while recovering. I think my daughter had to go out and all of a sudden Anthony came to my room and pulled up a chair. No doubt he was told to make sure I didn't get out of bed. Anyway we started talking and I asked him about school and what he was learning. I think it was some scientific thing that he started explaining to me.",
-                "date": "23/01/1993"
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/candel.png",
+                "user_name_show_var": "Norice Mazmanian",
+                "type_var": "candle",
+                "date_show_var": "January 22",
+                "details_show_var": "I remember one day after my bone marrow transplant. I was staying at my daughters house while recovering. I think my daughter had to go out and all of a sudden Anthony came to my room and pulled up a chair. No doubt he was told to make sure I didn't get out of bed. Anyway we started talking and I asked him about school and what he was learning. I think it was some scientific thing that he started explaining to me.",
+                "date_var": "23/01/1993"
             },
             {
                 "user_id": 1,
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/candel.png",
-                "user_name_show": "Adriana Villarreal",
-                "type": "candle",
-                "date_show": "January 21",
-                "details_show": "Anthony was such a kind person he never made me feel left out nor ever judged me.",
-                "date": "21/01/1995"
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/candel.png",
+                "user_name_show_var": "Adriana Villarreal",
+                "type_var": "candle",
+                "date_show_var": "January 21",
+                "details_show_var": "Anthony was such a kind person he never made me feel left out nor ever judged me.",
+                "date_var": "21/01/1995"
             },
             {
                 "user_id": 1,
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/candel.png",
-                "user_name_show": "Norice Mazmanian",
-                "type": "candle",
-                "date_show": "January 22",
-                "details_show": "Anthony was always precocious and asked every question ever. I loved his need to know more and more and to question. He always made me laugh. My favorite memories are long conversations with him. He could talk. And was so interesting. He was sweet and generous to everyone. He loved being in charge of projects and got any job done always wanting to do more. I miss his voice and laugh and \" yo, Mrs Johnson! You vibing?\" Anthony you will remain in my heart forever.",
-                "date": "21/01/1997"
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/candel.png",
+                "user_name_show_var": "Norice Mazmanian",
+                "type_var": "candle",
+                "date_show_var": "January 22",
+                "details_show_var": "Anthony was always precocious and asked every question ever. I loved his need to know more and more and to question. He always made me laugh. My favorite memories are long conversations with him. He could talk. And was so interesting. He was sweet and generous to everyone. He loved being in charge of projects and got any job done always wanting to do more. I miss his voice and laugh and \" yo, Mrs Johnson! You vibing?\" Anthony you will remain in my heart forever.",
+                "date_var": "21/01/1997"
             }
         ],
         "life_arr": [
             {
                 "user_id": 1,
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/baby_cot.png",
-                "details_show": "Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..."
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/baby_cot.png",
+                "details_show_var": "Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..."
             }
         ],
         "gallery_video_arr": [
             {
                 "user_id": 1,
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/download.jpg"
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/download.jpg"
             }
         ],
+        "about_tab_html_var": "<div id=\"About\" class=\"tabcontent\">{!$!user_memorial_tribute!$!}<div class=\"tributes\"><h1>Tributes</h1><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></div> <div class=\"tribute_blk\">{!$!tributes!$!}</div><div class=\"lev_tri\"><h3>Leave a Tribute</h3><div class=\"icon_list\"><div class=\"cand\"><imgsrc=\"{!!asset(`user_templates/template_1/images/candle_blu.png`)!!}\"alt=\"relative\"></div> <div class=\"flower\"> <img src=\"{!!asset(`user_templates/template_1/images/flower_blu.png`)!!}\"alt=\"relative\"></div><div class=\"feather\"><imgsrc=\"{!!asset(`user_templates/template_1/images/feather_blu.png`)!!}\"alt=\"relative\"></div></div><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button class=\"btn btn-danger pbbttn\">Publish</button> </div> </div> </div>",
+        "life_tab_html_var":"<div id=\"Life\" class=\"tabcontent\"><div class=\"reviewBox\"><ul class=\"reviewSection\"><li><h3>{!$!memorial_user.name!$!}’s Birth</h3></li></ul><div class=\"baby\"><img src=\"{!!asset(`user_templates/template_1/images/baby_cot.png`)!!}\" alt=\"\"></div> <p class=\"fdgsdf\">{!$!life.details_show!$!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div>",
+        "story_tab_html_var":"<div id=\"stories\" class=\"tabcontent\"> <div class=\"add_stor\"> <div class=\"flx\"><p>Share a special moment from {!$!memorial_user.name!$!}`s life</p><div class=\"stor_bttn\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_Write a story </div></div></div> <div class=\"story_tab\"><p> {!$!stories.date_show!$!} . by {!$!stories.user_name_show!$!}</p> <img src=\"{!$!stories.image_show!$!}\" alt=\"relative\"><div class=\"story_para\"><p>{!$!stories.details_show!$!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div></div>",
+        "gallery_tab_html_var":"<div id=\"Gallary\" class=\"tabcontent\"><div class=\"reviewBox\"><div class=\"tab_gal\"><button class=\"tab_gallinks\" onclick=\"openpic(event, `photo`)\" id=\"defaultOpen\">photo</button> <button class=\"tab_gallinks\" onclick=\"openpic(event, `video`)\">video</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `Audio`)\">Audio</button></div><div id=\"photo\" class=\"tab_galcontent\"> <div class=\"flx\"> <div class=\"gall_top_bttn\"> <div class=\"flx\"><div class=\"ply_bttn\"><i class=\"fa fa-play-circle\" aria-hidden=\"true\"></i></div><div class=\"slidsho_txt\"><p>Start slideshow</p> </div></div> </div><div class=\"gall_top_bttn\"> <div class=\"flx\"><div class=\"ply_bttn\">  <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></div> <div class=\"slidsho_txt\"><p>Add a Photo</p> </div> </div> </div></div> <div class=\"gallery\"> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!$!gallery.image_show!$!}\" alt=\"\"> </div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!$!gallery.image_show!$!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!$!gallery.image_show!$!}\"  alt=\"\"></div></div></div><div id=\"video\" class=\"tab_galcontent\"><div class=\"flx\"><div class=\"gall_top_bttn\"> <div class=\"flx\"><div class=\"ply_bttn\"> <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></div><div class=\"slidsho_txt\"><p>Add Video</p></div></div> </div></div> <div class=\"gallery\"><div class=\"col-md-3 pic_gal_img\"><img src=\"{!$!gallery_video.image_show!$!}\" alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!$!gallery_video.image_show!$!}\" alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!$!gallery_video.image_show!$!}\" alt=\"\"></div></div></div><div id=\"Audio\" class=\"tab_galcontent\"><div class=\"audio_icon\"><i class=\"fa fa-microphone\" aria-hidden=\"true\"></i></div><div class=\"add_audio\"><div class=\"aud_head\"> Add Audio</div><div class=\"aud_box\"><i class=\"fa fa-cloud-upload\" aria-hidden=\"true\"></i><p>From Your Device</p> </div></div></div></div></div>",
         "stories_arr": [
             {
                 "user_id": 1,
-                "user_name_show": "Alexa Zelaya",
-                "date_show": "January 21",
-                "image_show": "http://localhost/4_ever_memories/public/user_templates/template_1/images/baby_cot.png",
-                "details_show": "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We'd find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony."
+                "user_name_show_var": "Alexa Zelaya",
+                "date_show_var": "January 21",
+                "image_show_var": "http://localhost/4_ever_memories/public/user_templates/template_1/images/baby_cot.png",
+                "details_show_var": "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We'd find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony."
             }
         ]
     }
