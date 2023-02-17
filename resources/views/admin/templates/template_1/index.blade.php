@@ -4,9 +4,9 @@
 // dd($web);
 // dd($temp)
 @endphp
-{!!$temp->website_html!!}
+{!!$html!!}
 {{-- {!!dd($temp->website_variable)!!} --}}
-{!!$temp->tribute!!}
+{{-- {!!$temp->tribute!!}
 {!!$temp->life!!}
-{!!$temp->stories!!}
-{!!$temp->gallery!!}
+{!!$temp->stories!!} --}}
+{{-- {!!$temp->gallery!!} --}}
