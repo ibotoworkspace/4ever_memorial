@@ -16,7 +16,7 @@ class Template4Seeder extends Seeder
     public function run()
     {
 
-        $template_name = 'template_2';
+        $template_name = 'template_4';
         WebsiteTemplate::where('name',$template_name)->delete();
         $image_path = asset('/');
         $template = new WebsiteTemplate();
