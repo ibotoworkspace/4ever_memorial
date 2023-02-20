@@ -16,7 +16,8 @@ class TemplateController extends Controller
     // publi1c f1unction template_1(){
     //     return view('admin/templates/template_1/index');
     // }
-    public function template_2(){
+    public function template_2()
+    {
         return view('admin/templates/template_1\index-orignal');
     }
     // C:\php8\htdocs\4_ever_memories\resources\views\admin\templates\template_1\index-orignal.blade.php
@@ -26,18 +27,20 @@ class TemplateController extends Controller
     // publi1c f1unction template_4(){
     //     return view('admin/templates/template_4/index');
     // }
-    public function template_1(){
+    public function template_1()
+    {
         // $temp = WebsiteTemplate::where('name','template_1')->first();
         $temp = $this->get_template();
         $template_helper = new TemplateHelper($temp);
         $html = $template_helper->create_html();
         // return $html;
-// dd($html);
-    //    dd($temp);
+        // dd($html);
+        //    dd($temp);
         return view('admin/templates/template_1/index', compact('html'));
     }
 
-    public function get_template(){
+    public function get_template()
+    {
         $temp =  new stdClass();
         $temp->website_html = $this->web_html();
         $temp->website_variable = $this->web_variable();
@@ -49,7 +52,8 @@ class TemplateController extends Controller
         return $temp;
     }
 
-    public function web_html(){
+    public function web_html()
+    {
         $public_path = asset('/');
 
         return '
@@ -70,10 +74,13 @@ class TemplateController extends Controller
                     href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                <link rel="stylesheet" href="'.$public_path.'user_templates/template_1/css/style.css" />
+                <link rel="stylesheet" href="' . $public_path . 'user_templates/template_1/css/style.css" />
 
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
             </head>
 
             <body>
@@ -83,7 +90,7 @@ class TemplateController extends Controller
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="logo-area">
-                                    <img src="'.$public_path.'user_templates/template_1/images/logo.png" alt="relative" />
+                                    <img src="' . $public_path . 'user_templates/template_1/images/logo.png" alt="relative" />
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -107,7 +114,7 @@ class TemplateController extends Controller
                             </div>
                             <div class="col-md-4">
                                 <div class="profile_img">
-                                <img src="'.$public_path.'user_templates/template_1/images/profile_pic.jpg" alt="relative" />
+                                <img src="' . $public_path . 'user_templates/template_1/images/profile_pic.jpg" alt="relative" />
                                 </div>
                             </div>
                         </div>
@@ -189,7 +196,31 @@ class TemplateController extends Controller
                                     <div class="phots">
                                         <p class="pht_para">137 Photos</p>
                                         <div class="imag_sec">
-                                        <img src="'.$public_path.'user_templates/template_1/images/download.jpg" alt="">
+                                        <div class="contain side_slider">
+                                    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                        </ol>
+
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner">
+                                        {!!{slider_htmlarr}!!}
+                                        </div>
+
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
                                         </div>
                                     </div>
                                     <div class="rightBoxArea RecentUpdate">
@@ -288,7 +319,7 @@ class TemplateController extends Controller
                         tab_gallinks[i].className = tab_gallinks[i].className.replace(" active", "");
                     }
                     document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+                    evt.currentTarget.className += " ";
                 }
                 document.getElementById("defaultOpen").click();
 
@@ -297,9 +328,9 @@ class TemplateController extends Controller
 
 
         ';
-
     }
-    public function web_variable(){
+    public function web_variable()
+    {
 
         $public_path = asset('/');
         return '
@@ -311,7 +342,7 @@ class TemplateController extends Controller
                 "birth_var": "2004",
                 "death_var": "2022",
                 "father_name_var": "Anthony Father",
-                  "image_var": "'.$public_path.'user_templates/template_1/images/profile_pic.jpg"
+                  "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
                 },
                 "total_views_var": 90,
               "recent_updates_show_arr": [
@@ -335,10 +366,10 @@ class TemplateController extends Controller
                 }
               ],
               "icon_list_var":{
-               
-                "flower_image_var": "'.$public_path.'user_templates/template_1/images/flower_blu.png",
-                "candel_image_var": "'.$public_path.'user_templates/template_1/images/candle_blu.png",
-                "feather_image_var": "'.$public_path.'user_templates/template_1/images/feather_blu.png"
+
+                "flower_image_var": "' . $public_path . 'user_templates/template_1/images/flower_blu.png",
+                "candel_image_var": "' . $public_path . 'user_templates/template_1/images/candle_blu.png",
+                "feather_image_var": "' . $public_path . 'user_templates/template_1/images/feather_blu.png"
               },
               "memorial_user_var": {
                 "id": "03",
@@ -347,7 +378,7 @@ class TemplateController extends Controller
                 "birth_var": "2004",
                 "death_var": "2022",
                 "father_name_var": "Anthony Father",
-                "image_var": "'.$public_path.'user_templates/template_1/images/profile_pic.jpg"
+                "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
               },
               "tributes_arr": [
                 {
@@ -356,11 +387,11 @@ class TemplateController extends Controller
                     "date_show_var": "January 23",
                     "details_show_var": "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.",
                     "date_var": "23/01/1990",
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/flower.png"
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/flower.png"
                 },
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/candel.png",
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/candel.png",
                   "user_name_show_var": "Norice Mazmanian",
                   "type_var": "candle",
                   "date_show_var": "January 22",
@@ -369,7 +400,7 @@ class TemplateController extends Controller
                 },
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/candel.png",
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/candel.png",
                   "user_name_show_var": "Adriana Villarreal",
                   "type_var": "candle",
                   "date_show_var": "January 21",
@@ -378,7 +409,7 @@ class TemplateController extends Controller
                 },
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/candel.png",
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/candel.png",
                   "user_name_show_var": "Norice Mazmanian",
                   "type_var": "candle",
                   "date_show_var": "January 22",
@@ -389,26 +420,32 @@ class TemplateController extends Controller
               "life_tab_arr": [
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/baby_cot.png",
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/baby_cot.png",
                   "details_show_var": "Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..."
                 }
               ],
               "gallery_photo_arr": [
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/download.jpg"
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
                 }
               ],
               "gallery_audio_arr": [
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/download.jpg"
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
                 }
               ],
               "gallery_video_arr": [
                 {
                   "user_id": 1,
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/download.jpg"
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
+                }
+              ],
+              "slider_arr": [
+                {
+                  "num_var": 137,
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
                 }
               ],
               "story_tab_arr": [
@@ -416,17 +453,17 @@ class TemplateController extends Controller
                   "user_id": 1,
                   "user_name_show_var": "Alexa Zelaya",
                   "date_show_var": "January 21",
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/baby_cot.png",
+                  "image_show_var": "' . $public_path . 'user_templates/template_1/images/baby_cot.png",
                   "details_show_var": "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We\'d find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony."
                 }
               ]
             }
         ';
-
     }
 
-    public function variable_html(){
-        return'{
+    public function variable_html()
+    {
+        return '{
             "tributes_htmlarr":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{!!{tributes_arr.image_show_var}!!}\"></li> <li> <h3>{!!{tributes_arr.user_name_show_var}!!}</h3> <h5>{!!{tributes_arr.date_show_var}!!}</h5><p>{!!{tributes_arr.details_show_var}!!}</p> </li></ul></div>",
             "recent_updates_show_htmlarr": "<h5>{!!{recent_updates_show_arr.date_var}!!}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{recent_updates_show_arr.message_var}!!}</li></ul>",
             "user_memorial_tribute_htmlvar": "<h3 class=\"about_heading\">Let the memory of {!!{memorial_user_var.name_var}!!} be with us forever.</h3><p><ul class=\"li_txt\"><li>18 years old</li><li>Born on September 1, 2004 in San Dimas, California, United States</li><li>Passed away on December 11, 2022 in United States</li></ul></p><p class=\"abt_txt\">This memorial website was created in memory of our beloved son,Anthony Bouslaiby, 18 years old, born on September 1, 2004, and passed away onDecember 11, 2022. He will be with us forever, and we will never stop loving him. Idecided to start this website to celebrate his life. Even though he wasnt with us as long as he shouldve been, he has touched so many lives and was so loved. I hope you all will contribute to this page, with picture, videos, and stories_arr. I was so touched by all the memories left in the memory jar at the luncheon. Please feel free to add more, as they may come to you, because thats all we have left once a loved one leaves us. We all appreciate the love you showed Anthony for however long you may have known him. Thank you all!<br> Angela (his mom) <br> P.S. Please let me know if you have any probelms uploading etc. You can click on a  photo to see the caption. </p>",
@@ -436,10 +473,10 @@ class TemplateController extends Controller
             "gallery_photo_htmlarr":"<div id=\"photo\" class=\"tab_galcontent\"> <div class=\"flx\"> <div class=\"gall_top_bttn\"> <div class=\"flx\"> <div class=\"ply_bttn\"> <i class=\"fa fa-play-circle\" aria-hidden=\"true\"></i></div> <div class=\"slidsho_txt\"> <p>Start slideshow</p>  </div> </div>  </div><div class=\"gall_top_bttn\"> <div class=\"flx\"><div class=\"ply_bttn\"> <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></div><div class=\"slidsho_txt\"><p>Add a Photo</p></div></div></div></div> <div class=\"gallery\"> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"></div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> </div></div>",
             "gallery_audio_htmlarr":"<div id=\"Audio\" class=\"tab_galcontent\"><div class=\"audio_icon\"><i class=\"fa fa-microphone\" aria-hidden=\"true\"></i></div><div class=\"add_audio\"><div class=\"aud_head\">Add Audio</div> <div class=\"aud_box\"><i class=\"fa fa-cloud-upload\" aria-hidden=\"true\"></i><p>From Your Device</p> </div></div></div>",
             "gallery_video_htmlarr":"<div id=\"video\" class=\"tab_galcontent\"> <div class=\"flx\"> <div class=\"gall_top_bttn\"><div class=\"flx\"><div class=\"ply_bttn\"><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i> </div><div class=\"slidsho_txt\"><p>Add Video</p></div> </div></div></div><div class=\"gallery\"><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"> </div> </div></div>",
-            "story_tab_htmlarr":"<div id=\"stories\" class=\"tabcontent\"> <div class=\"add_stor\"> <div class=\"flx\"><p>Share a special moment from {!!{memorial_user_var.name_var}!!}`s life</p><div class=\"stor_bttn\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_Write a story </div></div></div> <div class=\"story_tab\"><p>{!!{stories_arr.date_show_var}!!}. by{!!{stories_arr.user_name_show_var}!!}</p> <img src=\"{!!{stories_arr.image_show_var}!!}\" alt=\"relative\"><div class=\"story_para\"><p>{!!{stories_arr.details_show_var}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div></div>"
-        }
+            "story_tab_htmlarr":"<div id=\"stories\" class=\"tabcontent\"> <div class=\"add_stor\"> <div class=\"flx\"><div class=\"container\"> <div class=\"row\"> <div class=\"col-md-8\"><p>Share a special moment from {!!{memorial_user_var.name_var}!!}`s life</p></div><div class=\"col-md-4\"><div class=\"stor_bttn\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_Write a story </div></div></div></div></div></div> <div class=\"story_tab\"><p>{!!{stories_arr.date_show_var}!!}. by{!!{stories_arr.user_name_show_var}!!}</p> <img src=\"{!!{stories_arr.image_show_var}!!}\" alt=\"relative\"><div class=\"story_para\"><p>{!!{stories_arr.details_show_var}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div></div>",
+            "slider_htmlarr": "<div class=\"item active\"><img src=\" {!!{slider_arr.image_show_var}!!}\" alt=\"responsive\"   style=\"width:100%; height: 100%;\"></div><div class=\"item\"><img src=\" {!!{slider_arr.image_show_var}!!}\"style=\"width:100%; height: 100%;\"></div><div class=\"item\"><img src=\" {!!{slider_arr.image_show_var}!!}\" style=\"width:100%; height: 100%;\"></div>"
+                }
         ';
         // "gallery_tab_htmlvar":"<div id=\"Gallary\" class=\"tabcontent\"><div class=\"reviewBox\"> <div class=\"tab_gal\"><button class=\"tab_gallinks\" onclick=\"openpic(event, `photo`)\"id=\"defaultOpen\">photo</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `video`)\">video</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `Audio`)\">Audio</button></div>{!!{gallery_photo_htmlarr}!!}{!!{gallery_video_htmlarr}!!}{!!{gallery_audio_htmlarr}!!}</div></div>",
     }
-
 }
