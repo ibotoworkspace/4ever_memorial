@@ -16,9 +16,10 @@ class TemplateController extends Controller
     // publi1c f1unction template_1(){
     //     return view('admin/templates/template_1/index');
     // }
-    // publi1c f1unction template_2(){
-    //     return view('admin/templates/template_2/index');
-    // }
+    public function template_2(){
+        return view('admin/templates/template_1\index-orignal');
+    }
+    // C:\php8\htdocs\4_ever_memories\resources\views\admin\templates\template_1\index-orignal.blade.php
     // publi1c f1unction template_3(){
     //     return view('admin/templates/template_3/index');
     // }
@@ -101,8 +102,6 @@ class TemplateController extends Controller
                             <div class="col-md-8">
                                 <div class="cover_head">
                                     <h1>{!!{memorial_user_var.full_name_var}!!}</h1>
-                                    <h1>{!!{total_views_var}!!}</h1>
-
                                     <h1>{!!{memorial_user_var.birth_var}!!} - {!!{memorial_user_var.death_var}!!}</h1>
                                 </div>
                             </div>
@@ -139,7 +138,7 @@ class TemplateController extends Controller
 
 
 
-                                        {!!{life_tab_htmlvar}!!}
+                                        {!!{life_tab_htmlarr}!!}
 
 
                                         <div id="Gallary" class="tabcontent">
@@ -158,7 +157,7 @@ class TemplateController extends Controller
 
                                             </div>
                                         </div>
-                                        {!!{gallary_stories_main}!!}
+                                        {!!{story_tab_htmlarr}!!}
 
 
 
@@ -335,6 +334,12 @@ class TemplateController extends Controller
                     "message_var":"added 2 tributes"
                 }
               ],
+              "icon_list_var":{
+               
+                "flower_image_var": "'.$public_path.'user_templates/template_1/images/flower_blu.png",
+                "candel_image_var": "'.$public_path.'user_templates/template_1/images/candle_blu.png",
+                "feather_image_var": "'.$public_path.'user_templates/template_1/images/feather_blu.png"
+              },
               "memorial_user_var": {
                 "id": "03",
                 "name_var": "Anthony",
@@ -351,7 +356,7 @@ class TemplateController extends Controller
                     "date_show_var": "January 23",
                     "details_show_var": "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.",
                     "date_var": "23/01/1990",
-                  "image_show_var": "'.$public_path.'user_templates/template_1/images/profile_pic.jpg"
+                  "image_show_var": "'.$public_path.'user_templates/template_1/images/flower.png"
                 },
                 {
                   "user_id": 1,
@@ -366,7 +371,7 @@ class TemplateController extends Controller
                   "user_id": 1,
                   "image_show_var": "'.$public_path.'user_templates/template_1/images/candel.png",
                   "user_name_show_var": "Adriana Villarreal",
-                  "type": "candle_var",
+                  "type_var": "candle",
                   "date_show_var": "January 21",
                   "details_show_var": "Anthony was such a kind person he never made me feel left out nor ever judged me.",
                   "date_var": "21/01/1995"
@@ -381,7 +386,7 @@ class TemplateController extends Controller
                   "date_var": "21/01/1997"
                 }
               ],
-              "life_arr": [
+              "life_tab_arr": [
                 {
                   "user_id": 1,
                   "image_show_var": "'.$public_path.'user_templates/template_1/images/baby_cot.png",
@@ -406,7 +411,7 @@ class TemplateController extends Controller
                   "image_show_var": "'.$public_path.'user_templates/template_1/images/download.jpg"
                 }
               ],
-              "stories_arr": [
+              "story_tab_arr": [
                 {
                   "user_id": 1,
                   "user_name_show_var": "Alexa Zelaya",
@@ -422,16 +427,16 @@ class TemplateController extends Controller
 
     public function variable_html(){
         return'{
-            "tributes_htmlarr":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{!!{tributes_arr.type_var}!!}\"></li> <li> <h3>{!!{tributes_arr.user_name_show_var}!!}</h3> <h5>{!!{tributes_arr.date_show_var}!!}</h5><p>{!!{tributes_arr.details_show_var}!!}</p> </li></ul></div>",
+            "tributes_htmlarr":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{!!{tributes_arr.image_show_var}!!}\"></li> <li> <h3>{!!{tributes_arr.user_name_show_var}!!}</h3> <h5>{!!{tributes_arr.date_show_var}!!}</h5><p>{!!{tributes_arr.details_show_var}!!}</p> </li></ul></div>",
             "recent_updates_show_htmlarr": "<h5>{!!{recent_updates_show_arr.date_var}!!}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{recent_updates_show_arr.message_var}!!}</li></ul>",
             "user_memorial_tribute_htmlvar": "<h3 class=\"about_heading\">Let the memory of {!!{memorial_user_var.name_var}!!} be with us forever.</h3><p><ul class=\"li_txt\"><li>18 years old</li><li>Born on September 1, 2004 in San Dimas, California, United States</li><li>Passed away on December 11, 2022 in United States</li></ul></p><p class=\"abt_txt\">This memorial website was created in memory of our beloved son,Anthony Bouslaiby, 18 years old, born on September 1, 2004, and passed away onDecember 11, 2022. He will be with us forever, and we will never stop loving him. Idecided to start this website to celebrate his life. Even though he wasnt with us as long as he shouldve been, he has touched so many lives and was so loved. I hope you all will contribute to this page, with picture, videos, and stories_arr. I was so touched by all the memories left in the memory jar at the luncheon. Please feel free to add more, as they may come to you, because thats all we have left once a loved one leaves us. We all appreciate the love you showed Anthony for however long you may have known him. Thank you all!<br> Angela (his mom) <br> P.S. Please let me know if you have any probelms uploading etc. You can click on a  photo to see the caption. </p>",
-            "about_tab_htmlvar": "<div id=\"About\" class=\"tabcontent\">{!!{user_memorial_tribute_htmlvar}!!}<div class=\"tributes\"><h1>Tributes</h1><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></div> <div class=\"tribute_blk\">{!!{tributes_htmlarr}!!}</div><div class=\"lev_tri\"><h3>Leave a Tribute</h3><div class=\"icon_list\"><div class=\"cand\"><imgsrc=\"{!!asset(`user_templates/template_1/images/candle_blu.png`)!!}\"alt=\"relative\"></div> <div class=\"flower\"> <img src=\"{!!asset(`user_templates/template_1/images/flower_blu.png`)!!}\"alt=\"relative\"></div><div class=\"feather\"><imgsrc=\"{!!asset(`user_templates/template_1/images/feather_blu.png`)!!}\"alt=\"relative\"></div></div><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button class=\"btn btn-danger pbbttn\">Publish</button> </div> </div> </div>",
-            "life_tab_htmlvar":"<div id=\"Life\" class=\"tabcontent\"><div class=\"reviewBox\"><ul class=\"reviewSection\"><li><h3>{!!{memorial_user_var.name_var}!!}’s Birth</h3></li></ul><div class=\"baby\"><img src=\"{!!asset(`user_templates/template_1/images/baby_cot.png`)!!}\" alt=\"\"></div> <p class=\"fdgsdf\">{!!{life_arr.details_show}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div>",
+            "about_tab_htmlvar": "<div id=\"About\" class=\"tabcontent\"> {!!{user_memorial_tribute_htmlvar}!!} <div class=\"tributes\"><h1>Tributes</h1><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></div> <div class=\"tribute_blk\">{!!{tributes_htmlarr}!!}</div><div class=\"lev_tri\"><h3>Leave a Tribute</h3><div class=\"icon_list\"><div class=\"cand\"><img src=\"{!!{icon_list_var.candel_image_var}!!}\" alt=\"relative\"></div> <div class=\"flower\"><img src=\"{!!{icon_list_var.flower_image_var}!!}\" alt=\"relative\"></div><div class=\"feather\"><img src=\"{!!{icon_list_var.feather_image_var}!!}\" alt=\"relative\"></div></div><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button class=\"btn btn-danger pbbttn\">Publish</button> </div> </div> </div>",
+            "life_tab_htmlarr":"<div id=\"Life\" class=\"tabcontent\"><div class=\"reviewBox\"><ul class=\"reviewSection\"><li><h3>{!!{memorial_user_var.name_var}!!}’s Birth</h3></li></ul><div class=\"baby\"><img src=\"{!!{life_tab_arr.image_show_var}!!}\" alt=\"relative\"></div> <p class=\"fdgsdf\">{!!{life_tab_arr.details_show_var}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div>",
 
             "gallery_photo_htmlarr":"<div id=\"photo\" class=\"tab_galcontent\"> <div class=\"flx\"> <div class=\"gall_top_bttn\"> <div class=\"flx\"> <div class=\"ply_bttn\"> <i class=\"fa fa-play-circle\" aria-hidden=\"true\"></i></div> <div class=\"slidsho_txt\"> <p>Start slideshow</p>  </div> </div>  </div><div class=\"gall_top_bttn\"> <div class=\"flx\"><div class=\"ply_bttn\"> <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i></div><div class=\"slidsho_txt\"><p>Add a Photo</p></div></div></div></div> <div class=\"gallery\"> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"></div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> </div></div>",
             "gallery_audio_htmlarr":"<div id=\"Audio\" class=\"tab_galcontent\"><div class=\"audio_icon\"><i class=\"fa fa-microphone\" aria-hidden=\"true\"></i></div><div class=\"add_audio\"><div class=\"aud_head\">Add Audio</div> <div class=\"aud_box\"><i class=\"fa fa-cloud-upload\" aria-hidden=\"true\"></i><p>From Your Device</p> </div></div></div>",
             "gallery_video_htmlarr":"<div id=\"video\" class=\"tab_galcontent\"> <div class=\"flx\"> <div class=\"gall_top_bttn\"><div class=\"flx\"><div class=\"ply_bttn\"><i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i> </div><div class=\"slidsho_txt\"><p>Add Video</p></div> </div></div></div><div class=\"gallery\"><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"> </div> </div></div>",
-            "story_tab_htmlvar":"<div id=\"stories\" class=\"tabcontent\"> <div class=\"add_stor\"> <div class=\"flx\"><p>Share a special moment from {!!{memorial_user.name_var}!!}`s life</p><div class=\"stor_bttn\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_Write a story </div></div></div> <div class=\"story_tab\"><p> {!!{stories_arr.date_show}!!} . by {!!{stories_arr.user_name_show}!!}</p> <img src=\"{!!{stories_arr.image_show_var}!!}\" alt=\"relative\"><div class=\"story_para\"><p>{!!{stories_arr.details_show}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div></div>"
+            "story_tab_htmlarr":"<div id=\"stories\" class=\"tabcontent\"> <div class=\"add_stor\"> <div class=\"flx\"><p>Share a special moment from {!!{memorial_user_var.name_var}!!}`s life</p><div class=\"stor_bttn\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_Write a story </div></div></div> <div class=\"story_tab\"><p>{!!{stories_arr.date_show_var}!!}. by{!!{stories_arr.user_name_show_var}!!}</p> <img src=\"{!!{stories_arr.image_show_var}!!}\" alt=\"relative\"><div class=\"story_para\"><p>{!!{stories_arr.details_show_var}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div></div>"
         }
         ';
         // "gallery_tab_htmlvar":"<div id=\"Gallary\" class=\"tabcontent\"><div class=\"reviewBox\"> <div class=\"tab_gal\"><button class=\"tab_gallinks\" onclick=\"openpic(event, `photo`)\"id=\"defaultOpen\">photo</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `video`)\">video</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `Audio`)\">Audio</button></div>{!!{gallery_photo_htmlarr}!!}{!!{gallery_video_htmlarr}!!}{!!{gallery_audio_htmlarr}!!}</div></div>",

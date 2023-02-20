@@ -16,11 +16,14 @@ class TemplateHelper
 
     public function __construct($template){
         $this->template = $template;
+        // dd($template->website_variable);
         $this->variable_html = json_decode($template->variable_html,true);
         $this->website_variable = json_decode($template->website_variable,true);
         $this->website_html = json_decode($template->website_html,true);
     }
     public function create_html(){
+        // dd($this->website_variable);
+
         $html = $this->template->website_html;
         $html = $this->replace_variables($html,1);
         // $html = $this->get_html_variables($template,$html);
@@ -40,6 +43,9 @@ class TemplateHelper
 
             $web_html_val = $this->variable_html[$index];
 
+            if(!isset($this->website_variable[$website_index])){
+                dd($this->website_variable,$website_index);
+            }
             $web_values_arr = $this->website_variable[$website_index];
             $html_arr_list = '';
             foreach($web_values_arr as $web_value){
@@ -76,19 +82,33 @@ class TemplateHelper
     }
 
     public function get_custom_variables_list($html,$end_types=''){
-        $pattern = '/'.$this->afterstr.'.*?'.$end_types.$this->beforestr.'/';
+        $pattern = '/'.$this->afterstr.'.*?'.$this->beforestr.'/';//.$end_types
+
+        // $all_vars_start_html_arr = explode($this->afterstr,$html);
+        // $all_var = [];
+
+        // foreach ($all_vars_start_html_arr as $key => $all_vars_start_html) {
+        //     $all_var[] = explode($end_types.$this->beforestr,$all_vars_start_html);
+        // }
+        // dd($all_var);
+            //     if($this->depth > 2){
+            //     // dd('asd',$this->depth,$this->variable_html,$result_arr);
+            //     dd($pattern,$m);
+            //     dd();
+            // }    
+
         if(preg_match_all($pattern,$html,$m)){
             if(isset($m[0])){
                 $result_arr = [];
-                if($this->depth > 2){
-                    // dd('asd',$this->depth,$this->variable_html,$result_arr);
-                    dd($html);
-                }
+
                 foreach($m[0] as $i){
+                    if ($end_types && !str_contains($i, $end_types.$this->beforestr)) { 
+                        continue;
+                    }
                     $index = $this->remove_var_identity($i);
                     $result_arr[$index] = $i;
                 }
-
+               
                 return $result_arr;
             }
         }
@@ -101,29 +121,62 @@ class TemplateHelper
     }
 
     public function remove_var_variables_from_html($html,$prefix='',$variables_arr = []){
+
         if(!$variables_arr){
             $variables_arr = $this->website_variable;
         }
+
         $vars = $this->get_custom_variables_list($html,'_var');
         foreach($vars as $index=>$var){
-            $value = $variables_arr;
+            $value = $variables_arr;           
             $index_arr = explode('.',$index);
             foreach($index_arr as $i){
-                if($i == "image_show_var"){
-                    // dd($vars,$index,$variables_arr,$i);
-                }
                 if($i == $prefix){
                     continue;
                 }
-                if(is_array($variables_arr)){
-                    $value = $value[$i];
+                if(is_array($value)){
+                    if(!isset($value[$i])){
+                        continue;
+                        // dd($value,$i,$index,$vars);
+                    }
+                    $value = $value[$i];                  
                 }
-                if(!is_array($value)){
-                    $html = str_replace($var,$value,$html);
-                }
+                if(!is_array($value)){                    
+                    $html = str_replace($var,$value,$html);                    
+                }                
             }
         }
+        // if($this->depth > 2 && $i == 'type_var'){
+
         // dd('aaa',$var,$value,$html);
+
         return $html;
     }
+    // public function find_var_and_replace_loop($vars,$find_global_arr){
+    //     if(!$variables_arr){
+    //         $variables_arr = $this->website_variable;
+    //     }
+
+    //     foreach($vars as $index=>$var){
+    //         $value = $variables_arr;           
+    //         $index_arr = explode('.',$index);
+    //         foreach($index_arr as $i){
+    //             if($i == $prefix){
+    //                 continue;
+    //             }
+    //             if(is_array($value)){
+    //                 if(!isset($value[$i])){
+    //                     dd($value,$i,$index,$vars);
+    //                 }
+    //                 $value = $value[$i];
+    //                 $value_a[] = $value;                   
+    //             }
+    //             if(!is_array($value)){                    
+    //                 $html = str_replace($var,$value,$html);                    
+    //             }                
+    //         }
+    //     }
+    //     return $html;
+    // }
+    
 }
