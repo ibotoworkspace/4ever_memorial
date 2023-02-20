@@ -27,10 +27,13 @@ class TemplateController extends Controller
     // publi1c f1unction template_4(){
     //     return view('admin/templates/template_4/index');
     // }
-    public function template_1()
+    public function template(Request $request)
     {
+        $template = $request->template;
         // $temp = WebsiteTemplate::where('name','template_1')->first();
-        $temp = $this->get_template();
+        // $temp = $this->get_template();
+        $temp = WebsiteTemplate::where('name',$template)->first();
+        // dd($temp);
         $template_helper = new TemplateHelper($temp);
         $html = $template_helper->create_html();
         // return $html;
@@ -42,8 +45,8 @@ class TemplateController extends Controller
     public function get_template()
     {
         $temp =  new stdClass();
-        $temp->website_html = $this->web_html();
-        $temp->website_variable = $this->web_variable();
+        $temp->web_html = $this->web_html();
+        $temp->web_variable = $this->web_variable();
         // $temp->tribute = $this->web_tribute();
         // $temp->stories = $this->web_stories();
         // $temp->gallery = $this->web_gallery();

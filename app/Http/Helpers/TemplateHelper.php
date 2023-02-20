@@ -18,14 +18,19 @@ class TemplateHelper
         $this->template = $template;
         // dd($template->website_variable);
         $this->variable_html = json_decode($template->variable_html,true);
-        $this->website_variable = json_decode($template->website_variable,true);
-        $this->website_html = json_decode($template->website_html,true);
+        $this->website_variable = json_decode($template->web_variable,true);
+        
+
+        $this->website_html = $template->web_html;
+        // dd($template->web_html);
     }
     public function create_html(){
         // dd($this->website_variable);
-
-        $html = $this->template->website_html;
-        $html = $this->replace_variables($html,1);
+        // dd($this->variable_html,$this->website_variable,$this->website_html);
+        $html = $this->website_html;
+        dd($this->variable_html);
+        // $html = $this->replace_variables($html,1);
+        // dd($html);
         // $html = $this->get_html_variables($template,$html);
 
         return $html;

@@ -24,8 +24,9 @@ class TemplateSeeder extends Seeder
         $template->name = $template_name;
         $template->save();
         $template = WebsiteTemplate::where('name',$template_name)->first();
-        $template->web_html =
         $public_path = asset('/');
+        $template->web_html =
+        
 
         '
 
@@ -439,7 +440,7 @@ class TemplateSeeder extends Seeder
         $template->save();
         $template = WebsiteTemplate::where('name',$template_name)->first();
 
-        $template->variable_html = '
+        $variable_html = '
         {
             "tributes_htmlarr":  "<div class=\"reviewBox\"><ul class=\"reviewSection\"> <li><img src=\"{!!{tributes_arr.image_show_var}!!}\"></li> <li> <h3>{!!{tributes_arr.user_name_show_var}!!}</h3> <h5>{!!{tributes_arr.date_show_var}!!}</h5><p>{!!{tributes_arr.details_show_var}!!}</p> </li></ul></div>",
             "recent_updates_show_htmlarr": "<h5>{!!{recent_updates_show_arr.date_var}!!}</h5><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{recent_updates_show_arr.message_var}!!}</li></ul>",
@@ -454,6 +455,8 @@ class TemplateSeeder extends Seeder
             "slider_htmlarr": "<div class=\"item active\"><img src=\" {!!{slider_arr.image_show_var}!!}\" alt=\"responsive\"   style=\"width:100%; height: 100%;\"></div><div class=\"item\"><img src=\" {!!{slider_arr.image_show_var}!!}\"style=\"width:100%; height: 100%;\"></div><div class=\"item\"><img src=\" {!!{slider_arr.image_show_var}!!}\" style=\"width:100%; height: 100%;\"></div>"
                 }
         ';
+        $template->variable_html = json_encode($variable_html);
+
         $template->save();
 
     }
