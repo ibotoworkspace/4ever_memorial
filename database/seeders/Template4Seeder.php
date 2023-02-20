@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Template;
 use App\Models\WebsiteTemplate;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TemplateSeeder extends Seeder
+class Template4Seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +15,8 @@ class TemplateSeeder extends Seeder
      */
     public function run()
     {
-        $template_name = 'template_1';
+
+        $template_name = 'template_2';
         WebsiteTemplate::where('name',$template_name)->delete();
         $image_path = asset('/');
         $template = new WebsiteTemplate();
@@ -45,7 +45,7 @@ class TemplateSeeder extends Seeder
                     href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                <link rel="stylesheet" href="' . $public_path . 'user_templates/template_1/css/style.css" />
+                <link rel="stylesheet" href="' . $public_path . 'user_templates/template_4/css/style.css" />
 
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -455,6 +455,5 @@ class TemplateSeeder extends Seeder
                 }
         ';
         $template->save();
-
     }
 }
