@@ -24,8 +24,12 @@ class TemplateSeeder extends Seeder
         $template->name = $template_name;
         $template->save();
         $template = WebsiteTemplate::where('name',$template_name)->first();
-        $public_path = asset('public').'/';
-        dd($public_path);
+        $server = 'localhost://';
+        $server = 'https://demo.hatinco.com/4_ever_memories/public';
+        // $server = 'demo.hatinco.com://';
+        // if(){}
+        $public_path = 'http://localhost/4_ever_memories/public/';
+        // dd($pub);
         $template->web_html =
         '
         <html>
