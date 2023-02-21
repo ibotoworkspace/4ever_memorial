@@ -29,11 +29,19 @@ class TemplateController extends Controller
     // }
     public function template(Request $request)
     {
+        // dd('asd');
         $template = $request->template;
         // $temp = WebsiteTemplate::where('name','template_1')->first();
         // $temp = $this->get_template();
+        // $temp = WebsiteTemplate::where('name',$template)->delete();
+        // $temp = new WebsiteTemplate();
+        // $temp->name = 'abc'; 
+        // $temp->web_html = 'abc'; 
+        // $temp->web_variable = 'abc'; 
+        // $temp->variable_html = 'abc'; 
+        // $temp->save(); 
         $temp = WebsiteTemplate::where('name',$template)->first();
-        // dd($temp);
+        // dd($temp,$temp->web_variable);
         $template_helper = new TemplateHelper($temp);
         $html = $template_helper->create_html();
         // return $html;

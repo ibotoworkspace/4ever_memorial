@@ -18,18 +18,16 @@ class TemplateSeeder extends Seeder
     {
         $template_name = 'template_1';
         WebsiteTemplate::where('name',$template_name)->delete();
-        $image_path = asset('/');
+        $image_path = asset('public').'/';
         $template = new WebsiteTemplate();
         // $template->id = 1;
         $template->name = $template_name;
         $template->save();
         $template = WebsiteTemplate::where('name',$template_name)->first();
-        $public_path = asset('/');
+        $public_path = asset('public').'/';
+        dd($public_path);
         $template->web_html =
-        
-
         '
-
         <html>
 
             <head>
@@ -302,12 +300,7 @@ class TemplateSeeder extends Seeder
         ';
       $template->save();
       $template = WebsiteTemplate::where('name',$template_name)->first();
-
-        // $template->website_variable = json_encode('
-        // $website_variable = '
-
-        $web_variable = preg_replace( "/<br>|\n/", "", '
-        [
+        $web_variable = '
             {
                 "owner_user_var":{
                   "id": "03",
@@ -340,7 +333,7 @@ class TemplateSeeder extends Seeder
                   }
                 ],
                 "icon_list_var":{
-
+        
                   "flower_image_var": "' . $public_path . 'user_templates/template_1/images/flower_blu.png",
                   "candel_image_var": "' . $public_path . 'user_templates/template_1/images/candle_blu.png",
                   "feather_image_var": "' . $public_path . 'user_templates/template_1/images/feather_blu.png"
@@ -432,11 +425,8 @@ class TemplateSeeder extends Seeder
                   }
                 ]
               }
-          ]
-        ');
-        // ';
-
-        $template->web_variable = json_encode($web_variable);
+        ';
+        $template->web_variable = $web_variable;
         $template->save();
         $template = WebsiteTemplate::where('name',$template_name)->first();
 
@@ -455,7 +445,7 @@ class TemplateSeeder extends Seeder
             "slider_htmlarr": "<div class=\"item active\"><img src=\" {!!{slider_arr.image_show_var}!!}\" alt=\"responsive\"   style=\"width:100%; height: 100%;\"></div><div class=\"item\"><img src=\" {!!{slider_arr.image_show_var}!!}\"style=\"width:100%; height: 100%;\"></div><div class=\"item\"><img src=\" {!!{slider_arr.image_show_var}!!}\" style=\"width:100%; height: 100%;\"></div>"
                 }
         ';
-        $template->variable_html = json_encode($variable_html);
+        $template->variable_html = $variable_html;
 
         $template->save();
 

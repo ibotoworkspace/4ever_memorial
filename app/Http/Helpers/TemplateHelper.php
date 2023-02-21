@@ -17,8 +17,9 @@ class TemplateHelper
     public function __construct($template){
         $this->template = $template;
         // dd($template->website_variable);
-        $this->variable_html = json_decode($template->variable_html,true);
-        $this->website_variable = json_decode($template->web_variable,true);
+        // $this->variable_html = json_decode($template->variable_html,true);
+        $this->variable_html =    $template->variable_html;
+        $this->website_variable = $template->web_variable;
         
 
         $this->website_html = $template->web_html;
@@ -28,8 +29,8 @@ class TemplateHelper
         // dd($this->website_variable);
         // dd($this->variable_html,$this->website_variable,$this->website_html);
         $html = $this->website_html;
-        dd($this->variable_html);
-        // $html = $this->replace_variables($html,1);
+        // dd($this->variable_html);
+        $html = $this->replace_variables($html,1);
         // dd($html);
         // $html = $this->get_html_variables($template,$html);
 
@@ -40,7 +41,6 @@ class TemplateHelper
 
     public function replace_htmlarr_variables_from_html($html,$html_arr){
         // $html_arr = $this->get_custom_variables_list($html,'_htmlarr');
-
 
         foreach($html_arr as $index=>$html_index){
             $website_index = str_replace('_htmlarr','_arr',$index);
@@ -88,19 +88,6 @@ class TemplateHelper
 
     public function get_custom_variables_list($html,$end_types=''){
         $pattern = '/'.$this->afterstr.'.*?'.$this->beforestr.'/';//.$end_types
-
-        // $all_vars_start_html_arr = explode($this->afterstr,$html);
-        // $all_var = [];
-
-        // foreach ($all_vars_start_html_arr as $key => $all_vars_start_html) {
-        //     $all_var[] = explode($end_types.$this->beforestr,$all_vars_start_html);
-        // }
-        // dd($all_var);
-            //     if($this->depth > 2){
-            //     // dd('asd',$this->depth,$this->variable_html,$result_arr);
-            //     dd($pattern,$m);
-            //     dd();
-            // }    
 
         if(preg_match_all($pattern,$html,$m)){
             if(isset($m[0])){
@@ -151,37 +138,6 @@ class TemplateHelper
                 }                
             }
         }
-        // if($this->depth > 2 && $i == 'type_var'){
-
-        // dd('aaa',$var,$value,$html);
-
         return $html;
     }
-    // public function find_var_and_replace_loop($vars,$find_global_arr){
-    //     if(!$variables_arr){
-    //         $variables_arr = $this->website_variable;
-    //     }
-
-    //     foreach($vars as $index=>$var){
-    //         $value = $variables_arr;           
-    //         $index_arr = explode('.',$index);
-    //         foreach($index_arr as $i){
-    //             if($i == $prefix){
-    //                 continue;
-    //             }
-    //             if(is_array($value)){
-    //                 if(!isset($value[$i])){
-    //                     dd($value,$i,$index,$vars);
-    //                 }
-    //                 $value = $value[$i];
-    //                 $value_a[] = $value;                   
-    //             }
-    //             if(!is_array($value)){                    
-    //                 $html = str_replace($var,$value,$html);                    
-    //             }                
-    //         }
-    //     }
-    //     return $html;
-    // }
-    
 }
