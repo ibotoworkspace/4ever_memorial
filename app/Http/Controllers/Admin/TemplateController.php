@@ -85,7 +85,7 @@ class TemplateController extends Controller
                     href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                <link rel="stylesheet" href="' . $public_path . 'user_templates/template_1/css/style.css" />
+                {!!{memorial_style_var.style_script}!!}
 
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -96,6 +96,14 @@ class TemplateController extends Controller
 
             <body>
                 <section class="nav_back">
+                            <style>
+                                .nav_back {
+                                        background-image: url(' . $public_path . 'user_templates/template_1/images/cover.png);
+                                        background-repeat: no-repeat;
+                                        background-position-x: -247px;
+                                        background-size: 133%;
+                                        }   
+                        </style>
                     <div class="nav_area">
                         <div class="container">
                             <div class="row">
@@ -391,6 +399,9 @@ class TemplateController extends Controller
                 "father_name_var": "Anthony Father",
                 "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
               },
+              "memorial_style_var": {
+                "style_script": "<link rel="stylesheet" href="' . $public_path . 'user_templates/template_1/css/style.css" />",
+              },
               "tributes_arr": [
                 {
                     "user_name_show_var": "Maria Nashed",
@@ -491,3 +502,6 @@ class TemplateController extends Controller
         // "gallery_tab_htmlvar":"<div id=\"Gallary\" class=\"tabcontent\"><div class=\"reviewBox\"> <div class=\"tab_gal\"><button class=\"tab_gallinks\" onclick=\"openpic(event, `photo`)\"id=\"defaultOpen\">photo</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `video`)\">video</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `Audio`)\">Audio</button></div>{!!{gallery_photo_htmlarr}!!}{!!{gallery_video_htmlarr}!!}{!!{gallery_audio_htmlarr}!!}</div></div>",
     }
 }
+
+
+?>

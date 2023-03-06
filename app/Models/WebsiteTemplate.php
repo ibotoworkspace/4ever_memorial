@@ -33,3 +33,4 @@ class WebsiteTemplate extends Model
     //     $this->attributes['web_variable'] = strtolower($web_variable);      
     // }
 }
+?>

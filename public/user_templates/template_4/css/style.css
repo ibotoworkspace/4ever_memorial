@@ -10,14 +10,12 @@
 .logo-area img {
     width: 175px;
 }
-.nav_back {
-    background-image: url(../images/TimelineCovers.pro_stairs-down-to-the-beach-at-sunset-facebook-cover.jpg);
-    /* height: 99%; */
+/* .nav_back {
+    background-image: url(../images/cover.png);
     background-repeat: no-repeat;
-    background-position-x: -231px;
-    background-position-y: -73px;
-    background-size: 131%;
-}
+    background-position-x: -247px;
+    background-size: 133%;
+} */
 .nav_bar {
     float: right;
     color: white;
@@ -32,7 +30,6 @@
 .cover_head {
     color: #3ec57a;
     margin-top: 86px;
-    margin-left: 211px;
     text-align: center;
 }
 .cover_head h1
@@ -50,7 +47,7 @@
     color: #1f758f;
     margin-top: 52px;
     border-radius: 5px;
-    margin-bottom: 74px;
+    margin-bottom: 50px;
 }
 
 
@@ -78,7 +75,7 @@
   /* Change background color of buttons on hover */
   .tab button:hover {
     color: #062745;
-    background-color: #d5a553;
+    background-color: #f7cce8;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -104,13 +101,14 @@
 }
 .about_heading {
     font-family: Courgette, sans-serif;
-    color: #ad7a9b;
+    color: #f7cce8;
     margin-left: 113px;
     margin-top: 50px;
 }
 
-.back_sec{
-background-color: #f7f5e6;
+.back_sec {
+    background-color: #f7f5e6;
+    padding-bottom: 80px;
 }
 .li_txt{
     padding-left: 90px;
@@ -140,7 +138,7 @@ ul.reviewSection {
 .reviewBox {
     color: #123352;
     background-color: #f7cce8;
-    border: 1px solid #6e4e63;
+    border: 1px solid #ebc496;
     border-radius: 10px;
     padding: 15px;
     position: relative;
@@ -220,10 +218,11 @@ h5.sdad {
     padding: 10px;
     margin-top: 22px;
 }
+
 .rightBoxArea {
     color: #123352;
     background-color: #f7cce8;
-    border: 1px solid #6e4e63;
+    border: 1px solid #ebc496;
     border-radius: 10px;
     padding: 15px;
     margin: 25px 0px;
@@ -599,7 +598,7 @@ body {font-family: Arial;}
     z-index: 2;
   }
 .story_tab {
-    background-color: #ffd8aa;
+    background-color: #f7cce8;
     margin-top: 30px;
     border-radius: 10px;
     padding: 15px;

@@ -10,13 +10,12 @@
 .logo-area img {
     width: 175px;
 }
-.nav_back {
-    background-image: url(../images/cover3.jpg);
-    /* height: 99%; */
+/* .nav_back {
+    background-image: url(../images/cover.png);
     background-repeat: no-repeat;
     background-position-x: -247px;
     background-size: 133%;
-}
+} */
 .nav_bar {
     float: right;
     color: white;
@@ -31,7 +30,6 @@
 .cover_head {
     color: #ff5d5d;
     margin-top: 86px;
-    margin-left: 211px;
     text-align: center;
 }
 .cover_head h1
@@ -46,7 +44,7 @@
 .profile_img {
     border: solid;
     width: 231px;
-    color: #1f758f;
+    color: #ff5d5d;
     margin-top: 52px;
     border-radius: 5px;
     margin-bottom: 50px;
@@ -108,8 +106,9 @@
     margin-top: 50px;
 }
 
-.back_sec{
-background-color: #f7f5e6;
+.back_sec {
+    background-color: #f7f5e6;
+    padding-bottom: 80px;
 }
 .li_txt{
     padding-left: 90px;
@@ -216,8 +215,8 @@ h5.sdad {
     color: white;
     text-decoration: none;
     background-color: transparent;
-    padding: 20px;
-    margin-top: 11px;
+    padding: 10px;
+    margin-top: 22px;
 }
 
 .rightBoxArea {
@@ -599,7 +598,7 @@ body {font-family: Arial;}
     z-index: 2;
   }
 .story_tab {
-    background-color: #ffd8aa;
+    background-color: #beedc7;
     margin-top: 30px;
     border-radius: 10px;
     padding: 15px;

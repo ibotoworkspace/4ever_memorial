@@ -48,7 +48,7 @@ class TemplateSeeder extends Seeder
                     href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                <link rel="stylesheet" href="' . $public_path . 'user_templates/template_1/css/style.css" />
+                {!!{memorial_style_var.style_script}!!}
 
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -59,6 +59,15 @@ class TemplateSeeder extends Seeder
 
             <body>
                 <section class="nav_back">
+                <style>
+                .nav_back {
+        background-image: url(' . $public_path . 'user_templates/template_1/images/cover.png);
+        /* height: 99%; */
+        background-repeat: no-repeat;
+        background-position-x: -247px;
+        background-size: 133%;
+    }
+            </style>
                     <div class="nav_area">
                         <div class="container">
                             <div class="row">
@@ -351,6 +360,9 @@ class TemplateSeeder extends Seeder
                   "father_name_var": "Anthony Father",
                   "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
                 },
+                "memorial_style_var": {
+                    "style_script": "<link rel="stylesheet" href="' . $public_path . 'user_templates/template_1/css/style.css" />",
+                  },
                 "tributes_arr": [
                   {
                       "user_name_show_var": "Maria Nashed",
@@ -455,3 +467,4 @@ class TemplateSeeder extends Seeder
 
     }
 }
+?>

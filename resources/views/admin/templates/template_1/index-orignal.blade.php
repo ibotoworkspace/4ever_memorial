@@ -25,6 +25,15 @@
 
 <body>
     <section class="nav_back">
+        <style>
+            .nav_back {
+    background-image: url(http://localhost/4_ever_memories/public/user_templates/template_1/images/cover.png);
+    /* height: 99%; */
+    background-repeat: no-repeat;
+    background-position-x: -247px;
+    background-size: 133%;
+}
+        </style>
         <div class="nav_area">
             <div class="container">
                 <div class="row">
