@@ -49,7 +49,7 @@ class TemplateHelper
             $web_html_val = $this->variable_html[$index];
 
             if(!isset($this->website_variable[$website_index])){
-                dd($this->website_variable,$website_index);
+                // dd($this->website_variable,$website_index);
             }
             $web_values_arr = $this->website_variable[$website_index];
             $html_arr_list = '';
