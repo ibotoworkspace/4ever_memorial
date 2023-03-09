@@ -10,13 +10,12 @@
 .logo-area img {
     width: 175px;
 }
-.nav_back {
+/* .nav_back {
     background-image: url(../images/cover.png);
-    /* height: 99%; */
     background-repeat: no-repeat;
     background-position-x: -247px;
     background-size: 133%;
-}
+} */
 .nav_bar {
     float: right;
     color: white;
@@ -31,7 +30,6 @@
 .cover_head {
     color: #1f758f;
     margin-top: 86px;
-    margin-left: 211px;
     text-align: center;
 }
 .cover_head h1
@@ -565,7 +563,6 @@ body {font-family: Arial;}
     border-color: #275d7d;
 }
 .stor_bttn {
-    margin-left: 158px;
     border: solid 1px;
     width: 156px;
     padding-left: 13px;
@@ -574,7 +571,32 @@ body {font-family: Arial;}
     margin-top: -13px;
     border-radius: 10px;
     border-color: #275d7d;
+    float: right;
 }
+.contain.side_slider{
+    height: 200px;
+    width: 100%;
+}
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+  }
+  .carousel-fade .carousel-inner .active {
+    opacity: 1;
+  }
+  .carousel-fade .carousel-inner .active.left,
+  .carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+  }
+  .carousel-fade .carousel-inner .next.left,
+  .carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+  }
+  .carousel-fade .carousel-control {
+    z-index: 2;
+  }
 .story_tab {
     background-color: #ffd8aa;
     margin-top: 30px;

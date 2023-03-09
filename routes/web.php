@@ -54,7 +54,7 @@ Route::get('template',[Admin_UserController::class, 'template']);
 
 /////////template
 Route::get('admin/template',[TemplateController::class, 'index']);
-Route::get('admin/template/template1',[TemplateController::class, 'template_1']);
+Route::get('admin/template/template',[TemplateController::class, 'template']);
 Route::get('admin/template/template2',[TemplateController::class, 'template_2']);
 Route::get('admin/template/template3',[TemplateController::class, 'template_3']);
 Route::get('admin/template/template4',[TemplateController::class, 'template_4']);
