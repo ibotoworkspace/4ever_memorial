@@ -12,15 +12,11 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {        
-        Schema::create('styling', function (Blueprint $table) {
+    {
+        Schema::create('stylings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('template_id')->nullable()->default(0);
             $table->bigInteger('category_id')->nullable()->default(0);
-            $table->string('name')->nullable()->default(null);
-            $table->longText('web_variable')->default(null);
-            $table->string('css_files',1000)->nullable()->default(null);
-            $table->string('js_files',1000)->nullable()->default(null);
+            $table->string('css')->nullable()->default(null);
             $table->softDeletes();
             $table->timestamps();
         });
