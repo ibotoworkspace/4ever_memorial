@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('website_template', function (Blueprint $table) {
             $table->id();
             $table->string('name',100)->nullable()->default(null);
-            $table->longText('web_html')->nullable()->default(0);
+            $table->longText('web_html')->nullable()->default(null);
             $table->text('web_variable')->nullable()->default(null);
             $table->text('variable_html')->nullable()->default(null);
             $table->softDeletes();
