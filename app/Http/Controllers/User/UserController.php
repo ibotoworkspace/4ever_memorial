@@ -27,8 +27,11 @@ class UserController extends Controller
     public function blog(){
         return view('user.blog');
     }
-    public function template(){
-        // $template  = ModelsTemplate::find(1);
-        // return view('user.template',compact('template'));
+    // public function template(){
+    //     $template  = ModelsTemplate::find(1);
+    //     return view('user.template',compact('template'));
+    // }
+    public function memorialform(){
+        return view('user.memorialform');
     }
 }

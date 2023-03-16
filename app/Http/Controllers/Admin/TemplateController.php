@@ -11,23 +11,11 @@ use stdClass;
 
 class TemplateController extends Controller
 {
-    // publi1c f1unction index(){
-    //     return view('admin/templates/template_index/index');
-    // }
-    // publi1c f1unction template_1(){
-    //     return view('admin/templates/template_1/index');
-    // }
     public function template_2()
     {
         return view('admin/templates/template_1\index-orignal');
     }
-    // C:\php8\htdocs\4_ever_memories\resources\views\admin\templates\template_1\index-orignal.blade.php
-    // publi1c f1unction template_3(){
-    //     return view('admin/templates/template_3/index');
-    // }
-    // publi1c f1unction template_4(){
-    //     return view('admin/templates/template_4/index');
-    // }
+
     public function template(Request $request)
     {
         // dd('asd');
@@ -50,8 +38,18 @@ class TemplateController extends Controller
         // dd($html);
         //    dd($temp);
         return view('admin/templates/template_1/index', compact('html'));
-    }
+    }    
 
+    public function template_5(Request $request)
+    {
+        $template = $request->template;
+        $temp = WebsiteTemplate::first();
+        $style = Styling::where('name',$template)->first();
+        $template_helper = new TemplateHelper($temp,$style);
+        $html = $template_helper->create_html();
+        return view('admin/templates/template_5/index', compact('html'));
+    }
+    
     public function get_template()
     {
         $temp =  new stdClass();
@@ -74,7 +72,7 @@ class TemplateController extends Controller
             <html>
 
             <head>
-                <title>4 Ever Memorial</title>
+                <title>4 Ever Memorialacascas</title>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
@@ -350,6 +348,7 @@ class TemplateController extends Controller
 
         ';
     }
+    
     public function web_variable()
     {
 
@@ -503,6 +502,11 @@ class TemplateController extends Controller
         ';
         // "gallery_tab_htmlvar":"<div id=\"Gallary\" class=\"tabcontent\"><div class=\"reviewBox\"> <div class=\"tab_gal\"><button class=\"tab_gallinks\" onclick=\"openpic(event, `photo`)\"id=\"defaultOpen\">photo</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `video`)\">video</button><button class=\"tab_gallinks\" onclick=\"openpic(event, `Audio`)\">Audio</button></div>{!!{gallery_photo_htmlarr}!!}{!!{gallery_video_htmlarr}!!}{!!{gallery_audio_htmlarr}!!}</div></div>",
     }
+
+
+
+
+      
 }
 
 

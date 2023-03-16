@@ -97,7 +97,7 @@ class AdminController extends Controller
         ];
         $modules[] = [
 
-            'url' => 'admin/styling',
+            'url' => 'admin/stylings',
             'title' => 'Styling ',
 
         ];
