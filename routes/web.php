@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TemplateController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\StylingsController;
 use App\Http\Controllers\Admin\UserController as Admin_UserController;
 use App\Http\Controllers\User\UserController as User_UserController;
 use Illuminate\Support\Facades\Route;
@@ -53,3 +55,12 @@ Route::get('admin/template/template',[TemplateController::class, 'template']);
 Route::get('admin/template/template2',[TemplateController::class, 'template_2']);
 Route::get('admin/template/template3',[TemplateController::class, 'template_3']);
 Route::get('admin/template/template4',[TemplateController::class, 'template_4']);
+
+
+
+
+/////////category
+Route::get('admin/category',[CategoryController::class, 'index']);
+
+/////////stylings
+Route::get('admin/stylings',[StylingsController::class, 'index']);

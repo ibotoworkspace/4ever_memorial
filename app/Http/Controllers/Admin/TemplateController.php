@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\TemplateHelper;
+use App\Models\Styling;
 use App\Models\WebsiteTemplate;
 use Illuminate\Http\Request;
 use stdClass;
@@ -40,9 +41,10 @@ class TemplateController extends Controller
         // $temp->web_variable = 'abc'; 
         // $temp->variable_html = 'abc'; 
         // $temp->save(); 
-        $temp = WebsiteTemplate::where('name',$template)->first();
+        $temp = WebsiteTemplate::first();
+        $style = Styling::where('name',$template)->first();
         // dd($temp,$temp->web_variable);
-        $template_helper = new TemplateHelper($temp);
+        $template_helper = new TemplateHelper($temp,$style);
         $html = $template_helper->create_html();
         // return $html;
         // dd($html);

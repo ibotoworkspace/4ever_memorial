@@ -14,12 +14,12 @@ class TemplateHelper
     public $website_html;
     public $depth = 1;
 
-    public function __construct($template){
+    public function __construct($template,$style){
         $this->template = $template;
         // dd($template->website_variable);
         // $this->variable_html = json_decode($template->variable_html,true);
         $this->variable_html =    $template->variable_html;
-        $this->website_variable = $template->web_variable;
+        $this->website_variable = $style->web_variable;
         
 
         $this->website_html = $template->web_html;
@@ -49,7 +49,7 @@ class TemplateHelper
             $web_html_val = $this->variable_html[$index];
 
             if(!isset($this->website_variable[$website_index])){
-                dd($this->website_variable,$website_index);
+                // dd($this->website_variable,$website_index);
             }
             $web_values_arr = $this->website_variable[$website_index];
             $html_arr_list = '';
