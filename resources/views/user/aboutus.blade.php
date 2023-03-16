@@ -2,9 +2,11 @@
 @section('title')
 <title>4 ever memorial About-US</title>
 @endsection
+
 @section('headerfiles')
 <link href="{!!asset('theme/user_theme/css/aboutus.css')!!}" rel="stylesheet">
 @endsection
+
 @section('body')
     <section>
         <div class="abouttopbanner">
@@ -25,8 +27,6 @@
                             <i class="fa fa-user-plus" aria-hidden="true"> Registration</i>
                             <i class="fa fa-sign-in" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign
                                 In</i>
-
-
 
                               <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -126,7 +126,6 @@
             </div>
         </div>
     </section>
-
     <section>
         <div class="aboutarea">
             <div class="container">
@@ -159,7 +158,6 @@
             </div>
         </div>
     </section>
-
     <section>
         <div class="aboutareaa">
             <div class="container">
@@ -197,5 +195,7 @@
             </div>
         </div>
     </section>
-
     @endsection
+
+
+    

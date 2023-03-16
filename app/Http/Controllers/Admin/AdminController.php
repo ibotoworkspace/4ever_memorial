@@ -36,6 +36,7 @@ class AdminController extends Controller
             session(['my_timezone' => $request->my_timezone]);
             return redirect('admin/dashboard');
         }
+        
         // elseif()
         // {
         //     return back()->with('error', 'Wrong Login Details');
@@ -98,11 +99,14 @@ class AdminController extends Controller
 
         ];
         
+        
 
         $myvar = [];
         $myvar['modules'] = $modules;
         $myvar['reports'] = $reports ;
         $myvar['chart'] = [];
+
+        
 
         return $myvar;
     }
