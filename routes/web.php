@@ -24,12 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get( '/admin/login',[AdminController::class, 'index'])->name('admin.index');
-
-Route::post('/admin/checklogin', [AdminController::class, 'checklogin'])->name('admin.checklogin');
-Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
-Route::get('/admin/logout',[AdminController::class, 'logout'])->name('admin.logout');
-
+ 
 //////////////user
 
 Route::get('/', [User_UserController::class, 'index'])->name('user.index');
