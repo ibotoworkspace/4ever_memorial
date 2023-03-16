@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
     @yield('title')  
   <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('theme/user_theme/images/favicon.png')!!}" />
   <meta charset="utf-8">
@@ -10,12 +7,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="{!! asset('theme/user_theme/css/main.css')!!}" rel="stylesheet">
+  <link href="{!! asset('theme/user_theme/css/main.css')!!}" rel="stylesheet">
   @yield('headerfiles')
 </head>
 <body>
+        
     @yield('body')
-
     <section>
         <div class="contactarea">
             <div class="container">
@@ -33,6 +30,7 @@
             </div>
         </div>
     </section>
+
     <section>
         <div class="footerarea">
         <div class="container">
@@ -47,7 +45,7 @@
                 <div class="fotermenu">
                     <div class="navbar-collapse nav-collapse collapse fomen">
                     <ul class="nav navbar-nav fomenu">
-                        <li id="1">
+                        <li id="1"  >
                         <a href=""><span>HOME</span> </a>
                         </li>
                         <li id="2">
@@ -80,7 +78,6 @@
         </div>
         </div>
     </section>
-  
 
 </body>
 

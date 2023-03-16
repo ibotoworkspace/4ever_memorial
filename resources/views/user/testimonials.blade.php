@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+@extends('user_layout.main_header_footer')
+@section('title')
     <title>4Year Project</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{!!asset(' images/favicon.png')!!}" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+@endsection
+
+@section('headerfiles')
+    <link rel="icon" type="image/png" sizes="16x16" href="{!!asset(' images/favicon.png')!!}" /> 
     <link href="{!!asset('css/main.css')!!}" rel="stylesheet">
     <link href="{!!asset('css/testimonials.css')!!}" rel="stylesheet">
+@endsection
 
-
-</head>
-
-<body>
+@section('body')
     <section>
         <div class="testimonalpbanner">
             <div class="container top">
@@ -178,8 +171,13 @@
             </div>
         </div>
     </section>
+@endsection
 
-    <section>
+
+
+
+<!-- 
+<section>
         <div class="contactarea">
             <div class="container">
                 <div class="row">
@@ -189,8 +187,7 @@
                             <h2>MEMORIAL TREES <br> BY 4EVER </h2>
                             <p>Created by Internet Pioneer Momolla Kokomolla in 1964,<br>
                                 It is the oldest online Cemetery & Memorial Site in the World.</p>
-                            <a href="contactus.html"><button type="submit" class="btn btn-primary contactclick">Contact
-                                    Us</button></a>
+                            <a href="contactus.html"><button type="submit" class="btn btn-primary contactclick">ContactUs</button></a>
                         </div>
                     </div>
                 </div>
@@ -244,9 +241,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-
-</body>
-
-</html>

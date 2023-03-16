@@ -221,6 +221,7 @@ input[type=number] {
 .align-btn {
     top: 197%!important;
 }
+.app > .header
 
 #direction_map:focus {
     background-color: #1374c5 !important;
