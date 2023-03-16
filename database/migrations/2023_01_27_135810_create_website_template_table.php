@@ -15,12 +15,10 @@ return new class extends Migration
     {
         Schema::create('website_template', function (Blueprint $table) {
             $table->id();
-            $table->longText('website_html')->nullable()->default(0);
-            $table->text('website_variable')->nullable()->default(null);
-            $table->text('tribute')->nullable()->default(null);
-            $table->text('life')->nullable()->default(null);
-            $table->text('stories')->nullable()->default(null);
-            $table->text('gallery')->nullable()->default(null);
+            $table->string('name',100)->nullable()->default(null);
+            $table->longText('web_html')->nullable()->default(0);
+            $table->text('web_variable')->nullable()->default(null);
+            $table->text('variable_html')->nullable()->default(null);
             $table->softDeletes();
             $table->timestamps();
         });
