@@ -18,17 +18,7 @@ class TemplateController extends Controller
 
     public function template(Request $request)
     {
-        // dd('asd');
         $template = $request->template;
-        // $temp = WebsiteTemplate::where('name','template_1')->first();
-        // $temp = $this->get_template();
-        // $temp = WebsiteTemplate::where('name',$template)->delete();
-        // $temp = new WebsiteTemplate();
-        // $temp->name = 'abc'; 
-        // $temp->web_html = 'abc'; 
-        // $temp->web_variable = 'abc'; 
-        // $temp->variable_html = 'abc'; 
-        // $temp->save(); 
         $temp = WebsiteTemplate::first();
         $style = Styling::where('name',$template)->first();
         // dd($temp,$temp->web_variable);
@@ -44,10 +34,13 @@ class TemplateController extends Controller
     {
         $template = $request->template;
         $temp = WebsiteTemplate::first();
-        $style = Styling::where('name',$template)->first();
-        $template_helper = new TemplateHelper($temp,$style);
+        // $style = Styling::where('name',$template)->first();
+        $styles = Styling::get();        
+        $template_helper = new TemplateHelper($temp,$styles->first());
         $html = $template_helper->create_html();
-        return view('admin/templates/template_5/index', compact('html'));
+        $styles = $styles->toArray();
+        $styles_json = json_encode($styles);
+        return view('admin/templates/template_5/index', compact('html','styles_json'));
     }
     
     public function get_template()

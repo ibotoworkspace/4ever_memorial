@@ -12,117 +12,91 @@
     @section('body')
     <section>
         <div class="contacttopbanner">
-            <div class="container top">
-                <div class="row hidden-xs">
-                    <div class="col-sm-4">
-                         <div class="logoarea">
-                            <img src="{!! asset('theme/user_theme/images/logo.png')!!}" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="topinput">
-                            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Find a Memorial">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="topicons">
-                            <i class="fa fa-user-plus" aria-hidden="true"> Registration</i>
-                            <i class="fa fa-sign-in" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign
-                                In</i>
-
-                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header modhead">
-                                      <h5 class="modal-title" id="exampleModalLongTitle">Sign in With Your Email</h5>
-                                    </div>
-                                    <div class="modal-body">
-                                      <div class="signmodaldata">
-                                        <form>
-                                          <div class="form-group">
-                                            <label for="exampleInputEmail1">Enter Your Email address :</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                              aria-describedby="emailHelp" placeholder="email address">
-                                          </div>
-                                          <div class="form-group form-check labelgroup">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <label class="form-check-label labelcd" for="exampleCheck1">I am visiting for the first
-                                              time.</label>
-                                          </div>
-                                        </form>
-                                      </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary mosubclick">Submit</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="menucont">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-2 col-xs-12 visible-xs">
-                            <div class="logoArea">
-                                <a href="/"><img src="{!! asset('theme/user_theme/images/logo.png')!!}" class="img-responsive"></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-xs-12">
-                            <div class="row mobileNav">
-                                <div class="col-xs-4 visible-xs xs-marker"></div>
-                                <div class="col-xs-4 visible-xs xs-phone"></div>
-                                <div class="col-xs-4 visible-xs">
-                                    <button data-target=".navbar-collapse" data-toggle="collapse" id="mnav-button" class="navbar-toggle fa fa-bars fa-2x collapsed threebar" type="button">
-                                    </button>
-                                </div>
-                            </div>
-                            <nav>
-                                <div class="jump">
-                                    <div class="navbar-collapse nav-collapse collapse">
-                                        <ul class="nav navbar-nav navmenu">
-                                            <li id="1">
-                                              <a href="{!!asset('/')!!}"><span>HOME</span></a>
-                                            </li>
-                                            <li id="2">
-                                              <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span></a>
-                                            </li>
-                                            <li id="3">
-                                            <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a>
-                                            </li>
-                                            <li id="4">
-                                              <a href="{!!asset('user/plans')!!}"><span>PLANS & FEATURES</span> </a>
-                                            </li>
-                                            <li id="5">
-                                              <a href="{!!asset('user/testimonials')!!}"><span>TESTIMONIALS</span> </a>
-                                            </li>
-                                            <li id="6">
-                                              <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
-                                            </li>
-                                            <li id="7">
-                                              <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
-                                            </li>
-                                          </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          @include('user_layout.components.banner_menu')
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="bannerdata aboutheading">
                             <h1>CONTACT</h1>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="contactdata conuniq">
+                        <div class="infobox">
+                            <div class="infoboximg">
+                                <img src="{!! asset('theme/user_theme/images/email.png')!!}" class="img-responsive">
+                            </div>
+                            <div class="infoboxtext">
+                                <p>info@4evermemory.com</p>
+                            </div>
+                        </div>
+                        <div class="infobox">
+                            <div class="infoboximg">
+                                <img src="{!! asset('theme/user_theme/images/phone.png')!!}" class="img-responsive">
+                            </div>
+                            <div class="infoboxtext">
+                                <p>0123456789</p>
+                            </div>
+                        </div>
+                        <div class="infobox">
+                            <div class="infoboximg loca">
+                                <img src="{!! asset('theme/user_theme/images/location.png')!!}" class="img-responsive">
+                            </div>
+                            <div class="infoboxtext">
+                                <p>4Forevermemory.com 817 Lorem 5th Ipsum, Lorem, L.P. 10003</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="contactform">
+                        <h2>Get In Touch With Us</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Type of inquiry*</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Make a Selection...</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Enter Name*</label>
+                                <input type="text" class="form-control" id="text" aria-describedby="text"
+                                    placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address*</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Memorial Name*</label>
+                                <input type="text" class="form-control" id="text" aria-describedby="text"
+                                    placeholder="(if applies)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Your message*</label>
+                                <input type="text" class="form-control" id="text" aria-describedby="text"
+                                    placeholder="Please add your subject here">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                                    placeholder="Please enter the specific details of your request. Please provide as much information as possible so we can help you quickly"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary contactclick">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 {!! $html !!}
 
 <script>
+    var sliders_list = JSON.parse(`{!!$styles_json!!}`);
+    console.log(sliders_list );
     $(function() {
         add_slider_select_theme();
     })
@@ -21,34 +23,39 @@
         });
 
         function get_slider_html() {
-            return `
-            <section class="regular slider custom-slider">
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-                <div>
-                    <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
-                </div>
-            </section>
-        `;
+            var slider = `
+            <section class="regular slider custom-slider">`;
+
+                for (let index = 0; index < sliders_list.length; index++) {
+                    var element = sliders_list[index];
+                    console.log(element,'a');
+                }
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //         <div>
+        //             <img src="{!!asset('user_templates/slider/image/test_img.jpg')!!}" class="img-responsive">
+        //         </div>
+        //     </section>
+        // `;
         }
     }
 </script>

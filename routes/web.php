@@ -28,6 +28,9 @@ use Illuminate\Support\Facades\Route;
  
 //////////////user
 
+Route::post('user/register', [User_UserController::class, 'register'])->name('user.register');
+Route::post('user/login', [User_UserController::class, 'login'])->name('user.login');
+
 Route::get('/', [User_UserController::class, 'index'])->name('user.index');
 Route::get('/user/aboutus',[User_UserController::class, 'aboutus'])->name('user.aboutus');
 Route::get('/user/testimonials',[User_UserController::class, 'testimonials'])->name('user.testimonials');
@@ -35,7 +38,7 @@ Route::get('/user/plans',[User_UserController::class, 'plans'])->name('user.plan
 Route::get('/user/contactus',[User_UserController::class, 'contactus'])->name('user.contactus');
 Route::get('/user/blog',[User_UserController::class, 'blog'])->name('user.blog');
 Route::get('template',[Admin_UserController::class, 'template']);
-Route::get('/user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform');
+Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform');
 
 
 
