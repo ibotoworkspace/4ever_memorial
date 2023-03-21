@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>4Year Project Form</title>
+    <title>4 Ever Memorial</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -42,13 +42,42 @@
                     <div class="col-sm-12">
                         <div class="tabdata">
                             <ul class="nav nav-tabs tabmenu">
-                                <li class=""><a data-toggle="tab" href="#home">ABOUT YOUR LOVED ONE</a></li>
-                                <li><a data-toggle="tab" href="#menu1">ACCOUNT DETAILS</a></li>
+                                <li class=""><a data-toggle="tab" href="#home">ACCOUNT DETAILS</a></li>
+                                <li><a data-toggle="tab" href="#menu1">ABOUT YOUR LOVED ONE</a></li>
                                 <li><a data-toggle="tab" href="#menu2">CHOOSE YOUR PLAN</a></li>
                                 <li><a data-toggle="tab" href="#menu3">PRIVACY OPTIONS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="home" class="tab-pane fade in active">
+                                    <div class="cardformarea">
+                                        <h2>Your account details:</h2>
+                                        <p>Already have an account? <span class="linktext">Sign in here.</span> </p>
+                                        <form action="">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">First Name</label>
+                                                <input name="ad_name" type="test" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Last Name</label>
+                                                <input name="ad_lastname" type="test" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email</label>
+                                                <input name="ad_email" type="test" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Create Password</label>
+                                                <input name="ad_pwd" type="test" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                        </form>
+                                        <button type="submit" class="btn btn-primary contclik">Continue</button>
+                                    </div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
                                     <div class="cardformarea">
                                         <h2>This memorial is dedicated to:</h2>
                                         <form>
@@ -92,11 +121,11 @@
                                                     <option>2</option>
                                                 </select>
                                             </div>
-                                        </form>
-                                        <h5>More Detail (Optional)</h5>
-                                        <div class="detailcard">
-                                            <p>This information can also be updated at a later time:</p>
-                                            <form>
+
+                                            <h5>More Detail (Optional)</h5>
+                                            <div class="detailcard">
+                                                <p>This information can also be updated at a later time:</p>
+
                                                 <div class="row">
                                                     <div class="col-sm-3">
                                                         <p>Born</p>
@@ -163,7 +192,7 @@
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input name="" type="test" class="form-control"
+                                                            <input name="p_city" type="test" class="form-control"
                                                                 placeholder="City or Town">
                                                         </div>
                                                     </div>
@@ -201,10 +230,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <h2>Memorial web address:</h2>
-                                        <form>
+
+                                            </div>
+                                            <h2>Memorial web address:</h2>
+
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="exampleFormControlInput1">Email address</label>
@@ -218,37 +247,8 @@
                                                 </div>
 
                                             </div>
-                                        </form>
-                                        <button type="submit" class="btn btn-primary contclik">Continue</button>
-                                    </div>
-                                </div>
-                                <div id="menu1" class="tab-pane fade">
-                                    <div class="cardformarea">
-                                        <h2>Your account details:</h2>
-                                        <p>Already have an account? <span class="linktext">Sign in here.</span> </p>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">First Name</label>
-                                                <input name="ad_name" type="test" class="form-control"
-                                                    placeholder="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Last Name</label>
-                                                <input name="ad_lastname" type="test" class="form-control"
-                                                    placeholder="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email</label>
-                                                <input name="ad_email" type="test" class="form-control"
-                                                    placeholder="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Create Password</label>
-                                                <input name="ad_pwd" type="test" class="form-control"
-                                                    placeholder="">
-                                            </div>
-                                        </form>
-                                        <button type="submit" class="btn btn-primary contclik">Continue</button>
+
+                                            <button type="submit" class="btn btn-primary contclik">Continue</button>
                                     </div>
                                 </div>
                                 <div id="menu2" class="tab-pane fade">
@@ -366,6 +366,7 @@
                                             <label class="form-check-label" for="exampleCheck1">I agree to <span
                                                     class="linktext">Terms of Use</span></label>
                                         </div>
+                                        </form>
                                         <button type="submit" class="btn btn-primary contclik">Continue</button>
                                     </div>
                                 </div>
