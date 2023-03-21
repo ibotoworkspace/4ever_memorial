@@ -22,9 +22,12 @@ class StylingSeeder extends Seeder
         $default_template = 'template_1';
 
         foreach ($template_name_arr as $template_name_css_path) {
+            Styling::where('name',$template_name_css_path)->delete();
+  
             $style = new Styling();
             $style->name = $template_name_css_path;
-            $style->css_files = $public_path . 'user_templates/' . $template_name_css_path . '/css/style.css"';
+            $style->css_files = $public_path . 'user_templates/' . $template_name_css_path . '/css/style.css';
+            $style->template_image = $public_path . 'user_templates/slider/image/'. $template_name_css_path.'.png';
 
             $web_variable = '
             {
