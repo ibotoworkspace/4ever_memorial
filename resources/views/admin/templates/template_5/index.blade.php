@@ -2,7 +2,8 @@
 
 <script>
     console.log('checking***********1')
-    var sliders_list = JSON.stringify(`{!! $styles_json !!}`);
+    var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
+    // var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
     // console.log('checking***********2',sliders_list)
     var sliders_list = JSON.parse(sliders_list);
     console.log('checking***********3')
@@ -26,41 +27,23 @@
                 slidesToScroll: 5
             });
         });
+    }
 
-
-        function get_slider_html() {
-            const fruits = [{!!$styles!!}];    
-            return `
-            <section class="regular slider custom-slider">
-                            
-                
-                    <div">                        
-                        <img src="{!! asset('user_templates/slider/image/temp_img.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_1.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_2.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_3.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_4.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_1.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_2.png') !!}" class="img-responsive">
-                    </div>
-                    <div>
-                        <img src="{!! asset('user_templates/slider/image/temp_3.png') !!}" class="img-responsive">
-                    </div>
-
-            </section>
-        `;
-        }
+    function get_slider_html() {
+        var slider_html = `<section class="regular slider custom-slider">`;
+        $.each(sliders_list, function(index, item) {
+            console.log('item.template_image', item.template_image);
+            slider_html = slider_html +
+                `<div onclick="change_css('` + item.css_files + `')">                        
+                        <img src="` + item.template_image + `" class="img-responsive">
+                    </div>`;
+        })
+        slider_html = slider_html + `</section>`;
+        return slider_html;
+    }
+    function change_css(css_file_path){
+        $("#template_css_link").attr("disabled", "disabled");
+        $("#template_css_link").remove();
+        $('head').append($('<link rel="stylesheet" type="text/css" id="template_css_link" />').attr('href',css_file_path));
     }
 </script>
