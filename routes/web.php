@@ -9,25 +9,8 @@ use App\Http\Controllers\Admin\UserController as Admin_UserController;
 use App\Http\Controllers\User\UserController as User_UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
- 
 //////////////user
-
 Route::post('user/register', [User_UserController::class, 'register'])->name('user.register');
 Route::post('user/login', [User_UserController::class, 'login'])->name('user.login');
 
@@ -38,8 +21,11 @@ Route::get('/user/plans',[User_UserController::class, 'plans'])->name('user.plan
 Route::get('/user/contactus',[User_UserController::class, 'contactus'])->name('user.contactus');
 Route::get('/user/blog',[User_UserController::class, 'blog'])->name('user.blog');
 Route::get('template',[Admin_UserController::class, 'template']);
-Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform');
 
+
+// saave_memorial_user *********
+Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform'); //index
+Route::post('user/memorialform_save', [User_UserController::class, 'memorialform_save'])->name('memorialform.save');; //save
 
 
 
