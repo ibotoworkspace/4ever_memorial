@@ -38,9 +38,11 @@ class TemplateController extends Controller
         $styles = Styling::get();        
         $template_helper = new TemplateHelper($temp,$styles->first());
         $html = $template_helper->create_html();
-        $styles = $styles->toArray();
-        $styles_json = json_encode($styles);
-        return view('admin/templates/template_5/index', compact('html','styles_json'));
+        // $styles = $styles->toArray();
+        $style_tag = strip_tags($styles);
+        $styles_json = json_encode($style_tag);
+        
+        return view('admin/templates/template_5/index', compact('html','styles_json','styles'));
     }
     
     public function get_template()
