@@ -30,18 +30,13 @@ class TemplateController extends Controller
         return view('admin/templates/template_1/index', compact('html'));
     }    
 
-    public function template_5(Request $request)
+    public function select_template(Request $request)
     {
         $template = $request->template;
         $temp = WebsiteTemplate::first();
-        // $style = Styling::where('name',$template)->first();
         $styles = Styling::get();        
         $template_helper = new TemplateHelper($temp,$styles->first());
         $html = $template_helper->create_html();
-        // $styles = $styles->toArray();
-        // $style_tag = $styles;//strip_tags($styles);
-        
-        // $styles_json = json_encode($styles);
         $styles_json = urlencode(json_encode($styles));
         
         return view('admin/templates/template_5/index', compact('html','styles_json','styles'));

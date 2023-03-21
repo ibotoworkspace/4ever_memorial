@@ -60,7 +60,9 @@ Route::get('admin/template/template',[TemplateController::class, 'template']);
 Route::get('admin/template/template2',[TemplateController::class, 'template_2']);
 Route::get('admin/template/template3',[TemplateController::class, 'template_3']);
 Route::get('admin/template/template4',[TemplateController::class, 'template_4']);
-Route::get('admin/template/template_5',[TemplateController::class, 'template_5']); //testing
+// Route::get('admin/template/select_template',[TemplateController::class, 'select_template']); //testing
+Route::get('user/template/select_template',[TemplateController::class, 'select_template']); //testing
+Route::get('user/template/select_template/{user_website}',[TemplateController::class, 'select_template']); //testing
 
 
 
