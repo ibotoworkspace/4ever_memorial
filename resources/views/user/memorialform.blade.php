@@ -42,13 +42,13 @@
                     <div class="col-sm-12">
                         <div class="tabdata">
                             <ul class="nav nav-tabs tabmenu">
-                                <li class=""><a data-toggle="tab" href="#home">ACCOUNT DETAILS</a></li>
+                                <!-- <li class=""><a data-toggle="tab" href="#home">ACCOUNT DETAILS</a></li> -->
                                 <li><a data-toggle="tab" href="#menu1">ABOUT YOUR LOVED ONE</a></li>
                                 <li><a data-toggle="tab" href="#menu2">CHOOSE YOUR PLAN</a></li>
                                 <li><a data-toggle="tab" href="#menu3">PRIVACY OPTIONS</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div id="home" class="tab-pane fade in active">
+                                <!-- <div id="home" class="tab-pane fade in active">
                                     <div class="cardformarea">
                                         <h2>Your account details:</h2>
                                         <p>Already have an account? <span class="linktext">Sign in here.</span> </p>
@@ -76,8 +76,8 @@
                                         </form>
                                         <button type="submit" class="btn btn-primary contclik">Continue</button>
                                     </div>
-                                </div>
-                                <div id="menu1" class="tab-pane fade">
+                                </div> -->
+                                <div id="menu1" class="tab-pane fade in active">
                                     <div class="cardformarea">
                                         <h2>This memorial is dedicated to:</h2>
                                         <form>
@@ -248,7 +248,7 @@
 
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary contclik">Continue</button>
+                                           <a data-toggle="tab" href="#menu2"><button class="btn btn-primary contclik">Continue</button></a>
                                     </div>
                                 </div>
                                 <div id="menu2" class="tab-pane fade">
