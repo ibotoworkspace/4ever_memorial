@@ -5,6 +5,8 @@
     <title>4 Ever Memorial</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -80,7 +82,8 @@
                                 <div id="menu1" class="tab-pane fade in active">
                                     <div class="cardformarea">
                                         <h2>This memorial is dedicated to:</h2>
-                                        <form>
+                                        <form class="create_memorial_form" action="{!!asset('admin/user/adduser')!!}" method="post">
+                                           
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">First Name</label>
                                                 <input type="test" name="f_name" class="form-control"
@@ -248,7 +251,9 @@
 
                                             </div>
 
-                                           <a data-toggle="tab" href="#menu2"><button class="btn btn-primary contclik">Continue</button></a>
+                                            <a data-toggle="tab" href="#menu2">
+                                                <input type="button" onclick="submit_form('.create_memorial_form','create_memorial')" class="btn btn-primary contclik" value="Continue">
+                                            </a>
                                     </div>
                                 </div>
                                 <div id="menu2" class="tab-pane fade">
@@ -453,6 +458,17 @@
             </div>
         </div>
     </section>
+@include('layouts.myapp_js')
+    <script>
+        function create_memorial(memorial_form, response){
+            console.log('res 1', response);
+            if (response.status) {
+                console.log('res 2', response);
+                $(memorial_form + " input").val("");
+                $(memorial_form + " textarea").val("");
+            }
+        }
+    </script>
 
 
 </body>
