@@ -3,13 +3,15 @@
 namespace App\Http\Helpers;
 
 use App\Models\UserWebsite;
-use Illuminate\Support\Facades\Request;
+// use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+
 
 class UserTemplateHelper
 {
        public function save_memorial_user(Request $request,$user){
         $user_website = new UserWebsite();
-        $user_website->user_id = $user->id;
+        // $user_website->user_id = $user->id;
         $user_website->ad_name = $request->ad_name;
         $user_website->ad_lastname = $request->ad_lastname;
         $user_website->ad_email = $request->ad_email;

@@ -32,6 +32,7 @@ Route::post('user/memorialform_save', [User_UserController::class, 'memorialform
 
 
 Route::post('admin/user/adduser',[Admin_UserController::class, 'add_user'])->name('admin.user.add_user');
+Route::post('admin/user/plan/{id}',[Admin_UserController::class, 'plan'])->name('admin.user.plan');
 Route::get('admin/user/',[Admin_UserController::class, 'index'])->name('admin.user.index');
 Route::get('admin/user/getUsers', [Admin_UserController::class, 'getUsers'])->name('admin.user.getUsers');
 // Route::get('/user/aboutus',[Admin_UserController::class, 'aboutus'])->name('user.aboutus');
