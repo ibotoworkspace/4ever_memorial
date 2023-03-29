@@ -315,7 +315,7 @@
                                             <p>Would you like to share your memorial with others, or keep it private?</p>
                                             <span class="braketdata">(This can be changed later.)</span><br>
                                             <div class="form-group form-check memoreadio">
-                                                <input name="check visible_to_all" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <input name="check" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
                                                 <div class="optrad">
                                                     <h6>All visitors can view and contribute.</h6>
                                                     <p>Recommended for most memorials. This option allows easy access to the
