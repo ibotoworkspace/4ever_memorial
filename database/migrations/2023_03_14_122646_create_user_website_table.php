@@ -53,7 +53,8 @@ return new class extends Migration
                 // 2 tab
 
                 // 3 tab
-                    $table->string('visible_to_all')->nullable()->default(null);
+                    $table->boolean('visible_to_all')->nullable()->default(null);
+                    $table->boolean('agreement')->nullable()->default(null);
                 // 3 tab
                 
             //memorial form fields
