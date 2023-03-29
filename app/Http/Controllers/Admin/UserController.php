@@ -23,24 +23,5 @@ class UserController extends Controller
         echo json_encode($userData);
 
     }
-    public function add_user(Request $request){
-        $user = Auth::user();
-        // dd($request->all());
-        $user_helper = new UserTemplateHelper();
-        $user_web = $user_helper->save_memorial_user($request,$user);
-        $response = new \stdClass();
-        $response->status = true;
-        $response->user_memorial = $user_web;
-        return json_encode($response);
-        // dd('saved');
-        
-        
-    }
-    public function plan(Request $request, $id){
-        dd('asasasas');
-        $plan=UserWebsite::find($id);
-        $plan->plan_id = $request->plan;
-        $plan->save();
-
-    }
+    
 }

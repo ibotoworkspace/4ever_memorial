@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\UserTemplateHelper;
 use App\Models\Models\Template;
 use App\Models\Template as ModelsTemplate;
 use App\Models\User;
+use App\Models\UserWebsite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -77,5 +79,32 @@ class UserController extends Controller
     // }
     public function memorialform(){
         return view('user.memorialform');
+    }
+    public function add_user(Request $request){
+        $user = Auth::user();
+        // dd($request->all());
+        $user_helper = new UserTemplateHelper();
+        $user_web = $user_helper->save_memorial_user($request,$user);
+        $response = new \stdClass();
+        $response->status = true;
+        $response->user_memorial = $user_web;
+        return json_encode($response);
+        // dd('saved');
+        
+        
+    }
+    public function update_plan(Request $request){
+        // echo('asdasdasdasdasd');
+        // dd($request->all(),'asasasas');
+        $plan=UserWebsite::find($request->memorial_id);
+        $plan->plan_id = $request->plan_id;
+        $plan->save();
+
+    }
+    public function privacy(Request $request){
+        $privacy=UserWebsite::find($request->memorial_id);
+        $privacy->visible_to_all = $request->visible_to_all;
+        $privacy->agreement = $request->agree;
+        $privacy->save();
     }
 }

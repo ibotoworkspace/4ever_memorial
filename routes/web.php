@@ -31,8 +31,6 @@ Route::post('user/memorialform_save', [User_UserController::class, 'memorialform
 
 
 
-Route::post('admin/user/adduser',[Admin_UserController::class, 'add_user'])->name('admin.user.add_user');
-Route::post('admin/user/plan/{id}',[Admin_UserController::class, 'plan'])->name('admin.user.plan');
 Route::get('admin/user/',[Admin_UserController::class, 'index'])->name('admin.user.index');
 Route::get('admin/user/getUsers', [Admin_UserController::class, 'getUsers'])->name('admin.user.getUsers');
 // Route::get('/user/aboutus',[Admin_UserController::class, 'aboutus'])->name('user.aboutus');
@@ -53,6 +51,10 @@ Route::get('user/template/select_template',[TemplateController::class, 'select_t
 Route::get('user/template/select_template/{user_website}',[TemplateController::class, 'select_template']); //testing
 
 
+Route::post('user/adduser',[User_UserController::class, 'add_user'])->name('admin.user.add_user');
+// Route::post('admin/user/plan/{id}',[Admin_UserController::class, 'plan'])->name('admin.user.plan');
+Route::post('user/memorial/update_plan',[User_UserController::class, 'update_plan'])->name('user.plan.update');
+Route::post('user/memorial/privacy',[User_UserController::class, 'privacy'])->name('user.plan.privacy');
 
 
 /////////category

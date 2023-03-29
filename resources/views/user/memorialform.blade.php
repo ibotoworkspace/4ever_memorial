@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body onload="disableSubmit()">
 
     <section>
         <div class="contacttopbanner">
@@ -47,7 +47,7 @@
                                 <!-- <li class=""><a data-toggle="tab" href="#home">ACCOUNT DETAILS</a></li> -->
                                 <li><a data-toggle="tab" href="#menu1">ABOUT YOUR LOVED ONE</a></li>
                                 <li><a data-toggle="tab" href="#menu2">CHOOSE YOUR PLAN</a></li>
-                                <li><a data-toggle="tab" href="#menu3">PRIVACY OPTIONS</a></li>
+                                <li id="privacy_tab"><a data-toggle="tab" href="#menu3">PRIVACY OPTIONS</a></li>
                             </ul>
                             <div class="tab-content">
                                 <!-- <div id="home" class="tab-pane fade in active">
@@ -83,7 +83,7 @@
                                     <div class="cardformarea">
                                         <h2>This memorial is dedicated to:</h2>
 
-                                        <form class="create_memorial_form" action="{!!asset('admin/user/adduser')!!}" method="post">
+                                        <form class="create_memorial_form" action="{!!asset('user/adduser')!!}" method="post">
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">First Name</label>
@@ -242,113 +242,107 @@
                                 <div id="menu2" class="tab-pane fade">
 
                                     <div class="col-sm-6">
-                                        <form action="admin/user/plan/{id}" method="post">
-                                            <input type="hidden" name="memorial_id" id="memorial_id">
-                                            <div class="plandata">
-                                                <h4>STANDARD (15 MEMORIAL PACKAGE)</h4>
-                                                <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Decease Bio <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Image Gallery <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <div class="inerpkgclick">
-                                                    <input type="hidden" value="1" name="plan">
-                                                    <a data-toggle="tab" href="#menu3">
-                                                        <input type="submit" class="btn btn-primary banclick" value="Buy Now">
-                                                    </a>
-                                                </div>
+                                        <div class="plandata">
+                                            <h4>STANDARD (15 MEMORIAL PAGES)</h4>
+                                            <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Decease Bio <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Image Gallery <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="inerpkgclick">
+                                                <a data-toggle="tab" href="#menu3">
+                                                    <input type="button" onclick="submit_update_plan(1)" class="btn btn-primary banclick" value="Buy Now">
+
+                                                </a>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <form action="admin/user/plan/{id}" method="post">
-                                            <div class="plandata">
-                                                <h4>PREMIUM (30 MEMORIAL PAGE)</h4>
-                                                <p>All in Standard And Biography of Deceased And Family Members <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Automated Anniversary Reminder <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <div class="inerpkgclick">
-                                                    <input type="hidden" value="2" name="plan">
-                                                    <a data-toggle="tab" href="#menu3">
-                                                        <input type="submit" class="btn btn-primary banclick" value="Buy Now">
+                                        <div class="plandata">
+                                            <h4>PREMIUM (30 MEMORIAL PAGES)</h4>
+                                            <p>All in Standard And Biography of Deceased And Family Members <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Automated Anniversary Reminder <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="inerpkgclick">
+                                                <a data-toggle="tab" href="#menu3">
+                                                    <input type="button" onclick="submit_update_plan(2)" class="btn btn-primary banclick" value="Buy Now">
 
-                                                    </a>
-                                                </div>
+                                                </a>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <form action="admin/user/plan/{id}" method="post">
 
-                                            <div class="plandata">
-                                                <h4>PREMIUM PLUS (50 MEMORIAL PAGE)</h4>
-                                                <p>All in Standard And Premium Including <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Tribute Page For Message From Family And Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Grave Yard Image On Top Of The Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Link To Physical Grave Site <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Link Memorials Of Relative To Their Pages, Example <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>B. Husband Or Wife Memorials Merge Together <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <div class="inerpkgclick">
-                                                    <input type="hidden" value="3" name="plan">
-                                                    <a data-toggle="tab" href="#menu3">
-                                                        <button type="submit" class="btn btn-primary banclick">Buy
-                                                            Now</button>
-                                                    </a>
-                                                </div>
+                                        <div class="plandata">
+                                            <h4>PREMIUM PLUS (50 MEMORIAL PAGES)</h4>
+                                            <p>All in Standard And Premium Including <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Tribute Page For Message From Family And Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Grave Yard Image On Top Of The Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Link To Physical Grave Site <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Link Memorials Of Relative To Their Pages, Example <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>B. Husband Or Wife Memorials Merge Together <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="inerpkgclick">
+                                                <a data-toggle="tab" href="#menu3">
+                                                    <input type="button" onclick="submit_update_plan(3)" class="btn btn-primary banclick" value="Buy Now">
+                                                </a>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <form action="admin/user/plan/{id}" method="post">
 
-                                            <div class="plandata">
-                                                <h4>VIP PREMIUM PLUS (80 MEMORIAL PAGE)</h4>
-                                                <p>(All in Premium Plus) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Customized Dedicated Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Highly Secure Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                                <div class="inerpkgclick">
-                                                    <input type="hidden" value="4" name="plan">
-                                                    <a data-toggle="tab" href="#menu3">
-                                                        <button type="submit" class="btn btn-primary banclick">Buy
-                                                            Now</button>
-                                                    </a>
-                                                </div>
+                                        <div class="plandata">
+                                            <h4>VIP PREMIUM PLUS (80 MEMORIAL PAGES)</h4>
+                                            <p>(All in Premium Plus) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Customized Dedicated Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Highly Secure Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="inerpkgclick">
+                                                <a data-toggle="tab" href="#menu3">
+                                                    <input type="button" onclick="submit_update_plan(4)" class="btn btn-primary banclick" value="Buy Now">
+
+                                                </a>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
 
                                 </div>
                                 <div id="menu3" class="tab-pane fade">
                                     <div class="cardformarea option">
-                                        <h2>Privacy options:</h2>
-                                        <p>Would you like to share your memorial with others, or keep it private?</p>
-                                        <span class="braketdata">(This can be changed later.)</span><br>
-                                        <div class="form-group form-check memoreadio">
-                                            <input name="visible_to_all" type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <div class="optrad">
-                                                <h6>All visitors can view and contribute.</h6>
-                                                <p>Recommended for most memorials. This option allows easy access to the
-                                                    website and
-                                                    facilitates collaboration.</p>
+                                        <form action="{!!asset('user/memorial/privacy')!!}" method="post">
+                                            <h2>Privacy options:</h2>
+                                            <p>Would you like to share your memorial with others, or keep it private?</p>
+                                            <span class="braketdata">(This can be changed later.)</span><br>
+                                            <div class="form-group form-check memoreadio">
+                                                <input name="check visible_to_all" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <div class="optrad">
+                                                    <h6>All visitors can view and contribute.</h6>
+                                                    <p>Recommended for most memorials. This option allows easy access to the
+                                                        website and
+                                                        facilitates collaboration.</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group form-check memoreadio">
-                                            <input name="visible_to_all" type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <div class="optrad">
-                                                <h6>Visible only to me.</h6>
-                                                <p>Choose this option if you do not want the memorial to be visible to
-                                                    others at this time.</p>
+                                            <div class="form-group form-check memoreadio">
+                                                <input name="check" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <div class="optrad">
+                                                    <h6>Visible only to me.</h6>
+                                                    <p>Choose this option if you do not want the memorial to be visible to
+                                                        others at this time.</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group form-check confi">
-                                            <input name="" type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <label class="form-check-label" for="exampleCheck1">I agree to <span class="linktext">Terms of Use</span></label>
-                                        </div>
+                                            <div class="form-group form-check confi">
+                                                <input name="agree" type="checkbox" class="form-check-input" id="exampleChaeck1" onchange="activateButton(this)">
+                                                <label class="form-check-label" for="exampleCheck1">I agree to <span class="linktext">Terms of Use</span></label>
+                                            </div>
+                                            <?php
+
+                                            $chk_agree = 'disabled';
+
+                                            ?>
+                                           <a href="{!!asset('user/template/select_template/{user_website}')!!}"> <button type="button" class="btn btn-primary contclik" id="submit">Continue</button></a>
+
                                         </form>
-                                        <button type="submit" class="btn btn-primary contclik">Continue</button>
                                     </div>
                                 </div>
                             </div>
@@ -357,14 +351,13 @@
                 </div>
             </div>
         </div>
+
+        <form action="{!!asset('user/memorial/update_plan')!!}" method="post" id="update_plan_form">
+            {!!csrf_field()!!}
+            <input type="hidden" name="memorial_id" id="memorial_id">
+            <input type="hidden" name="plan_id" id="plan_id">
+        </form>
     </section>
-
-
-
-
-
-
-
 
     <section>
         <div class="contactarea">
@@ -446,6 +439,38 @@
                 user_memorial = response.user_memorial;
                 $('#memorial_id').val(user_memorial.id);
             }
+        }
+
+        function submit_update_plan(selected_plan_id) {
+            $('#plan_id').val(selected_plan_id);
+            // $('#update_plan_form').submit();
+            submit_form('#memorial_id', 'open_tab');
+        }
+
+        function open_tab(res) {
+            console.log('res', res);
+            $('#privacy_tab').click();
+        }
+
+        function onlyOne(checkbox) {
+            var checkboxes = document.getElementsByName('check')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }
+
+        function disableSubmit() {
+            document.getElementById("submit").disabled = true;
+        }
+
+        function activateButton(element) {
+
+            if (element.checked) {
+                document.getElementById("submit").disabled = false;
+            } else {
+                document.getElementById("submit").disabled = true;
+            }
+
         }
     </script>
 
