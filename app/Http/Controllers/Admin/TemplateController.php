@@ -11,9 +11,24 @@ use stdClass;
 
 class TemplateController extends Controller
 {
+    public function template_1()
+    {
+        return view('admin/templates/template_1/index-orignal');
+    }
     public function template_2()
     {
-        return view('admin/templates/template_1\index-orignal');
+        return view('admin/templates/template_2/index');
+    }
+    public function template_3()
+    {
+        return view('admin/templates/template_3/index');
+    }
+    public function template_4()
+    {
+        return view('admin/templates/template_4/index');
+    }
+    public function index(){
+        return view('admin/templates/template_index/index');
     }
 
     public function template(Request $request)
