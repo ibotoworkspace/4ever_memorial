@@ -90,18 +90,18 @@ class AdminController extends Controller
             'title' => 'Template ',
 
         ];
-        $modules[] = [
+        // $modules[] = [
 
-            'url' => 'admin/category',
-            'title' => 'Category ',
+        //     'url' => 'admin/category',
+        //     'title' => 'Category ',
 
-        ];
-        $modules[] = [
+        // ];
+        // $modules[] = [
 
-            'url' => 'admin/stylings',
-            'title' => 'Styling ',
+        //     'url' => 'admin/stylings',
+        //     'title' => 'Styling ',
 
-        ];
+        // ];
         
 
         $reports[] = [

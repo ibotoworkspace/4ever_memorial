@@ -24,7 +24,7 @@ Route::get('template',[Admin_UserController::class, 'template']);
 
 Route::get('admin/login',[AdminController::class, 'index']);
 Route::post('admin/checklogin',[AdminController::class, 'checklogin']);
-Route::get('admin/dashboard',[AdminController::class, 'dashboard']);
+Route::get('admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('admin/logout',[AdminController::class, 'logout']);
 
 
@@ -48,7 +48,7 @@ Route::get('template',[Admin_UserController::class, 'template']);
 
 /////////template
 Route::get('admin/template',[TemplateController::class, 'index']);
-Route::get('admin/template/template',[TemplateController::class, 'template']);
+Route::get('admin/template/template1',[TemplateController::class, 'template_1']);
 Route::get('admin/template/template2',[TemplateController::class, 'template_2']);
 Route::get('admin/template/template3',[TemplateController::class, 'template_3']);
 Route::get('admin/template/template4',[TemplateController::class, 'template_4']);
