@@ -22,6 +22,12 @@ Route::get('/user/contactus',[User_UserController::class, 'contactus'])->name('u
 Route::get('/user/blog',[User_UserController::class, 'blog'])->name('user.blog');
 Route::get('template',[Admin_UserController::class, 'template']);
 
+Route::get('admin/login',[AdminController::class, 'index']);
+Route::post('admin/checklogin',[AdminController::class, 'checklogin']);
+Route::get('admin/dashboard',[AdminController::class, 'dashboard']);
+Route::get('admin/logout',[AdminController::class, 'logout']);
+
+
 
 // saave_memorial_user *********
 Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform'); //index
