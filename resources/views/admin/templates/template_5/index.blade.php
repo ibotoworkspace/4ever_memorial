@@ -31,6 +31,7 @@
 
     function get_slider_html() {
         var slider_html = `<section class="regular slider custom-slider">`;
+        
         $.each(sliders_list, function(index, item) {
             console.log('item.template_image', item.template_image);
             slider_html = slider_html +
@@ -38,6 +39,11 @@
                         <img src="` + item.template_image + `" class="img-responsive">
                     </div>`;
         })
+        slider_html += `<div> 
+                            <button class="btn btn-success">
+                            Select
+                            </button>
+                        </div>`;
         slider_html = slider_html + `</section>`;
         return slider_html;
     }
