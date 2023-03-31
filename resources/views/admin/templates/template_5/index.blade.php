@@ -9,16 +9,23 @@
         font-weight: 500;
         width: 35%;
         padding: 8px;
-        /* margin-top: -490px !important; */
         float: left;
+        margin: 0px 3px;
+        opacity: 0.5;
     }
 
     .sliderselimgtemp {
-        /* margin-top: 50px; */
+        position: relative;
     }
 
     .completwithd {
         width: 85% !important;
+    }
+
+    .picbtnoverlap {
+        position: absolute;
+        width: 50%;
+        margin: 0px 30%;
     }
 </style>
 
@@ -58,12 +65,14 @@
             console.log('item.template_image', item.template_image);
             slider_html = slider_html +
                 `<div class="sliderselimgtemp" onclick="change_css('` + item.css_files + `')">                        
+                   <center><div class="picbtnoverlap">
                     <button class="btn btn-success sliderimageselect">
                                 Save
                             </button>    
                     <button class="btn btn-success sliderimageselect " onclick="change_css('` + item.css_files + `')">
                                 View
                             </button>    
+                            </div></center>
                     <img src="` + item.template_image + `" class="img-responsive">
                     </div>`;
         })
