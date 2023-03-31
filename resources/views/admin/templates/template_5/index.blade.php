@@ -1,5 +1,27 @@
 {!! $html !!}
 
+<style>
+    .sliderimageselect {
+        background: black;
+        border-color: white;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        width: 35%;
+        padding: 8px;
+        /* margin-top: -490px !important; */
+        float: left;
+    }
+
+    .sliderselimgtemp {
+        /* margin-top: 50px; */
+    }
+
+    .completwithd {
+        width: 85% !important;
+    }
+</style>
+
 <script>
     console.log('checking***********1')
     var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
@@ -31,25 +53,31 @@
 
     function get_slider_html() {
         var slider_html = `<section class="regular slider custom-slider">`;
-        
+
         $.each(sliders_list, function(index, item) {
             console.log('item.template_image', item.template_image);
             slider_html = slider_html +
-                `<div onclick="change_css('` + item.css_files + `')">                        
-                        <img src="` + item.template_image + `" class="img-responsive">
+                `<div class="sliderselimgtemp" onclick="change_css('` + item.css_files + `')">                        
+                    <button class="btn btn-success sliderimageselect">
+                                Save
+                            </button>    
+                    <button class="btn btn-success sliderimageselect " onclick="change_css('` + item.css_files + `')">
+                                View
+                            </button>    
+                    <img src="` + item.template_image + `" class="img-responsive">
                     </div>`;
         })
         slider_html += `<div> 
-                            <button class="btn btn-success">
-                            Select
-                            </button>
+                           
                         </div>`;
         slider_html = slider_html + `</section>`;
         return slider_html;
     }
-    function change_css(css_file_path){
+
+    function change_css(css_file_path) {
         $("#template_css_link").attr("disabled", "disabled");
         $("#template_css_link").remove();
-        $('head').append($('<link rel="stylesheet" type="text/css" id="template_css_link" />').attr('href',css_file_path));
+        $('head').append($('<link rel="stylesheet" type="text/css" id="template_css_link" />').attr('href',
+            css_file_path));
     }
 </script>
