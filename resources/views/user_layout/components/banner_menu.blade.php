@@ -68,6 +68,9 @@
                                 <li id="7">
                                   <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                 </li>
+                                <li id="8">
+                                  <a href="{!!asset('user/my_memorials')!!}"><span>MY MEMORIALS</span> </a>
+                                </li>
                               </ul>
                         </div>
                     </div>

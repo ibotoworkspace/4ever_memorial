@@ -12,11 +12,14 @@ class Styling extends Model
     use SoftDeletes;
     protected $table = 'styling';
 
-    protected function getWebVariableAttribute($value)
+    public function getWebVariableAttribute($value)
     {
         $web_variable = $value;
-        // $web_variable = preg_replace( "/<br>|\n/", "",$value);
         $web_variable = json_decode($web_variable,true);   
         return $web_variable;        
     }
+
+    // public function website_template(){
+    //     return $this->hasOne('App\Models\WebsiteTemplate','id','website_template_id');
+    // }
 }

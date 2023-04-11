@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class UserTemplateHelper
 {
-       public function save_memorial_user(Request $request,$user){
+       public function save_memorial_user(Request $request,$user,$style){
         $user_website = new UserWebsite();
-        // $user_website->user_id = $user->id;
+        $user_website->user_id = $user->id;        
         $user_website->ad_name = $request->ad_name;
         $user_website->ad_lastname = $request->ad_lastname;
         $user_website->ad_email = $request->ad_email;
@@ -37,6 +37,11 @@ class UserTemplateHelper
         $user_website->email = $request->email;
         $user_website->visible_to_all = $request->visible_to_all;
         $user_website->save();
+
+
+
+
+
         return $user_website;
 
       }

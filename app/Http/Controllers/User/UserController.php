@@ -5,6 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\UserTemplateHelper;
 use App\Models\Models\Template;
+use App\Http\Helpers\TemplateHelper;
+use App\Models\Styling;
+use App\Models\WebsiteTemplate;
 use App\Models\Template as ModelsTemplate;
 use App\Models\User;
 use App\Models\UserWebsite;
@@ -32,6 +35,9 @@ class UserController extends Controller
     }
     public function blog(){
         return view('user.blog');
+    }
+    public function my_memorials(){
+        return view('user.my_memorials');
     }
     public function register(Request $request){
 
@@ -102,9 +108,45 @@ class UserController extends Controller
 
     }
     public function privacy(Request $request){
-        $privacy=UserWebsite::find($request->memorial_id);
-        $privacy->visible_to_all = $request->visible_to_all;
-        $privacy->agreement = $request->agree;
+        $memorial_id = $request->memorial_id;
+        $privacy = UserWebsite::find($memorial_id);
+        $privacy->visible_to_all = $request->all_visitors ?? '0';
+        $privacy->agreement = $request->agreement ?? '0';
         $privacy->save();
+
+        $temp = WebsiteTemplate::first();
+        $styles = Styling::get();        
+        $template_helper = new TemplateHelper($temp,$styles->first());
+        $html = $template_helper->create_html();
+        $styles_json = urlencode(json_encode($styles));
+        
+        return view('user/dynamic_template/index', compact('html','styles_json','styles','memorial_id'));
+
+    }
+    public function save_css(Request $request){
+        $user_website=UserWebsite::find($request->user_website_id);
+        $user_website->website_template_id = $request->css_style_id;
+        $style = Styling::find($request->css_style_id);
+
+        
+        $user_website->website_html = $style->website_template->web_html;
+        $user_website->website_variable = $style->web_variable;
+        $user_website->variable_html = $style->variable_html;
+
+
+        $user_website->save();
+        return redirect('user/get_memorial/'.$user_website->email);
+
+    }
+
+    public function get_memorial(Request $request,$user_email){
+        // 11DFSn@mail.com
+        $website_template_email = $user_email;
+        $user_website = UserWebsite::where('email',$website_template_email)->first();
+        $temp = WebsiteTemplate::first();
+        $style = Styling::where('id',$user_website->website_template_id)->first();
+        $template_helper = new TemplateHelper($temp,$style);
+        $html = $template_helper->create_html();
+        return view('user/dynamic_template/user_page', compact('html'));
     }
 }

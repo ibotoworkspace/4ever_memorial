@@ -15,14 +15,12 @@ class WebsiteTemplate extends Model
     protected function getWebVariableAttribute($value)
     {
         $web_variable = $value;
-        // $web_variable = preg_replace( "/<br>|\n/", "",$value);
         $web_variable = json_decode($web_variable,true);   
         return $web_variable;        
     }
     protected function getVariableHtmlAttribute($value)
     {
         $web_variable = $value;
-        // $web_variable = preg_replace( "/<br>|\n/", "",$value);
         $web_variable = json_decode($web_variable,true);   
         return $web_variable;        
     }
