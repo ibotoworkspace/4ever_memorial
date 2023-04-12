@@ -84,13 +84,16 @@ class UserController extends Controller
     //     return view('user.template',compact('template'));
     // }
     public function memorialform(){
+        // $style = Styling::with('website_template')->first();
+        // dd($style);
         return view('user.memorialform');
     }
     public function add_user(Request $request){
         $user = Auth::user();
         // dd($request->all());
+        $style = Styling::with('website_template')->first();
         $user_helper = new UserTemplateHelper();
-        $user_web = $user_helper->save_memorial_user($request,$user);
+        $user_web = $user_helper->save_memorial_user($request,$user,$style);
         $response = new \stdClass();
         $response->status = true;
         $response->user_memorial = $user_web;
@@ -125,7 +128,7 @@ class UserController extends Controller
     }
     public function save_css(Request $request){
         $user_website=UserWebsite::find($request->user_website_id);
-        $user_website->website_template_id = $request->css_style_id;
+        $user_website->style_id = $request->css_style_id;
         $style = Styling::find($request->css_style_id);
 
         

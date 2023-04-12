@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\WebsiteTemplate as WTE;
 
 class Styling extends Model
 {
@@ -19,7 +20,9 @@ class Styling extends Model
         return $web_variable;        
     }
 
-    // public function website_template(){
-    //     return $this->hasOne('App\Models\WebsiteTemplate','id','website_template_id');
-    // }
+    public function website_template(){
+        // return $this->hasOne(Phone::class, 'foreign_key', 'local_key');
+        // return $this->hasOne(WTE::class, 'id', 'website_template_id');
+        return $this->hasOne('App\Models\WebsiteTemplate','id','website_template_id');
+    }
 }
