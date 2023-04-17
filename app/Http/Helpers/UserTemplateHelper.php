@@ -11,13 +11,13 @@ use Illuminate\Http\Request;
 class UserTemplateHelper
 {
        public function save_memorial_user(Request $request,$user,$style){
-
+        
         $user = User::find(1);
         $user_website = new UserWebsite();
         // $user_website->user_id = $user->id;        
         $user_website->style_id = $style->id;
         $user_website->website_html = $style->website_template->website_html;
-        // dd($style);
+       
         $web_variable = $style->web_variable;
 // dd($web_variable);
         // $user 
@@ -33,7 +33,7 @@ class UserTemplateHelper
         $web_variable['memorial_user_var']['death_var'] = $request->p_year;
         $web_variable['memorial_user_var']['father_name_var'] = $request->l_name;
 
-
+// dd($web_variable);
 
         $user_website->website_variable = json_encode($web_variable);
         $user_website->variable_html = $style->variable_html; // json_encode

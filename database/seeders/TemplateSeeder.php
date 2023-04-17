@@ -49,8 +49,8 @@ class TemplateSeeder extends Seeder
                     href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                <link rel="stylesheet" id="template_css_link" href="{l-scale=1" />
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/np!!{memorial_style_var.style_script_var}!!}" />
+                <link rel="stylesheet" id="template_css_link" href="" />
+                <link rel="stylesheet" href="{!!{memorial_style_var.style_script_var}!!}" />
 
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
