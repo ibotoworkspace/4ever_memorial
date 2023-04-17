@@ -112,14 +112,17 @@ class UserController extends Controller
     }
     public function privacy(Request $request){
         $memorial_id = $request->memorial_id;
-        $privacy = UserWebsite::find($memorial_id);
-        $privacy->visible_to_all = $request->all_visitors ?? '0';
-        $privacy->agreement = $request->agreement ?? '0';
-        $privacy->save();
+        $user_web = UserWebsite::with('style.website_template')->find($memorial_id);
+        $user_web->visible_to_all = $request->all_visitors ?? '0';
+        $user_web->agreement = $request->agreement ?? '0';
+        $user_web->save();
+        // $temp = WebsiteTemplate::first();
+        // $styles = Styling::get();        
+        $styles = $user_web->style;
+        $user_website_template = $styles->website_template;
+        $user_website_template->web_variable = $user_web->website_variable;
 
-        $temp = WebsiteTemplate::first();
-        $styles = Styling::get();        
-        $template_helper = new TemplateHelper($temp,$styles->first());
+        $template_helper = new TemplateHelper($user_website_template,$user_web->style);
         $html = $template_helper->create_html();
         $styles_json = urlencode(json_encode($styles));
         
@@ -145,10 +148,12 @@ class UserController extends Controller
     public function get_memorial(Request $request,$user_email){
         // 11DFSn@mail.com
         $website_template_email = $user_email;
-        $user_website = UserWebsite::where('email',$website_template_email)->first();
         $temp = WebsiteTemplate::first();
-        $style = Styling::where('id',$user_website->website_template_id)->first();
-        $template_helper = new TemplateHelper($temp,$style);
+        $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
+        // dd($user_website);
+        
+        // $style = Styling::where('id',$user_website->style_id)->first();
+        $template_helper = new TemplateHelper($temp,$user_website->style);
         $html = $template_helper->create_html();
         return view('user/dynamic_template/user_page', compact('html'));
     }

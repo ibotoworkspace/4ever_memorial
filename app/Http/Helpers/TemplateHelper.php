@@ -16,27 +16,17 @@ class TemplateHelper
 
     public function __construct($template,$style){
         $this->template = $template;
-        // dd($template->website_variable);
         // $this->variable_html = json_decode($template->variable_html,true);
         $this->variable_html =    $template->variable_html;
         $this->website_variable = $style->web_variable;
         
 
         $this->website_html = $template->web_html;
-        // dd($template->web_html);
     }
     public function create_html(){
-        // dd($this->website_variable);
-        // dd($this->variable_html,$this->website_variable,$this->website_html);
         $html = $this->website_html;
-        // dd($this->variable_html);
         $html = $this->replace_variables($html,1);
-        // dd($html);
-        // $html = $this->get_html_variables($template,$html);
-
         return $html;
-
-
     }
 
     public function replace_htmlarr_variables_from_html($html,$html_arr){
@@ -49,7 +39,8 @@ class TemplateHelper
             $web_html_val = $this->variable_html[$index];
 
             if(!isset($this->website_variable[$website_index])){
-                // dd($this->website_variable,$website_index);
+                dd($this->website_variable,$website_index);
+                // continue;
             }
             $web_values_arr = $this->website_variable[$website_index];
             $html_arr_list = '';
