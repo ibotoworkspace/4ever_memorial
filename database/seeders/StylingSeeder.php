@@ -279,7 +279,7 @@ class StylingSeeder extends Seeder
             $web_variable_std->story_tab_arr[0]->user_name_show_var =  "Alexa Zelaya";
             $web_variable_std->story_tab_arr[0]->date_show_var =  "January 21";
             $web_variable_std->story_tab_arr[0]->image_show_var = "' . $public_path . 'user_templates/' . $default_template . '/images/baby_cot.png";
-            $web_variable_std->story_tab_arr[0]->details_show_var =  "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony.";
+            // $web_variable_std->story_tab_arr[0]->details_show_var =  "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony.";
           
 
             
