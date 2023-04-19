@@ -158,7 +158,7 @@ class StylingSeeder extends Seeder
             $web_variable_std->owner_user_var->birth_var = "2004";
             $web_variable_std->owner_user_var->death_var = "2022";
             $web_variable_std->owner_user_var->father_name_var = "Anthony Father";
-            $web_variable_std->owner_user_var->image_var = "' . $public_path . 'user_templates/' . $default_template . '/images/profile_pic.jpg";
+            $web_variable_std->owner_user_var->image_var = $public_path . "user_templates/" . $default_template . "/images/profile_pic.jpg";
 
             $web_variable_std->total_views_var = "90";
             $web_variable_std->recent_updates_show_arr = [];
@@ -182,9 +182,9 @@ class StylingSeeder extends Seeder
             $web_variable_std->recent_updates_show_arr[2]->message_var = "added 2 tributes";
             
             $web_variable_std->icon_list_var = new \stdClass();
-            $web_variable_std->icon_list_var->flower_image_var = "' . $public_path . 'user_templates/' . $default_template . '/images/flower_blu.png";
-            $web_variable_std->icon_list_var->candel_image_var = "' . $public_path . 'user_templates/' . $default_template . '/images/candle_blu.png";
-            $web_variable_std->icon_list_var->feather_image_var ="' . $public_path . 'user_templates/' . $default_template . '/images/feather_blu.png";
+            $web_variable_std->icon_list_var->flower_image_var = $public_path . "user_templates/" . $default_template . "/images/flower_blu.png";
+            $web_variable_std->icon_list_var->candel_image_var = $public_path . "user_templates/" . $default_template . "/images/candle_blu.png";
+            $web_variable_std->icon_list_var->feather_image_var = $public_path . "user_templates/" . $default_template . "/images/feather_blu.png";
             
           
             $web_variable_std->memorial_user_var = new \stdClass();
@@ -194,11 +194,11 @@ class StylingSeeder extends Seeder
             $web_variable_std->memorial_user_var->birth_var = "2004";
             $web_variable_std->memorial_user_var->death_var = "2022";
             $web_variable_std->memorial_user_var->father_name_var = "Anthony Father";
-            $web_variable_std->memorial_user_var->image_var = "' . $public_path . 'user_templates/' . $default_template . '/images/profile_pic.jpg";
+            $web_variable_std->memorial_user_var->image_var = $public_path . "user_templates/" . $default_template . "/images/profile_pic.jpg";
 
            
             $web_variable_std->memorial_style_var = new \stdClass();
-            $web_variable_std->memorial_style_var->style_script_var = "' . $public_path . 'user_templates/' . $template_name_css_path . '/css/style.css";
+            $web_variable_std->memorial_style_var->style_script_var = $public_path . "user_templates/" . $default_template . "/css/style.css";
             
 
             $web_variable_std->tributes_arr = [];
@@ -208,14 +208,14 @@ class StylingSeeder extends Seeder
             $web_variable_std->tributes_arr[0]->date_show_var = "January 23";
             $web_variable_std->tributes_arr[0]->details_show_var = "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.";
             $web_variable_std->tributes_arr[0]->date_var = "23/01/1990";
-            $web_variable_std->tributes_arr[0]->image_show_var = "' . $public_path . 'user_templates/' . $default_template . '/images/flower.png";
+            $web_variable_std->tributes_arr[0]->image_show_var = $public_path . "user_templates/" . $default_template . "/images/flower.png";
 
 
 
 
             $web_variable_std->tributes_arr[1] = new \stdClass();
             $web_variable_std->tributes_arr[1]->user_id = "1";
-            $web_variable_std->tributes_arr[1]->image_show_var = "' . $public_path . 'user_templates/' . $default_template . '/images/candel.png";
+            $web_variable_std->tributes_arr[1]->image_show_var = $public_path . "user_templates/" . $default_template . "/images/candel.png";
             $web_variable_std->tributes_arr[1]->user_name_show_var = "Norice Mazmanian";
             $web_variable_std->tributes_arr[1]->type_var = "candle";
             $web_variable_std->tributes_arr[1]->date_show_var = "January 22";
@@ -224,7 +224,7 @@ class StylingSeeder extends Seeder
 
             $web_variable_std->tributes_arr[2] = new \stdClass();
             $web_variable_std->tributes_arr[2]->user_id = "1";
-            $web_variable_std->tributes_arr[2]->image_show_var = "' . $public_path . 'user_templates/' . $default_template . '/images/candel.png";
+            $web_variable_std->tributes_arr[2]->image_show_var = $public_path . "user_templates/" . $default_template . "/images/candel.png";
             $web_variable_std->tributes_arr[2]->user_name_show_var = "Adriana Villarreal";
             $web_variable_std->tributes_arr[2]->type_var = "candle";
             $web_variable_std->tributes_arr[2]->date_show_var = "January 21";
@@ -234,7 +234,7 @@ class StylingSeeder extends Seeder
            
             $web_variable_std->tributes_arr[3] = new \stdClass();
             $web_variable_std->tributes_arr[3]->user_id = "1";
-            $web_variable_std->tributes_arr[3]->image_show_var = "' . $public_path . 'user_templates/' . $default_template . '/images/candel.png";
+            $web_variable_std->tributes_arr[3]->image_show_var = $public_path . "user_templates/" . $default_template . "/images/candel.png";
             $web_variable_std->tributes_arr[3]->user_name_show_var = "Norice Mazmanian";
             $web_variable_std->tributes_arr[3]->type_var = "candle";
             $web_variable_std->tributes_arr[3]->date_show_var = "January 22";
@@ -245,42 +245,42 @@ class StylingSeeder extends Seeder
             $web_variable_std->life_tab_arr = [];
             $web_variable_std->life_tab_arr[0] = new \stdClass();
             $web_variable_std->life_tab_arr[0]->user_id = "1";
-            $web_variable_std->life_tab_arr[0]->image_show_var =  "' . $public_path . 'user_templates/' . $default_template . '/images/baby_cot.png";
+            $web_variable_std->life_tab_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/baby_cot.png";
             $web_variable_std->life_tab_arr[0]->details_show_var = "Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz...";
             
             
             $web_variable_std->gallery_photo_arr = [];
             $web_variable_std->gallery_photo_arr[0] = new \stdClass();
             $web_variable_std->gallery_photo_arr[0]->user_id = "1";
-            $web_variable_std->gallery_photo_arr[0]->image_show_var =  "' . $public_path . 'user_templates/' . $default_template . '/images/download.jpg";
+            $web_variable_std->gallery_photo_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/download.jpg";
           
             
             $web_variable_std->gallery_audio_arr = [];
             $web_variable_std->gallery_audio_arr[0] = new \stdClass();
             $web_variable_std->gallery_audio_arr[0]->user_id = "1";
-            $web_variable_std->gallery_audio_arr[0]->image_show_var =  "' . $public_path . 'user_templates/' . $default_template . '/images/download.jpg";
+            $web_variable_std->gallery_audio_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/download.jpg";
           
             $web_variable_std->gallery_video_arr = [];
             $web_variable_std->gallery_video_arr[0] = new \stdClass();
             $web_variable_std->gallery_video_arr[0]->user_id = "1";
-            $web_variable_std->gallery_video_arr[0]->image_show_var =  "' . $public_path . 'user_templates/' . $default_template . '/images/download.jpg";
+            $web_variable_std->gallery_video_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/download.jpg";
           
           
             $web_variable_std->slider_arr = [];
             $web_variable_std->slider_arr[0] = new \stdClass();
             $web_variable_std->slider_arr[0]->num_var = "137";
-            $web_variable_std->slider_arr[0]->image_show_var =  "' . $public_path . 'user_templates/' . $default_template . '/images/download.jpg";
+            $web_variable_std->slider_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/download.jpg";
           
 
             
             $web_variable_std->story_tab_arr = [];
-            $web_variable_std->story_tab_arr[0] = new \stdClass();
-            $web_variable_std->story_tab_arr[0]->user_id = "1";
-            $web_variable_std->story_tab_arr[0]->user_name_show_var =  "Alexa Zelaya";
-            $web_variable_std->story_tab_arr[0]->date_show_var =  "January 21";
-            $web_variable_std->story_tab_arr[0]->image_show_var = "' . $public_path . 'user_templates/' . $default_template . '/images/baby_cot.png";
+            $story_tab_std = new \stdClass();
+            $story_tab_std->user_id = "1";
+            $story_tab_std->user_name_show_var =  "Alexa Zelaya";
+            $story_tab_std->date_show_var =  "January 21";
+            $story_tab_std->image_show_var = $public_path . "user_templates/" . $default_template . "/images/baby_cot.png";
             // $web_variable_std->story_tab_arr[0]->details_show_var =  "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony.";
-          
+            $web_variable_std->story_tab_arr[0] = $story_tab_std;
 
             
 

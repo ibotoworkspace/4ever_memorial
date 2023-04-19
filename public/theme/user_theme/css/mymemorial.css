@@ -1,0 +1,32 @@
+
+.outer-bx {
+    border: #d0e3ef solid 1px;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+
+
+.img-bx {
+    border: #beb28d solid 1px;
+    height: 261px;
+    margin: 19px 45px;
+    border-radius: 36px;
+    overflow: hidden;
+    filter: blur(2px);
+}
+.plandatas {
+    padding: 15px;
+    border-radius: 7px;
+    margin: 11px;
+}
+.plandatas h4 {
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.inerpkgclick {
+    margin-top: 30px;
+}
+.banclick {
+    width: 25%;
+}
