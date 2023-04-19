@@ -15,9 +15,12 @@ class WebsiteTemplate extends Model
     protected function getWebVariableAttribute($value)
     {
         $web_variable = $value;
-        $web_variable = json_decode($web_variable,true);   
+        if(is_string($web_variable)){
+            $web_variable = json_decode($web_variable,true);
+        }
         return $web_variable;        
     }
+    
     protected function getVariableHtmlAttribute($value)
     {
         $web_variable = $value;

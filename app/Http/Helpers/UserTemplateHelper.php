@@ -13,6 +13,10 @@ class UserTemplateHelper
        public function save_memorial_user(Request $request,$user,$style){
         
         $user = User::find(1);
+
+        $user_memorial = new User();
+
+        $user_memorial->save();
         $user_website = new UserWebsite();
         // $user_website->user_id = $user->id;        
         $user_website->style_id = $style->id;
@@ -38,6 +42,7 @@ class UserTemplateHelper
         $user_website->website_variable = json_encode($web_variable);
         $user_website->variable_html = $style->variable_html; // json_encode
         $user_website->ad_name = $request->ad_name;
+        $user_website->website_user_id = $user_memorial->id;
         $user_website->ad_lastname = $request->ad_lastname;
         $user_website->ad_email = $request->ad_email;
         $user_website->ad_pwd = $request->ad_pwd;

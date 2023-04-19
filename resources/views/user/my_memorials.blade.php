@@ -11,42 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{!! asset('theme/user_theme/css/mymemorial.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/user_theme/css/memorial.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/user_theme/css/main.css') !!}" rel="stylesheet">
 
-    <style>
-  .outer-bx {
-    border: #d0e3ef solid 1px;
-    border-radius: 10px;
-    margin: 15px 0px;
-}
-
-
-.img-bx {
-    border: #beb28d solid 1px;
-    height: 348px;
-    margin: 19px 45px;
-    border-radius: 36px;
-    overflow: hidden;
-    filter: blur(2px);
-}
-.plandatas {
-    padding: 15px;
-    border-radius: 7px;
-    margin: 11px;
-}
-.plandatas h4 {
-    font-size: 27px;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-.inerpkgclick {
-    margin-top: 30px;
-}
-.banclick {
-    width: 25%;
-}
-    </style>
+    
 </head>
 
 <body onload="disableSubmit()">

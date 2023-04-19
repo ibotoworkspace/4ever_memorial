@@ -117,16 +117,16 @@ class UserController extends Controller
         $user_web->agreement = $request->agreement ?? '0';
         $user_web->save();
         // $temp = WebsiteTemplate::first();
-        // $styles = Styling::get();        
-        $styles = $user_web->style;
-        $user_website_template = $styles->website_template;
+        $styles = Styling::get(); 
+        $default_style = $user_web->style;
+        $user_website_template = $default_style->website_template;
         $user_website_template->web_variable = $user_web->website_variable;
-
+// dd($styles);
         $template_helper = new TemplateHelper($user_website_template,$user_web->style);
         $html = $template_helper->create_html();
         $styles_json = urlencode(json_encode($styles));
         
-        return view('user/dynamic_template/index', compact('html','styles_json','styles','memorial_id'));
+        return view('user/dynamic_template/index', compact('html','styles_json','styles','default_style','memorial_id'));
 
     }
     public function save_css(Request $request){
@@ -141,7 +141,11 @@ class UserController extends Controller
 
 
         $user_website->save();
-        return redirect('user/get_memorial/'.$user_website->email);
+        $res = new \stdClass();
+        $res->status = true;
+        $res->redirect = asset('user/get_memorial/'.$user_website->email);
+        return $this->sendResponse(200,$res);
+        // return redirect('user/get_memorial/'.$user_website->email);
 
     }
 

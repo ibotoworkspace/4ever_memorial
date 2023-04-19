@@ -34,7 +34,7 @@
     var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
     var sliders_list = JSON.parse(sliders_list);
     console.log('checking***********3')
-    console.log(sliders_list, "slider_list");
+    console.log("slider_list",sliders_list);
     $(function() {
         add_slider_select_theme();
     })
@@ -112,10 +112,11 @@
 
             success: function(data) {
                 console.log('success data', data);
+                window.location = data.redirect;
                 
             },
             error: function(err) {
-                console.log('form failed', err);
+                console.log('form failed', err.Message);
             }
 
         })
