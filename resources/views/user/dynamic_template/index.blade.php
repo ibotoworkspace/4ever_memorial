@@ -112,7 +112,7 @@
 
             success: function(data) {
                 console.log('success data', data);
-                window.location = data.redirect;
+                window.location = data.response.redirect;
                 
             },
             error: function(err) {
