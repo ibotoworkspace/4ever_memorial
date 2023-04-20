@@ -154,10 +154,12 @@ class UserController extends Controller
         $website_template_email = $user_email;
         $temp = WebsiteTemplate::first();
         $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        // dd($user_website);
-        
-        // $style = Styling::where('id',$user_website->style_id)->first();
-        $template_helper = new TemplateHelper($temp,$user_website->style);
+        // $user_website->style->web_variable = $user_website->website_variable; 
+        $style = new \stdClass();
+        $style->web_variable = $user_website->website_variable; 
+        // dd($style);
+        $template_helper = new TemplateHelper($temp,$style);
+        // $template_helper = new TemplateHelper($temp,$user_website->style);
         $html = $template_helper->create_html();
         return view('user/dynamic_template/user_page', compact('html'));
     }

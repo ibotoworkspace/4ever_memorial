@@ -17,6 +17,7 @@ class TemplateHelper
     public function __construct($template,$style){
         $this->template = $template;
         // $this->variable_html = json_decode($template->variable_html,true);
+        
         $this->variable_html =    $template->variable_html;
         $this->website_variable = $style->web_variable;
         

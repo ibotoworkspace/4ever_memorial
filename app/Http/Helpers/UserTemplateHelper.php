@@ -6,18 +6,18 @@ use App\Models\UserWebsite;
 use App\Models\User;
 // use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class UserTemplateHelper
 {
        public function save_memorial_user(Request $request,$user,$style){
         
-        $user = User::find(1);
-        $user ->save();
+        $user = Auth::user();
+        // $user->save();
 
         $user_memorial = new User();
 
-        $user_memorial->save();
+        // $user_memorial->save();
         $user_website = new UserWebsite();
         // $user_website->user_id = $user->id;        
         $user_website->style_id = $style->id;
