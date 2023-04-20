@@ -26,7 +26,7 @@ class TemplateHelper
     }
     public function create_html(){
         $html = $this->website_html;
-        $html = $this->replace_variables($html,1);
+        $html = $this->replace_variables($html);
         return $html;
     }
 
@@ -37,6 +37,9 @@ class TemplateHelper
             $website_index = str_replace('_htmlarr','_arr',$index);
             $website_index = $this->remove_var_identity($website_index);
 
+            if(!isset($this->variable_html[$index])){
+                // dd($this->variable_html,$index);
+            }
             $web_html_val = $this->variable_html[$index];
 
             if(!isset($this->website_variable[$website_index])){
@@ -120,12 +123,16 @@ class TemplateHelper
                 }
                 if(is_array($value)){
                     if(!isset($value[$i])){
-                        continue;
-                        // dd($value,$i,$index,$vars);
+                        $replace_val = '';                        
+                        // continue;                        
                     }
-                    $value = $value[$i];                  
+                    else{                        
+                        $replace_val = $value[$i];
+                    }
+                    
+                    $value = $replace_val;                  
                 }
-                if(!is_array($value)){                    
+                if(!is_array($value)){        
                     $html = str_replace($var,$value,$html);                    
                 }                
             }

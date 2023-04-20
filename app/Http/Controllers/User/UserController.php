@@ -84,27 +84,21 @@ class UserController extends Controller
     //     return view('user.template',compact('template'));
     // }
     public function memorialform(){
-        // $style = Styling::with('website_template')->first();
-        // dd($style);
+        $user = Auth::user();
         return view('user.memorialform');
     }
     public function add_user(Request $request){
         $user = Auth::user();
-        // dd($request->all());
         $style = Styling::with('website_template')->first();
         $user_helper = new UserTemplateHelper();
         $user_web = $user_helper->save_memorial_user($request,$user,$style);
         $response = new \stdClass();
         $response->status = true;
         $response->user_memorial = $user_web;
-        return json_encode($response);
-        // dd('saved');
-        
-        
+        $response->all_request = $request->all();
+        return $this->sendResponse(200,$response);
     }
     public function update_plan(Request $request){
-        // echo('asdasdasdasdasd');
-        // dd($request->all(),'asasasas');
         $plan=UserWebsite::find($request->memorial_id);
         $plan->plan_id = $request->plan_id;
         $plan->save();
@@ -133,11 +127,10 @@ class UserController extends Controller
         $user_website=UserWebsite::find($request->user_website_id);
         $user_website->style_id = $request->css_style_id;
         $style = Styling::find($request->css_style_id);
+        $website_html = $style->website_template->web_html;
 
-        
-        $user_website->website_html = $style->website_template->web_html;
-        $user_website->website_variable = $style->web_variable;
-        $user_website->variable_html = $style->variable_html;
+        $web_html = str_replace('{!!{memorial_style_var.style_script_var}!!}',$style->css_files,$website_html);
+        $user_website->website_html = $web_html;
 
 
         $user_website->save();
@@ -152,8 +145,13 @@ class UserController extends Controller
     public function get_memorial(Request $request,$user_email){
         // 11DFSn@mail.com
         $website_template_email = $user_email;
-        $temp = WebsiteTemplate::first();
+        // $temp = WebsiteTemplate::first();
         $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
+        $temp = new \stdClass();
+        
+        $temp->web_html = $user_website->website_html;
+        $temp->web_variable = $user_website->website_variable;
+        $temp->variable_html = $user_website->variable_html;
         // $user_website->style->web_variable = $user_website->website_variable; 
         $style = new \stdClass();
         $style->web_variable = $user_website->website_variable; 

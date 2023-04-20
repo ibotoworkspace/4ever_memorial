@@ -181,10 +181,17 @@ span.sidetick {
 }
 
 .examplemail {
-    margin-top: 35px;
+    margin-top: 10px;
     font-size: 16px;
     font-weight: 500;
     color: #465863;
+    margin-left: -16px;
+    
+}
+.http {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .option p {
