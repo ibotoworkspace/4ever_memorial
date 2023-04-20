@@ -78,17 +78,42 @@
                                             <div class="form-group">
                                                 <label name="relation" for="exampleFormControlSelect1">Relationship</label>
                                                 <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>Please Select Relationship</option>
-                                                    <option value="single">Single</option>
-                                                    <option value="married">Married</option>
+                                                <option value="" hidden="">Please select relationship</option>
+                                                    <option value="Aunt">Aunt</option>
+                                                    <option value="Boyfriend">Boyfriend</option>
+                                                    <option value="Brother">Brother</option>
+                                                    <option value="Colleague">Colleague</option>
+                                                    <option value="Cousin">Cousin</option>
+                                                    <option value="Daughter">Daughter</option>
+                                                    <option value="Father">Father</option>
+                                                    <option value="Friend">Friend</option>
+                                                    <option value="Girlfriend">Girlfriend</option>
+                                                    <option value="Granddaughter">Granddaughter</option>
+                                                    <option value="Grandfather">Grandfather</option>
+                                                    <option value="Grandmother">Grandmother</option>
+                                                    <option value="Grandson">Grandson</option>
+                                                    <option value="Husband">Husband</option>
+                                                    <option value="Mother">Mother</option>
+                                                    <option value="Nephew">Nephew</option>
+                                                    <option value="Niece">Niece</option>
+                                                    <option value="Sister">Sister</option>
+                                                    <option value="Son">Son</option>
+                                                    <option value="Step Family">Step Family</option>
+                                                    <option value="Uncle">Uncle</option>
+                                                    <option value="Wife">Wife</option>
+                                                    <option value="Other" data-code="other">Other</option>
+                                                    <option value="No relationship">No relationship</option> 
                                                 </select>
                                             </div>
+                                            
                                             <div class="form-group">
                                                 <label name="memorial_designation" for="exampleFormControlSelect1">Memorial Designation</label>
                                                 <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>Select Designation, If applies</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
+                                                <option value="" selected="" disabled="" hidden="">Select designation, if applies </option>
+                                                <option value="does_not_apply">No Designation </option>
+                                                <option value="military" >Military Veteran </option>
+                                                <option value="first_responder">First Responder </option>
+                                                <option value="covid">COVID-19 Victim </option>
                                                 </select>
                                             </div>
 
@@ -164,13 +189,18 @@
                                             <h2>Memorial web address:</h2>
 
                                             <div class="form-group row">
-                                                <div class="col-sm-10">
-                                                    <label for="exampleFormControlInput1">Email address</label>
+                                            <div class="col-md-1">
+                                                    <div class="http">
+                                                         https://    
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <!-- <label for="exampleFormControlInput1">Email address</label> -->
                                                     <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="examplemail">
-                                                        <p>forevermemorial.com</p>
+                                                        <p style="font-size: 18px; font-weight: 500;">.forevermemorial.com</p>
                                                     </div>
                                                 </div>
 
@@ -385,7 +415,7 @@
                 console.log('res 2', response);
                 $(memorial_form + " input").val("");
                 $(memorial_form + " textarea").val("");
-                user_memorial = response.user_memorial;
+                user_memorial = response.response.user_memorial;
                 $('.memorial_id').val(user_memorial.id);
             }
         }

@@ -32,7 +32,7 @@ Route::get('admin/logout',[AdminController::class, 'logout']);
 
 // saave_memorial_user *********
 Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform'); //index
-Route::post('user/memorialform_save', [User_UserController::class, 'memorialform_save'])->name('memorialform.save');; //save
+// Route::get('user/memorialform_save', [User_UserController::class, 'memorialform_save'])->name('memorialform.save');; //save
 Route::get('user/get_memorial/{user_email}',[User_UserController::class, 'get_memorial']); 
 
 
