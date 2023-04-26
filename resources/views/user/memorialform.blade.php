@@ -189,22 +189,18 @@
                                             <h2>Memorial web address:</h2>
 
                                             <div class="form-group row">
-                                            <div class="col-md-1">
-                                                    <div class="http">
-                                                         https://    
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <!-- <label for="exampleFormControlInput1">Email address</label> -->
-                                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                <div class="col-sm-10">
+                                                    <label for="exampleFormControlInput1">Memorial Name</label>
+                                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Write A Unique Memorial Name">
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="examplemail">
-                                                        <p style="font-size: 18px; font-weight: 500;">.forevermemorial.com</p>
+                                                        <p >@forevermemorial.com</p>
                                                     </div>
                                                 </div>
 
                                             </div>
+
 
                                             <a data-toggle="tab" href="#menu2">
                                                 <input type="button" onclick="submit_form('.create_memorial_form','create_memorial')" class="btn btn-primary contclik" value="Continue">
@@ -290,7 +286,7 @@
                                             <p>Would you like to share your memorial with others, or keep it private?</p>
                                             <span class="braketdata">(This can be changed later.)</span><br>
                                             <div class="form-group form-check memoreadio">
-                                                <input name="all_visitors" value="1" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <input name="all_visitors" value="1" type="checkbox"  class="form-check-input only_one_check" id="exampleCheck1" onclick="onlyOne(this)">
                                                 <div class="optrad">
                                                     <h6>All visitors can view and contribute.</h6>
                                                     <p>Recommended for most memorials. This option allows easy access to the
@@ -299,7 +295,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group form-check memoreadio">
-                                                <input name="only_me"  value="1" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <input name="only_me"  value="1" type="checkbox" class="form-check-input only_one_check" id="exampleCheck1" onclick="onlyOne(this)">
                                                 <div class="optrad">
                                                     <h6>Visible only to me.</h6>
                                                     <p>Choose this option if you do not want the memorial to be visible to
@@ -433,8 +429,13 @@
         }
 
         function onlyOne(checkbox) {
-            var checkboxes = document.getElementsByName('check')
-            checkboxes.forEach((item) => {
+            // var checkboxes = document.getElementsByClassName('only_one_check');
+            var checkboxes = $('.only_one_check');
+
+            console.log('checkboxes',checkboxes);
+            checkboxes.each((index,item) => {
+            console.log('item',item);
+
                 if (item !== checkbox) item.checked = false
             })
         }

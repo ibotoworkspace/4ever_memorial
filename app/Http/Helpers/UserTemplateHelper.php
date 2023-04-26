@@ -3,6 +3,8 @@
 namespace App\Http\Helpers;
 
 use App\Models\UserWebsite;
+use App\Models\Styling;
+
 use App\Models\User;
 // use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
@@ -21,8 +23,15 @@ class UserTemplateHelper
         $user_website = new UserWebsite();
         // $user_website->user_id = $user->id;        
         $user_website->style_id = $style->id;
-        $user_website->website_html = $style->website_template->website_html;
-       
+        $user_website->web_html = $style->website_template->web_html;
+
+
+
+        $user_website->style_id = $style->id;
+        $user_website->web_variable = json_encode($style->web_variable);
+        $user_website->variable_html = json_encode($style->variable_html);
+        $user_website->save();
+
         $web_variable = $style->web_variable;
 // dd($web_variable);
         // $user 
@@ -39,7 +48,7 @@ class UserTemplateHelper
 
 // dd($web_variable);
 
-        $user_website->website_variable = json_encode($web_variable);
+        $user_website->web_variable = json_encode($web_variable);
         $user_website->variable_html = $style->variable_html; // json_encode
         $user_website->ad_name = $request->ad_name;
         $user_website->user_id = $user->id;
@@ -67,12 +76,8 @@ class UserTemplateHelper
         $user_website->p_country = $request->p_country;
         $user_website->email = $request->email;
         $user_website->visible_to_all = $request->visible_to_all;
+        // dd($user_website);
         $user_website->save();
-
-
-
-
-
         return $user_website;
 
       }
