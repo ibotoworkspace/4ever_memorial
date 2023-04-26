@@ -13,11 +13,17 @@ class UserWebsite extends Model
     use SoftDeletes;
     protected $table='user_website';
 
-    protected function getWebsiteVariableAttribute($value)
+    protected function getWebVariableAttribute($value)
     {
         $web_variable = $value;
         $web_variable = json_decode($web_variable,true);   
         return $web_variable;        
+    }
+
+    protected function getVariableHtmlAttribute($value)
+    {
+        $json_var = json_decode($value,true);   
+        return $json_var;        
     }
 
     public function style(){

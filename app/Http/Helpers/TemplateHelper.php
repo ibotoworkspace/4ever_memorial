@@ -10,22 +10,24 @@ class TemplateHelper
     public $beforestr='}!!}';
     public $template;
     public $variable_html;
-    public $website_variable;
-    public $website_html;
+    public $web_variable;
+    public $web_html;
     public $depth = 1;
 
-    public function __construct($template,$style){
+    public function __construct($template,$web_variable){// $style
         $this->template = $template;
         // $this->variable_html = json_decode($template->variable_html,true);
         
         $this->variable_html =    $template->variable_html;
-        $this->website_variable = $style->web_variable;
+        // $this->web_variable = $style->web_variable;
+        $this->web_variable = $web_variable;
         
 
-        $this->website_html = $template->web_html;
+        $this->web_html = $template->web_html;
+        // dd($template,$web_variable);
     }
     public function create_html(){
-        $html = $this->website_html;
+        $html = $this->web_html;
         $html = $this->replace_variables($html);
         return $html;
     }
@@ -42,11 +44,11 @@ class TemplateHelper
             }
             $web_html_val = $this->variable_html[$index];
 
-            if(!isset($this->website_variable[$website_index])){
-                dd($this->website_variable,$website_index);
-                // continue;
+            if(!isset($this->web_variable[$website_index])){
+                dd('index not found',$this->web_variable,$website_index);
+                continue;
             }
-            $web_values_arr = $this->website_variable[$website_index];
+            $web_values_arr = $this->web_variable[$website_index];
             $html_arr_list = '';
             foreach($web_values_arr as $web_value){
                 $html_arr_list .=$this->remove_var_variables_from_html($web_html_val,$website_index,$web_value);
@@ -110,7 +112,7 @@ class TemplateHelper
     public function remove_var_variables_from_html($html,$prefix='',$variables_arr = []){
 
         if(!$variables_arr){
-            $variables_arr = $this->website_variable;
+            $variables_arr = $this->web_variable;
         }
 
         $vars = $this->get_custom_variables_list($html,'_var');

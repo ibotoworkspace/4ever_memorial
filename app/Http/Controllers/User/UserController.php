@@ -110,13 +110,10 @@ class UserController extends Controller
         $user_web->visible_to_all = $request->all_visitors ?? '0';
         $user_web->agreement = $request->agreement ?? '0';
         $user_web->save();
-        // $temp = WebsiteTemplate::first();
-        $styles = Styling::get(); 
+        $styles = Styling::get();
         $default_style = $user_web->style;
-        $user_website_template = $default_style->website_template;
-        $user_website_template->web_variable = $user_web->website_variable;
-// dd($styles);
-        $template_helper = new TemplateHelper($user_website_template,$user_web->style);
+        $template_helper = new TemplateHelper($user_web,$user_web->web_variable);
+        // dd($user_web,$user_web->web_variable);
         $html = $template_helper->create_html();
         $styles_json = urlencode(json_encode($styles));
         
@@ -127,10 +124,10 @@ class UserController extends Controller
         $user_website=UserWebsite::find($request->user_website_id);
         $user_website->style_id = $request->css_style_id;
         $style = Styling::find($request->css_style_id);
-        $website_html = $style->website_template->web_html;
+        $web_html = $style->website_template->web_html;
 
-        $web_html = str_replace('{!!{memorial_style_var.style_script_var}!!}',$style->css_files,$website_html);
-        $user_website->website_html = $web_html;
+        $web_html = str_replace('{!!{memorial_style_var.style_script_var}!!}',$style->css_files,$web_html);
+        $user_website->web_html = $web_html;
 
 
         $user_website->save();
@@ -147,17 +144,18 @@ class UserController extends Controller
         $website_template_email = $user_email;
         // $temp = WebsiteTemplate::first();
         $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        $temp = new \stdClass();
+        // $temp = new \stdClass();
         
-        $temp->web_html = $user_website->website_html;
-        $temp->web_variable = $user_website->website_variable;
-        $temp->variable_html = $user_website->variable_html;
+        // $user_website->web_html = $user_website->web_html;
+        // $user_website->web_variable = $user_website->website_variable;
+        // $user_website->variable_html = $user_website->variable_html;
         // $user_website->style->web_variable = $user_website->website_variable; 
-        $style = new \stdClass();
-        $style->web_variable = $user_website->website_variable; 
+        // $style = new \stdClass();
+        // $user_website->web_variable = $user_website->website_variable; 
         // dd($style);
-        $template_helper = new TemplateHelper($temp,$style);
-        // $template_helper = new TemplateHelper($temp,$user_website->style);
+        // $template_helper = new TemplateHelper($user_website,$user_website);
+        $template_helper = new TemplateHelper($user_website,$user_website->web_variable);
+        // dd($user_website->variable_html,$user_website);
         $html = $template_helper->create_html();
         return view('user/dynamic_template/user_page', compact('html'));
     }
