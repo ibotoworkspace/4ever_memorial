@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('media_url')->nullable()->default(null);
             $table->string('type')->nullable()->default(null);
             $table->bigInteger('user_id')->nullable()->default(0);
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

@@ -80,14 +80,12 @@
                                                 <select class="form-control" id="exampleFormControlSelect1">
                                                 <option value="" hidden="">Please select relationship</option>
                                                     <option value="Aunt">Aunt</option>
-                                                    <option value="Boyfriend">Boyfriend</option>
                                                     <option value="Brother">Brother</option>
                                                     <option value="Colleague">Colleague</option>
                                                     <option value="Cousin">Cousin</option>
                                                     <option value="Daughter">Daughter</option>
                                                     <option value="Father">Father</option>
                                                     <option value="Friend">Friend</option>
-                                                    <option value="Girlfriend">Girlfriend</option>
                                                     <option value="Granddaughter">Granddaughter</option>
                                                     <option value="Grandfather">Grandfather</option>
                                                     <option value="Grandmother">Grandmother</option>
@@ -104,6 +102,13 @@
                                                     <option value="Other" data-code="other">Other</option>
                                                     <option value="No relationship">No relationship</option> 
                                                 </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                            <div style="display:none">
+                                                <label name="relation" for="exampleFormControlSelect1">Other Relationship</label>
+                                                <input type="text" name="other_rel" class="form-control"  placeholder="discribe your relationship" id="exampleFormControlSelect1">
+                                                </div>
                                             </div>
                                             
                                             <div class="form-group">
