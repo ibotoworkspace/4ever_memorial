@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('details_show_var')->nullable()->default(null);
             $table->string('date_var')->nullable()->default(null);
             $table->string('image_show_var')->nullable()->default(null);
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
