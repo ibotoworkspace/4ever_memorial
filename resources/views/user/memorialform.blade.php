@@ -218,10 +218,14 @@
                                     <div class="col-sm-6">
                                         <div class="plandata">
                                             <h4>STANDARD (15 MEMORIAL PAGES)</h4>
-                                            <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Decease Bio <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Image Gallery <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+
+                                            <div class="mincardboxhght">
+                                                <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Decease Bio <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Image Gallery <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
+
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
                                                     <input type="button" onclick="submit_update_plan(1)" class="btn btn-primary banclick" value="Buy Now">
@@ -233,10 +237,14 @@
                                     <div class="col-sm-6">
                                         <div class="plandata">
                                             <h4>PREMIUM (30 MEMORIAL PAGES)</h4>
-                                            <p>All in Standard And Biography of Deceased And Family Members <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Automated Anniversary Reminder <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+
+                                            <div class="mincardboxhght">
+                                                <p>All in Standard And Biography of Deceased And Family Members <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Automated Anniversary Reminder <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
+
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
                                                     <input type="button" onclick="submit_update_plan(2)" class="btn btn-primary banclick" value="Buy Now">
@@ -249,13 +257,17 @@
 
                                         <div class="plandata">
                                             <h4>PREMIUM PLUS (50 MEMORIAL PAGES)</h4>
-                                            <p>All in Standard And Premium Including <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Tribute Page For Message From Family And Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Grave Yard Image On Top Of The Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Link To Physical Grave Site <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Link Memorials Of Relative To Their Pages, Example <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>B. Husband Or Wife Memorials Merge Together <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+
+                                            <div class="mincardboxhght">
+                                                <p>All in Standard And Premium Including <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Tribute Page For Message From Family And Friends <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Grave Yard Image On Top Of The Page <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Link To Physical Grave Site <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Link Memorials Of Relative To Their Pages, Example <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>B. Husband Or Wife Memorials Merge Together <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div> 
+
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
                                                     <input type="button" onclick="submit_update_plan(3)" class="btn btn-primary banclick" value="Buy Now">
@@ -267,11 +279,15 @@
 
                                         <div class="plandata">
                                             <h4>VIP PREMIUM PLUS (80 MEMORIAL PAGES)</h4>
-                                            <p>(All in Premium Plus) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Customized Dedicated Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Highly Secure Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+
+                                            <div class="mincardboxhght">
+                                                <p>(All in Premium Plus) <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Customized Dedicated Page <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Highly Secure Login Access <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
+
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
                                                     <input type="button" onclick="submit_update_plan(4)" class="btn btn-primary banclick" value="Buy Now">

@@ -23,11 +23,20 @@ h4 {
     background-repeat: no-repeat;
 }
 
+.mincardboxhght {
+    min-height: 225px !important;
+}
+.plandata h4 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 17px;
+}
+
 .plandata {
     padding: 15px;
     background: #f7f7f7;
     border-radius: 7px;
-    min-height: 366px;
+    /* min-height: 366px; */
     margin-top: 31px;
 }
 
@@ -186,8 +195,9 @@ span.sidetick {
     font-weight: 500;
     color: #465863;
     margin-left: -16px;
-    
+
 }
+
 .option p {
     font-size: 13px;
     font-weight: 400;

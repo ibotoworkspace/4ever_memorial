@@ -210,7 +210,6 @@
                                 
                                 <div class="lev_tri">
                                     <h3>Leave a Tribute</h3>
-                                    asasd
                                     <div class="icon_list">
                                     <div class="cand same">
                                     <div class="ico_wri">
@@ -490,6 +489,51 @@
                                         </div>
                                     </div>
                                 </div>
+  
+                                            <section class="story_add">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="share_story">
+                                                            <div class="heddd">
+                                                                <h2>Share a story</h2>
+                                                            </div>
+                                                            <div class="str_title">
+                                                                <input type="text" class="form-control" placeholder="Title (Optional)">
+                                                            </div>
+                                                            <div class="str_textaea">
+                                                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                                            </div>
+                                                            <div class="by">
+                                                                <div class="dropdown">
+                                                                    by ameer maavia<button class="dpbtn dropdown-toggle" type="button"
+                                                                        data-toggle="dropdown">Change<span class=""></span></button>
+                                                                    <ul class="dropdown-menu dp_menue">
+                                                                        <li><a href="#">HTML</a></li>
+                                                                        <li><a href="#">CSS</a></li>
+                                                                        <li><a href="#">JavaScript</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="attach">
+                                                                <div class="attch_hed">
+                                                                    Attach a picture or video (optional):
+                                                                </div>
+                                                                <div class="attch_icon_area">
+                                                                    <div class="attch_icon">
+                                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                                        <p>Upload From Your Device</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="publ_btn">
+                                                                <button class="btn btn-danger">Publish</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </section>
                             </div>
 
 
