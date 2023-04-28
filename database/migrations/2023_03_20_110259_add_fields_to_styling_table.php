@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::table('styling', function (Blueprint $table) {
             $table->string('template_image')->nullable()->default(null); 
-            
         });
     }
 

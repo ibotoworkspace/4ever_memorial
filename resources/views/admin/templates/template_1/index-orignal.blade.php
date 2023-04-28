@@ -129,7 +129,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}">
+                                                <img src="{!! asset('user_templates/template_1/images/flower.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Maria Nashed</h3>
@@ -151,7 +151,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
+                                                <img src="{!! asset('user_templates/template_1/images/candel.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Norice Mazmanian</h3>
@@ -173,7 +173,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
+                                                <img src="{!! asset('user_templates/template_1/images/candel.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Adriana Villarreal</h3>
@@ -189,7 +189,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
+                                                <img src="{!! asset('user_templates/template_1/images/candel.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Wendi Johnson</h3>
@@ -207,27 +207,12 @@
                                     </div>
 
                                 </div>
-                                
                                 <div class="lev_tri">
                                     <h3>Leave a Tribute</h3>
                                     <div class="icon_list">
-                                    <div class="cand same">
-                                    <div class="ico_wri">
-                                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
-                                            <span class="sp">Light a Candle</span>
-                                            </div>
-                                        </div>   
-                                        <div class="flower same"> 
-                                    <div class="ico_wri">
-                                            <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
-                                            <span class="sp">Lay a Flower</span>
-                                            </div>
-                                        </div>
-                                         <div class="feather same">
-                                            <div class="ico_wri">
-                                            <img src="{!! asset('user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
-                                            <span class="sp">Leave a Note</span>                                            </div>
-                                             </div>
+                                        <div class="cand"><img src="{!! asset('user_templates/template_1/images/candle_blu.png') !!}" alt="relative"></div>
+                                        <div class="flower"> <img src="{!! asset('user_templates/template_1/images/flower_blu.png') !!}" alt="relative"></div>
+                                        <div class="feather"><img src="{!! asset('user_templates/template_1/images/feather_blu.png') !!}" alt="relative"></div>
                                     </div>
                                     <div class="txt_ara">
                                         <textarea name="tribute" id="" cols="86" placeholder="Add your tribute here" rows="6"></textarea>

@@ -5,9 +5,6 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\UserTemplateHelper;
 use App\Models\Models\Template;
-use App\Http\Helpers\TemplateHelper;
-use App\Models\Styling;
-use App\Models\WebsiteTemplate;
 use App\Models\Template as ModelsTemplate;
 use App\Models\User;
 use App\Models\UserWebsite;
@@ -20,9 +17,6 @@ class UserController extends Controller
 {
     public function index(){
         return view('user.index');
-    }
-    public function index1111(){
-        return view('admin.templates.template_1.index-orignal');
     }
     public function aboutus(){
         return view('user.aboutus');
@@ -38,9 +32,6 @@ class UserController extends Controller
     }
     public function blog(){
         return view('user.blog');
-    }
-    public function my_memorials(){
-        return view('user.my_memorials');
     }
     public function register(Request $request){
 
@@ -87,79 +78,33 @@ class UserController extends Controller
     //     return view('user.template',compact('template'));
     // }
     public function memorialform(){
-        $user = Auth::user();
         return view('user.memorialform');
     }
     public function add_user(Request $request){
         $user = Auth::user();
-        $style = Styling::with('website_template')->first();
+        // dd($request->all());
         $user_helper = new UserTemplateHelper();
-        $user_web = $user_helper->save_memorial_user($request,$user,$style);
+        $user_web = $user_helper->save_memorial_user($request,$user);
         $response = new \stdClass();
         $response->status = true;
         $response->user_memorial = $user_web;
-        $response->all_request = $request->all();
-        return $this->sendResponse(200,$response);
+        return json_encode($response);
+        // dd('saved');
+        
+        
     }
     public function update_plan(Request $request){
+        // echo('asdasdasdasdasd');
+        // dd($request->all(),'asasasas');
         $plan=UserWebsite::find($request->memorial_id);
         $plan->plan_id = $request->plan_id;
         $plan->save();
 
     }
     public function privacy(Request $request){
-        $memorial_id = $request->memorial_id;
-        $user_web = UserWebsite::with('style.website_template')->find($memorial_id);
-        $user_web->visible_to_all = $request->all_visitors ?? '0';
-        $user_web->agreement = $request->agreement ?? '0';
-        $user_web->save();
-        $styles = Styling::get();
-        $default_style = $user_web->style;
-        $template_helper = new TemplateHelper($user_web,$user_web->web_variable);
-        // dd($user_web,$user_web->web_variable);
-        $html = $template_helper->create_html();
-        $styles_json = urlencode(json_encode($styles));
-        
-        return view('user/dynamic_template/index', compact('html','styles_json','styles','default_style','memorial_id'));
-
-    }
-    public function save_css(Request $request){
-        $user_website=UserWebsite::find($request->user_website_id);
-        $user_website->style_id = $request->css_style_id;
-        $style = Styling::find($request->css_style_id);
-        $web_html = $style->website_template->web_html;
-
-        $web_html = str_replace('{!!{memorial_style_var.style_script_var}!!}',$style->css_files,$web_html);
-        $user_website->web_html = $web_html;
-
-
-        $user_website->save();
-        $res = new \stdClass();
-        $res->status = true;
-        $res->redirect = asset('user/get_memorial/'.$user_website->email);
-        return $this->sendResponse(200,$res);
-        // return redirect('user/get_memorial/'.$user_website->email);
-
-    }
-
-    public function get_memorial(Request $request,$user_email){
-        // 11DFSn@mail.com
-        $website_template_email = $user_email;
-        // $temp = WebsiteTemplate::first();
-        $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        // $temp = new \stdClass();
-        
-        // $user_website->web_html = $user_website->web_html;
-        // $user_website->web_variable = $user_website->website_variable;
-        // $user_website->variable_html = $user_website->variable_html;
-        // $user_website->style->web_variable = $user_website->website_variable; 
-        // $style = new \stdClass();
-        // $user_website->web_variable = $user_website->website_variable; 
-        // dd($style);
-        // $template_helper = new TemplateHelper($user_website,$user_website);
-        $template_helper = new TemplateHelper($user_website,$user_website->web_variable);
-        // dd($user_website->variable_html,$user_website);
-        $html = $template_helper->create_html();
-        return view('user/dynamic_template/user_page', compact('html'));
+        $privacy=UserWebsite::find($request->memorial_id);
+        $privacy->visible_to_all = $request->visible_to_all;
+        $privacy->agreement = $request->agree;
+        $privacy->save();
     }
 }

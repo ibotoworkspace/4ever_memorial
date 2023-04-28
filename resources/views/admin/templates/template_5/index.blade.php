@@ -67,9 +67,8 @@
                 `<div class="sliderselimgtemp" onclick="change_css('` + item.css_files + `')">                        
                    <center>
                         <div class="picbtnoverlap">
-                            <button class="btn btn-success sliderimageselect" onclick="save_css('` + item
-                .css_files + `')">
-                                Save
+                            <button class="btn btn-success sliderimageselect">
+                                Select
                             </button>    
                             <button class="btn btn-success sliderimageselect " onclick="change_css('` + item
                 .css_files + `')">
@@ -93,9 +92,5 @@
         $("#template_css_link").remove();
         $('head').append($('<link rel="stylesheet" type="text/css" id="template_css_link" />').attr('href',
             css_file_path));
-    }
-
-    function save_css(css_file_path){
-        
     }
 </script>
