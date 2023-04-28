@@ -1,6 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+/* * .new{} */
 
+.same img {
+    padding: 15px;
+    height: 90px;
+    margin-right: 35px;
+}
+.ico_wri {
+    display: grid;
+}
+.same {
+    padding: 10px;
+    margin: 6px;
+    text-align: center;
+}
+.cand img {
+    padding-left: 26px;
+}
+.flower.same {
+    margin-top: 6px;
+    width: 130px;
+}
+.feather.same{
+    width: 130px;
+
+}
+.feather.same img {
+    margin-left: 13px;
+}
+span.sp {
+    font-weight: 600;
+    color: #2d516a;
+}
+ul.reviewSection img {
+    height: 70px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+/* .change{} */
+.flower {
+    margin-top: 0px;
+}
+
+.cand:hover{
+    background-color: #7dabc7;
+    border-radius: 10px;
+}
+.flower:hover{
+    background-color: #7dabc7;
+    border-radius: 10px;
+
+}
+.feather:hover{
+    background-color: #7dabc7;
+    border-radius: 10px;
+
+}
+.sdads{
+    margin-top: 35px;
+}
+/* .change{} */
+
+/* .new{} */
 .nav_area{
     transition: background-color .5s;
     color: #fff;
@@ -165,19 +227,8 @@ ul.reviewSection {
     margin-bottom: 36px;
     height: 472px;
 }
-.flower {
-    margin-top: 16px;
-}
 
-.cand:hover{
-    background-color: #275d7d;
-}
-.flower:hover{
-    background-color: #275d7d;
-}
-.feather:hover{
-    background-color: #275d7d;
-}
+
 textarea {
     overflow: auto;
     resize: vertical;
@@ -185,9 +236,7 @@ textarea {
     border-radius: 10px;
 }
 
-.sdads{
-    margin-top: 28px;
-}
+
 .footer_area {
     background-color: #396f79;
     height: 80px;
