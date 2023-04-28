@@ -13,7 +13,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{!! asset('theme/user_theme/css/memorial.css') !!}" rel="stylesheet">
     <link href="{!! asset('theme/user_theme/css/main.css') !!}" rel="stylesheet">
-
 </head>
 
 <body onload="disableSubmit()">
@@ -83,19 +82,23 @@
                                     <div class="cardformarea">
                                         <h2>This memorial is dedicated to:</h2>
 
-                                        <form class="create_memorial_form" action="{!!asset('user/adduser')!!}" method="post">
+                                        <form class="create_memorial_form" action="{!! asset('user/adduser') !!}"
+                                            method="post">
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">First Name</label>
-                                                <input type="test" name="f_name" class="form-control" placeholder="">
+                                                <input type="test" name="f_name" class="form-control"
+                                                    placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Middle Name</label>
-                                                <input type="test" name="m_name" class="form-control" placeholder="">
+                                                <input type="test" name="m_name" class="form-control"
+                                                    placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Last Name</label>
-                                                <input type="test" name="l_name" class="form-control" placeholder="">
+                                                <input type="test" name="l_name" class="form-control"
+                                                    placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label name="gender" for="exampleFormControlSelect1">Gender</label>
@@ -105,7 +108,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label name="relation" for="exampleFormControlSelect1">Relationship</label>
+                                                <label name="relation"
+                                                    for="exampleFormControlSelect1">Relationship</label>
                                                 <select class="form-control" id="exampleFormControlSelect1">
                                                     <option>Please Select Relationship</option>
                                                     <option value="single">Single</option>
@@ -113,7 +117,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label name="memorial_designation" for="exampleFormControlSelect1">Memorial Designation</label>
+                                                <label name="memorial_designation"
+                                                    for="exampleFormControlSelect1">Memorial Designation</label>
                                                 <select class="form-control" id="exampleFormControlSelect1">
                                                     <option>Select Designation, If applies</option>
                                                     <option value="1">1</option>
@@ -131,38 +136,44 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <select name="b_year" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="b_year" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Year</option>
                                                                 <option>2001</option>
                                                                 <option>2002</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input name="b_city" type="test" class="form-control" placeholder="City or Town">
+                                                            <input name="b_city" type="test" class="form-control"
+                                                                placeholder="City or Town">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <select name="b_month" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="b_month" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Month</option>
                                                                 <option>Jan</option>
                                                                 <option>Feb</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input name="b_state" type="test" class="form-control" placeholder="State or Area">
+                                                            <input name="b_state" type="test" class="form-control"
+                                                                placeholder="State or Area">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <select name="b_day" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="b_day" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Day</option>
                                                                 <option>Monday</option>
                                                                 <option>Tuesday</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <select name="b_country" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="b_country" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Country</option>
                                                                 <option>Pakistan</option>
                                                                 <option>Dubai</option>
@@ -177,38 +188,44 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <select name="p_year" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="p_year" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Year</option>
                                                                 <option>2001</option>
                                                                 <option>2002</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input name="p_city" type="test" class="form-control" placeholder="City or Town">
+                                                            <input name="p_city" type="test" class="form-control"
+                                                                placeholder="City or Town">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <select name="p_month" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="p_month" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Month</option>
                                                                 <option>Jan</option>
                                                                 <option>Feb</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input name="p_state" type="test" class="form-control" placeholder="State or Area">
+                                                            <input name="p_state" type="test" class="form-control"
+                                                                placeholder="State or Area">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <select name="p_day" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="p_day" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Day</option>
                                                                 <option>Monday</option>
                                                                 <option>Tuesday</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <select name="p_country" class="form-control" id="exampleFormControlSelect1">
+                                                            <select name="p_country" class="form-control"
+                                                                id="exampleFormControlSelect1">
                                                                 <option>Country</option>
                                                                 <option>Pakistan</option>
                                                                 <option>Dubai</option>
@@ -224,7 +241,8 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
                                                     <label for="exampleFormControlInput1">Email address</label>
-                                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                    <input name="email" type="email" class="form-control"
+                                                        id="exampleFormControlInput1" placeholder="name@example.com">
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="examplemail">
@@ -235,7 +253,9 @@
                                             </div>
 
                                             <a data-toggle="tab" href="#menu2">
-                                                <input type="button" onclick="submit_form('.create_memorial_form','create_memorial')" class="btn btn-primary contclik" value="Continue">
+                                                <input type="button"
+                                                    onclick="submit_form('.create_memorial_form','create_memorial')"
+                                                    class="btn btn-primary contclik" value="Continue">
                                             </a>
                                     </div>
                                 </div>
@@ -244,13 +264,16 @@
                                     <div class="col-sm-6">
                                         <div class="plandata">
                                             <h4>STANDARD (15 MEMORIAL PAGES)</h4>
-                                            <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Decease Bio <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Image Gallery <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="pdtaheight">
+                                                <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Decease Bio <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Image Gallery <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(1)" class="btn btn-primary banclick" value="Buy Now">
+                                                    <input type="button" onclick="submit_update_plan(1)"
+                                                        class="btn btn-primary banclick" value="Buy Now">
 
                                                 </a>
                                             </div>
@@ -259,13 +282,18 @@
                                     <div class="col-sm-6">
                                         <div class="plandata">
                                             <h4>PREMIUM (30 MEMORIAL PAGES)</h4>
-                                            <p>All in Standard And Biography of Deceased And Family Members <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Automated Anniversary Reminder <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="pdtaheight">
+                                                <p>All in Standard And Biography of Deceased And Family Members <span
+                                                        class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Automated Anniversary Reminder <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span
+                                                        class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(2)" class="btn btn-primary banclick" value="Buy Now">
+                                                    <input type="button" onclick="submit_update_plan(2)"
+                                                        class="btn btn-primary banclick" value="Buy Now">
 
                                                 </a>
                                             </div>
@@ -275,16 +303,23 @@
 
                                         <div class="plandata">
                                             <h4>PREMIUM PLUS (50 MEMORIAL PAGES)</h4>
-                                            <p>All in Standard And Premium Including <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Tribute Page For Message From Family And Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Grave Yard Image On Top Of The Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Link To Physical Grave Site <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Link Memorials Of Relative To Their Pages, Example <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>B. Husband Or Wife Memorials Merge Together <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="pdtaheight">
+                                                <p>All in Standard And Premium Including <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Tribute Page For Message From Family And Friends <span
+                                                        class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Grave Yard Image On Top Of The Page <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Link To Physical Grave Site <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Link Memorials Of Relative To Their Pages, Example <span
+                                                        class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span
+                                                        class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>B. Husband Or Wife Memorials Merge Together <span
+                                                        class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(3)" class="btn btn-primary banclick" value="Buy Now">
+                                                    <input type="button" onclick="submit_update_plan(3)"
+                                                        class="btn btn-primary banclick" value="Buy Now">
                                                 </a>
                                             </div>
                                         </div>
@@ -293,14 +328,17 @@
 
                                         <div class="plandata">
                                             <h4>VIP PREMIUM PLUS (80 MEMORIAL PAGES)</h4>
-                                            <p>(All in Premium Plus) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Customized Dedicated Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Highly Secure Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
-                                            <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
+                                            <div class="pdtaheight">
+                                                <p>(All in Premium Plus) <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Customized Dedicated Page <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Highly Secure Login Access <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                                <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
+                                            </div>
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(4)" class="btn btn-primary banclick" value="Buy Now">
+                                                    <input type="button" onclick="submit_update_plan(4)"
+                                                        class="btn btn-primary banclick" value="Buy Now">
 
                                                 </a>
                                             </div>
@@ -310,37 +348,46 @@
                                 </div>
                                 <div id="menu3" class="tab-pane fade">
                                     <div class="cardformarea option">
-                                        <form action="{!!asset('user/memorial/privacy')!!}" method="post">
+                                        <form action="{!! asset('user/memorial/privacy') !!}" method="post">
                                             <h2>Privacy options:</h2>
-                                            <p>Would you like to share your memorial with others, or keep it private?</p>
+                                            <p>Would you like to share your memorial with others, or keep it private?
+                                            </p>
                                             <span class="braketdata">(This can be changed later.)</span><br>
                                             <div class="form-group form-check memoreadio">
-                                                <input name="check" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <input name="check" type="checkbox" class="form-check-input"
+                                                    id="exampleCheck1" onclick="onlyOne(this)">
                                                 <div class="optrad">
                                                     <h6>All visitors can view and contribute.</h6>
-                                                    <p>Recommended for most memorials. This option allows easy access to the
+                                                    <p>Recommended for most memorials. This option allows easy access to
+                                                        the
                                                         website and
                                                         facilitates collaboration.</p>
                                                 </div>
                                             </div>
                                             <div class="form-group form-check memoreadio">
-                                                <input name="check" type="checkbox" class="form-check-input" id="exampleCheck1" onclick="onlyOne(this)">
+                                                <input name="check" type="checkbox" class="form-check-input"
+                                                    id="exampleCheck1" onclick="onlyOne(this)">
                                                 <div class="optrad">
                                                     <h6>Visible only to me.</h6>
-                                                    <p>Choose this option if you do not want the memorial to be visible to
+                                                    <p>Choose this option if you do not want the memorial to be visible
+                                                        to
                                                         others at this time.</p>
                                                 </div>
                                             </div>
                                             <div class="form-group form-check confi">
-                                                <input name="agree" type="checkbox" class="form-check-input" id="exampleChaeck1" onchange="activateButton(this)">
-                                                <label class="form-check-label" for="exampleCheck1">I agree to <span class="linktext">Terms of Use</span></label>
+                                                <input name="agree" type="checkbox" class="form-check-input"
+                                                    id="exampleChaeck1" onchange="activateButton(this)">
+                                                <label class="form-check-label" for="exampleCheck1">I agree to <span
+                                                        class="linktext">Terms of Use</span></label>
                                             </div>
                                             <?php
-
+                                            
                                             $chk_agree = 'disabled';
-
+                                            
                                             ?>
-                                           <a href="{!!asset('user/template/select_template/{user_website}')!!}"> <button type="button" class="btn btn-primary contclik" id="submit">Continue</button></a>
+                                            <a href="{!! asset('user/template/select_template/{user_website}') !!}"> <button type="button"
+                                                    class="btn btn-primary contclik"
+                                                    id="submit">Continue</button></a>
 
                                         </form>
                                     </div>
@@ -352,8 +399,8 @@
             </div>
         </div>
 
-        <form action="{!!asset('user/memorial/update_plan')!!}" method="post" id="update_plan_form">
-            {!!csrf_field()!!}
+        <form action="{!! asset('user/memorial/update_plan') !!}" method="post" id="update_plan_form">
+            {!! csrf_field() !!}
             <input type="hidden" name="memorial_id" id="memorial_id">
             <input type="hidden" name="plan_id" id="plan_id">
         </form>
@@ -369,7 +416,8 @@
                             <h2>MEMORIAL TREES <br> BY 4EVER </h2>
                             <p>Created by Internet Pioneer Momolla Kokomolla in 1964,<br>
                                 It is the oldest online Cemetery & Memorial Site in the World.</p>
-                            <a href="contactus.html"><button type="submit" class="btn btn-primary contactclick">Contact
+                            <a href="contactus.html"><button type="submit"
+                                    class="btn btn-primary contactclick">Contact
                                     Us</button></a>
                         </div>
                     </div>
@@ -426,7 +474,9 @@
             </div>
         </div>
     </section>
+
     @include('layouts.myapp_js')
+
     <script>
         var user_memorial = null;
 
@@ -473,7 +523,6 @@
 
         }
     </script>
-
 
 </body>
 

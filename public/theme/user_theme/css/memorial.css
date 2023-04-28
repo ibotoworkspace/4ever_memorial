@@ -23,11 +23,25 @@ h4 {
     background-repeat: no-repeat;
 }
 
+.pdtaheight {
+    min-height: 270px !important;
+}
+
+.pdtaheight p {
+    min-height: 28px;
+}
+
+.plandata h4 {
+    margin-bottom: 21px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .plandata {
     padding: 15px;
     background: #f7f7f7;
     border-radius: 7px;
-    min-height: 366px;
+    /* min-height: 366px; */
     margin-top: 31px;
 }
 
