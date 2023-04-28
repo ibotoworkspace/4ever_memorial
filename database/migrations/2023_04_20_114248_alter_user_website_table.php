@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('styling', function (Blueprint $table) {
-            $table->string('template_image')->nullable()->default(null); 
-            
-        });
-    }
+        Schema::table('user_website', function (Blueprint $table) {
+            $table->dropColumn('website_html');
+            $table->dropColumn('website_variable');
+            $table->longText('web_html')->nullable()->default(null);
+            $table->text('web_variable')->nullable()->default(null);
+
+        });    }
 
     /**
      * Reverse the migrations.
@@ -26,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('styling', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

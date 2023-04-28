@@ -68,6 +68,9 @@
                                 <li id="7">
                                   <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                 </li>
+                                <li id="8">
+                                  <a href="{!!asset('user/my_memorials')!!}"><span>MY MEMORIALS</span> </a>
+                                </li>
                               </ul>
                         </div>
                     </div>
@@ -76,3 +79,80 @@
         </div>
     </div>
 </div>
+{{-- Sign in modal --}}
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modhead">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Sign in With Your Email</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="signmodaldata">
+                        <form action="{!! asset('user/login') !!}" method="POST">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="email">Enter Your Email address :</label>
+                                <input type="email" name="email" class="form-control" id="email"
+                                    aria-describedby="email" placeholder="email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Enter Your Password :</label>
+                                <input type="password" name="password" class="form-control" id="password"
+                                    aria-describedby="password" placeholder="password">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary mosubclick">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{-- End Sign in modal --}}
+
+    {{-- Register in modal --}}
+    <div class="modal fade" id="remodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modhead">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Register With Your Email</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="signmodaldata">
+                        <form action="{!! asset('user/register') !!}" method="POST">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="email">Enter Name :</label>
+                                <input type="text" name="name" class="form-control" id="name"
+                                    aria-describedby="email" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Enter Your Email address :</label>
+                                <input type="email" name="email" class="form-control" id="email"
+                                    aria-describedby="email" placeholder="email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Enter Your Password :</label>
+                                <input type="password" name="password" class="form-control" id="password"
+                                    aria-describedby="password" placeholder="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Confirm Your Password :</label>
+                                <input type="password" name="password" class="form-control" id="password"
+                                    aria-describedby="password" placeholder="password">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary mosubclick">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{-- End Register in modal --}}

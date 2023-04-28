@@ -32,11 +32,9 @@
 <script>
     console.log('checking***********1')
     var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
-    // var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
-    // console.log('checking***********2',sliders_list)
     var sliders_list = JSON.parse(sliders_list);
     console.log('checking***********3')
-    console.log(sliders_list, "slider_list");
+    console.log("slider_list",sliders_list);
     $(function() {
         add_slider_select_theme();
     })
@@ -68,7 +66,7 @@
                    <center>
                         <div class="picbtnoverlap">
                             <button class="btn btn-success sliderimageselect" onclick="save_css('` + item
-                .css_files + `')">
+                .id + `')">
                                 Save
                             </button>    
                             <button class="btn btn-success sliderimageselect " onclick="change_css('` + item
@@ -95,7 +93,32 @@
             css_file_path));
     }
 
-    function save_css(css_file_path){
+    function save_css(css_style_id){
         
+        var formdata = new FormData();
+        formdata.append('user_website_id', '{!!$memorial_id!!}');
+        formdata.append('css_style_id', css_style_id);
+        formdata.append('_token', '{!!csrf_token()!!}');
+
+        $.ajax({
+            method: 'POST',
+            url: '{!!asset("user/memorial/save_css")!!}',
+            data: formdata,
+            dataType: 'JSON',
+            processData: false,
+            contentType: false,
+            cache: false,
+            enctype: 'multipart/form-data',
+
+            success: function(data) {
+                console.log('success data', data);
+                window.location = data.response.redirect;
+                
+            },
+            error: function(err) {
+                console.log('form failed', err.Message);
+            }
+
+        })
     }
 </script>
