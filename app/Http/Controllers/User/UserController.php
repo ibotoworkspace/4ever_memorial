@@ -21,6 +21,9 @@ class UserController extends Controller
     public function index(){
         return view('user.index');
     }
+    public function index1111(){
+        return view('admin.templates.template_1.index-orignal');
+    }
     public function aboutus(){
         return view('user.aboutus');
     }
