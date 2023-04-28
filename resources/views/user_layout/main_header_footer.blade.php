@@ -23,6 +23,7 @@
                 @endforeach
             </ul>
         </div>
+
     @endif
     @if (isset($message))
         <div class="alert alert-info">
@@ -33,7 +34,17 @@
             </ul>
         </div>
     @endif
+
+
+
+    
+
     @yield('body')
+
+
+
+
+
     <section>
         <div class="contactarea">
             <div class="container">
@@ -52,7 +63,6 @@
             </div>
         </div>
     </section>
-
 
     {{-- Sign in modal --}}
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -162,6 +172,9 @@
                                         </li>
                                         <li id="7">
                                             <a href=""><span>CONTACT</span> </a>
+                                        </li>
+                                        <li id="8">
+                                            <a href=""><span>MY MEMORIALS</span> </a>
                                         </li>
                                     </ul>
                                 </div>

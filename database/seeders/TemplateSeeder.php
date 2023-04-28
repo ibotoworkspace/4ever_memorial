@@ -17,13 +17,15 @@ class TemplateSeeder extends Seeder
     public function run()
     {
         $template_name = 'template_1';
-        WebsiteTemplate::where('name',$template_name)->delete();
+        $template = WebsiteTemplate::where('name',$template_name)->first();
+
+        if(!$template){
+            $template = new WebsiteTemplate();
+        }
         $image_path = asset('public').'/';
-        $template = new WebsiteTemplate();
         // $template->id = 1;
         $template->name = $template_name;
         $template->save();
-        $template = WebsiteTemplate::where('name',$template_name)->first();
         $server = 'localhost://';
         $server = 'https://demo.hatinco.com/4_ever_memories/public';
         // $server = 'demo.hatinco.com://';
@@ -37,8 +39,7 @@ class TemplateSeeder extends Seeder
             <head>
                 <title>4 Ever Memorial</title>
                 <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+                <meta name="viewport" content="width=device-width, initiam/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
                 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -48,7 +49,8 @@ class TemplateSeeder extends Seeder
                     href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                <link rel="stylesheet" id="template_css_link" href="{!!{memorial_style_var.style_script_var}!!}" />
+                <link rel="stylesheet" id="template_css_link" href="" />
+                <link rel="stylesheet" href="{!!{memorial_style_var.style_script_var}!!}" />
 
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

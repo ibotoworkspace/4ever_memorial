@@ -20,6 +20,7 @@ Route::get('/user/testimonials',[User_UserController::class, 'testimonials'])->n
 Route::get('/user/plans',[User_UserController::class, 'plans'])->name('user.plans');
 Route::get('/user/contactus',[User_UserController::class, 'contactus'])->name('user.contactus');
 Route::get('/user/blog',[User_UserController::class, 'blog'])->name('user.blog');
+Route::get('/user/my_memorials',[User_UserController::class, 'my_memorials'])->name('user.my_memorials');
 Route::get('template',[Admin_UserController::class, 'template']);
 
 Route::get('admin/login',[AdminController::class, 'index']);
@@ -31,7 +32,8 @@ Route::get('admin/logout',[AdminController::class, 'logout']);
 
 // saave_memorial_user *********
 Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->name('user.memorialform'); //index
-Route::post('user/memorialform_save', [User_UserController::class, 'memorialform_save'])->name('memorialform.save');; //save
+// Route::get('user/memorialform_save', [User_UserController::class, 'memorialform_save'])->name('memorialform.save');; //save
+Route::get('user/get_memorial/{user_email}',[User_UserController::class, 'get_memorial']); 
 
 
 
@@ -58,9 +60,11 @@ Route::get('user/template/select_template/{user_website}',[TemplateController::c
 
 
 Route::post('user/adduser',[User_UserController::class, 'add_user'])->name('admin.user.add_user');
+Route::get('user/testing',[User_UserController::class, 'index1111'])->name('admin.user.add_user');
 // Route::post('admin/user/plan/{id}',[Admin_UserController::class, 'plan'])->name('admin.user.plan');
 Route::post('user/memorial/update_plan',[User_UserController::class, 'update_plan'])->name('user.plan.update');
-Route::post('user/memorial/privacy',[User_UserController::class, 'privacy'])->name('user.plan.privacy');
+Route::post('user/memorial/privacy',[User_UserController::class, 'privacy'])->name('user.memorial.privacy');
+Route::post('user/memorial/save_css',[User_UserController::class, 'save_css'])->name('user.memorial.save_css');
 
 
 /////////category
