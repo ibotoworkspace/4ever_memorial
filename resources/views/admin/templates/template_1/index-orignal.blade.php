@@ -210,6 +210,7 @@
                                 
                                 <div class="lev_tri">
                                     <h3>Leave a Tribute</h3>
+                                    asasd
                                     <div class="icon_list">
                                     <div class="cand same">
                                     <div class="ico_wri">
