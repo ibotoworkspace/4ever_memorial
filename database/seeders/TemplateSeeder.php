@@ -51,7 +51,7 @@ class TemplateSeeder extends Seeder
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
                 <link rel="stylesheet" id="template_css_link" href="" />
                 <link rel="stylesheet" href="{!!{memorial_style_var.style_script_var}!!}" />
-
+                <meta name="csrf-token" content="{{ csrf_token() }}" />
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

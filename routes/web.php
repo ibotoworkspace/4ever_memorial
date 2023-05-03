@@ -36,6 +36,10 @@ Route::get('user/memorialform',[User_UserController::class, 'memorialform'])->na
 Route::get('user/get_memorial/{user_email}',[User_UserController::class, 'get_memorial']); 
 
 
+//save story
+Route::post('user/storyform',[User_UserController::class, 'storyform'])->name('user.storyform'); //add story
+
+
 
 
 
