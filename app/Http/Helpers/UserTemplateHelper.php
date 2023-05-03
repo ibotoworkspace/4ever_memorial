@@ -74,7 +74,7 @@ class UserTemplateHelper
         $user_website->p_state = $request->p_state;
         $user_website->p_day = $request->p_day;
         $user_website->p_country = $request->p_country;
-        $user_website->email = $request->email;
+        $user_website->email = $request->email.'@forevermemorial.com';
         $user_website->visible_to_all = $request->visible_to_all;
         // dd($user_website);
         $user_website->save();
