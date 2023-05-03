@@ -489,28 +489,27 @@
                                         </div>
                                     </div>
                                 </div>
-  
                                             <section class="story_add">
-                                                <div class="container">
+                                                <div class="contaiasner">
                                                     <div class="row">
                                                         <div class="share_story">
                                                             <div class="heddd">
                                                                 <h2>Share a story</h2>
                                                             </div>
+                                                            <form action="" method="post">
                                                             <div class="str_title">
-                                                                <input type="text" class="form-control" placeholder="Title (Optional)">
+                                                                <input type="text" class="form-control" id="story_title" placeholder="Title (Optional)">
                                                             </div>
                                                             <div class="str_textaea">
-                                                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                                                <textarea class="form-control" rows="5" id="story_details"></textarea>
                                                             </div>
                                                             <div class="by">
                                                                 <div class="dropdown">
                                                                     by ameer maavia<button class="dpbtn dropdown-toggle" type="button"
                                                                         data-toggle="dropdown">Change<span class=""></span></button>
                                                                     <ul class="dropdown-menu dp_menue">
-                                                                        <li><a href="#">HTML</a></li>
-                                                                        <li><a href="#">CSS</a></li>
-                                                                        <li><a href="#">JavaScript</a></li>
+                                                                        <li><a href="#">I am the author </a></li>
+                                                                        <li><a href="#">Posting on behalf of another person </a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -520,7 +519,7 @@
                                                                 </div>
                                                                 <div class="attch_icon_area">
                                                                     <div class="attch_icon">
-                                                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                                       <a href=""><i class="fa fa-cloud-upload" aria-hidden="true"></i></a> 
                                                                         <p>Upload From Your Device</p>
                                                                     </div>
                                                                 </div>
@@ -528,6 +527,7 @@
                                                             <div class="publ_btn">
                                                                 <button class="btn btn-danger">Publish</button>
                                                             </div>
+                                                            </form>
 
                                                         </div>
                                                     </div>
