@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers\UserTemplateHelper;
 use App\Models\Models\Template;
 use App\Http\Helpers\TemplateHelper;
+use App\Models\Story_Tab_Arr;
 use App\Models\Styling;
 use App\Models\WebsiteTemplate;
 use App\Models\Template as ModelsTemplate;
@@ -161,5 +162,13 @@ class UserController extends Controller
         // dd($user_website->variable_html,$user_website);
         $html = $template_helper->create_html();
         return view('user/dynamic_template/user_page', compact('html'));
+    }
+    public function storyform(Request $request){
+        $story = new Story_Tab_Arr();
+        $story->user_name_show_var = $request->story_title_n;
+        $story->details_show_var = $request->story_details_n;
+        $story->memorial_id = $request->memorial_id;
+        $story->user_id = $request->user_id;
+        $story->save();
     }
 }

@@ -498,10 +498,10 @@
                                                             </div>
                                                             <form action="" method="post">
                                                             <div class="str_title">
-                                                                <input type="text" class="form-control" id="story_title" placeholder="Title (Optional)">
+                                                                <input type="text" class="form-control" name="story_title_n" id="story_title" placeholder="Title (Optional)">
                                                             </div>
                                                             <div class="str_textaea">
-                                                                <textarea class="form-control" rows="5" id="story_details"></textarea>
+                                                                <textarea class="form-control" name="story_details_n" rows="5" id="story_details"></textarea>
                                                             </div>
                                                             <div class="by">
                                                                 <div class="dropdown">
@@ -525,7 +525,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="publ_btn">
-                                                                <button class="btn btn-danger">Publish</button>
+                                                                <button id="save_story" class="btn btn-danger">Publish</button>
                                                             </div>
                                                             </form>
 
