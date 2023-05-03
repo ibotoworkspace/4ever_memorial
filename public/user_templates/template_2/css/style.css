@@ -1,5 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+/* .new{2} */
+.share_story {
+    background-color: #9ec5ca;
+    border-radius: 10px;
+    width: 97%;
+    margin: 10px 13px;
+    padding: 2px 3px;
+}
+.dpbtn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #275d7d;
+}
+.dp_menue {
+    background-color: #f7f5e6;
+    padding: 10px 125px;
+}
+.dp_menue.dropdown-menu>li>a {
+    display: block;
+    padding: 10px 125px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    background-color: #f7f5e6;
+}
+.dp_menue.dropdown-menu>li>a:hover {
+    background-color: #9ec5ca;
+    
+}
+
+.heddd {
+    color: #275d7d;
+    margin: 12px 21px;
+}
+.str_title {
+    margin: 10px 20px;
+    border: #275d7d 1px solid;
+    border-radius: 3px;
+}
+.str_textaea {
+    margin: 10px 20px;
+    border: #275d7d 1px solid;
+    border-radius: 3px;
+}
+.by {
+    margin: 1px 20px;
+    color: #275d7d;
+    font-weight: 500;
+}
+.attach {
+    margin: 26px 20px;
+}
+.attch_hed {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #275d7d;
+}
+.attch_icon_area {
+    width: 100%;
+    border: #96adbb solid 2px;
+    border-style: dashed;
+    display: grid;
+    text-align: center;
+    border-radius: 10px;
+
+}
+.attch_icon i {
+    color: #275d7d;
+    font-size: 75px;
+}
+.attch_icon p {
+    color: #275d7d;
+    font-weight: 800;
+}
+.attch_icon {
+    margin: 18px 0px;
+}
+.publ_btn {
+    margin: 20px 21px;
+    margin-left: 70%;
+}
+.publ_btn button {
+    width: 200px;
+    height: 50px;
+}
+/* .new{2} */
+
+
 /* * .new{} */
 
 .same img {
