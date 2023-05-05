@@ -30,7 +30,7 @@ class TemplateSeeder extends Seeder
         $server = 'https://demo.hatinco.com/4_ever_memories/public';
         // $server = 'demo.hatinco.com://';
         // if(){}
-        $public_path = 'http://localhost/4_ever_memories/public/';
+        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // dd($pub);
         $template->web_html =
         '
