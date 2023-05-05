@@ -163,21 +163,21 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <input type="date" name="b_year" class="form-control" id="exampleFormControlSelect1">
+                                                            <input type="date" name="p_year" class="form-control" id="exampleFormControlSelect1">
                                                             
                                                         </div>
                                                        
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input type="text" name="b_city" type="test" class="form-control" placeholder="City or Town" >
+                                                            <input type="text" name="p_city" type="test" class="form-control" placeholder="City or Town" >
                                                            
                                                         </div>
                                                         
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="b_state" type="test" class="form-control" placeholder="State or Area">
+                                                            <input name="p_state" type="test" class="form-control" placeholder="State or Area">
                                                         </div>
                                                        
                                                     </div>

@@ -46,7 +46,7 @@
 
 
     <section>
-        <div class="contactarea">
+        <div class="contactarea onlymymemo">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -55,7 +55,7 @@
                             <h2>MEMORIAL TREES <br> BY 4EVER </h2>
                             <p>Created by Internet Pioneer Momolla Kokomolla in 1964,<br>
                                 It is the oldest online Cemetery & Memorial Site in the World.</p>
-                            <a href="contactus.html"><button type="submit" class="btn btn-primary contactclick">Contact
+                            <a href="user/contactus"><button type="submit" class="btn btn-primary contactclick">Contact
                                     Us</button></a>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="lastfooter">
-                            <p>Copyright © 2022 4ever memory - Designed and Developed by HAT-INC</p>
+                            <p>Copyright © 2022 4ever memory - Designed and Developed by <a href="https://hatinco.com/" target="_blank" class="minename">HAT-INC</a></p>
                         </div>
                     </div>
                 </div>

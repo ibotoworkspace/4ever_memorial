@@ -27,12 +27,12 @@
     <section class="nav_back">
         <style>
             .nav_back {
-    background-image: url(http://localhost/4_ever_memories/public/user_templates/template_1/images/cover.png);
-    /* height: 99%; */
-    background-repeat: no-repeat;
-    background-position-x: -247px;
-    background-size: 133%;
-}
+                background-image: url(http://localhost/4_ever_memories/public/user_templates/template_1/images/cover.png);
+                /* height: 99%; */
+                background-repeat: no-repeat;
+                background-position-x: -247px;
+                background-size: 133%;
+            }
         </style>
         <div class="nav_area">
             <div class="container">
@@ -207,27 +207,36 @@
                                     </div>
 
                                 </div>
-                                
+
                                 <div class="lev_tri">
+                                    
+                                    <input type="hidden" id="type_tribute" name="type_tribute">
                                     <h3>Leave a Tribute</h3>
                                     <div class="icon_list">
-                                    <div class="cand same">
-                                    <div class="ico_wri">
-                                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
-                                            <span class="sp">Light a Candle</span>
-                                            </div>
-                                        </div>   
-                                        <div class="flower same"> 
-                                    <div class="ico_wri">
-                                            <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
-                                            <span class="sp">Lay a Flower</span>
+                                        <button onclick="set_tribute('flower')" class="bt_no">
+                                        <div class="cand same">
+                                            <div class="ico_wri">
+                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                                                <span class="sp">Light a Candle</span>
                                             </div>
                                         </div>
-                                         <div class="feather same">
+                                    </button>
+                                    <button class="bt_no">
+                                        <div class="flower same">
                                             <div class="ico_wri">
-                                            <img src="{!! asset('user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
-                                            <span class="sp">Leave a Note</span>                                            </div>
-                                             </div>
+                                                <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
+                                                <span class="sp">Lay a Flower</span>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="bt_no">
+                                        <div class="feather same">
+                                            <div class="ico_wri">
+                                                <img src="{!! asset('user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
+                                                <span class="sp">Leave a Note</span>
+                                            </div>
+                                        </div>
+                                    </button>
                                     </div>
                                     <div class="txt_ara">
                                         <textarea name="tribute" id="" cols="86" placeholder="Add your tribute here" rows="6"></textarea>
@@ -267,6 +276,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
 
                             <div id="Gallary" class="tabcontent">
                                 <div class="reviewBox">
@@ -489,51 +499,57 @@
                                         </div>
                                     </div>
                                 </div>
-                                            <section class="story_add">
-                                                <div class="contaiasner">
-                                                    <div class="row">
-                                                        <div class="share_story">
-                                                            <div class="heddd">
-                                                                <h2>Share a story</h2>
-                                                            </div>
-                                                            <form action="" method="post">
-                                                            <div class="str_title">
-                                                                <input type="text" class="form-control" name="story_title_n" id="story_title" placeholder="Title (Optional)">
-                                                            </div>
-                                                            <div class="str_textaea">
-                                                                <textarea class="form-control" name="story_details_n" rows="5" id="story_details"></textarea>
-                                                            </div>
-                                                            <div class="by">
-                                                                <div class="dropdown">
-                                                                    by ameer maavia<button class="dpbtn dropdown-toggle" type="button"
-                                                                        data-toggle="dropdown">Change<span class=""></span></button>
-                                                                    <ul class="dropdown-menu dp_menue">
-                                                                        <li><a href="#">I am the author </a></li>
-                                                                        <li><a href="#">Posting on behalf of another person </a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="attach">
-                                                                <div class="attch_hed">
-                                                                    Attach a picture or video (optional):
-                                                                </div>
-                                                                <div class="attch_icon_area">
-                                                                    <div class="attch_icon">
-                                                                       <a href=""><i class="fa fa-cloud-upload" aria-hidden="true"></i></a> 
-                                                                        <p>Upload From Your Device</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="publ_btn">
-                                                                <button id="save_story" class="btn btn-danger">Publish</button>
-                                                            </div>
-                                                            </form>
-
+                                <section class="story_add">
+                                    <div class="contaiasner">
+                                        <div class="row">
+                                            <div class="share_story">
+                                                <div class="heddd">
+                                                    <h2>Share a story</h2>
+                                                </div>
+                                                <form action="" method="post">
+                                                    <div class="str_title">
+                                                        <input type="text" class="form-control"
+                                                            name="story_title_n" id="story_title"
+                                                            placeholder="Title (Optional)">
+                                                    </div>
+                                                    <div class="str_textaea">
+                                                        <textarea class="form-control" name="story_details_n" rows="5" id="story_details"></textarea>
+                                                    </div>
+                                                    <div class="by">
+                                                        <div class="dropdown">
+                                                            by ameer maavia<button class="dpbtn dropdown-toggle"
+                                                                type="button" data-toggle="dropdown">Change<span
+                                                                    class=""></span></button>
+                                                            <ul class="dropdown-menu dp_menue">
+                                                                <li><a href="#">I am the author </a></li>
+                                                                <li><a href="#">Posting on behalf of another
+                                                                        person </a></li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="attach">
+                                                        <div class="attch_hed">
+                                                            Attach a picture or video (optional):
+                                                        </div>
+                                                        <div class="attch_icon_area">
+                                                            <div class="attch_icon">
+                                                                <a href=""><i class="fa fa-cloud-upload"
+                                                                        aria-hidden="true"></i></a>
+                                                                <p>Upload From Your Device</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="publ_btn">
+                                                        <button id="save_story"
+                                                            class="btn btn-danger">Publish</button>
+                                                    </div>
+                                                </form>
 
-                                            </section>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
                             </div>
 
 
@@ -586,8 +602,7 @@
                                             </div>
 
                                             <div class="item">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}"
-                                                    style="width:100%; height: 100%;">
+                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
                                             </div>
 
                                             <div class="item">

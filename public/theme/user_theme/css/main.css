@@ -66,9 +66,10 @@ h4 {
     padding: 20px;
 }
 
+/* 
 .navmenu li a span {
     margin: 15px 3px;
-}
+} */
 
 
 .navmenu>li>a:hover {
@@ -358,6 +359,17 @@ h4 {
     height: 200px;
 }
 
+.minename {
+    color: #beb28d;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.minename:hover {
+    color: #beb28d;
+    text-decoration: none !important;
+}
+
 .footerlogo {
     text-align: center;
 }
@@ -366,6 +378,10 @@ h4 {
     color: white;
     font-size: 25px;
     margin: 25px 13px;
+}
+
+.fomenu li a:hover {
+    color: #465863;
 }
 
 .fomenu li a {
@@ -547,17 +563,20 @@ h4 {
 .packageSpace {
     margin: 20px 0px;
 }
+
 .modhead h5 {
     text-align: center;
     font-size: 18px;
     font-weight: 600;
 }
+
 .signmodaldata input {
     height: 42px;
     border-radius: 0px;
     color: black;
     font-size: 14px;
 }
+
 .mosubclick {
     background: #beb28d;
     border-color: #beb28d;
@@ -568,18 +587,22 @@ h4 {
     border-radius: 0px;
     padding: 7px 0px;
 }
+
 .signmodaldata label {
     font-size: 14px;
     font-weight: 600;
     color: #423f3f;
 }
+
 .labelgroup {
     display: flex;
     margin-top: -15px;
 }
+
 .labelcd {
     margin: 16px 8px !important;
 }
+
 .modhead {
     background: #465863;
     color: white;

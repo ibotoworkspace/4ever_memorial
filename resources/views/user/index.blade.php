@@ -205,7 +205,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="formdata">
-              <h2>CREATE A MEMORIAL WEBSSITE</h2>
+              <h2>CREATE A MEMORIAL WEBSITE</h2>
               <p>Preserve and share memories of your loved one.</p>
             </div>
           </div>

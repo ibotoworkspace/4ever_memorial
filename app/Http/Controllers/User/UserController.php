@@ -8,6 +8,7 @@ use App\Models\Models\Template;
 use App\Http\Helpers\TemplateHelper;
 use App\Models\Story_Tab_Arr;
 use App\Models\Styling;
+use App\Models\Tributes_Arr;
 use App\Models\WebsiteTemplate;
 use App\Models\Template as ModelsTemplate;
 use App\Models\User;
@@ -40,9 +41,7 @@ class UserController extends Controller
     public function blog(){
         return view('user.blog');
     }
-    public function my_memorials(){
-        return view('user.my_memorials');
-    }
+    
     public function register(Request $request){
 
         $validator =  Validator::make(['email' => $request->email], [
@@ -164,11 +163,32 @@ class UserController extends Controller
         return view('user/dynamic_template/user_page', compact('html'));
     }
     public function storyform(Request $request){
+        $user = Auth::user();
         $story = new Story_Tab_Arr();
         $story->user_name_show_var = $request->story_title_n;
         $story->details_show_var = $request->story_details_n;
         $story->memorial_id = $request->memorial_id;
-        $story->user_id = $request->user_id;
+        $story->user_id = $user->id;
         $story->save();
     }
+    public function tributeform(Request $request){
+        $user = Auth::user();
+        $tribute = new Tributes_Arr();
+        $tribute->details_show_var = $request->tribute;
+        $tribute->type_var = $request->type_tribute;
+        $tribute->memorial_id = $request->memorial_id;
+        $tribute->user_id = $user->id;
+        $tribute->save();
+    }
+
+
+    
+
+    public function my_memorials(){
+        $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+        // $template = Styling::orderBy('created_at', 'DESC')->get();
+        return view('user.my_memorials', compact('memorials'));
+
+    }
+
 }
