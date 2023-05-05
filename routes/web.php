@@ -38,6 +38,7 @@ Route::get('user/get_memorial/{user_email}',[User_UserController::class, 'get_me
 
 //save story
 Route::post('user/storyform',[User_UserController::class, 'storyform'])->name('user.storyform'); //add story
+Route::post('user/tributeform',[User_UserController::class, 'tributeform'])->name('user.tributeform'); //add story
 
 
 
