@@ -364,7 +364,9 @@ h4 {
     font-weight: 700;
     text-decoration: none;
 }
-
+.txtar {
+    border: 1px solid black;
+}
 .minename:hover {
     color: #beb28d;
     text-decoration: none !important;

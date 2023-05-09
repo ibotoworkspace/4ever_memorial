@@ -32,11 +32,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
     <section>
         <div class="tabsarea">
             <div class="container">
@@ -58,15 +53,15 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">First Name</label>
-                                                <input type="test" name="f_name" class="form-control" placeholder="">
+                                                <input type="text" name="f_name" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Middle Name</label>
-                                                <input type="test" name="m_name" class="form-control" placeholder="">
+                                                <input type="text" name="m_name" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Last Name</label>
-                                                <input type="test" name="l_name" class="form-control" placeholder="">
+                                                <input type="text" name="l_name" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label name="gender" for="exampleFormControlSelect1">Gender</label>
@@ -121,6 +116,10 @@
                                                 <option value="covid">COVID-19 Victim </option>
                                                 </select>
                                             </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Life (Write A Few Words On The Life/Birth Of The Deceased)</label>
+                                                <textarea rows="5" name="life_tab_arr" class="ckeditor form-control form-group txtar" id="summary_ckeditor" placeholder="Write A Few Words On The Life/Birth Of The Deceased"></textarea>
+                                            </div>
 
                                             <h5>More Detail (Optional)</h5>
                                             <div class="detailcard">
@@ -139,20 +138,20 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input type="text" name="b_city" type="test" class="form-control" placeholder="City or Town" >
+                                                            <input type="text" name="b_city" class="form-control" placeholder="City or Town" >
                                                            
                                                         </div>
                                                         
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="b_state" type="test" class="form-control" placeholder="State or Area">
+                                                            <input name="b_state" type="text" class="form-control" placeholder="State or Area">
                                                         </div>
                                                        
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="b_state" type="test" class="form-control" placeholder="Country">
+                                                            <input name="b_state" type="text" class="form-control" placeholder="Country">
                                                         </div>
                                                         
                                                     </div>
@@ -170,20 +169,20 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input type="text" name="p_city" type="test" class="form-control" placeholder="City or Town" >
+                                                            <input type="text" name="p_city"  class="form-control" placeholder="City or Town" >
                                                            
                                                         </div>
                                                         
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="p_state" type="test" class="form-control" placeholder="State or Area">
+                                                            <input name="p_state" type="text" class="form-control" placeholder="State or Area">
                                                         </div>
                                                        
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="b_state" type="test" class="form-control" placeholder="Country">
+                                                            <input name="b_state" type="text" class="form-control" placeholder="Country">
                                                         </div>
                                                         
                                                     </div>
@@ -205,7 +204,7 @@
                                                 </div>
 
                                             </div>
-
+                                            
 
                                             <a data-toggle="tab" href="#menu2">
                                                 <input type="button" onclick="submit_form('.create_memorial_form','create_memorial')" class="btn btn-primary contclik" value="Continue">
@@ -218,7 +217,6 @@
                                     <div class="col-sm-6">
                                         <div class="plandata">
                                             <h4>STANDARD (15 MEMORIAL PAGES)</h4>
-
                                             <div class="mincardboxhght">
                                                 <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
                                                 <p>Decease Bio <span class="sidetick"><i class="fa fa-check-circle" aria-hidden="true"></i></span></p>
@@ -348,6 +346,8 @@
             </div>
         </div>
 
+        {{-- <button onclick="test()" >tesssssssssssssssssssss</button> --}}
+
         <form action="{!!asset('user/memorial/update_plan')!!}" method="post" id="update_plan_form">
             {!!csrf_field()!!}
             <input type="hidden" name="memorial_id" class="memorial_id">
@@ -423,10 +423,21 @@
         </div>
     </section>
     @include('layouts.myapp_js')
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
+        // var data = CKEDITOR.instances.editor1.getData();
+    
+   
         var user_memorial = null;
+        
+        function test(){
+            var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
+            console.log('my_memorial',my_memorial);
+        }
 
         function create_memorial(memorial_form, response) {
+            var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
+            console.log('my_memorial',my_memorial);
             console.log('res 1', response);
             if (response.status) {
                 console.log('res 2', response);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Helpers;
 
+use App\Models\Life_Tab_Arr;
 use App\Models\UserWebsite;
 use App\Models\Styling;
 
@@ -78,6 +79,11 @@ class UserTemplateHelper
         $user_website->visible_to_all = $request->visible_to_all;
         // dd($user_website);
         $user_website->save();
+
+        $user_website_life = new Life_Tab_Arr();
+        $user_website_life->details_show_var = $request->life_tab_arr;
+        $user_website_life->save();
+
         return $user_website;
 
       }
