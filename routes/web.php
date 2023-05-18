@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 //////////////user
 Route::post('user/register', [User_UserController::class, 'register'])->name('user.register');
 Route::post('user/login', [User_UserController::class, 'login'])->name('user.login');
+Route::get('user/logout', [User_UserController::class, 'logout'])->name('user.logout');
 
 Route::get('/', [User_UserController::class, 'index'])->name('user.index');
 Route::get('/user/aboutus',[User_UserController::class, 'aboutus'])->name('user.aboutus');

@@ -65,15 +65,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <label name="gender" for="exampleFormControlSelect1">Gender</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                <select class="form-control" name="gender" id="exampleFormControlSelect1">
+                                                    <option value="" selected="" disabled="" hidden="">Gender</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label name="relation" for="exampleFormControlSelect1">Relationship</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                <option value="" hidden="">Please select relationship</option>
+                                                <label name="relation" for="exampleFormControlSelect1">Relationship</label>                                             
+
+                                                <input list="relations" placeholder="Please write/select a relationship" class="form-control" name="relation">
+                                                <datalist id="relations">
                                                     <option value="Aunt">Aunt</option>
                                                     <option value="Brother">Brother</option>
                                                     <option value="Colleague">Colleague</option>
@@ -96,19 +98,13 @@
                                                     <option value="Wife">Wife</option>
                                                     <option value="Other" data-code="other">Other</option>
                                                     <option value="No relationship">No relationship</option> 
-                                                </select>
-                                            </div>
-                                            
-                                            <div class="form-group">
-                                            <div style="display:none">
-                                                <label name="relation" for="exampleFormControlSelect1">Other Relationship</label>
-                                                <input type="text" name="other_rel" class="form-control"  placeholder="discribe your relationship" id="exampleFormControlSelect1">
-                                                </div>
-                                            </div>
+                                                </datalist>
+                                                
+                                            </div>                              
                                             
                                             <div class="form-group">
                                                 <label name="memorial_designation" for="exampleFormControlSelect1">Memorial Designation</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                <select class="form-control" name="memorial_designation" id="exampleFormControlSelect1">
                                                 <option value="" selected="" disabled="" hidden="">Select designation, if applies </option>
                                                 <option value="does_not_apply">No Designation </option>
                                                 <option value="military" >Military Veteran </option>
@@ -117,9 +113,11 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Life (Write A Few Words On The Life/Birth Of The Deceased)</label>
-                                                <textarea rows="5" name="life_tab_arr" class="ckeditor form-control form-group txtar" id="summary_ckeditor" placeholder="Write A Few Words On The Life/Birth Of The Deceased"></textarea>
+                                                <label for="exampleInputEmail1">Life (Write A Few Words On The Life/Birth Of This Person)</label>
+                                                <textarea rows="5" id="summary_ckeditor" name="life_tab_arr" class="ckeditor form-control form-group txtar" placeholder="Write A Few Words On The Life/Birth Of The Deceased"></textarea>
+                                                {{-- <div onclick="get_ck_editor_val()">Get val</div> --}}
                                             </div>
+
 
                                             <h5>More Detail (Optional)</h5>
                                             <div class="detailcard">
@@ -151,7 +149,7 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="b_state" type="text" class="form-control" placeholder="Country">
+                                                            <input name="b_country" type="text" class="form-control" placeholder="Country">
                                                         </div>
                                                         
                                                     </div>
@@ -182,7 +180,7 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
-                                                            <input name="b_state" type="text" class="form-control" placeholder="Country">
+                                                            <input name="p_country" type="text" class="form-control" placeholder="Country">
                                                         </div>
                                                         
                                                     </div>
@@ -207,7 +205,8 @@
                                             
 
                                             <a data-toggle="tab" href="#menu2">
-                                                <input type="button" onclick="submit_form('.create_memorial_form','create_memorial')" class="btn btn-primary contclik" value="Continue">
+                                                <button onclick="submit_form('.create_memorial_form','create_memorial')" class="btn btn-primary contclik">Continue
+                                                </button>
                                             </a>
                                         </form>
                                     </div>
@@ -226,7 +225,7 @@
 
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(1)" class="btn btn-primary banclick" value="Buy Now">
+                                                    <button  onclick="submit_update_plan(1)" class="btn btn-primary banclick" >Buy Now</button>
 
                                                 </a>
                                             </div>
@@ -245,7 +244,9 @@
 
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(2)" class="btn btn-primary banclick" value="Buy Now">
+                                                    
+                                                    <button  onclick="submit_update_plan(2)" class="btn btn-primary banclick" >Buy Now</button>
+
 
                                                 </a>
                                             </div>
@@ -268,7 +269,8 @@
 
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(3)" class="btn btn-primary banclick" value="Buy Now">
+                                                    <button  onclick="submit_update_plan(3)" class="btn btn-primary banclick" >Buy Now</button>
+
                                                 </a>
                                             </div>
                                         </div>
@@ -288,8 +290,7 @@
 
                                             <div class="inerpkgclick">
                                                 <a data-toggle="tab" href="#menu3">
-                                                    <input type="button" onclick="submit_update_plan(4)" class="btn btn-primary banclick" value="Buy Now">
-
+                                                    <button  onclick="submit_update_plan(4)" class="btn btn-primary banclick" >Buy Now</button>
                                                 </a>
                                             </div>
                                         </div>
@@ -429,11 +430,21 @@
     
    
         var user_memorial = null;
-        
-        function test(){
+
+        function get_ck_editor_val(){
             var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
+
+            var c1 = CKEDITOR.instances["summary_ckeditor"];
+            var c2 = CKEDITOR.instances["textarea-id"];
+
+            console.log('its ckeditor',c1);
+            console.log('not ckeditor',c2);
+
             console.log('my_memorial',my_memorial);
+            console.log('my_memorial');
+            return false;
         }
+        
 
         function create_memorial(memorial_form, response) {
             var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
@@ -461,9 +472,7 @@
         }
 
         function onlyOne(checkbox) {
-            // var checkboxes = document.getElementsByClassName('only_one_check');
             var checkboxes = $('.only_one_check');
-
             console.log('checkboxes',checkboxes);
             checkboxes.each((index,item) => {
             console.log('item',item);
@@ -485,6 +494,10 @@
             }
 
         }
+
+
+
+
     </script>
 
 
