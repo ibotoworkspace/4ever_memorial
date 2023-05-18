@@ -7,26 +7,44 @@
         });
     })
 
+    
     function submit_form(form_by_id_or_class, success_funtion = '') {
 
         var form = $(form_by_id_or_class);
         var inputs = $(form_by_id_or_class + " input");
         var textareas = $(form_by_id_or_class + " textarea");
-        var all_inputs = $.merge(inputs, textareas);
+        var select = $(form_by_id_or_class + " select");
+        // var textareas = $(form_by_id_or_class + " textarea").not('.ckeditor');
+        // var cktextareas = $(form_by_id_or_class + " ckeditor");
+        var all_inputs = $.merge($.merge(inputs, textareas),select);
+        // console.log('all_inputs',all_inputs);
+        // return;
         var formdata = new FormData();
 
         all_inputs.each(function() {
-
             var name = $(this).attr('name');
+            console.log('name',name);
             if ($(this).attr('type') == 'file') {
                 console.log('files', name, $(this)[0].files[0]);
                 formdata.append($(this).attr('name'), $(this)[0].files[0]);
-            } else {
+            } 
+            else if ($(this).attr('type') == 'select') {
+                formdata.append($(this).attr('name'), $(this).find('selected').val());
+            } 
+            else if($(this).hasClass("ckeditor")){
+                var val = CKEDITOR.instances[$(this).attr('id')].getData();
+                formdata.append($(this).attr('name'), val);
+            }
+            else {
                 console.log('all_inputs', $(this).attr('name'), $(this).val());
                 formdata.append($(this).attr('name'), $(this).val());
             }
         })
+        // cktextareas.each()
         console.log('submit_form url',form.attr('action'));
+        for (var pair of formdata.entries()) {
+            console.log('form data values ',pair[0]+ ', ' + pair[1]); 
+        }
 
         $.ajax({
             method: form.attr('method'),

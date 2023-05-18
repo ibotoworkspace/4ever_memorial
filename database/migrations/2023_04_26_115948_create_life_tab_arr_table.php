@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('memorial_id')->nullable()->default(0);
             $table->string('image_show_var')->nullable()->default(null);
-            $table->string('details_show_var')->nullable()->default(null);
+            $table->text('details_show_var')->nullable()->default(null);
             $table->bigInteger('user_id')->nullable()->default(0);
             $table->softDeletes();
             $table->timestamps();

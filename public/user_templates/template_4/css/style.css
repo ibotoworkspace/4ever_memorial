@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 
+
+.same:active {
+    background-color: #7dabc7 !important;
+    border-radius: 10px !important;
+}
 /* .new{3} */
 button.bt_no {
     background: none;

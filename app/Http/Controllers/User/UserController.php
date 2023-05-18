@@ -82,6 +82,11 @@ class UserController extends Controller
             return redirect()->back()->with('login_error', 'Wrong Login Details');
         }
     }
+    function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
     // public function template(){
     //     $template  = ModelsTemplate::find(1);
     //     return view('user.template',compact('template'));
@@ -143,24 +148,11 @@ class UserController extends Controller
     }
 
     public function get_memorial(Request $request,$user_email){
-        // 11DFSn@mail.com
         $website_template_email = $user_email;
-        // $temp = WebsiteTemplate::first();
         $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        // $temp = new \stdClass();
-        
-        // $user_website->web_html = $user_website->web_html;
-        // $user_website->web_variable = $user_website->website_variable;
-        // $user_website->variable_html = $user_website->variable_html;
-        // $user_website->style->web_variable = $user_website->website_variable; 
-        // $style = new \stdClass();
-        // $user_website->web_variable = $user_website->website_variable; 
-        // dd($style);
-        // $template_helper = new TemplateHelper($user_website,$user_website);
         $template_helper = new TemplateHelper($user_website,$user_website->web_variable);
-        // dd($user_website->variable_html,$user_website);
         $html = $template_helper->create_html();
-        return view('user/dynamic_template/user_page', compact('html'));
+        return view('user/dynamic_template/user_page', compact('html','user_website'));
     }
     public function storyform(Request $request){
         $user = Auth::user();
@@ -168,7 +160,7 @@ class UserController extends Controller
         $story->user_name_show_var = $request->story_title_n;
         $story->details_show_var = $request->story_details_n;
         $story->memorial_id = $request->memorial_id;
-        $story->user_id = $user->id;
+        // $story->user_id = $user->id;
         $story->save();
     }
     public function tributeform(Request $request){
@@ -177,7 +169,7 @@ class UserController extends Controller
         $tribute->details_show_var = $request->tribute;
         $tribute->type_var = $request->type_tribute;
         $tribute->memorial_id = $request->memorial_id;
-        $tribute->user_id = $user->id;
+        // $tribute->user_id = $user->id;
         $tribute->save();
     }
 

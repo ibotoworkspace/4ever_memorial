@@ -1,3 +1,4 @@
+
 <div class="container top">
     <div class="row hidden-xs">
         <div class="col-sm-4">
@@ -11,11 +12,25 @@
                     placeholder="Find a Memorial">
             </div>
         </div>
+
+        @php
+                $signin = '';
+                $signout = '';
+            if (Auth::user()) {
+                // dd('asddsdaasdasdsdaasassd');                
+                $signin = "display: block;";
+                $signout = "display: none;";
+            }
+            else{
+                $signin = "display: none;";
+                $signout = "display: block;";
+            }
+        @endphp
         <div class="col-sm-4">
-            <div class="topicons">
-                <i class="fa fa-user-plus" aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i>
-                <i class="fa fa-sign-in" aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign
-                    In</i>
+            <div class="topicons" >
+                <i class="fa fa-user-plus" style="{!!$signout!!}" aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i>
+                <i class="fa fa-sign-in"  style="{!!$signout!!}"aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign</i>
+                <i class="fa fa-user-circle-o"  style="{!!$signin!!}"aria-hidden="true"data-target="#exampleModalCenter"><a href="user/logout"> LogOut </a></i>
 
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>

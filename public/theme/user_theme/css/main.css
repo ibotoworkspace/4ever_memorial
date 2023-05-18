@@ -364,6 +364,13 @@ h4 {
     font-weight: 700;
     text-decoration: none;
 }
+.topicons {
+    display: flex;
+    float: right;
+}
+    .topicons a {
+    color: white;
+}
 .txtar {
     border: 1px solid black;
 }
