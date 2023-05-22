@@ -11,4 +11,8 @@ class Tributes_Arr extends Model
     use HasFactory;
     use SoftDeletes;
     protected $table='tributes_arr';
+    
+    public function user(){
+        return $this->hasOne('App\Models\User','id','user_id');
+    }
 }
