@@ -209,34 +209,34 @@
                                 </div>
 
                                 <div class="lev_tri">
-                                    
+
                                     <input type="hidden" id="type_tribute" name="type_tribute">
                                     <h3>Leave a Tribute</h3>
                                     <div class="icon_list">
                                         <button onclick="set_tribute('flower')" class="bt_no">
-                                        <div class="cand same">
-                                            <div class="ico_wri">
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
-                                                <span class="sp">Light a Candle</span>
+                                            <div class="cand same">
+                                                <div class="ico_wri">
+                                                    <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                                                    <span class="sp">Light a Candle</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </button>
-                                    <button class="bt_no">
-                                        <div class="flower same">
-                                            <div class="ico_wri">
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
-                                                <span class="sp">Lay a Flower</span>
+                                        </button>
+                                        <button class="bt_no">
+                                            <div class="flower same">
+                                                <div class="ico_wri">
+                                                    <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
+                                                    <span class="sp">Lay a Flower</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </button>
-                                    <button class="bt_no">
-                                        <div class="feather same">
-                                            <div class="ico_wri">
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
-                                                <span class="sp">Leave a Note</span>
+                                        </button>
+                                        <button class="bt_no">
+                                            <div class="feather same">
+                                                <div class="ico_wri">
+                                                    <img src="{!! asset('user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
+                                                    <span class="sp">Leave a Note</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </button>
+                                        </button>
                                     </div>
                                     <div class="txt_ara">
                                         <textarea name="tribute" id="" cols="86" placeholder="Add your tribute here" rows="6"></textarea>
@@ -276,7 +276,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                             <div id="Gallary" class="tabcontent">
                                 <div class="reviewBox">
@@ -531,10 +531,11 @@
                                                         <div class="attch_hed">
                                                             Attach a picture or video (optional):
                                                         </div>
+
                                                         <div class="attch_icon_area">
                                                             <div class="attch_icon">
-                                                                <a href=""><i class="fa fa-cloud-upload"
-                                                                        aria-hidden="true"></i></a>
+                                                                <label for="upload-photo"><i class="fa fa-cloud-upload" aria-hidden="true"></i></label>
+                                                                <input type="file" name="photo" id="upload-photo" class="up_ld_file" /> 
                                                                 <p>Upload From Your Device</p>
                                                             </div>
                                                         </div>

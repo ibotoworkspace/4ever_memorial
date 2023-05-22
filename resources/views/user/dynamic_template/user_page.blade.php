@@ -1,33 +1,36 @@
-{!!$html!!}
-
+{!! $html !!}
+{{-- {!!dd($user_website->id)!!} --}}
 
 <script>
-    $('#save_story').on('click',function(){
+    function set_tribute(type_tribute) {
 
-        // $('.add_new_story').append(`
-        //     <input type="hidden" name="memorial_id" value="{!!$user_website->memorial_id!!}">
-        // `);
+        $('#type_tribute').val(type_tribute);
+    }
+    
 
-        // submit_form('.add_new_story','create_story');
+    $('#save_story').on('click', function() {
+
+
 
         var formData = new FormData();
-        formData.append('memorial_id','{!!$user_website->memorial_id!!}');
-        formData.append('story_title_n',$('input[name="story_title_n"]').val());
-        formData.append('story_details_n',$('#story_details').val());
-        // formData.append('_token','{!!csrf_token()!!}');
+        formData.append('memorial_id', '{!! $user_website->id !!}');
+        formData.append('story_title_n', $('input[name="story_title_n"]').val());
+        formData.append('story_details_n', $('#story_details').val());
+        formData.append('image', $('input[type=file]')[0].files[0]); 
+        // formData.append('_token','{!! csrf_token() !!}');
 
 
         $.ajax({
-            url:'{!!asset('user/storyform')!!}',
-            method:'POST',
-            data:formData,
+            url: '{!! asset('user/storyform') !!}',
+            method: 'POST',
+            data: formData,
             dataType: 'JSON',
             processData: false,
             contentType: false,
             cache: false,
             enctype: 'multipart/form-data',
-            success:function(res){
-                console.log('res',res)
+            success: function(res) {
+                console.log('res', res)
             },
             error: function(err) {
                 console.log('form failed', err);
@@ -37,35 +40,33 @@
     });
 
 
-    function create_story(add_story, response) {
-            console.log('res 1', response);
-            if (response.status) {
-                console.log('res 2', response);
-                $(add_story + " input").val("");
-                $(add_story + " textarea").val("");
-                
+    $('#save_trib').on('click', function() {
+
+
+        var formData = new FormData();
+        formData.append('memorial_id', '{!! $user_website->id !!}');
+        formData.append('details_show_var', $('#add_tibs').val());
+        formData.append('details_show_var', $('textarea[name="tribute"]').val());
+        formData.append('type_var', $('#type_tribute').val());
+
+
+
+        $.ajax({
+            url: '{!! asset('user/tributeform') !!}',
+            method: 'POST',
+            data: formData,
+            dataType: 'JSON',
+            processData: false,
+            contentType: false,
+            cache: false,
+            enctype: 'multipart/form-data',
+            success: function(res) {
+                console.log('res', res)
+            },
+            error: function(err) {
+                console.log('form failed', err);
             }
-        }
+        })
 
-    function set_tribute(type_tribute){
-        $('#type_tribute').val(type_tribute);
-    }
-
-
-    $('#save_trib').on('click',function(){
-        submit_form('add_new_trib','create_trib');
     });
-
-
-    function create_trib(add_trib, response) {
-            console.log('res 1', response);
-            if (response.status) {
-                console.log('res 2', response);
-                $(add_trib + " input").val("");
-                $(add_trib + " textarea").val("");
-                
-                
-            }
-        }
-      
 </script>
