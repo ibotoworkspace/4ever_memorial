@@ -87,6 +87,10 @@ button.bt_no {
 .attch_icon i {
     color: #275d7d;
     font-size: 75px;
+    cursor: pointer;
+}
+.attch_icon input {
+    cursor: pointer;
 }
 .attch_icon p {
     color: #275d7d;
