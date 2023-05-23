@@ -174,8 +174,7 @@ class UserController extends Controller
         $tribute->memorial_id = $request->memorial_id;
         $tribute->user_id = $user->id;
         $user_trib = Tributes_Arr::with('user')->select('*')->get();
-        dd("aaaaa", $user_trib);
-        $tribute->user_name_show_var = $user_trib->first_name;
+        $tribute->user_name_show_var =$user_trib[$user->id]->user->first_name;
         $tribute->date_show_var = date(" jS  F Y");
         $tribute->save();
     }
