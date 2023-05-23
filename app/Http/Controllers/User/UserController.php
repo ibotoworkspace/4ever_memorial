@@ -150,8 +150,13 @@ class UserController extends Controller
     public function get_memorial(Request $request,$user_email){
         $website_template_email = $user_email;
         $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        // dd($user_website);
-        $template_helper = new TemplateHelper($user_website,$user_website->web_variable);
+        // dd($user_website->web_variable);
+        $tributes = Tributes_Arr::where('memorial_id',$user_website->id)->get()->toArray();
+        // dd($tributes->toArray());
+        $web_variable = $user_website->web_variable;
+        $web_variable['tributes_arr'] = $this->set_attribute_arr_pics($tributes);//$tributes;
+        // set_attribute_arr_pics($tributes);
+        $template_helper = new TemplateHelper($user_website,$web_variable);
         $html = $template_helper->create_html();
         return view('user/dynamic_template/user_page', compact('html','user_website'));
     }
@@ -173,8 +178,8 @@ class UserController extends Controller
         $tribute->type_var = $request->type_var;
         $tribute->memorial_id = $request->memorial_id;
         $tribute->user_id = $user->id;
-        $user_trib = Tributes_Arr::with('user')->select('*')->get();
-        $tribute->user_name_show_var =$user_trib[$user->id]->user->first_name;
+        // $user_trib = Tributes_Arr::with('user')->select('*')->get();
+        $tribute->user_name_show_var =$user->first_name;
         $tribute->date_show_var = date(" jS  F Y");
         $tribute->save();
     }
