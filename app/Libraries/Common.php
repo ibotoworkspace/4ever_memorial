@@ -13,6 +13,28 @@ trait Common
 {
 
 
+    public function set_attribute_arr_pics($attributes){
+        $attribute_arr = [];
+        foreach ($attributes as $key => $attribute) {
+            // dd($attribute);
+            $attribute_arr[$key] = $attribute;
+
+            if($attribute['type_var'] == 'flower'){
+                $pic = asset('user_templates/template_1/images/imgs/flower.png');
+            }
+            elseif($attribute['type_var'] == 'candle'){
+                $pic = asset('user_templates/template_1/images/imgs/candle.png');
+            }
+            else{//feather
+                $pic = asset('user_templates/template_1/images/imgs/feather.png');
+            }
+            $attribute['image_show_var'] = $pic;
+            $attribute_arr[$key]['image_show_var'] = $pic;
+
+        }
+        // dd($attribute_arr);
+        return $attribute_arr;
+    }
 
    public function get_permission_details($all_permissions,$role_permissions){
     $all_permissions = $all_permissions->transform(function($all_p)use($role_permissions){
