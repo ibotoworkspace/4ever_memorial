@@ -98,7 +98,7 @@ class TemplateSeeder extends Seeder
                                     <h1>{!!{memorial_user_var.birth_var}!!} - {!!{memorial_user_var.death_var}!!}</h1>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 prf_img">
                                 <div class="profile_img">
                                 <img src="' . $public_path . 'user_templates/template_1/images/profile_pic.jpg" alt="relative" />
                                 </div>
@@ -156,7 +156,7 @@ class TemplateSeeder extends Seeder
 
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 side_area">
                                     <div class="rightBoxArea familyFriend">
                                         <ul>
                                             <li>

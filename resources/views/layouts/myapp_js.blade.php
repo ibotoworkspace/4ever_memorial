@@ -5,7 +5,13 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
     })
+ $(document).ajaxError_show(
+        function(event, jqXHR, ajaxSettings, thrownError) {
+            console.log('[event:' + event + '], [jqXHR:' + jqXHR + '], [ajaxSettings:' + ajaxSettings +
+                '], [thrownError:' + thrownError + '])');
+        });
 
     
     function submit_form(form_by_id_or_class, success_funtion = '') {

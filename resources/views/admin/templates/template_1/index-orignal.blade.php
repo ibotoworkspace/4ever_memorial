@@ -28,10 +28,6 @@
         <style>
             .nav_back {
                 background-image: url(http://localhost/4_ever_memories/public/user_templates/template_1/images/cover.png);
-                /* height: 99%; */
-                background-repeat: no-repeat;
-                background-position-x: -247px;
-                background-size: 133%;
             }
         </style>
         <div class="nav_area">
@@ -61,7 +57,7 @@
                         <h1>2004 - 2022</h1>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 prf_img">
                     <div class="profile_img">
                         <img src="{!! asset('user_templates/template_1/images/profile_pic.jpg') !!}" alt="relative" />
                     </div>
@@ -150,6 +146,28 @@
                                             <span class="badge badge-secondary">New</span>
                                         </div>
                                         <ul class="reviewSection">
+                                            <li>
+                                                <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}">
+                                            </li>
+                                            <li>
+                                                <h3>Maria Nashed</h3>
+                                                <h5>January 23</h5>
+                                                <p>Anthony was an amazingly sweet friend. After class he would always
+                                                    walk me to my car and then I would drive him to his. We would always
+                                                    have a good time laughing at the way we pronounced Arabic words due
+                                                    to difference in dialect even though he knew little-to-no Arabic at
+                                                    all lol. I also remember how whenever I would ask for help on
+                                                    homework, he would always insist on teaching me how to do the
+                                                    problems fully in order for me to better... <a href="#">read
+                                                        more</a></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="reviewBox">
+                                        <div class="newTag">
+                                            <span class="badge badge-secondary">New</span>
+                                        </div>
+                                        <ul class="reviewSection" id="reviewSection">
                                             <li>
                                                 <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
                                             </li>
@@ -560,7 +578,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 side_area">
                         <div class="rightBoxArea familyFriend">
                             <ul>
                                 <li>

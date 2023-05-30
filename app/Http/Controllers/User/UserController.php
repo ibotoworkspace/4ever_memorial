@@ -170,6 +170,8 @@ class UserController extends Controller
         $story->date_show_var = date(" jS  F Y");
         $story->user_id = $user->id;
         $story->save();
+        return $this->sendResponse(200);
+
     }
     public function tributeform(Request $request){
         $user = Auth::user();
@@ -182,8 +184,15 @@ class UserController extends Controller
         $tribute->user_name_show_var =$user->first_name;
         $tribute->date_show_var = date(" jS  F Y");
         $tribute->save();
+        return $this->sendResponse(200);
     }
+public function get_tribute(Request $request){
+    
+    $tributes = Tributes_Arr::orderBy('created_at', 'ASC')->select('*')->get();
+    $tributesData['data'] = $tributes;
+    echo json_encode($tributesData);
 
+}
 
     
 
