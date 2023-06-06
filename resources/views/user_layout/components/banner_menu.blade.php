@@ -1,4 +1,15 @@
+<style>
+    .search_area button {
+    background: none;
+    color: white;
+    border: none;
+    padding-top: 10px;
+}
 
+.search_area {
+    display: flex;
+}
+</style>
 <div class="container top">
     <div class="row hidden-xs">
         <div class="col-sm-4">
@@ -8,8 +19,14 @@
         </div>
         <div class="col-sm-4">
             <div class="topinput">
-                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+                <form method="post" action="{!!asset('search/memorial')!!}">
+                    {!! csrf_field() !!}
+                    <div class="search_area">
+                <input type="text" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
                     placeholder="Find a Memorial">
+                    <button><i class="fa fa-search icon_c" aria-hidden="true"></i></button>
+                </div>
+                </form>
             </div>
         </div>
 

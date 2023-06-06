@@ -77,11 +77,14 @@ class UserTemplateHelper
         $user_website->p_country = $request->p_country;
         $user_website->email = $request->email.'@forevermemorial.com';
         $user_website->visible_to_all = $request->visible_to_all;
-        // dd($user_website);
+        // dd($user_memorial->id);
         $user_website->save();
 
         $user_website_life = new Life_Tab_Arr();
         $user_website_life->details_show_var = $request->life_tab_arr;
+        $user_website_life->image_show_var = $request->life_image;
+        // $user_website_life->memorial_id = $user_memorial->id;
+        $user_website_life->user_id =  $user->id;
         $user_website_life->save();
 
         return $user_website;

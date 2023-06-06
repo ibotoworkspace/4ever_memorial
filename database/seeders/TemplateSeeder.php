@@ -30,8 +30,8 @@ class TemplateSeeder extends Seeder
         $server = 'https://demo.hatinco.com/4_ever_memories/public';
         // $server = 'demo.hatinco.com://';
         // if(){}
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
-        // $public_path = 'http://localhost/4_ever_memories/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        $public_path = 'http://localhost/4_ever_memories/public/';
         // dd($pub);
         $template->web_html =
         '
@@ -65,10 +65,6 @@ class TemplateSeeder extends Seeder
                 <style>
                 .nav_back {
         background-image: url(' . $public_path . 'user_templates/template_1/images/cover.png);
-        /* height: 99%; */
-        background-repeat: no-repeat;
-        background-position-x: -247px;
-        background-size: 133%;
     }
             </style>
                     <div class="nav_area">
@@ -98,7 +94,7 @@ class TemplateSeeder extends Seeder
                                     <h1>{!!{memorial_user_var.birth_var}!!} - {!!{memorial_user_var.death_var}!!}</h1>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 prf_img">
                                 <div class="profile_img">
                                 <img src="' . $public_path . 'user_templates/template_1/images/profile_pic.jpg" alt="relative" />
                                 </div>
@@ -156,7 +152,7 @@ class TemplateSeeder extends Seeder
 
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 side_area">
                                     <div class="rightBoxArea familyFriend">
                                         <ul>
                                             <li>
