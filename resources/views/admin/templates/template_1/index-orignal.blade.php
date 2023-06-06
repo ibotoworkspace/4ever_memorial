@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo-area">
-                            <img src="{!! asset('user_templates/template_1/images/logo.png') !!}" alt="relative" />
+                            <img src="{!! asset('user_templates/template_1/images/logo.png') !!}" class="img-fluid" alt="relative" />
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -323,54 +323,71 @@
                                                     <div class="ply_bttn">
                                                         <i class="fa fa-plus-square-o" aria-hidden="true"></i>
                                                     </div>
-                                                    <div class="slidsho_txt">
-                                                        <p>Add a Photo</p>
+                                                    <div class="slidsho_txt" style="display: grid">
+                                                        {{-- <p>Add a Photo</p> --}}
+                                                        <label for="file_upload" class="custom-file-upload">
+                                                            Add a Photo
+                                                        </label>
+                                                        <input type="file" id="file_upload" class="upld_file" >
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                        </div>
+
+
+
+                                        <div class="gallery">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                        </div>
+
+
+                                        <div class="gallery">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -396,47 +413,56 @@
                                             </div>
                                         </div>
                                         <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+
+                                        </div>
+                                        <div class="gallery">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="gallery">
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                            </div>
-                                            <div class="col-md-3 pic_gal_img">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -458,7 +484,11 @@
                                                 Add Audio
                                             </div>
                                             <div class="aud_box">
-                                                <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                <label for="file_upload" class="custom-file-upload">
+                                                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                </label>
+                                                <input type="file" onselect="" id="audio_upload" class="upld_audio" >
+                                                
                                                 <p>From Your Device</p>
 
                                             </div>
@@ -552,8 +582,11 @@
 
                                                         <div class="attch_icon_area">
                                                             <div class="attch_icon">
-                                                                <label for="upload-photo"><i class="fa fa-cloud-upload" aria-hidden="true"></i></label>
-                                                                <input type="file" name="photo" id="upload-photo" class="up_ld_file" /> 
+                                                                <label for="upload-photo"><i
+                                                                        class="fa fa-cloud-upload"
+                                                                        aria-hidden="true"></i></label>
+                                                                <input type="file" name="photo"
+                                                                    id="upload-photo" class="up_ld_file" />
                                                                 <p>Upload From Your Device</p>
                                                             </div>
                                                         </div>

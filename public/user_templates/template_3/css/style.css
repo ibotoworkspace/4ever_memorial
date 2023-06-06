@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+
+/* .new{5} */
+
+input#audio_upload {
+    display: none;
+}
+input#vid_upload {
+    display: none;
+}
+
+input#file_upload {
+    display: none;
+}
+
+label.custom-file-upload {
+    margin-top: 4px;
+}
+/* .new{5} */
+.attach {
+    text-align: center;
+}
+
+.lev_tri h3 {
+    color: #2d516a;
+}
 /* .new{4} */
 .up_ld_file {
     margin-left: 231px;
@@ -781,3 +807,217 @@ body {font-family: Arial;}
 .story_para {
     padding-right: 40px;
 }
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+
+    .logo-area {
+        padding: 10px 57px;
+        text-align: center;
+    }
+    
+    .nav_bar {
+        padding-top: 30px;
+        font-size: 17px;
+        display: grid;
+        text-align: center;
+        float: unset;
+    }
+    .nav_bar a {
+        color: white;
+        margin-top: 20px;
+        padding: 15px;
+    }
+    .nav_bar a:hover {
+        background-color: #275d7d;
+        opacity: 0.5;
+        color: white;
+    }
+    .nav_back {
+        background-size: 1382%;
+    }
+    .col-md-4.prf_img {
+        padding: 0px 78px;
+    }
+    .tab button {
+        padding: 18px 13px;
+    }
+    .about_heading {
+        margin-left: 0px;
+    }
+    .li_txt {
+        padding-left: 0px;
+    }
+    .abt_txt {
+        padding-left: 20px;
+        
+    }
+    .bt_trei {
+        margin-left: 8px;
+        height: 55px;
+        margin-top: 13px;
+    }
+    .same img {
+        margin-right: 0px;
+    }
+    .cand img {
+        padding-left: 0px;
+        margin-left: 17px;
+    }
+    .same {
+        padding: 0px;
+        margin: 0px;
+        width: 74px;
+    }
+    .flower.same {
+        width: 99px;
+        margin-top: 0px;
+
+    }
+    span.sp {
+        font-size: 10px;
+    }
+    .icon_list {
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .publish {
+        text-align: center;
+        margin-top: 20px;
+        float: none;
+        margin-right: 0px; 
+    }
+    .col-md-4.side_area {
+        display: none;
+    }
+    .links {
+        display: grid;
+    }
+    .footer_area {
+        height: auto;   
+        text-align: center;   
+    }
+    .links a:hover {
+        background-color: #6e9096;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+    .sdad {
+        margin-left: 123px;
+    }
+    .baby img {
+        margin-left: 7px;
+    }
+    .tab_gal button {
+        padding: 14px 27px;
+        margin-left: 3px;
+    }
+    .gall_top_bttn {
+        padding: 6px 3px;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 19px;
+        margin-left: 3px;
+        font-size: 12px;
+    }
+    .slidsho_txt {
+        margin-top: 7px;
+    }
+    .slidsho_txt p {
+        margin: 0 0 0px;
+    }
+    .pic_gal_img {
+        margin: 14px 3px;
+    }
+    .col-md-3.pic_gal_img img {
+        width: 279px;
+        border-radius: 10px;
+        border: #6e9096 solid 1px;
+    }
+    .aud_box {
+     
+        height: 200px;
+        width: 228px;
+    }
+    .aud_box i {
+        margin-left: 64px;
+    }
+    .aud_box p {
+        margin-left: 60px;
+    }
+    .audio_icon {
+        margin-left: 31%;
+        
+    }
+    .story_tab img {
+        block-size: 225px;
+        margin-left: 18px;
+        margin-bottom: 7px;
+    }
+    .add_stor {
+        padding-left: 0px;
+        padding-top: 21px;
+
+    }
+    .stor_bttn {
+        
+        padding-left: 23px;
+        height: 38px;   
+        border-color: #275d7d;
+        float: none;
+        margin-left: 33px;
+        margin-top: 1px;
+        background-color: #ffd8aa;
+
+    }
+    .attach {
+        margin: 26px 0px;
+    }
+    .share_story {
+        background-color: #9ec5ca;
+        border-radius: 10px;
+        width: 93%;
+        margin: 10px 13px;
+        padding: 2px 3px;
+    }
+    .stor_bttn:hover {
+    background-color: #f3d0a6;
+    }
+    .publ_btn {
+    margin-left: 20%;
+}
+.attch_icon_area {
+    width: 312px;
+    margin: 10px;
+}
+.up_ld_file {
+    margin-left: 43px;
+}
+.attch_icon label {
+    margin-left: 0px;
+}
+.attch_icon {
+    margin: 0px;
+    text-align: center;
+}
+.story_para {
+    padding-right: 0px;
+}
+.story_tab p {
+    margin: 10px;
+    text-align: justify;
+}
+    
+}
+/* @media only screen and (max-width : 1000px) {
+    .col-md-4.side_area {
+        display: none;
+    }
+    .reviewBox {
+        padding: 0px;
+    }
+    .nav_back {
+        background-repeat: no-repeat;
+    }
+} */

@@ -30,8 +30,8 @@ class TemplateSeeder extends Seeder
         $server = 'https://demo.hatinco.com/4_ever_memories/public';
         // $server = 'demo.hatinco.com://';
         // if(){}
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
-        // $public_path = 'http://localhost/4_ever_memories/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        $public_path = 'http://localhost/4_ever_memories/public/';
         // dd($pub);
         $template->web_html =
         '
@@ -65,10 +65,6 @@ class TemplateSeeder extends Seeder
                 <style>
                 .nav_back {
         background-image: url(' . $public_path . 'user_templates/template_1/images/cover.png);
-        /* height: 99%; */
-        background-repeat: no-repeat;
-        background-position-x: -247px;
-        background-size: 133%;
     }
             </style>
                     <div class="nav_area">

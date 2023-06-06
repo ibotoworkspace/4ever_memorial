@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\UserTemplateHelper;
+use App\Models\Gallery;
 use App\Models\Models\Template;
 use App\Http\Helpers\TemplateHelper;
 use App\Models\Story_Tab_Arr;
@@ -25,6 +26,12 @@ class UserController extends Controller
     }
     public function index1111(){
         return view('admin.templates.template_1.index-orignal');
+    }
+    public function index2(){
+        return view('user.memorial_search');
+    }
+    public function index3(){
+        return view('user.view_memorial');
     }
     public function aboutus(){
         return view('user.aboutus');
@@ -180,11 +187,10 @@ class UserController extends Controller
         $tribute->type_var = $request->type_var;
         $tribute->memorial_id = $request->memorial_id;
         $tribute->user_id = $user->id;
-        // $user_trib = Tributes_Arr::with('user')->select('*')->get();
         $tribute->user_name_show_var =$user->first_name;
         $tribute->date_show_var = date(" jS  F Y");
         $tribute->save();
-        return $this->sendResponse(200);
+        return $this->sendResponse(200,$tribute);
     }
 public function get_tribute(Request $request){
     
@@ -200,6 +206,24 @@ public function get_tribute(Request $request){
         $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
         // $template = Styling::orderBy('created_at', 'DESC')->get();
         return view('user.my_memorials', compact('memorials'));
+
+    }
+    public function search_memorial(Request $request){
+        $email = $request->email ?? '';
+
+        $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get()->toArray();
+        // Session()->put($search_memorial, "Your Data Save Successfully !");  
+
+        // dd( Session()->get(1, $search_memorial));
+        return view('user.view_memorial',compact('search_memorial'));
+    }
+
+    public function upload_gallery_files(Request $request){
+        $gallery = new Gallery();
+        $gallery->image_url	 = $request->upld_file;
+        $gallery->media_url = $request->upld_vid;
+        $gallery->media_url = $request->upld_aud;
+        $gallery->save();
 
     }
 

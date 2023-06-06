@@ -69,6 +69,8 @@ Route::get('user/template/select_template/{user_website}',[TemplateController::c
 
 Route::post('user/adduser',[User_UserController::class, 'add_user'])->name('admin.user.add_user');
 Route::get('user/testing',[User_UserController::class, 'index1111'])->name('admin.user.add_user');
+Route::get('user/testing2',[User_UserController::class, 'index2'])->name('admin.user.add_user');
+Route::get('user/testing3',[User_UserController::class, 'index3'])->name('admin.user.add_user');
 // Route::post('admin/user/plan/{id}',[Admin_UserController::class, 'plan'])->name('admin.user.plan');
 Route::post('user/memorial/update_plan',[User_UserController::class, 'update_plan'])->name('user.plan.update');
 Route::post('user/memorial/privacy',[User_UserController::class, 'privacy'])->name('user.memorial.privacy');
@@ -80,3 +82,7 @@ Route::get('admin/category',[CategoryController::class, 'index']);
 
 /////////stylings
 Route::get('admin/stylings',[StylingsController::class, 'index']);
+
+
+Route::post('search/memorial',[User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
+Route::post('user/upload_gallery_files',[User_UserController::class, 'upload_gallery_files'])->name('user.upload_gallery_files'); //search
