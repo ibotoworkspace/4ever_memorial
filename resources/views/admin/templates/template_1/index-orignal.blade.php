@@ -328,7 +328,7 @@
                                                         <label for="file_upload" class="custom-file-upload">
                                                             Add a Photo
                                                         </label>
-                                                        <input type="file" id="file_upload" class="upld_file" >
+                                                        <input type="file" id="file_upload" class="upld_file">
                                                     </div>
                                                 </div>
                                             </div>
@@ -487,8 +487,9 @@
                                                 <label for="file_upload" class="custom-file-upload">
                                                     <i class="fa fa-cloud-upload" aria-hidden="true"></i>
                                                 </label>
-                                                <input type="file" onselect="" id="audio_upload" class="upld_audio" >
-                                                
+                                                <input type="file" onselect="" id="audio_upload"
+                                                    class="upld_audio">
+
                                                 <p>From Your Device</p>
 
                                             </div>
@@ -521,27 +522,35 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="story_tab">
-                                    <p>
-                                        January 21 . by Alexa Zelaya</p>
-                                    <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="relative">
-                                    <div class="story_para">
-                                        <p>3rd floor of the library was always our go to if we wanted to "study" (aka
-                                            gossip haha.) We shared so many nice chats here and always wanted to reserve
-                                            a study room but we were always too lazy to do that. We'd find an empty one
-                                            but then get kicked out like 10 minutes later after someone who actually
-                                            reserved it came in. All the memories at school hold a special place in my
-                                            heart. I walk past the places we would hang out and think about everything.
-                                            I am glad we went from high school to college. I am so grateful I got to
-                                            spend my first quarter of college with someone as amazing as you, Anthony.
-                                        </p>
-                                        <div class="whole">
-                                            <div class="flx">
-                                                <div class="share">
-                                                    <i class="fa fa-share-alt-square" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="chr_p">
-                                                    Share
+                                <div class="story_blk">
+                                    <div class="story_tab">
+                                        <p>
+                                            January 21 . by Alexa Zelaya</p>
+                                        <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="relative">
+                                        <div class="story_para">
+                                            <p>3rd floor of the library was always our go to if we wanted to "study"
+                                                (aka
+                                                gossip haha.) We shared so many nice chats here and always wanted to
+                                                reserve
+                                                a study room but we were always too lazy to do that. We'd find an empty
+                                                one
+                                                but then get kicked out like 10 minutes later after someone who actually
+                                                reserved it came in. All the memories at school hold a special place in
+                                                my
+                                                heart. I walk past the places we would hang out and think about
+                                                everything.
+                                                I am glad we went from high school to college. I am so grateful I got to
+                                                spend my first quarter of college with someone as amazing as you,
+                                                Anthony.
+                                            </p>
+                                            <div class="whole">
+                                                <div class="flx">
+                                                    <div class="share">
+                                                        <i class="fa fa-share-alt-square" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="chr_p">
+                                                        Share
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

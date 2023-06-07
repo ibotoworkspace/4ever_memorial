@@ -168,6 +168,7 @@ class UserController extends Controller
         return view('user/dynamic_template/user_page', compact('html','user_website'));
     }
     public function storyform(Request $request){
+        // dd($request->all());
         $user = Auth::user();
         $story = new Story_Tab_Arr();
         $story->user_name_show_var = $request->story_title_n;
@@ -177,7 +178,7 @@ class UserController extends Controller
         $story->date_show_var = date(" jS  F Y");
         $story->user_id = $user->id;
         $story->save();
-        return $this->sendResponse(200);
+        return $this->sendResponse(200,$story);
 
     }
     public function tributeform(Request $request){
@@ -220,7 +221,7 @@ public function get_tribute(Request $request){
 
     public function upload_gallery_files(Request $request){
         $gallery = new Gallery();
-        $gallery->image_url	 = $request->upld_file;
+        $gallery->image_url	 = $request->upld_img;
         $gallery->media_url = $request->upld_vid;
         $gallery->media_url = $request->upld_aud;
         $gallery->save();

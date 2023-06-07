@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 /* .new{5} */
-
+label.custom-file-upload i {
+    cursor: pointer;
+}
 input#audio_upload {
     display: none;
 }
@@ -15,6 +17,7 @@ input#file_upload {
 
 label.custom-file-upload {
     margin-top: 4px;
+    width: 136px;
 }
 /* .new{5} */
 
