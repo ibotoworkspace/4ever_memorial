@@ -213,10 +213,13 @@ public function get_tribute(Request $request){
         $email = $request->email ?? '';
 
         $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get()->toArray();
+        $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+        // $template = Styling::orderBy('created_at', 'DESC')->get();
+       
         // Session()->put($search_memorial, "Your Data Save Successfully !");  
 
         // dd( Session()->get(1, $search_memorial));
-        return view('user.view_memorial',compact('search_memorial'));
+        return view('user.view_memorial',compact('search_memorial', 'memorials'));
     }
 
     public function upload_gallery_files(Request $request){
