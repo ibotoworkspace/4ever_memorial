@@ -56,31 +56,34 @@
 
                                         <form class="create_memorial_form" action="{!! asset('user/adduser') !!}"
                                             method="post">
-                                            <div class="col-sm-8">
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">First Name</label>
                                                     <input type="text" name="f_name" class="form-control"
                                                         placeholder="">
                                                 </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Last Name</label>
+                                                    <input type="text" name="l_name" class="form-control"
+                                                        placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Middle Name</label>
                                                     <input type="text" name="m_name" class="form-control"
                                                         placeholder="">
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-4">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">decised image</label>
-                                                    <input type="file" name="f_name" class="form-control prof_box"
+                                                    <label for="exampleInputEmail1">Deceased Profile Image</label>
+                                                    <input type="file" name="prof_img" class="form-control prof_box"
                                                         placeholder="">
                                                 </div>
-                                                
+
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Last Name</label>
-                                                <input type="text" name="l_name" class="form-control"
-                                                    placeholder="">
-                                            </div>
+
                                             <div class="form-group">
                                                 <label name="gender" for="exampleFormControlSelect1">Gender</label>
                                                 <select class="form-control" name="gender"
