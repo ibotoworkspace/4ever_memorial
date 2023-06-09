@@ -13,7 +13,11 @@
             formData.append('memorial_id', '{!! $user_website->id !!}');
             formData.append('story_title_n', $('input[name="story_title_n"]').val());
             formData.append('story_details_n', $('#story_details').val());
-            formData.append('image', $('input[type=file]')[0].files[0]);
+            // formData.append('image', $('#upload-photo').files[0]);
+            // formData.append('image', $('input[id=upload-photo]')[0].files[0]);
+            // formData.append('image', $('input[type=file]')[0].files[0]);
+            // formData.append('image', $('input[type=file].up_ld_file')[0].files[0]);
+            formData.append('image', $('.attch_icon').find('input[type=file]')[0].files[0]);
 
 
             $.ajax({

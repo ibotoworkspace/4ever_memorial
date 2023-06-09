@@ -162,7 +162,7 @@
                                             <a href=""><span>CREATE A MEMORIAL</span> </a>
                                         </li>
                                         <li id="4">
-                                            <a href=""><span>PLANS 7& FEATURES</span> </a>
+                                            <a href=""><span>PLANS & FEATURES</span> </a>
                                         </li>
                                         <li id="5">
                                             <a href=""><span>TESTIMONIALS</span> </a>

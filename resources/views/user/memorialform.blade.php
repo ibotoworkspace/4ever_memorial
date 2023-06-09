@@ -15,6 +15,7 @@
     <link href="{!! asset('theme/user_theme/css/main.css') !!}" rel="stylesheet">
 
 </head>
+@extends('user_layout.main_header_footer')
 
 <body onload="disableSubmit()">
 
@@ -44,6 +45,10 @@
                                 <li><a data-toggle="tab" href="#menu2">CHOOSE YOUR PLAN</a></li>
                                 <li id="privacy_tab"><a data-toggle="tab" href="#menu3">PRIVACY OPTIONS</a></li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
                             <div class="tab-content">
                                 <div id="menu1" class="tab-pane fade in active">
                                     <div class="cardformarea">
@@ -51,16 +56,25 @@
 
                                         <form class="create_memorial_form" action="{!! asset('user/adduser') !!}"
                                             method="post">
-
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">First Name</label>
-                                                <input type="text" name="f_name" class="form-control"
-                                                    placeholder="">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">First Name</label>
+                                                    <input type="text" name="f_name" class="form-control"
+                                                        placeholder="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Middle Name</label>
+                                                    <input type="text" name="m_name" class="form-control"
+                                                        placeholder="">
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Middle Name</label>
-                                                <input type="text" name="m_name" class="form-control"
-                                                    placeholder="">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">decised image</label>
+                                                    <input type="file" name="f_name" class="form-control prof_box"
+                                                        placeholder="">
+                                                </div>
+                                                
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Last Name</label>
@@ -112,11 +126,13 @@
 
                                             <div class="form-group">
                                                 <label name="memorial_designation"
-                                                    for="exampleFormControlSelect1">Memorial Designation</label>
+                                                    for="exampleFormControlSelect1">Memorial
+                                                    Designation</label>
                                                 <select class="form-control" name="memorial_designation"
                                                     id="exampleFormControlSelect1">
                                                     <option value="" selected="" disabled=""
-                                                        hidden="">Select designation, if applies </option>
+                                                        hidden="">
+                                                        Select designation, if applies </option>
                                                     <option value="does_not_apply">No Designation </option>
                                                     <option value="military">Military Veteran </option>
                                                     <option value="first_responder">First Responder </option>
@@ -133,7 +149,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image (Attach A Picture Regarding The
                                                     Life/Birth Of This Person)</label>
-                                                    <input type="file" name="life_image" class="form-control"
+                                                <input type="file" name="life_image" class="form-control"
                                                     id="exampleInputEmail1">
                                                 {{-- <div onclick="get_ck_editor_val()">Get val</div> --}}
                                             </div>
@@ -441,7 +457,7 @@
         </form>
     </section>
 
-    <section>
+    {{-- <section>
         <div class="contactarea">
             <div class="container">
                 <div class="row">
@@ -459,9 +475,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section>
+    {{-- <section>
         <div class="footerarea">
             <div class="container">
                 <div class="row">
@@ -508,7 +524,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     @include('layouts.myapp_js')
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>

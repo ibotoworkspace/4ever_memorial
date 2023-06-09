@@ -28,10 +28,12 @@ class UserController extends Controller
         return view('admin.templates.template_1.index-orignal');
     }
     public function index2(){
-        return view('user.memorial_search');
+        $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+        return view('user.memorial_search' ,compact('memorials'));
     }
     public function index3(){
-        return view('user.view_memorial');
+        $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+        return view('user.view_memorial' ,compact('memorials'));
     }
     public function aboutus(){
         return view('user.aboutus');
@@ -210,10 +212,9 @@ public function get_tribute(Request $request){
 
     }
     public function search_memorial(Request $request){
-        $email = $request->email ?? '';
-
-        $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get()->toArray();
         $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+        $email = $request->email ?? '';
+        $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get()->toArray();
         // $template = Styling::orderBy('created_at', 'DESC')->get();
        
         // Session()->put($search_memorial, "Your Data Save Successfully !");  

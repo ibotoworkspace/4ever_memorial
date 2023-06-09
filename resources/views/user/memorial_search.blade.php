@@ -128,6 +128,28 @@
                         </a>
                     </div>
                 </div>
+                <div class="row ">
+                    @foreach($memorials as $m)
+                    <div class="col-sm-4">
+                        <a href="{!! asset('user/get_memorial/'.$m->email) !!}" class="deco_no">
+                            <div class="memo_box box_hvr">
+                                <div class="img_area">
+                                    <img src="{!! asset('images/prof_img7.jpg') !!}" class="img-responsive">
+                                </div>
+                                <div class="info_area">
+                                    <h3>{!! ucwords($m->f_name) !!}-{!! ucwords($m->m_name) !!}-{!! ucwords($m->l_name) !!}</h3>
+                                    <h4>{!! ucwords($m->b_year) !!} - {!! ucwords($m->p_year) !!}</h4>
+                                    <a href="{!! asset('user/get_memorial/'.$m->email) !!}">
+                                        <p><i class="fa fa-globe" aria-hidden="true"></i>{!! ucwords($m->email) !!}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                    
+                    
+                </div>
                 <div class="view_all">
                     <a href=""><button class="btn">View all</button></a>
                 </div>
