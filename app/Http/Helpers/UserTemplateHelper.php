@@ -60,6 +60,12 @@ class UserTemplateHelper
         $user_website->f_name = $request->f_name;
         $user_website->m_name = $request->m_name;
         $user_website->l_name = $request->l_name;
+        // $user_website->image_show_var = $request->prof_img;
+        if ($request->hasFile('avatar')) {
+                $avatar = $request->prof_img;
+                $root = $request->root();
+                $user_website->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
+            }
         $user_website->gender = $request->gender;
         $user_website->relation = $request->relation;
         $user_website->memorial_designation = $request->memorial_designation;

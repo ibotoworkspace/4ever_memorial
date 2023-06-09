@@ -2,9 +2,9 @@
 <button id="btn1">add a story block</button>
 <script>
     $(document).ready(function() {
-        $("#btn1").click(function() {
-            $(".add_tribute_append").append(review);
-        });
+        // $("#btn1").click(function() {
+        //     $(".add_tribute_append").append(review);
+        // });
 
 
         $('#save_story').on('click', function() {
@@ -13,7 +13,11 @@
             formData.append('memorial_id', '{!! $user_website->id !!}');
             formData.append('story_title_n', $('input[name="story_title_n"]').val());
             formData.append('story_details_n', $('#story_details').val());
-            formData.append('image', $('input[type=file]')[0].files[0]);
+            // formData.append('image', $('#upload-photo').files[0]);
+            // formData.append('image', $('input[id=upload-photo]')[0].files[0]);
+            // formData.append('image', $('input[type=file]')[0].files[0]);
+            // formData.append('image', $('input[type=file].up_ld_file')[0].files[0]);
+            formData.append('image', $('.attch_icon').find('input[type=file]')[0].files[0]);
 
 
             $.ajax({
@@ -27,12 +31,44 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
+                    $(".story_blk").append(get_story_html(res.response));
+                    
                 },
                 error: function(err) {
                     console.log('form failed', err);
                 }
             })
         });
+
+
+        $('#file_upload').on('click', function() {
+
+            var formData = new FormData();
+            formData.append('upld_img', $('input[type=file]')[0].files[0]);
+
+
+            $.ajax({
+                url: '{!! asset('user/upload_gallery_files') !!}',
+                method: 'POST',
+                data: formData,
+                dataType: 'JSON',
+                processData: false,
+                contentType: false,
+                cache: false,
+                enctype: 'multipart/form-data',
+                success: function(res) {
+                    console.log('res', res)
+                    $(".gallery_img").append(get_gallery_img_html(res.response));
+                    
+                },
+                error: function(err) {
+                    console.log('form failed', err);
+                }
+            })
+        });
+
+
+
 
         $('#save_trib').on('click', function() {
             var formData = new FormData();
@@ -64,28 +100,28 @@
             })
         });
 
-        fetchRecords();
+        // fetchRecords();
 
-        function fetchRecords() {
+        // function fetchRecords() {
 
-            $.ajax({
-                url: '{!! asset('user/get_tribute') !!}',
-                type: 'get',
-                dataType: 'json',
-                success: function(response) {
-                    console.log('response');
-                    var len = response['data'].length;
-                    console.log('response2');
+        //     $.ajax({
+        //         url: '{!! asset('user/get_tribute') !!}',
+        //         type: 'get',
+        //         dataType: 'json',
+        //         success: function(response) {
+        //             console.log('response');
+        //             var len = response['data'].length;
+        //             console.log('response2');
 
-                    console.log(response, 'i am here');
+        //             console.log(response, 'i am here');
 
-                    for (var i = 0; i < len; i++) {
-                        console.log('my arr');
-                        // $(".add_tribute_append").append(get_review_html(response['data'][i]));
-                    }
-                }
-            });
-        }
+        //             for (var i = 0; i < len; i++) {
+        //                 console.log('my arr');
+        //                 // $(".add_tribute_append").append(get_review_html(response['data'][i]));
+        //             }
+        //         }
+        //     });
+        // }
 
 
     });
@@ -151,6 +187,60 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    `;
+        return review;
+
+    }
+
+
+
+    function get_story_html(response) {
+        // alert('asd');
+
+        // var id = response['data'][i].id;
+        var user_name_show_var = response.user_name_show_var;
+        var date_show_var = response.date_show_var;
+        var details_show_var = response.details_show_var;
+        var image_show_var =`<img src="` +response.image_show_var+ `">`;
+        console.log(image_show_var,'image');
+       
+        var review = `
+        <div class="story_tab">
+                                    <p>
+                                        ` + date_show_var +`.by `+ user_name_show_var + `</p>
+                                        <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="relative">
+                                    <div class="story_para">
+                                        <p>`+ details_show_var +`
+                                        </p>
+                                        <div class="whole">
+                                            <div class="flx">
+                                                <div class="share">
+                                                    <i class="fa fa-share-alt-square" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="chr_p">
+                                                    Share
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    `;
+        return review;
+
+    }
+
+    function get_gallery_img_html(response) {
+        var image_show_var =`<img src="` +response.image_url+ `">`;
+        console.log(image_show_var,'image');
+       
+        var review = `
+        <div class="gallery_img">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
                                     `;
         return review;
 
