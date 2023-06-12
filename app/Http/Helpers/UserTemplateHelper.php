@@ -5,6 +5,7 @@ namespace App\Http\Helpers;
 use App\Models\Life_Tab_Arr;
 use App\Models\UserWebsite;
 use App\Models\Styling;
+use App\Libraries\Common;
 
 use App\Models\User;
 // use Illuminate\Support\Facades\Request;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserTemplateHelper
 {
+        use  Common;
        public function save_memorial_user(Request $request,$user,$style){
         
         $user = Auth::user();
@@ -61,7 +63,7 @@ class UserTemplateHelper
         $user_website->m_name = $request->m_name;
         $user_website->l_name = $request->l_name;
         // $user_website->image_show_var = $request->prof_img;
-        if ($request->hasFile('avatar')) {
+        if ($request->hasFile('prof_img')) {
                 $avatar = $request->prof_img;
                 $root = $request->root();
                 $user_website->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
@@ -88,7 +90,13 @@ class UserTemplateHelper
 
         $user_website_life = new Life_Tab_Arr();
         $user_website_life->details_show_var = $request->life_tab_arr;
-        $user_website_life->image_show_var = $request->life_image;
+        // $user_website_life->image_show_var = $request->life_image;
+        if ($request->hasFile('life_image')) {
+                $avatar = $request->life_image;
+                $root = $request->root();
+                $user_website_life->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
+            }
+
         // $user_website_life->memorial_id = $user_memorial->id;
         $user_website_life->user_id =  $user->id;
         $user_website_life->save();

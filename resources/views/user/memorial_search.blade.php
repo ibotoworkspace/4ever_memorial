@@ -134,7 +134,7 @@
                         <a href="{!! asset('user/get_memorial/'.$m->email) !!}" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img7.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset($m->image_show_var) !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>{!! ucwords($m->f_name) !!}-{!! ucwords($m->m_name) !!}-{!! ucwords($m->l_name) !!}</h3>
@@ -151,7 +151,7 @@
                     
                 </div>
                 <div class="view_all">
-                    <a href=""><button class="btn">View all</button></a>
+                    <a href="{!! asset('user/testing3') !!}"><button class="btn">View all</button></a>
                 </div>
 
             </div>

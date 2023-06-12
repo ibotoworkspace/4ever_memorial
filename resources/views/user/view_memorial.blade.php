@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-md-4 left_box">
                             <div class="img_bx">
-                                <img src="{!! asset('images/prof_img8.jpg') !!}" class="img-responsive">
+                                <img src="{!! asset($m->image_show_var) !!}" class="img-responsive">
                             </div>
                         </div>
                         <div class="col-sm-6">

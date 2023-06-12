@@ -68,6 +68,8 @@ trait Common
     return $all_permissions;
 }
 
+
+
     public function prepare_excel($data , $field_not_required = []){
         $users = [];
         foreach ($data as $rec_key => $value){

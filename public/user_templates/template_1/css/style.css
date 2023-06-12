@@ -1,26 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 
+.add_audio {
+    background: #9ec5ca;
+    margin-top: 53px;
+    border-radius: 10px;
+    height: 347px;
+}
+.publish_btn.aud button {
+    width: 225px;
+}   
+.publish_btn.aud {
+    float: right;
+    margin-right: 27px;
+    margin-top: 14px;
+}
+.aud_box i {
+    font-size: 92px;
+    margin-left: 256px;
+    margin-top: 47px;
+    opacity: 70%;
+}
+
+input#audio_upload {
+    margin-left: 206px;
+}
+
+
+.ply_bttn {
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+.gall_top_bttn {
+    border: solid 1px;
+    width: 385px;
+    padding: 10px 13px;
+    height: 67px;
+    border-radius: 10px;
+    margin-top: 19px;
+    margin-left: 36px;
+}
+
+.publish_btn button {
+    margin-left: 20px;
+    height: 43px;
+}
+
 /* .new{5} */
 
 label.custom-file-upload i {
     cursor: pointer;
 }
 input#audio_upload {
-    display: none;
+    /* display: none; */
 }
 input#vid_upload {
-    display: none;
+    /* display: none; */
 }
 
 input#file_upload {
-    display: none;
+    /* display: none; */
 }
 
 label.custom-file-upload {
-    margin-top: 4px;
-    width: 136px;
+    margin-top: 0px;
+    margin-left: 3px;
 }
+
 /* .new{5} */
 
 .attach {
@@ -693,19 +742,7 @@ body {font-family: Arial;}
 }
 
 
-.gall_top_bttn {
-    border: solid 1px;
-    width: 182px;
-    padding: 10px;
-    height: 49px;
-    border-radius: 10px;
-    margin-top: 19px;
-    margin-left: 36px;
-}
-.ply_bttn {
-    font-size: 30px;
-    margin-right: 10px;
-}
+
 .gall_top_bttn:hover {
     background: #ebc496;
 }
@@ -716,17 +753,12 @@ body {font-family: Arial;}
     color: #b9c8d5;
     opacity: 50%;
 }
-.add_audio {
-    background: #9ec5ca;
-    margin-top: 53px;
-    border-radius: 10px;
-    height: 300;
-}
+
 .aud_box {
     border: solid 1px;
     border-style: dashed;
     height: 200px;
-    width: 600px;
+    width: 620px;
     margin-left: 25px;
     margin-top: 10px;
     border-radius: 10px;
@@ -738,12 +770,7 @@ body {font-family: Arial;}
     font-size: 23px;
     color: #2d4356;
 }
-.aud_box i {
-    font-size: 92px;
-    margin-left: 256px;
-    margin-top: 71px;
-    opacity: 70%;
-}
+
 .aud_box p {
     margin-left: 238px;
     opacity: 70%;
@@ -801,13 +828,16 @@ body {font-family: Arial;}
 }
 
 .story_tab img {
-    block-size: 500px;
+    width: 617px;
     margin-left: 40px;
     margin-bottom: 40px;
     border: solid 1px;
     border-color: #275d7d;
     margin-top: 16px;
     border-radius: 10px;
+}
+.story_tab h3 {
+    margin-left: 40px;
 }
 .story_tab p {
     margin-top: 14px;
@@ -922,14 +952,7 @@ body {font-family: Arial;}
         padding: 14px 27px;
         margin-left: 3px;
     }
-    .gall_top_bttn {
-        padding: 6px 3px;
-        height: auto;
-        border-radius: 10px;
-        margin-top: 19px;
-        margin-left: 3px;
-        font-size: 12px;
-    }
+  
     .slidsho_txt {
         margin-top: 7px;
     }
@@ -949,9 +972,7 @@ body {font-family: Arial;}
         height: 200px;
         width: 228px;
     }
-    .aud_box i {
-        margin-left: 64px;
-    }
+    
     .aud_box p {
         margin-left: 60px;
     }
