@@ -9,7 +9,7 @@
     height: 380px;
 }
 
-.img_area {
+.img_area img {
     border-radius: 100px;
     overflow: hidden;
     width: 199px;

@@ -173,10 +173,16 @@ class UserController extends Controller
         // dd($request->all());
         $user = Auth::user();
         $story = new Story_Tab_Arr();
-        $story->user_name_show_var = $request->story_title_n;
+        $story->user_name_show_var = $user->first_name;
+        $story->story_title = $request->story_title_n;
         $story->details_show_var = $request->story_details_n;
         $story->memorial_id = $request->memorial_id;
-        $story->image_show_var = $request->image;
+        // $story->image_show_var = $request->image;
+        if ($request->hasFile('image')) {
+            $avatar = $request->image;
+            $root = $request->root();
+            $story->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
+        }
         $story->date_show_var = date(" jS  F Y");
         $story->user_id = $user->id;
         $story->save();

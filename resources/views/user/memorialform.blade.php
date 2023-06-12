@@ -78,8 +78,8 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Deceased Profile Image</label>
-                                                    <input type="file" name="prof_img" class="form-control prof_box"
-                                                        placeholder="">
+                                                    <input type="file" name="prof_img" class="form-control prof_box">
+
                                                 </div>
 
                                             </div>
@@ -154,7 +154,6 @@
                                                     Life/Birth Of This Person)</label>
                                                 <input type="file" name="life_image" class="form-control"
                                                     id="exampleInputEmail1">
-                                                {{-- <div onclick="get_ck_editor_val()">Get val</div> --}}
                                             </div>
 
 

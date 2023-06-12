@@ -305,6 +305,7 @@
                                         <button class="tab_gallinks" onclick="openpic(event, 'video')">video</button>
                                         <button class="tab_gallinks" onclick="openpic(event, 'Audio')">Audio</button>
                                     </div>
+                                    <input type="hidden" id="media_type" name="media_type">
 
                                     <div id="photo" class="tab_galcontent">
                                         <div class="flx">
@@ -330,7 +331,11 @@
                                                         </label>
                                                         <input type="file" id="file_upload" class="upld_file">
                                                     </div>
+                                                    
                                                 </div>
+                                            </div>
+                                            <div class="publish_btn">
+                                                <button id ="save_media"class="btn btn-danger">Publish</button>
                                             </div>
                                         </div>
                                         <div class="gallery">
@@ -524,6 +529,7 @@
                                 </div>
                                 <div class="story_blk">
                                     <div class="story_tab">
+                                        <h3>story title</h3>
                                         <p>
                                             January 21 . by Alexa Zelaya</p>
                                         <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="relative">

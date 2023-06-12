@@ -14,10 +14,10 @@
             formData.append('story_title_n', $('input[name="story_title_n"]').val());
             formData.append('story_details_n', $('#story_details').val());
             // formData.append('image', $('#upload-photo').files[0]);
-            // formData.append('image', $('input[id=upload-photo]')[0].files[0]);
+            formData.append('image', $('input[id=upload-photo]')[0].files[0]);
             // formData.append('image', $('input[type=file]')[0].files[0]);
             // formData.append('image', $('input[type=file].up_ld_file')[0].files[0]);
-            formData.append('image', $('.attch_icon').find('input[type=file]')[0].files[0]);
+            // formData.append('image', $('.attch_icon').find('input[type=file]')[0].files[0]);
 
 
             $.ajax({
@@ -142,6 +142,13 @@
         $('.'+select_class).addClass('selected_tribute');
         $('#type_tribute').val(type_tribute);
     }
+    
+    
+    
+    function set_media(media_type) {
+
+        $('#media_type').val(media_type);
+    }
 
 
 
@@ -201,14 +208,16 @@
         var user_name_show_var = response.user_name_show_var;
         var date_show_var = response.date_show_var;
         var details_show_var = response.details_show_var;
-        var image_show_var =`<img src="` +response.image_show_var+ `">`;
+        var story_title = response.story_title;
+        var image_show_var =`<img src="` +response.image_show_var+ ` " alt="relative">`;
         console.log(image_show_var,'image');
        
         var review = `
         <div class="story_tab">
-                                    <p>
+                                            <h3>`+ story_title +`</h3>
+                                            <p>
                                         ` + date_show_var +`.by `+ user_name_show_var + `</p>
-                                        <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="relative">
+                                        `+ image_show_var +` 
                                     <div class="story_para">
                                         <p>`+ details_show_var +`
                                         </p>
