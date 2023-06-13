@@ -130,23 +130,23 @@ id="upload_image" style="display:block" /> --}}
         var modal = $('#crop-modal');
         var image = document.getElementById('cropper_sample_image');
         var cropper;
-        var image_width ;
-        var image_height ;
+        var image_width;
+        var image_height;
         var aspect_ratio_width;
-        var aspect_ratio_height ;
-        var selected_image_input ;
+        var aspect_ratio_height;
+        var selected_image_input;
         // var upload_input_by_name ;
-        var element_by_id ;
-
+        var element_by_id;
 
         $('.crop_upload_image').change(function(event) {
             var image_num = '';
-            selected_image_input = event;
-             image_width = $($(event)).attr('image_width');
-             image_height = $(this).attr('image_height');
-             aspect_ratio_width = $(this).attr('aspect_ratio_width');
-             aspect_ratio_height = $(this).attr('aspect_ratio_height');
-             element_by_id = "#"+$(this).attr('id');
+            selected_image_input = event.target;
+            // selected_image_input = $(event.target);
+            image_width = $($(event)).attr('image_width');
+            image_height = $(this).attr('image_height');
+            aspect_ratio_width = $(this).attr('aspect_ratio_width');
+            aspect_ratio_height = $(this).attr('aspect_ratio_height');
+            element_by_id = "#" + $(this).attr('id');
             console.log('image_widthimage_widthimage_width', image_width)
             console.log('image_heightimage_height', image_height)
             console.log('aspect_ratiowidthaspect_ratio_width', aspect_ratio_width)
@@ -203,22 +203,35 @@ id="upload_image" style="display:block" /> --}}
                         },
                         success: function(data) {
                             modal.modal('hide');
-                            console.log('data image upload  ',data);
-                            if(data.status){
-                                console.log('element_by_id',element_by_id);
-                                var upload_input_by_name = $(element_by_id).attr('upload_input_by_name');
-                                console.log('m1',upload_input_by_name);
-                                var cropped_file_input = '<input type="hidden" name="'+upload_input_by_name+'" value="'+data.image+'">';
-                                console.log('m2',cropped_file_input);
-                                $(element_by_id).parent().append(cropped_file_input);
-                            }
-                            else{
+                            console.log('data image upload  ', data);
+                            if (data.status) {
+                                // console.log('element_by_id', element_by_id);
+                                // var upload_input_by_name = $(element_by_id)
+                                //     .attr('upload_input_by_name');
+                                var upload_input_by_name = $(selected_image_input).attr('upload_input_by_name');
+                                // console.log('m1', $($(selected_image_input)).attr('image_width'));
+                                // console.log('m1 2', $(selected_image_input).attr('image_width'));
+                                // console.log('m1 2', selected_image_input.attr('image_width'));
+                                
+                                var cropped_file_input =
+                                    '<input type="hidden" name="' +
+                                    upload_input_by_name + '" value="' + data
+                                    .image + '">';
+                                console.log('m2', cropped_file_input);
+                                $(element_by_id).parent().find('input[name="'+upload_input_by_name+'"]').remove();
+                                $(element_by_id).parent().append(
+                                    cropped_file_input);
+                            } else {
                                 alert('Invalid upload');
                             }
                         }
                     });
                 };
             });
+        });
+
+        $('.crop_upload_image').click(function() {
+            $(this).val('');
         });
     });
 </script>
