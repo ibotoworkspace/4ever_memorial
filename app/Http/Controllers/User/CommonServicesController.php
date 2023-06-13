@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use File;
 
 class CommonServicesController extends Controller
 {
+    
 
     public function crop_image(Request $request)
     {
+        if(isset($request->pre_image)){
+            File::delete($request->pre_image);
+        }
         $folderPath = public_path('images/');
         $image_parts = explode(";base64,", $request->image);
         $image_type_aux = explode("image/", $image_parts[0]);

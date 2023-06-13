@@ -135,8 +135,6 @@ id="upload_image" style="display:block" /> --}}
         var aspect_ratio_width;
         var aspect_ratio_height;
         var selected_image_input;
-        // var upload_input_by_name ;
-        var element_by_id;
 
         $('.crop_upload_image').change(function(event) {
             var image_num = '';
@@ -146,7 +144,6 @@ id="upload_image" style="display:block" /> --}}
             image_height = $(this).attr('image_height');
             aspect_ratio_width = $(this).attr('aspect_ratio_width');
             aspect_ratio_height = $(this).attr('aspect_ratio_height');
-            element_by_id = "#" + $(this).attr('id');
             console.log('image_widthimage_widthimage_width', image_width)
             console.log('image_heightimage_height', image_height)
             console.log('aspect_ratiowidthaspect_ratio_width', aspect_ratio_width)
@@ -189,7 +186,31 @@ id="upload_image" style="display:block" /> --}}
 
             canvas.toBlob(function(blob) {
                 url = URL.createObjectURL(blob);
-                console.log('image url', url);
+                // console.log('image url', url);
+                // if (typeof attr !== 'undefined' && attr !== false) {
+                //     // ...
+                // }
+                var remove_previous = $(selected_image_input).attr('keep_previous') === "true" ? true:false;
+                // console.log('keep pre 1',keep_previous);
+
+                // if (typeof keep_previous === 'undefined' || keep_previous !== false) {
+                    console.log('keep pre 2',remove_previous);
+                    // console.log('keep pre testr no ',$(selected_image_input).attr('keep_previous1'));
+                // }
+                // if(keep_previous === "true"){
+                //     console.log('keep previous',true);
+                // }
+                // else{
+                //     console.log('keep previous',false);
+
+                // }
+
+                var upload_input_by_name = $(selected_image_input).attr('upload_input_by_name');
+                var pre_image = $('input[name="'+upload_input_by_name+'"]');
+                var pre_image_url = '';
+                if(pre_image.length > 0 && remove_previous){
+                    pre_image_url = pre_image.val();
+                }
                 var reader = new FileReader();
                 reader.readAsDataURL(blob);
                 reader.onloadend = function() {
@@ -199,27 +220,20 @@ id="upload_image" style="display:block" /> --}}
                         method: 'POST',
                         data: {
                             image: base64data,
+                            pre_image:pre_image_url,
                             _token: '{!! csrf_token() !!}',
                         },
                         success: function(data) {
                             modal.modal('hide');
                             console.log('data image upload  ', data);
                             if (data.status) {
-                                // console.log('element_by_id', element_by_id);
-                                // var upload_input_by_name = $(element_by_id)
-                                //     .attr('upload_input_by_name');
-                                var upload_input_by_name = $(selected_image_input).attr('upload_input_by_name');
-                                // console.log('m1', $($(selected_image_input)).attr('image_width'));
-                                // console.log('m1 2', $(selected_image_input).attr('image_width'));
-                                // console.log('m1 2', selected_image_input.attr('image_width'));
-                                
                                 var cropped_file_input =
                                     '<input type="hidden" name="' +
                                     upload_input_by_name + '" value="' + data
                                     .image + '">';
                                 console.log('m2', cropped_file_input);
-                                $(element_by_id).parent().find('input[name="'+upload_input_by_name+'"]').remove();
-                                $(element_by_id).parent().append(
+                                $(selected_image_input).parent().find('input[name="'+upload_input_by_name+'"]').remove();
+                                $(selected_image_input).parent().append(
                                     cropped_file_input);
                             } else {
                                 alert('Invalid upload');

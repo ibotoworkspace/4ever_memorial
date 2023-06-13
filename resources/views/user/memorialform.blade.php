@@ -79,7 +79,7 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Deceased Profile Image</label>
                                                     {{-- name="prof_img" --}}
-                                                    <input type="file" id="crop_pro_img"
+                                                    <input type="file"
                                                         class="form-control prof_box crop_upload_image"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
                                                         aspect_ratio_height="9" upload_input_by_name="prof_img">
@@ -160,7 +160,7 @@
                                                     id="exampleInputEmail1"> --}}
 
                                                     
-                                                    <input type="file" id="crop_life_image"
+                                                    <input type="file"
                                                         class="form-control prof_box crop_upload_image"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
                                                         aspect_ratio_height="9" upload_input_by_name="life_image">
