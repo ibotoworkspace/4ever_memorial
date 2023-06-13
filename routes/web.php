@@ -6,11 +6,14 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StylingsController;
 use App\Http\Controllers\Admin\MemorialFormController;
 use App\Http\Controllers\Admin\UserController as Admin_UserController;
+use App\Http\Controllers\User\CommonServicesController;
 use App\Http\Controllers\User\UserController as User_UserController;
 use Illuminate\Support\Facades\Route;
 
 
 //////////////user
+Route::post('cropper/crop_image', [CommonServicesController::class, 'crop_image'])->name('crop.image');
+
 Route::post('user/register', [User_UserController::class, 'register'])->name('user.register');
 Route::post('user/login', [User_UserController::class, 'login'])->name('user.login');
 Route::get('user/logout', [User_UserController::class, 'logout'])->name('user.logout');
