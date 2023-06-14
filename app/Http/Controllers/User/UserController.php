@@ -158,12 +158,19 @@ class UserController extends Controller
 
     public function get_memorial(Request $request,$user_email){
         $website_template_email = $user_email;
-        $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        // dd($user_website->web_variable);
-        $tributes = Tributes_Arr::where('memorial_id',$user_website->id)->get()->toArray();
-        // dd($tributes->toArray());
+        $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();        
         $web_variable = $user_website->web_variable;
+        // dd($web_variable);
+        
+        $tributes = Tributes_Arr::where('memorial_id',$user_website->id)->get()->toArray();
         $web_variable['tributes_arr'] = $this->set_attribute_arr_pics($tributes);//$tributes;
+
+        $stories = Story_Tab_Arr::orderbydesc('id')->get()->toArray();
+        // dd($stories);
+        // $stories = Story_Tab_Arr::where('memorial_id',$user_website->id)->get()->toArray();
+        
+        $web_variable['story_tab_arr'] = $stories;//$tributes;
+        // dd($user_website->id,$web_variable);
         // set_attribute_arr_pics($tributes);
         $template_helper = new TemplateHelper($user_website,$web_variable);
         $html = $template_helper->create_html();
@@ -177,12 +184,12 @@ class UserController extends Controller
         $story->story_title = $request->story_title_n;
         $story->details_show_var = $request->story_details_n;
         $story->memorial_id = $request->memorial_id;
-        // $story->image_show_var = $request->image;
-        if ($request->hasFile('image')) {
-            $avatar = $request->image;
-            $root = $request->root();
-            $story->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
-        }
+        $story->image_show_var = $request->story_image;
+        // if ($request->hasFile('image')) {
+        //     $avatar = $request->image;
+        //     $root = $request->root();
+        //     $story->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
+        // }
         $story->date_show_var = date(" jS  F Y");
         $story->user_id = $user->id;
         $story->save();

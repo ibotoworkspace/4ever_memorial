@@ -1,4 +1,6 @@
 {!! $html !!}
+@include('partial_layouts.cropper.cropper_html')
+
 <button id="btn1">add a story block</button>
 <script>
     $(document).ready(function() {
@@ -14,7 +16,7 @@
             formData.append('story_title_n', $('input[name="story_title_n"]').val());
             formData.append('story_details_n', $('#story_details').val());
             // formData.append('image', $('#upload-photo').files[0]);
-            formData.append('image', $('input[id=upload-photo]')[0].files[0]);
+            formData.append('story_image', $('input[name="story_image"]').val());
             // formData.append('image', $('input[type=file]')[0].files[0]);
             // formData.append('image', $('input[type=file].up_ld_file')[0].files[0]);
             // formData.append('image', $('.attch_icon').find('input[type=file]')[0].files[0]);

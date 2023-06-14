@@ -139,7 +139,6 @@ id="upload_image" style="display:block" /> --}}
         $('.crop_upload_image').change(function(event) {
             var image_num = '';
             selected_image_input = event.target;
-            // selected_image_input = $(event.target);
             image_width = $($(event)).attr('image_width');
             image_height = $(this).attr('image_height');
             aspect_ratio_width = $(this).attr('aspect_ratio_width');
@@ -176,7 +175,6 @@ id="upload_image" style="display:block" /> --}}
             cropper = null;
         });
 
-        // var image_1 = '';
 
         $('#crop').click(function() {
             canvas = cropper.getCroppedCanvas({
@@ -186,24 +184,11 @@ id="upload_image" style="display:block" /> --}}
 
             canvas.toBlob(function(blob) {
                 url = URL.createObjectURL(blob);
-                // console.log('image url', url);
-                // if (typeof attr !== 'undefined' && attr !== false) {
-                //     // ...
-                // }
+                
                 var remove_previous = $(selected_image_input).attr('keep_previous') === "true" ? true:false;
-                // console.log('keep pre 1',keep_previous);
-
-                // if (typeof keep_previous === 'undefined' || keep_previous !== false) {
+               
                     console.log('keep pre 2',remove_previous);
-                    // console.log('keep pre testr no ',$(selected_image_input).attr('keep_previous1'));
-                // }
-                // if(keep_previous === "true"){
-                //     console.log('keep previous',true);
-                // }
-                // else{
-                //     console.log('keep previous',false);
-
-                // }
+               
 
                 var upload_input_by_name = $(selected_image_input).attr('upload_input_by_name');
                 var pre_image = $('input[name="'+upload_input_by_name+'"]');

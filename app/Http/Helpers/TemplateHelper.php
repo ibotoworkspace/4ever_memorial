@@ -24,6 +24,7 @@ class TemplateHelper
         
 
         $this->web_html = $template->web_html;
+        // dd($web_variable);
         // dd($template,$web_variable);
     }
     public function create_html(){

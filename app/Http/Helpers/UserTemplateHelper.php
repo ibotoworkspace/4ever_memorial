@@ -63,11 +63,6 @@ class UserTemplateHelper
         $user_website->m_name = $request->m_name;
         $user_website->l_name = $request->l_name;
         $user_website->image_show_var = $request->prof_img;
-        // if ($request->hasFile('prof_img')) {
-        //         $avatar = $request->prof_img;
-        //         $root = $request->root();
-        //         $user_website->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
-        //     }
         $user_website->gender = $request->gender;
         $user_website->relation = $request->relation;
         $user_website->memorial_designation = $request->memorial_designation;
@@ -90,15 +85,8 @@ class UserTemplateHelper
 
         $user_website_life = new Life_Tab_Arr();
         $user_website_life->details_show_var = $request->life_tab_arr;
-        // $user_website_life->image_show_var = $request->life_image;
         $user_website_life->image_show_var = $request->life_image;
-
-        // if ($request->hasFile('life_image')) {
-        //         $avatar = $request->life_image;
-        //         $root = $request->root();
-        //         $user_website_life->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
-        //     }
-
+       
         // $user_website_life->memorial_id = $user_memorial->id;
         $user_website_life->user_id =  $user->id;
         $user_website_life->save();
