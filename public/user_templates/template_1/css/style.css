@@ -18,13 +18,11 @@
     border-radius: 10px;
     height: 347px;
 }
-.publish_btn.aud button {
-    width: 225px;
-}   
-.publish_btn.aud {
+.publishing_btn button {
     float: right;
-    margin-right: 27px;
-    margin-top: 14px;
+    margin-right: 25px;
+    margin-top: 7px;
+    width: 225px;
 }
 .aud_box i {
     font-size: 92px;
@@ -650,7 +648,6 @@ h4.aaa:hover {
 .publish {
     float: right;
     margin-top: 25px;
-    margin-right: 10px;
 }
 .pbbttn{
     width: 225px;
@@ -769,7 +766,7 @@ body {font-family: Arial;}
     border: solid 1px;
     border-style: dashed;
     height: 200px;
-    width: 600px;
+    width: 620px;
     margin-left: 25px;
     margin-top: 10px;
     border-radius: 10px;
@@ -974,11 +971,7 @@ body {font-family: Arial;}
         border-radius: 10px;
         border: #6e9096 solid 1px;
     }
-    .aud_box {
-     
-        height: 200px;
-        width: 228px;
-    }
+    
     
     .aud_box p {
         margin-left: 60px;

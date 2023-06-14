@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+.publish_btn{
+    margin-left: 20px;
+    height: 43px;
+    color: #123377;
+    border-color: #123352;
+    background-color: transparent;
+    font-weight: bold;
+}
 .uploaded_audio_area audio {
     width: 85%;
 }
@@ -641,7 +650,6 @@ h4.aaa:hover {
 .publish {
     float: right;
     margin-top: 25px;
-    margin-right: 10px;
 }
 .pbbttn{
     width: 225px;
@@ -766,7 +774,7 @@ body {font-family: Arial;}
     border: solid 1px;
     border-style: dashed;
     height: 200px;
-    width: 600px;
+    width: 620px;
     margin-left: 25px;
     margin-top: 10px;
     border-radius: 10px;
@@ -971,11 +979,7 @@ body {font-family: Arial;}
         border-radius: 10px;
         border: #6e9096 solid 1px;
     }
-    .aud_box {
-     
-        height: 200px;
-        width: 228px;
-    }
+   
    
     .aud_box p {
         margin-left: 60px;

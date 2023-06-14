@@ -40,10 +40,13 @@ class TemplateHelper
             $website_index = str_replace('_htmlarr','_arr',$index);
             $website_index = $this->remove_var_identity($website_index);
 
+   
+
             if(!isset($this->variable_html[$index])){
                 // dd($this->variable_html,$index);
             }
             $web_html_val = $this->variable_html[$index];
+
 
             if(!isset($this->web_variable[$website_index])){
                 dd('index not found',$this->web_variable,$website_index);
@@ -54,6 +57,10 @@ class TemplateHelper
             foreach($web_values_arr as $web_value){
                 $html_arr_list .=$this->remove_var_variables_from_html($web_html_val,$website_index,$web_value);
             }
+            // if($index == 'story_tab_htmlarr'){//story_tab_arr
+            //     dd($html_index,$html_arr_list,$html);
+            //     // dd($website_index,$web_values_arr,$this->web_variable);
+            // }
 
             $html = str_replace($html_index,$html_arr_list,$html);
         }
