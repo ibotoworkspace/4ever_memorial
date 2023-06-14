@@ -16,7 +16,9 @@
               <h2>Beautiful, Free Online Memorials & Tributes</h2>
               <h3>4Ever Virtual Cemetery online tributes are a simple way <br>
                 to preserve, celebrate and share a loved one's legacy.</h3>
-              <button type="submit" class="btn btn-primary banclick">Click here to create a memorial</button>
+              <a class="btn btn-primary banclick" href="{!!asset('user/memorialform')!!}">
+                Click here to create a memorial
+              </a>
             </div>
           </div>
         </div>

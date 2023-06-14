@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+.uploaded_audio_area audio {
+    width: 85%;
+}
+.uploaded_audio_area {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #edcaa1;
+}
+
 
 .add_audio {
     background: #9ec5ca;
@@ -7,13 +18,11 @@
     border-radius: 10px;
     height: 347px;
 }
-.publish_btn.aud button {
-    width: 225px;
-}   
-.publish_btn.aud {
+.publishing_btn button {
     float: right;
-    margin-right: 27px;
-    margin-top: 14px;
+    margin-right: 25px;
+    margin-top: 7px;
+    width: 225px;
 }
 .aud_box i {
     font-size: 92px;
@@ -384,7 +393,7 @@ ul.reviewSection img {
     background: none;
     width: 198px;
     margin-left: 392px;
-    height: 70px;
+    height: 57px;
 }
 ul.reviewSection {
     list-style: none;
@@ -639,7 +648,6 @@ h4.aaa:hover {
 .publish {
     float: right;
     margin-top: 25px;
-    margin-right: 10px;
 }
 .pbbttn{
     width: 225px;
@@ -891,11 +899,7 @@ body {font-family: Arial;}
         padding-left: 20px;
         
     }
-    .bt_trei {
-        margin-left: 8px;
-        height: 55px;
-        margin-top: 13px;
-    }
+    
     .same img {
         margin-right: 0px;
     }
@@ -967,11 +971,7 @@ body {font-family: Arial;}
         border-radius: 10px;
         border: #6e9096 solid 1px;
     }
-    .aud_box {
-     
-        height: 200px;
-        width: 228px;
-    }
+    
     
     .aud_box p {
         margin-left: 60px;

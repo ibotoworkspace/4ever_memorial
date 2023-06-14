@@ -32,7 +32,7 @@
 <script>
     console.log('checking***********1')
     var sliders_list = decodeURIComponent(`{!! $styles_json !!}`);
-    var sliders_list = JSON.parse(sliders_list);
+    sliders_list = JSON.parse(sliders_list);
     console.log('checking***********3')
     console.log("slider_list",sliders_list);
     $(function() {

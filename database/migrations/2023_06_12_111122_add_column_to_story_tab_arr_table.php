@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('story_tab_arr', function (Blueprint $table) {
-            $table->string('story_title')->nullable()->default(null);
+            $table->string('story_title_show_var')->nullable()->default(null);
         });
     }
 

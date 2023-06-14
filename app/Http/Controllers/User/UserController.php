@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\UserTemplateHelper;
 use App\Models\Gallery;
+use App\Models\Life_Tab_Arr;
 use App\Models\Models\Template;
 use App\Http\Helpers\TemplateHelper;
 use App\Models\Story_Tab_Arr;
@@ -129,10 +130,14 @@ class UserController extends Controller
         $user_web->save();
         $styles = Styling::get();
         $default_style = $user_web->style;
+        // dd($user_web->web_variable);
         $template_helper = new TemplateHelper($user_web,$user_web->web_variable);
         // dd($user_web,$user_web->web_variable);
         $html = $template_helper->create_html();
+        // dd($html);
         $styles_json = urlencode(json_encode($styles));
+        // $styles_json = json_encode($styles[0]);
+        // dd($styles_json);
         
         return view('user/dynamic_template/index', compact('html','styles_json','styles','default_style','memorial_id'));
 
@@ -158,12 +163,24 @@ class UserController extends Controller
 
     public function get_memorial(Request $request,$user_email){
         $website_template_email = $user_email;
-        $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();
-        // dd($user_website->web_variable);
-        $tributes = Tributes_Arr::where('memorial_id',$user_website->id)->get()->toArray();
-        // dd($tributes->toArray());
+        $user_website = UserWebsite::with('style')->where('email',$website_template_email)->first();        
         $web_variable = $user_website->web_variable;
+        // dd($web_variable);
+        
+        $tributes = Tributes_Arr::where('memorial_id',$user_website->id)->get()->toArray();
         $web_variable['tributes_arr'] = $this->set_attribute_arr_pics($tributes);//$tributes;
+
+        $stories = Story_Tab_Arr::orderbydesc('id')->get()->toArray();
+        // dd($stories);
+        // $stories = Story_Tab_Arr::where('memorial_id',$user_website->id)->get()->toArray();
+        
+        $web_variable['story_arr'] = $stories;//$tributes;
+        $stories = Life_Tab_Arr::orderbydesc('id')->get()->toArray();
+        // dd($stories);
+        // $stories = Story_Tab_Arr::where('memorial_id',$user_website->id)->get()->toArray();
+        
+        $web_variable['life_tab_arr'] = $stories;//$tributes;
+        // dd($user_website->id,$web_variable);
         // set_attribute_arr_pics($tributes);
         $template_helper = new TemplateHelper($user_website,$web_variable);
         $html = $template_helper->create_html();
@@ -174,15 +191,15 @@ class UserController extends Controller
         $user = Auth::user();
         $story = new Story_Tab_Arr();
         $story->user_name_show_var = $user->first_name;
-        $story->story_title = $request->story_title_n;
+        $story->story_title_show_var = $request->story_title_n;
         $story->details_show_var = $request->story_details_n;
         $story->memorial_id = $request->memorial_id;
-        // $story->image_show_var = $request->image;
-        if ($request->hasFile('image')) {
-            $avatar = $request->image;
-            $root = $request->root();
-            $story->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
-        }
+        $story->image_show_var = $request->story_image;
+        // if ($request->hasFile('image')) {
+        //     $avatar = $request->image;
+        //     $root = $request->root();
+        //     $story->image_show_var = $this->move_img_get_path($avatar, $root, 'image');
+        // }
         $story->date_show_var = date(" jS  F Y");
         $story->user_id = $user->id;
         $story->save();
@@ -229,12 +246,38 @@ public function get_tribute(Request $request){
         return view('user.view_memorial',compact('search_memorial', 'memorials'));
     }
 
-    public function upload_gallery_files(Request $request){
-        $gallery = new Gallery();
-        $gallery->image_url	 = $request->upld_img;
-        $gallery->media_url = $request->upld_vid;
-        $gallery->media_url = $request->upld_aud;
-        $gallery->save();
+    public function upload_gallery_image(Request $request){
+        // dd('asdasd');
+        $user = Auth::user();
+        $gallery_img = new Gallery();
+        $gallery_img->media_url	 = $request->upld_img;
+        $gallery_img->type = $request->media_type;
+        $gallery_img->user_id = $user->id;
+        $gallery_img->save();
+        return $this->sendResponse(200,$gallery_img);
+
+
+    }
+    public function upload_gallery_video(Request $request){
+        $user = Auth::user();
+        $gallery_vid = new Gallery();
+        $gallery_vid->media_url = $request->upld_video;
+        $gallery_vid->type = $request->media_type;
+        $gallery_vid->user_id = $user->id;
+        $gallery_vid->save();
+        return $this->sendResponse(200,$gallery_vid);
+
+
+    }
+    public function upload_gallery_audio(Request $request){
+        $user = Auth::user();
+        $gallery_aud = new Gallery();
+        $gallery_aud->media_url = $request->upld_audio;
+        $gallery_aud->type = $request->media_type;
+        $gallery_aud->user_id = $user->id;
+        $gallery_aud->save();
+        return $this->sendResponse(200,$gallery_aud);
+
 
     }
 

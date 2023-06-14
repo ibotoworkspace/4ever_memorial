@@ -6,11 +6,14 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StylingsController;
 use App\Http\Controllers\Admin\MemorialFormController;
 use App\Http\Controllers\Admin\UserController as Admin_UserController;
+use App\Http\Controllers\User\CommonServicesController;
 use App\Http\Controllers\User\UserController as User_UserController;
 use Illuminate\Support\Facades\Route;
 
 
 //////////////user
+Route::post('cropper/crop_image', [CommonServicesController::class, 'crop_image'])->name('crop.image');
+
 Route::post('user/register', [User_UserController::class, 'register'])->name('user.register');
 Route::post('user/login', [User_UserController::class, 'login'])->name('user.login');
 Route::get('user/logout', [User_UserController::class, 'logout'])->name('user.logout');
@@ -85,4 +88,6 @@ Route::get('admin/stylings',[StylingsController::class, 'index']);
 
 
 Route::post('search/memorial',[User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
-Route::post('user/upload_gallery_files',[User_UserController::class, 'upload_gallery_files'])->name('user.upload_gallery_files'); //search
+Route::post('user/upload_gallery_image',[User_UserController::class, 'upload_gallery_image'])->name('user.upload_gallery_image'); //search
+Route::post('user/upload_gallery_video',[User_UserController::class, 'upload_gallery_video'])->name('user.upload_gallery_video'); //search
+Route::post('user/upload_gallery_audio',[User_UserController::class, 'upload_gallery_audio'])->name('user.upload_gallery_audio'); //search

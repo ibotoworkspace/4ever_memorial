@@ -1,4 +1,6 @@
 {!! $html !!}
+@include('partial_layouts.cropper.cropper_html')
+
 <button id="btn1">add a story block</button>
 <script>
     $(document).ready(function() {
@@ -14,7 +16,7 @@
             formData.append('story_title_n', $('input[name="story_title_n"]').val());
             formData.append('story_details_n', $('#story_details').val());
             // formData.append('image', $('#upload-photo').files[0]);
-            formData.append('image', $('input[id=upload-photo]')[0].files[0]);
+            formData.append('story_image', $('input[name="story_image"]').val());
             // formData.append('image', $('input[type=file]')[0].files[0]);
             // formData.append('image', $('input[type=file].up_ld_file')[0].files[0]);
             // formData.append('image', $('.attch_icon').find('input[type=file]')[0].files[0]);
@@ -41,14 +43,15 @@
         });
 
 
-        $('#file_upload').on('click', function() {
+        $('#save_media_audio').on('click', function() {
 
             var formData = new FormData();
-            formData.append('upld_img', $('input[type=file]')[0].files[0]);
+            formData.append('upld_audio', $('input[name="upld_aud"]').val());
+            formData.append('media_type', $('input[name="media_type"]'));
 
 
             $.ajax({
-                url: '{!! asset('user/upload_gallery_files') !!}',
+                url: '{!! asset('user/upload_gallery_audio') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -58,7 +61,67 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
-                    $(".gallery_img").append(get_gallery_img_html(res.response));
+                    // $(".gallery_img").append(get_gallery_img_html(res.response));
+                    
+                },
+                error: function(err) {
+                    console.log('form failed', err);
+                }
+            })
+        });
+
+
+
+
+        $('#save_media_image').on('click', function() {
+
+            var formData = new FormData();
+            formData.append('media_type', $('input[name="media_type"]').val());
+            formData.append('upld_img', $('input[name="upld_file"]').val());
+            formData.append('_token', $('{{ csrf_token() }}'));
+
+            $.ajax({
+                url: '{!! asset('user/upload_gallery_image') !!}',
+                method: 'POST',
+                data: formData,
+                dataType: 'JSON',
+                processData: false,
+                contentType: false,
+                cache: false,
+                enctype: 'multipart/form-data',
+                success: function(res) {
+                    console.log('res', res)
+                    // $(".gallery_img").append(get_gallery_img_html(res.response));
+                    
+                },
+                error: function(err) {
+                    console.log('form failed', err);
+                }
+            })
+        });
+
+
+
+        
+        $('#save_media_video').on('click', function() {
+
+            var formData = new FormData();
+            formData.append('media_type', $('input[name="media_type"]').val());
+            formData.append('upld_video', $('input[name="upld_vid"]').val());
+
+
+            $.ajax({
+                url: '{!! asset('user/upload_gallery_video') !!}',
+                method: 'POST',
+                data: formData,
+                dataType: 'JSON',
+                processData: false,
+                contentType: false,
+                cache: false,
+                enctype: 'multipart/form-data',
+                success: function(res) {
+                    console.log('res', res)
+                    // $(".gallery_img").append(get_gallery_img_html(res.response));
                     
                 },
                 error: function(err) {
@@ -208,7 +271,7 @@
         var user_name_show_var = response.user_name_show_var;
         var date_show_var = response.date_show_var;
         var details_show_var = response.details_show_var;
-        var story_title = response.story_title;
+        var story_title = response.story_title_show_var;
         var image_show_var =`<img src="` +response.image_show_var+ ` " alt="relative">`;
         console.log(image_show_var,'image');
        
