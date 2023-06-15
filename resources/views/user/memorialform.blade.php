@@ -56,16 +56,17 @@
 
                                         <form class="create_memorial_form" action="{!! asset('user/adduser') !!}"
                                             method="post">
+                                            {!! csrf_field() !!}
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">First Name</label>
-                                                    <input type="text" name="f_name" class="form-control"
-                                                        placeholder="">
+                                                    <input type="text" required name="f_name" class="form-control"
+                                                        placeholder="First Name">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Last Name</label>
-                                                    <input type="text" name="l_name" class="form-control"
+                                                    <input type="text" required name="l_name" class="form-control"
                                                         placeholder="">
                                                 </div>
                                             </div>
@@ -260,12 +261,12 @@
                                             </div>
 
 
-                                            <a data-toggle="tab" href="#menu2">
-                                                <button
-                                                    onclick="submit_form('.create_memorial_form','create_memorial')"
+                                            {{-- <a data-toggle="tab" href="#menu2"> --}}
+                                                <div
+                                                    onclick="validate_submit_form('.create_memorial_form','create_memorial')"
                                                     class="btn btn-primary contclik">Continue
-                                                </button>
-                                            </a>
+                                                </div>
+                                            {{-- </a> --}}
                                         </form>
                                     </div>
                                 </div>
@@ -564,8 +565,8 @@
             console.log('res 1', response);
             if (response.status) {
                 console.log('res 2', response);
-                $(memorial_form + " input").val("");
-                $(memorial_form + " textarea").val("");
+                // $(memorial_form + " input").val("");
+                // $(memorial_form + " textarea").val("");
                 user_memorial = response.response.user_memorial;
                 $('.memorial_id').val(user_memorial.id);
             }
@@ -605,6 +606,30 @@
                 document.getElementById("submit").disabled = true;
             }
 
+        }
+
+        function validate_submit_form(form_selector,sucess_function){
+            // data-toggle="tab" href="#menu2"
+           
+            // $('.nav-tabs li:eq(3) a').tab('show')
+console.log('asdsad');
+            var valid_form = true;
+            $(form_selector).find('input').each(function(){
+                // console.log('this',$(this).attr('name')); 
+                if($(this).prop('required') && $.trim($(this).val().length) ){
+                    // $(this).val('');
+                    // $(this).addClass('required-warning');
+                    valid_form = false;
+                    // return;
+                }
+            });
+            if(valid_form){
+                // console.log('form validity',valid_form);
+
+                submit_form(form_selector,sucess_function);
+                $('.nav-tabs a[href="#menu2"]').tab('show')
+            }
+            // submit_form('.create_memorial_form','create_memorial')
         }
     </script>
 

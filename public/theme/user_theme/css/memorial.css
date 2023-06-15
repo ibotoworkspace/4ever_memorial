@@ -15,6 +15,11 @@ h4 {
     font-family: 'Raleway', sans-serif;
 }
 
+.required-warning::placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+}
+
 .contacttopbanner {
     border-bottom: 5px none #2dafc3;
     background-image: url(../images/headerimage.jpg);
