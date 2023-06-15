@@ -59,8 +59,10 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">First Name</label>
-                                                    <input type="text" name="f_name" class="form-control"
-                                                        placeholder="">
+
+                                                    <input type="text" required name="f_name" class="required-warning form-control"
+                                                        placeholder="First Name">
+
                                                 </div>
 
                                                 <div class="form-group">
@@ -606,6 +608,25 @@
             }
 
         }
+
+
+        function validate_submit_form(form_selector,sucess_function){
+            var valid_form = true;
+            $(form_selector).find('input').each(function(){
+                if($(this).prop('required') && $.trim($(this).val()).length === 0 ){
+                    console.log('err name',$(this).attr('name'));
+                    console.log('err name',$.trim($(this).val().length ));
+                    console.log('err name',$(this).attr('name'));
+                    $(this).addClass('required-warning');
+                    // valid_form = false;
+                }
+            });
+            if(valid_form){
+                submit_form(form_selector,sucess_function);
+                $('.nav-tabs a[href="#menu2"]').tab('show')
+            }
+        }
+
     </script>
 
 
