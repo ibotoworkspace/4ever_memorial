@@ -117,7 +117,7 @@ class TemplateSeeder extends Seeder
                                             <button class="tablinks" onclick="openCity(event, \'Life\')">
                                                 LIFE
                                             </button>
-                                            <button class="tablinks" onclick="openCity(event, \'Gallary\') ,openpic(event, \'photo\')">
+                                            <button class="tablinks" onclick="openCity(event, \'Gallary\'); openpic(event, \'photo\'); set_media(\'photo\');">
                                                 GALLERY
                                             </button>
                                             <button class="tablinks" onclick="openCity(event, \'stories\')">
