@@ -16,7 +16,7 @@ h4 {
 }
 
 .required-warning::placeholder {
-    color: red;
+    color: red !important;
     opacity: 1; /* Firefox */
 }
 

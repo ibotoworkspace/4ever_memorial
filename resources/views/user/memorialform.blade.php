@@ -60,7 +60,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">First Name</label>
-                                                    <input type="text" required name="f_name" class="form-control"
+                                                    <input type="text" required name="f_name" class="required-warning form-control"
                                                         placeholder="First Name">
                                                 </div>
 
@@ -609,27 +609,20 @@
         }
 
         function validate_submit_form(form_selector,sucess_function){
-            // data-toggle="tab" href="#menu2"
-           
-            // $('.nav-tabs li:eq(3) a').tab('show')
-console.log('asdsad');
             var valid_form = true;
             $(form_selector).find('input').each(function(){
-                // console.log('this',$(this).attr('name')); 
-                if($(this).prop('required') && $.trim($(this).val().length) ){
-                    // $(this).val('');
-                    // $(this).addClass('required-warning');
-                    valid_form = false;
-                    // return;
+                if($(this).prop('required') && $.trim($(this).val()).length === 0 ){
+                    console.log('err name',$(this).attr('name'));
+                    console.log('err name',$.trim($(this).val().length ));
+                    console.log('err name',$(this).attr('name'));
+                    $(this).addClass('required-warning');
+                    // valid_form = false;
                 }
             });
             if(valid_form){
-                // console.log('form validity',valid_form);
-
                 submit_form(form_selector,sucess_function);
                 $('.nav-tabs a[href="#menu2"]').tab('show')
             }
-            // submit_form('.create_memorial_form','create_memorial')
         }
     </script>
 
