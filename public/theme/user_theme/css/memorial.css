@@ -17,10 +17,9 @@ h4 {
 
 
 .required-warning::placeholder {
-    color: red !important;
+    color: red;
     opacity: 1; /* Firefox */
 }
-
 
 .contacttopbanner {
     border-bottom: 5px none #2dafc3;

@@ -481,17 +481,19 @@
 
                                     <div id="Audio" class="tab_galcontent">
                                         <div class="uploaded_audio_area">
+                                        <div class="uploaded_audio_box">
                                             
-                                            <p>January 21 .by Alexa Zelaya </p>
-                                            <audio controls autoplay>
-                                                <source src="horse.mp3" type="audio/mpeg">
-                                              </audio>
-                                            </div>
-                                        <div class="uploaded_audio_area">
                                             <h4>January 21 .by Alexa Zelaya </h4>
                                             <audio controls autoplay>
                                                 <source src="horse.mp3" type="audio/mpeg">
                                               </audio>
+                                            </div>
+                                        <div class="uploaded_audio_box">
+                                            <h4>January 21 .by Alexa Zelaya </h4>
+                                            <audio controls autoplay>
+                                                <source src="horse.mp3" type="audio/mpeg">
+                                              </audio>
+                                            </div>
                                             </div>
                                         <div class="audio_icon">
                                             <i class="fa fa-microphone" aria-hidden="true"></i>

@@ -117,7 +117,7 @@ class TemplateSeeder extends Seeder
                                             <button class="tablinks" onclick="openCity(event, \'Life\')">
                                                 LIFE
                                             </button>
-                                            <button class="tablinks" onclick="openCity(event, \'Gallary\') ,openpic(event, \'photo\')">
+                                            <button class="tablinks" onclick="openCity(event, \'Gallary\'); openpic(event, \'photo\'); set_media(\'photo\');">
                                                 GALLERY
                                             </button>
                                             <button class="tablinks" onclick="openCity(event, \'stories\')">
@@ -140,9 +140,10 @@ class TemplateSeeder extends Seeder
                                                     <button class="tab_gallinks audio_btn" onclick="openpic(event, \'Audio\'); set_media(\'audio\');">Audio</button>
                                                 </div>
                                                 <input type="hidden" id="media_type" name="media_type">
-                                                {!!{gallery_photo_htmlarr}!!}
-                                                {!!{gallery_audio_htmlarr}!!}
-                                                {!!{gallery_video_htmlarr}!!}
+                                                {!!{gallery_photo_tab_htmlvar}!!}
+                                                {!!{gallery_audio_tab_htmlvar}!!}
+                                                {!!{gallery_video_tab_htmlvar}!!}
+
 
 
                                             </div>
