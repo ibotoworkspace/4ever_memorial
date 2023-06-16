@@ -257,13 +257,15 @@ class UserController extends Controller
     }
     public function search_memorial(Request $request)
     {
-        $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+        // $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
         $email = $request->email ?? '';
-        $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get()->toArray();
+        // dd($email);
+        $memorials = UserWebsite::where('email', 'like', '%' . $email . '%')->get();
+        $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get();
         // $template = Styling::orderBy('created_at', 'DESC')->get();
 
         // Session()->put($search_memorial, "Your Data Save Successfully !");  
-
+// dd($memorials);
         // dd( Session()->get(1, $search_memorial));
         return view('user.view_memorial', compact('search_memorial', 'memorials'));
     }

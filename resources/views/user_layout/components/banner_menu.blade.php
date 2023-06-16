@@ -22,7 +22,7 @@
                 <form method="post" action="{!!asset('search/memorial')!!}">
                     {!! csrf_field() !!}
                     <div class="search_area">
-                <input type="text" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+                <input type="text" name="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
                     placeholder="Find a Memorial">
                     <button><i class="fa fa-search icon_c" aria-hidden="true"></i></button>
                 </div>
