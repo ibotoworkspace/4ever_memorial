@@ -191,7 +191,7 @@ class TemplateSeeder extends Seeder
 
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner">
-                                        {!!{slider_htmlarr}!!}
+                                        {!!{slider_htmlvar}!!}
                                         </div>
 
                                         <!-- Left and right controls -->
@@ -209,7 +209,7 @@ class TemplateSeeder extends Seeder
                                     </div>
                                     <div class="rightBoxArea RecentUpdate">
                                         <h3>Recent updates</h3>
-                                        {!!{recent_updates_show_htmlarr}!!}
+                                        {!!{recent_updates_show_htmlvar}!!}
                                     </div>
                                     <div class="rightBoxArea NotiPref">
                                         <h4>This website is administered by:

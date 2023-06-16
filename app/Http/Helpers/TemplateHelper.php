@@ -19,6 +19,7 @@ class TemplateHelper
         // $this->variable_html = json_decode($template->variable_html,true);
         
         $this->variable_html =    $template->variable_html;
+        // dd($this->variable_html);
         // $this->web_variable = $style->web_variable;
         $this->web_variable = $web_variable;
         
@@ -79,6 +80,10 @@ class TemplateHelper
         $html_vars = $this->get_custom_variables_list($html,'_htmlvar');
         if($html_vars){
             foreach($html_vars as $index=>$html_var){
+                if($index == 'about_tab_htmlvar'&& !isset($this->variable_html[$index])){
+                    dd($html_vars,$index,$this->variable_html);
+                    // dd($this->variable_html[$index]);
+                }
                 $html = str_replace($html_var,$this->variable_html[$index],$html);
             }
             $html = $this->remove_var_variables_from_html($html);

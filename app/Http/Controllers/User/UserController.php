@@ -146,6 +146,8 @@ class UserController extends Controller
         $styles = Styling::get();
         $default_style = $user_web->style;
         // dd($user_web->web_variable);
+        // dd($default_style);
+        // dd($user_web);
         $template_helper = new TemplateHelper($user_web, $user_web->web_variable);
         // dd($user_web,$user_web->web_variable);
         $html = $template_helper->create_html();

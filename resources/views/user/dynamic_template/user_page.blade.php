@@ -163,15 +163,15 @@
         var type_var = response.type_var;
         if (type_var == 'flower') {
             type_var =
-                '<img src=' + global_path + '"/user_templates/template_1/images/imgs/flower.png">';
+                '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
             // '<img src="http://localhost/4_ever_memories/public/user_templates/template_1/images/imgs/flower.png">';
 
         } else if (type_var == 'candle') {
             type_var =
-                '<img src=' + global_path + '"/user_templates/template_1/images/imgs/candle.png">';
+                '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
         } else {
             type_var =
-                '<img src="' + global_path + '"/user_templates/template_1/images/imgs/feather.png">';
+                '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
         }
         var review = `
                     <div class="reviewBox">
@@ -197,9 +197,7 @@
 
 
     function get_story_html(response) {
-        // alert('asd');
-
-        // var id = response['data'][i].id;
+        
         var user_name_show_var = response.user_name_show_var;
         var date_show_var = response.date_show_var;
         var details_show_var = response.details_show_var;
@@ -247,9 +245,9 @@
     }
 
     function get_gallery_video_html(response) {
-        var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
+        var image_show_var = `<video width="200" height="200" controls=""><source src="` + response.image_show_var + `" alt=""></video>`;
         console.log(image_show_var, 'image');
-
+        
         var review = `
                     <div class="col-md-3 pic_gal_vid">
                     ` + image_show_var + ` 
