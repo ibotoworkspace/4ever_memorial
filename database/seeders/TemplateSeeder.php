@@ -128,7 +128,7 @@ class TemplateSeeder extends Seeder
 
 
 
-                                        {!!{life_tab_htmlarr}!!}
+                                        {!!{life_tab_htmlvar}!!}
 
 
                                         <div id="Gallary" class="tabcontent">

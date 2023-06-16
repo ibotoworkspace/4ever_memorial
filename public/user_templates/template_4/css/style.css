@@ -569,6 +569,9 @@ h4.aaa:hover {
 .pic_gal_img{
     margin: 19px;
 }
+.pic_gal_vid{
+    margin: 19px;
+}
 .fb_icon {
     color: #002bff;
     font-size: 53px;
@@ -975,6 +978,14 @@ body {font-family: Arial;}
         margin: 14px 3px;
     }
     .col-md-3.pic_gal_img img {
+        width: 279px;
+        border-radius: 10px;
+        border: #6e9096 solid 1px;
+    }
+    .pic_gal_vid {
+        margin: 14px 3px;
+    }
+    .col-md-3.pic_gal_vid img {
         width: 279px;
         border-radius: 10px;
         border: #6e9096 solid 1px;

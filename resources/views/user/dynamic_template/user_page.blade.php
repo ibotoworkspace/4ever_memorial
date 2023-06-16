@@ -61,7 +61,22 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
-                    $(".gall_row").append(get_gallery_img_html(res.response));
+                    if(res.response.type == 'video' ){
+                        $(".vid_row").append(get_gallery_video_html(res.response));
+                        console.log(res.response.type,'type is here');
+
+
+                    }else  if(res.response.type == 'photo' ){
+                        $(".gall_row").append(get_gallery_img_html(res.response));
+                        console.log(res.response.type,'type is here');
+
+
+                    }else{
+                        $(".uploaded_audio_area").append(get_gallery_audio_html(res.response));
+                        console.log(res.response.type,'type is here');
+
+                    }
+                    
 
 
                 },
@@ -219,13 +234,44 @@
     }
 
     function get_gallery_img_html(response) {
-        var image_show_var = `<img src="` + response.media_url + ` " alt="relative">`;
+        var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
         console.log(image_show_var, 'image');
 
         var review = `
                     <div class="col-md-3 pic_gal_img">
                     ` + image_show_var + ` 
                     </div>
+        `;
+        return review;
+
+    }
+
+    function get_gallery_video_html(response) {
+        var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
+        console.log(image_show_var, 'image');
+
+        var review = `
+                    <div class="col-md-3 pic_gal_vid">
+                    ` + image_show_var + ` 
+                    </div>
+        `;
+        return review;
+
+    }
+    function get_gallery_audio_html (response) {
+        var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
+        var date_show_var = response.date_show_var;
+        var name_show_var = response.name_show_var ;
+        console.log(image_show_var, 'image');
+
+        var review = `
+                                        <div class="uploaded_audio_box">
+                                            
+                                            <h4>` + date_show_var + ` .by  ` + name_show_var + `</h4>
+                                            <audio controls autoplay>
+                                                <source src="` + image_show_var + `" type="audio/mpeg">
+                                              </audio>
+                                        </div>
         `;
         return review;
 

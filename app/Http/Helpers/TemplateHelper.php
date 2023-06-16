@@ -43,7 +43,7 @@ class TemplateHelper
    
 
             if(!isset($this->variable_html[$index])){
-                // dd($this->variable_html,$index);
+                dd($this->variable_html,$index);
             }
             $web_html_val = $this->variable_html[$index];
 

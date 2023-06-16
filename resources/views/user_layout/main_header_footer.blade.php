@@ -41,7 +41,9 @@
 
     @yield('body')
 
-
+{{-- Cropper Modal --}}
+@include('partial_layouts.cropper.cropper_html')
+{{-- End Cropper Modal --}}
 
 
 
@@ -137,9 +139,7 @@
     </div>
     {{-- End Register in modal --}}
 
-    {{-- Cropper Modal --}}
-        @include('partial_layouts.cropper.cropper_html')
-    {{-- End Cropper Modal --}}
+    
 
     <section>
         <div class="footerarea">
