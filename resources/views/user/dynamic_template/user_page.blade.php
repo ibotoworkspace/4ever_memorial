@@ -259,7 +259,7 @@
 
     }
     function get_gallery_audio_html (response) {
-        var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
+        var image_show_var = response.image_show_var;
         var date_show_var = response.date_show_var;
         var name_show_var = response.name_show_var ;
         console.log(image_show_var, 'image');
@@ -267,7 +267,7 @@
         var review = `
                                         <div class="uploaded_audio_box">
                                             
-                                            <h4>` + date_show_var + ` .by  ` + name_show_var + `</h4>
+                                            <h4><div class="new_tag">new</div>` + date_show_var + ` .by  ` + name_show_var + `</h4>
                                             <audio controls autoplay>
                                                 <source src="` + image_show_var + `" type="audio/mpeg">
                                               </audio>

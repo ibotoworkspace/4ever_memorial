@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+
+.new_tag {
+    background-color: #123352;
+    width: 50px;
+    height: 21px;
+    border-radius: 10px;
+    color: white;
+    padding: 2px;
+    font-size: 15px;
+}
 .publish_btn button {
     margin-left: 20px;
     height: 43px;
