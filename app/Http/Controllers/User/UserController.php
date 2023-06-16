@@ -146,6 +146,8 @@ class UserController extends Controller
         $styles = Styling::get();
         $default_style = $user_web->style;
         // dd($user_web->web_variable);
+        // dd($default_style);
+        // dd($user_web);
         $template_helper = new TemplateHelper($user_web, $user_web->web_variable);
         // dd($user_web,$user_web->web_variable);
         $html = $template_helper->create_html();
@@ -189,6 +191,19 @@ class UserController extends Controller
         $web_variable['story_arr'] = $stories; //$tributes;
         $life_arr = Life_Tab_Arr::where('memorial_id', $user_website->id)->orderbydesc('id')->get()->toArray();
         $web_variable['life_tab_arr'] = $life_arr;
+
+        $gallery_image = Gallery::where('memorial_id', $user_website->id)->where('type','photo')
+        ->orderbydesc('id')->get()->toArray();
+        $web_variable['gallery_photo_arr'] = $gallery_image;
+
+        $gallery_video = Gallery::where('memorial_id', $user_website->id)->where('type','video')
+        ->orderbydesc('id')->get()->toArray();
+        $web_variable['gallery_video_arr'] = $gallery_video;
+
+        $gallery_audio = Gallery::where('memorial_id', $user_website->id)->where('type','audio')
+        ->orderbydesc('id')->get()->toArray();
+        $web_variable['gallery_audio_arr'] = $gallery_audio;
+
         $template_helper = new TemplateHelper($user_website, $web_variable);
         $html = $template_helper->create_html();
         return view('user/dynamic_template/user_page', compact('html', 'user_website'));
@@ -262,11 +277,13 @@ class UserController extends Controller
         if ($request->hasFile('upload_file')) {
             $avatar = $request->upload_file;
             $root = $request->root();
-            $gallery_aud->media_url = $this->move_img_get_path($avatar, $root, 'upload_file');
+            $gallery_aud->image_show_var = $this->move_img_get_path($avatar, $root, 'upload_file');
         } else {
-            $gallery_aud->media_url = $request->upload_file;
+            $gallery_aud->image_show_var = $request->upload_file;
         }
         $gallery_aud->type = $request->media_type;
+        $gallery_aud->date_show_var = date(" jS  F Y");
+        $gallery_aud->name_show_var = $user->first_name;
         $gallery_aud->user_id = $user->id;
         $gallery_aud->save();
         return $this->sendResponse(200, $gallery_aud);

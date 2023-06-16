@@ -128,7 +128,7 @@ class TemplateSeeder extends Seeder
 
 
 
-                                        {!!{life_tab_htmlarr}!!}
+                                        {!!{life_tab_htmlvar}!!}
 
 
                                         <div id="Gallary" class="tabcontent">
@@ -140,9 +140,10 @@ class TemplateSeeder extends Seeder
                                                     <button class="tab_gallinks audio_btn" onclick="openpic(event, \'Audio\'); set_media(\'audio\');">Audio</button>
                                                 </div>
                                                 <input type="hidden" id="media_type" name="media_type">
-                                                {!!{gallery_photo_htmlarr}!!}
-                                                {!!{gallery_audio_htmlarr}!!}
-                                                {!!{gallery_video_htmlarr}!!}
+                                                {!!{gallery_photo_tab_htmlvar}!!}
+                                                {!!{gallery_audio_tab_htmlvar}!!}
+                                                {!!{gallery_video_tab_htmlvar}!!}
+
 
 
                                             </div>
@@ -190,7 +191,7 @@ class TemplateSeeder extends Seeder
 
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner">
-                                        {!!{slider_htmlarr}!!}
+                                        {!!{slider_htmlvar}!!}
                                         </div>
 
                                         <!-- Left and right controls -->
@@ -208,7 +209,7 @@ class TemplateSeeder extends Seeder
                                     </div>
                                     <div class="rightBoxArea RecentUpdate">
                                         <h3>Recent updates</h3>
-                                        {!!{recent_updates_show_htmlarr}!!}
+                                        {!!{recent_updates_show_htmlvar}!!}
                                     </div>
                                     <div class="rightBoxArea NotiPref">
                                         <h4>This website is administered by:

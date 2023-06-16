@@ -15,8 +15,9 @@ h4 {
     font-family: 'Raleway', sans-serif;
 }
 
+
 .required-warning::placeholder {
-    color: red !important;
+    color: red;
     opacity: 1; /* Firefox */
 }
 

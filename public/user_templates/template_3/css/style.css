@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+.aud_box input {
+    margin-left: 220px;
+}
+.new_tag {
+    background-color: #123352;
+    width: 50px;
+    height: 21px;
+    border-radius: 10px;
+    color: white;
+    padding: 2px;
+    font-size: 15px;
+}
 .publish_btn button {
     margin-left: 20px;
     height: 43px;
@@ -8,10 +21,10 @@
     background-color: transparent;
     font-weight: bold;
 }
-.uploaded_audio_area audio {
+.uploaded_audio_box audio {
     width: 85%;
 }
-.uploaded_audio_area {
+.uploaded_audio_box {
     padding: 10px;
     margin-top: 15px;
     border-radius: 10px;
@@ -559,6 +572,9 @@ h4.aaa:hover {
 .pic_gal_img{
     margin: 19px;
 }
+.pic_gal_vid{
+    margin: 19px;
+}
 .fb_icon {
     color: #002bff;
     font-size: 53px;
@@ -959,6 +975,14 @@ body {font-family: Arial;}
         margin: 14px 3px;
     }
     .col-md-3.pic_gal_img img {
+        width: 279px;
+        border-radius: 10px;
+        border: #6e9096 solid 1px;
+    }
+    .pic_gal_vid {
+        margin: 14px 3px;
+    }
+    .col-md-3.pic_gal_vid img {
         width: 279px;
         border-radius: 10px;
         border: #6e9096 solid 1px;

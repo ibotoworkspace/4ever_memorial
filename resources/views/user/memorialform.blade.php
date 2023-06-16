@@ -60,8 +60,11 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">First Name</label>
-                                                    <input type="text" required name="f_name" class="required-warning form-control"
+
+
+                                                    <input type="text" required name="f_name" class="form-control"
                                                         placeholder="First Name">
+
                                                 </div>
 
                                                 <div class="form-group">
@@ -608,6 +611,7 @@
 
         }
 
+
         function validate_submit_form(form_selector,sucess_function){
             var valid_form = true;
             $(form_selector).find('input').each(function(){
@@ -624,6 +628,8 @@
                 $('.nav-tabs a[href="#menu2"]').tab('show')
             }
         }
+
+
     </script>
 
 

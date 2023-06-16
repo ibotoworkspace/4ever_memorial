@@ -61,6 +61,23 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
+                    if(res.response.type == 'video' ){
+                        $(".vid_row").append(get_gallery_video_html(res.response));
+                        console.log(res.response.type,'type is here');
+
+
+                    }else  if(res.response.type == 'photo' ){
+                        $(".gall_row").append(get_gallery_img_html(res.response));
+                        console.log(res.response.type,'type is here');
+
+
+                    }else{
+                        $(".uploaded_audio_area").append(get_gallery_audio_html(res.response));
+                        console.log(res.response.type,'type is here');
+
+                    }
+                    
+
 
                 },
                 error: function(err) {
@@ -146,15 +163,15 @@
         var type_var = response.type_var;
         if (type_var == 'flower') {
             type_var =
-                '<img src=' + global_path + '"/user_templates/template_1/images/imgs/flower.png">';
+                '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
             // '<img src="http://localhost/4_ever_memories/public/user_templates/template_1/images/imgs/flower.png">';
 
         } else if (type_var == 'candle') {
             type_var =
-                '<img src=' + global_path + '"/user_templates/template_1/images/imgs/candle.png">';
+                '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
         } else {
             type_var =
-                '<img src="' + global_path + '"/user_templates/template_1/images/imgs/feather.png">';
+                '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
         }
         var review = `
                     <div class="reviewBox">
@@ -180,9 +197,7 @@
 
 
     function get_story_html(response) {
-        // alert('asd');
-
-        // var id = response['data'][i].id;
+        
         var user_name_show_var = response.user_name_show_var;
         var date_show_var = response.date_show_var;
         var details_show_var = response.details_show_var;
@@ -217,17 +232,44 @@
     }
 
     function get_gallery_img_html(response) {
-        var image_show_var = `<img src="` + response.image_url + `">`;
+        var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
         console.log(image_show_var, 'image');
 
         var review = `
-        <div class="gallery_img">
-                <div class="row">
                     <div class="col-md-3 pic_gal_img">
-                        <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                    ` + image_show_var + ` 
                     </div>
-                </div>
-        </div>
+        `;
+        return review;
+
+    }
+
+    function get_gallery_video_html(response) {
+        var image_show_var = `<video width="200" height="200" controls=""><source src="` + response.image_show_var + `" alt=""></video>`;
+        console.log(image_show_var, 'image');
+        
+        var review = `
+                    <div class="col-md-3 pic_gal_vid">
+                    ` + image_show_var + ` 
+                    </div>
+        `;
+        return review;
+
+    }
+    function get_gallery_audio_html (response) {
+        var image_show_var = response.image_show_var;
+        var date_show_var = response.date_show_var;
+        var name_show_var = response.name_show_var ;
+        console.log(image_show_var, 'image');
+
+        var review = `
+                                        <div class="uploaded_audio_box">
+                                            
+                                            <h4><div class="new_tag">new</div>` + date_show_var + ` .by  ` + name_show_var + `</h4>
+                                            <audio controls autoplay>
+                                                <source src="` + image_show_var + `" type="audio/mpeg">
+                                              </audio>
+                                        </div>
         `;
         return review;
 
