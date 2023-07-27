@@ -303,7 +303,7 @@ class TemplateSeeder extends Seeder
                         tab_gallinks[i].className = tab_gallinks[i].className.replace(" active", "");
                     }
                     document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " ";
+                    evt.currentTarget.className += " active";
                 }
                 document.getElementById("defaultOpen").click();
 

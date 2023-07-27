@@ -311,7 +311,7 @@ ul.reviewSection img {
     font: inherit;
 }
 .cover_head {
-    color: #1f758f;
+    color: #3ec57a;
     margin-top: 86px;
     text-align: center;
 }
@@ -327,7 +327,7 @@ ul.reviewSection img {
 .profile_img {
     border: solid;
     width: 231px;
-    color: #1f758f;
+    color: #3ec57a;
     margin-top: 52px;
     border-radius: 5px;
     margin-bottom: 50px;
@@ -379,12 +379,12 @@ ul.reviewSection img {
     border-top: none;
   }
   .tab_backg {
-    background-color: #64d0ef;
+    background-color: #f7cce8;
     height: 69px;
 }
 .about_heading {
     font-family: Courgette, sans-serif;
-    color: #548fa0;
+    color: #da5542;
     margin-left: 113px;
     margin-top: 50px;
 }
@@ -421,7 +421,7 @@ ul.reviewSection {
 }
 .reviewBox {
     color: #123352;
-    background-color: #64d0ef;
+    background-color: #f7cce8;
     border: 1px solid #ebc496;
     border-radius: 10px;
     padding: 15px;
@@ -493,7 +493,7 @@ h5.sdad {
 
 .rightBoxArea {
     color: #123352;
-    background-color: #64d0ef;
+    background-color: #f7cce8;
     border: 1px solid #ebc496;
     border-radius: 10px;
     padding: 15px;
@@ -850,7 +850,7 @@ body {font-family: Arial;}
     z-index: 2;
   }
 .story_tab {
-    background-color: #64d0ef;
+    background-color: #f7cce8;
     margin-top: 30px;
     border-radius: 10px;
     padding: 15px;
@@ -1028,7 +1028,7 @@ body {font-family: Arial;}
         float: none;
         margin-left: 33px;
         margin-top: 1px;
-        background-color: #64d0ef;
+        background-color: #f7cce8;
 
     }
     .attach {

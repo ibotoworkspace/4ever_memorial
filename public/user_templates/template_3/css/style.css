@@ -311,7 +311,7 @@ ul.reviewSection img {
     font: inherit;
 }
 .cover_head {
-    color: #1f758f;
+    color: #ff5d5d;
     margin-top: 86px;
     text-align: center;
 }
@@ -327,7 +327,7 @@ ul.reviewSection img {
 .profile_img {
     border: solid;
     width: 231px;
-    color: #1f758f;
+    color: #ff5d5d;
     margin-top: 52px;
     border-radius: 5px;
     margin-bottom: 50px;
@@ -379,7 +379,7 @@ ul.reviewSection img {
     border-top: none;
   }
   .tab_backg {
-    background-color: #f5c97d;
+    background-color: #beedc7;
     height: 69px;
 }
 .about_heading {
@@ -421,7 +421,7 @@ ul.reviewSection {
 }
 .reviewBox {
     color: #123352;
-    background-color: #ffd8aa;
+    background-color: #beedc7;
     border: 1px solid #ebc496;
     border-radius: 10px;
     padding: 15px;
@@ -493,7 +493,7 @@ h5.sdad {
 
 .rightBoxArea {
     color: #123352;
-    background-color: #ffd8aa;
+    background-color: #beedc7;
     border: 1px solid #ebc496;
     border-radius: 10px;
     padding: 15px;
@@ -850,7 +850,7 @@ body {font-family: Arial;}
     z-index: 2;
   }
 .story_tab {
-    background-color: #ffd8aa;
+    background-color: #beedc7;
     margin-top: 30px;
     border-radius: 10px;
     padding: 15px;
@@ -1028,7 +1028,7 @@ body {font-family: Arial;}
         float: none;
         margin-left: 33px;
         margin-top: 1px;
-        background-color: #ffd8aa;
+        background-color: #beedc7;
 
     }
     .attach {
