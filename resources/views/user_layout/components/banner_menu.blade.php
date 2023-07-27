@@ -46,8 +46,8 @@
         <div class="col-sm-4">
             <div class="topicons" >
                 <i class="fa fa-user-plus" style="{!!$signout!!}" aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i>
-                <i class="fa fa-sign-in"  style="{!!$signout!!}"aria-hidden="true" data-toggle="modal" data-target="#exampleModalCenter"> Sign</i>
-                <i class="fa fa-user-circle-o"  style="{!!$signin!!}"aria-hidden="true"data-target="#exampleModalCenter"><a href="user/logout"> LogOut </a></i>
+                <i class="fa fa-sign-in"  style="{!!$signout!!}"aria-hidden="true" data-toggle="modal" data-target="#LoginModalCenter"> Sign</i>
+                <i class="fa fa-user-circle-o"  style="{!!$signin!!}"aria-hidden="true"data-target="#LoginModalCenter"><a href="{!!asset('user/logout')!!}"> LogOut </a></i>
 
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -75,6 +75,21 @@
                         </button>
                     </div>
                 </div>
+                <?php
+                            $signin = "data-toggle='modal' data-target='#LoginModalCenter'";
+
+                        if (Auth::user()) {
+                            $signin = "href='".asset('user/memorialform')."'";
+                        }
+
+
+
+                            $signin_mymemorial = "data-toggle='modal' data-target='#LoginModalCenter'";
+
+                        if (Auth::user()) {
+                            $signin_mymemorial = "href='".asset('user/my_memorials')."'";
+                        }
+                        ?>
                 <nav>
                     <div class="jump">
                         <div class="navbar-collapse nav-collapse collapse">
@@ -86,7 +101,7 @@
                                   <a href="{!!asset('user/aboutus')!!}"><span>ABOUT</span></a>
                                 </li>
                                 <li id="3">
-                                <a href="{!!asset('user/memorialform')!!}"><span>CREATE A MEMORIAL</span> </a>
+                                <a {!!$signin!!}><span>CREATE A MEMORIAL</span> </a>
                                 </li>
                                 <li id="4">
                                   <a href="{!!asset('user/plans')!!}"><span>PLANS & FEATURES</span> </a>
@@ -101,7 +116,7 @@
                                   <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                 </li>
                                 <li id="8">
-                                  <a href="{!!asset('user/my_memorials')!!}"><span>MY MEMORIALS</span> </a>
+                                  <a {!!$signin_mymemorial!!}><span>MY MEMORIALS</span> </a>
                                 </li>
                               </ul>
                         </div>
@@ -112,12 +127,12 @@
     </div>
 </div>
 {{-- Sign in modal --}}
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="LoginModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="LoginModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header modhead">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Sign in With Your Email</h5>
+                    <h5 class="modal-title" id="loginModalLongTitle">Sign in With Your Email</h5>
                 </div>
                 <div class="modal-body">
                     <div class="signmodaldata">
@@ -146,12 +161,12 @@
     {{-- End Sign in modal --}}
 
     {{-- Register in modal --}}
-    <div class="modal fade" id="remodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="remodal" tabindex="-1" role="dialog" aria-labelledby="LoginModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header modhead">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Register With Your Email</h5>
+                    <h5 class="modal-title" id="loginModalLongTitle">Register With Your Email</h5>
                 </div>
                 <div class="modal-body">
                     <div class="signmodaldata">

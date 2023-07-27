@@ -23,6 +23,11 @@
     text-align: center;
     background-color: #edcaa1;
 }
+.required-warning::placeholder {
+    color: red !important;
+    opacity: 1; /* Firefox */
+}
+
 
 
 .add_audio {
@@ -54,23 +59,24 @@ input#audio_upload {
     margin-right: 10px;
     margin-top: 10px;
 }
-
+input#file_upload {
+    font-size: 10px;
+}
 
 .gall_top_bttn {
     border: solid 1px;
-    width: 385px;
     padding: 10px 13px;
     height: 67px;
     border-radius: 10px;
     margin-top: 19px;
-    margin-left: 36px;
 }
 
 .publish_btn button {
-    margin-left: 20px;
     height: 43px;
 }
-
+.upld_file {
+    justify-content: space-between;
+}
 /* .new{5} */
 
 label.custom-file-upload i {
@@ -397,15 +403,15 @@ ul.reviewSection img {
     color: #275d7d;
     font-weight: 400;
 }
-.tributes{
+.tributes {
     display: flex;
+    justify-content: space-between;
 }
 .bt_trei {
     border-block: solid 1px;
     border-radius: 10px;
     background: none;
     width: 198px;
-    margin-left: 392px;
     height: 57px;
 }
 ul.reviewSection {

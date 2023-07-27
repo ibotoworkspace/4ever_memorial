@@ -24,6 +24,15 @@
             </div>
         </div>
     </section>
+    <?php
+    // dd(Auth::user());
+                
+                            $signin_buy = "data-toggle='modal' data-target='#LoginModalCenter'";
+
+                        if (Auth::user()) {
+                            $signin_buy = "href='".asset('#')."'";
+                        }
+                        ?>
     <section>
         <div class="testdataarea">
             <div class="container">
@@ -37,7 +46,7 @@
                             <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <p>Image Gallery <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <div class="inerpkgclick">
-                                <button type="submit" class="btn btn-primary banclick">Buy Now</button>
+                                <button type="submit" {!!$signin_buy!!} class="btn btn-primary banclick">Buy Now</button>
                             </div>
                         </div>
                     </div>

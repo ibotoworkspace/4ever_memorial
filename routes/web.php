@@ -20,6 +20,7 @@ Route::get('user/logout', [User_UserController::class, 'logout'])->name('user.lo
 
 Route::get('/', [User_UserController::class, 'index'])->name('user.index');
 Route::get('/user/aboutus',[User_UserController::class, 'aboutus'])->name('user.aboutus');
+Route::get('/user/privacy_policy',[User_UserController::class, 'privacy_policy'])->name('user.privacy_policy');
 Route::get('/user/testimonials',[User_UserController::class, 'testimonials'])->name('user.testimonials');
 Route::get('/user/plans',[User_UserController::class, 'plans'])->name('user.plans');
 Route::get('/user/contactus',[User_UserController::class, 'contactus'])->name('user.contactus');

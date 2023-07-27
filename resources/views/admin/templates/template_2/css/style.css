@@ -28,6 +28,10 @@
     padding-left: 25px;
     font: inherit;
 }
+.selected_tribute {
+    background-color: #7dabc7;
+    border-radius: 10px;
+}
 .cover_head {
     color: #bbffc3;
     margin-top: 86px;

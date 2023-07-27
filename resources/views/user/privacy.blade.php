@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="bannerdata aboutheading">
-                            <h1>ABOUT</h1>
+                            <h1>Privacy Policy</h1>
                         </div>
                     </div>
                 </div>
