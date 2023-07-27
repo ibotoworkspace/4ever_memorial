@@ -1,9 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 
-.aud_box input {
-    margin-left: 220px;
+.aud_box {
+    border: solid 1px;
+    border-style: dashed;
+    height: 200px;
+    /* width: 620px; */
+    /* margin-left: 25px; */
+    /* margin-top: 10px; */
+    border-radius: 10px;
+    color: #61809d;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 10px;
 }
+.aud_box i {
+    font-size: 92px;
+    /* margin-left: 256px; */
+    margin-top: 47px;
+    opacity: 70%;
+}
+.aud_box p {
+    opacity: 70%;
+}
+
+/* /////////// */
+
 .new_tag {
     background-color: #123352;
     width: 50px;
@@ -42,12 +65,7 @@
     margin-top: 7px;
     width: 225px;
 }
-.aud_box i {
-    font-size: 92px;
-    margin-left: 256px;
-    margin-top: 47px;
-    opacity: 70%;
-}
+
 
 input#audio_upload {
     margin-left: 206px;
@@ -784,16 +802,6 @@ body {font-family: Arial;}
     opacity: 50%;
 }
 
-.aud_box {
-    border: solid 1px;
-    border-style: dashed;
-    height: 200px;
-    width: 620px;
-    margin-left: 25px;
-    margin-top: 10px;
-    border-radius: 10px;
-    color: #61809d;
-}
 .aud_head {
     margin-left: 41px;
     padding-top: 32px;
@@ -801,10 +809,6 @@ body {font-family: Arial;}
     color: #2d4356;
 }
 
-.aud_box p {
-    margin-left: 238px;
-    opacity: 70%;
-}
 
 .add_stor {
     border: solid 1px;
@@ -1002,10 +1006,7 @@ body {font-family: Arial;}
         border: #6e9096 solid 1px;
     }
     
-    
-    .aud_box p {
-        margin-left: 60px;
-    }
+   
     .audio_icon {
         margin-left: 31%;
         
