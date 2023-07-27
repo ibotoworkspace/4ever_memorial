@@ -107,9 +107,9 @@
         }
 
         $('#save_media_audio').on('click', function() {
-            var aud = $('#file_upload').val();
+            var aud = $('.upld_audio').val();
             if(aud == "") {
-                alert('Plz Write A Tribute');
+                // alert('Plz Write A Tribute');
                 
                 return;
             }
@@ -119,7 +119,7 @@
         $('#save_media_image').on('click', function() {
             var img = $('#file_upload').val();
             if(img == "") {
-                alert('Plz Write A Tribute');
+                // alert('Plz Write A Tribute');
                 
                 return;
             }
@@ -127,9 +127,9 @@
         });
 
         $('#save_media_video').on('click', function() {
-            var vid = $('#file_upload').val();
+            var vid = $('.upld_video').val();
             if(vid == "") {
-                alert('Plz Write A Tribute');
+                // alert('Plz Write A Tribute');
                 
                 return;
             }

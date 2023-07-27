@@ -230,7 +230,7 @@ class StylingSeeder extends Seeder
 
                 "gallery_photo_htmlarr":  "<div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"></div>",
                 "gallery_video_htmlarr":  "<div class=\"col-md-3 pic_gal_vid\"><video width=\"200\" height=\"200\" controls=\"\"><source src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"></video></div>",
-                "gallery_audio_htmlarr":  "<div class=\"uploaded_audio_box\"><p>{!!{gallery_audio_arr.date_show_var}!!} .by {!!{gallery_audio_arr.name_show_var}!!}</p><audio controls autoplay><source src=\"{!!{gallery_audio_arr.image_show_var}!!}\" type=\"audio/mpeg\" /></audio></div>",
+                "gallery_audio_htmlarr":  "<div class=\"uploaded_audio_box\"><p>{!!{gallery_audio_arr.date_show_var}!!} .by {!!{gallery_audio_arr.name_show_var}!!}</p><audio controls ><source src=\"{!!{gallery_audio_arr.image_show_var}!!}\" type=\"audio/mpeg\" /></audio></div>",
 
 
                 "gallery_photo_tab_htmlvar":"<div id=\"photo\" class=\"tab_galcontent\"> <div class=\"gall_top_bttn\"> <div class=\"flx upld_file\">  <div class=\"slidsho_txt\" > <label for=\"file_upload\" class=\"custom-file-upload\">  Add a Photo </label><input type=\"file\"  accept=\"image/*\" id=\"file_upload\" name=\"upld_file\" class=\"upld_file crop_upload_image\" image_width=\"378\" image_height=\"226\" aspect_ratio_width=\"16\" aspect_ratio_height=\"9\" upload_input_by_name=\"upld_file_hid\" ></div><div class=\"publish_btn\"><button id =\"save_media_image\"class=\"btn btn-danger\">Publish</button></div> </div> </div> <div class=\"gallery_img\"> <div class=\"row gall_row\">{!!{gallery_photo_htmlarr}!!}</div></div></div>",
