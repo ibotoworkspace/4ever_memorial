@@ -48,6 +48,10 @@ class UserController extends Controller
     {
         return view('user.privacy');
     }
+    public function service_term()
+    {
+        return view('user.service_term');
+    }
     public function testimonials()
     {
         return view('user.testimonials');
@@ -253,9 +257,15 @@ class UserController extends Controller
 
 
     public function my_memorials()
-    {
-        $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
+    {        $authuser = Auth::user();
+        $aut_id = $authuser->id;
+        // dd($aut_id);
+
+
+        $memorials = UserWebsite::with('style')->where('user_id', $aut_id)->orderBy('created_at', 'DESC')->get();
         // $template = Styling::orderBy('created_at', 'DESC')->get();
+        // dd($memorials);
+
         return view('user.my_memorials', compact('memorials'));
 
     }
