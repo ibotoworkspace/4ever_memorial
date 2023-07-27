@@ -59,7 +59,7 @@
                                             {!! csrf_field() !!}
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">First Name</label>
+                                                    <label for="exampleInputEmail1">First Name<i class="fa fa-asterisk staring" aria-hidden="true"></i></label>
 
 
                                                     <input type="text" required name="f_name" class="form-control"
@@ -68,46 +68,46 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Last Name</label>
+                                                    <label for="exampleInputEmail1">Last Name<i class="fa fa-asterisk staring" aria-hidden="true"></i></label>
                                                     <input type="text" required name="l_name" class="form-control"
-                                                        placeholder="">
+                                                        placeholder="Last Name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Middle Name</label>
+                                                    <label for="exampleInputEmail1">Middle Name<i class="fa fa-asterisk staring" aria-hidden="true"></i></label>
                                                     <input type="text" name="m_name" class="form-control"
-                                                        placeholder="">
+                                                        placeholder="Middle Name"  required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Deceased Profile Image</label>
+                                                    <label for="exampleInputEmail1">Deceased Profile Image<i class="fa fa-asterisk staring" aria-hidden="true"></i></label>
                                                     {{-- name="prof_img" --}}
                                                     <input type="file"
                                                         class="form-control prof_box crop_upload_image"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
-                                                        aspect_ratio_height="9" upload_input_by_name="prof_img">
+                                                        aspect_ratio_height="9" upload_input_by_name="prof_img"  required>
 
                                                 </div>
 
                                             </div>
 
                                             <div class="form-group">
-                                                <label name="gender" for="exampleFormControlSelect1">Gender</label>
-                                                <select class="form-control" name="gender"
+                                                <label name="gender" for="exampleFormControlSelect1">Gender</i></label>
+                                                <select class="form-control" name="gender"  required
                                                     id="exampleFormControlSelect1">
-                                                    <option value="" selected="" disabled="" hidden="">
-                                                        Gender</option>
+                                                    <!-- <option value="" selected="" disabled="" hidden="">
+                                                        Gender</option> -->
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label name="relation"
-                                                    for="exampleFormControlSelect1">Relationship</label>
+                                                    for="exampleFormControlSelect1">Relationship<i class="fa fa-asterisk staring" aria-hidden="true"></i></label>
 
                                                 <input list="relations" placeholder="Please write/select a relationship"
-                                                    class="form-control" name="relation">
+                                                    class="form-control" name="relation"  required>
                                                 <datalist id="relations">
                                                     <option value="Aunt">Aunt</option>
                                                     <option value="Brother">Brother</option>
@@ -139,48 +139,48 @@
                                                 <label name="memorial_designation"
                                                     for="exampleFormControlSelect1">Memorial
                                                     Designation</label>
-                                                <select class="form-control" name="memorial_designation"
+                                                <select class="form-control" name="memorial_designation"  required
                                                     id="exampleFormControlSelect1">
-                                                    <option value="" selected="" disabled=""
+                                                    <!-- <option value="" selected="" disabled=""
                                                         hidden="">
-                                                        Select designation, if applies </option>
-                                                    <option value="does_not_apply">No Designation </option>
+                                                        Select designation, if applies </option> -->
+                                                    <option value="does_not_apply">Does not apply </option>
                                                     <option value="military">Military Veteran </option>
                                                     <option value="first_responder">First Responder </option>
                                                     <option value="covid">COVID-19 Victim </option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Life (Write A Few Words On The
+                                                <label for="exampleInputEmail1">Life<i class="fa fa-asterisk staring" aria-hidden="true"></i> (Write A Few Words On The
                                                     Life/Birth Of This Person)</label>
                                                 <textarea rows="5" id="summary_ckeditor" name="life_tab_arr" class="ckeditor form-control form-group txtar"
-                                                    placeholder="Write A Few Words On The Life/Birth Of The Deceased"></textarea>
+                                                    placeholder="Write A Few Words On The Life/Birth Of The Deceased"  required></textarea>
                                                 {{-- <div onclick="get_ck_editor_val()">Get val</div> --}}
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Image (Attach A Picture Regarding The
+                                                <label for="exampleInputEmail1">Image<i class="fa fa-asterisk staring" aria-hidden="true"></i> (Attach A Picture Regarding The
                                                     Life/Birth Of This Person)</label>
                                                     <input type="file"
                                                         class="form-control prof_box crop_upload_image"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
-                                                        aspect_ratio_height="9" upload_input_by_name="life_image">
+                                                        aspect_ratio_height="9" upload_input_by_name="life_image"  required>
 
 
                                             </div>
 
 
-                                            <h5>More Detail (Optional)</h5>
+                                            <h5>More Details</h5>
                                             <div class="detailcard">
-                                                <p>This information can also be updated at a later time:</p>
+                                                <!-- <p>This information can also be updated at a later time:</p> -->
 
                                                 <div class="row">
                                                     <div class="col-sm-2">
-                                                        <p>Born</p>
+                                                        <p>Born<i class="fa fa-asterisk staring" aria-hidden="true"></i></p>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group">
                                                             <input type="date" name="b_year" class="form-control"
-                                                                id="exampleFormControlSelect1">
+                                                                id="exampleFormControlSelect1"  required>
 
                                                         </div>
 
@@ -188,7 +188,7 @@
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
                                                             <input type="text" name="b_city" class="form-control"
-                                                                placeholder="City or Town">
+                                                                placeholder="City or Town"  required>
 
                                                         </div>
 
@@ -196,14 +196,14 @@
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
                                                             <input name="b_state" type="text" class="form-control"
-                                                                placeholder="State or Area">
+                                                                placeholder="State or Area"  required>
                                                         </div>
 
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group">
                                                             <input name="b_country" type="text"
-                                                                class="form-control" placeholder="Country">
+                                                                class="form-control" placeholder="Country"  required>
                                                         </div>
 
                                                     </div>
@@ -250,10 +250,10 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
-                                                    <label for="exampleFormControlInput1">Memorial Name</label>
+                                                    <label for="exampleFormControlInput1">Memorial Name<i class="fa fa-asterisk staring" aria-hidden="true"></i></label>
                                                     <input name="email" type="email" class="form-control"
                                                         id="exampleFormControlInput1"
-                                                        placeholder="Write A Unique Memorial Name">
+                                                        placeholder="Write A Unique Memorial Name"  required>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="examplemail">
@@ -620,9 +620,18 @@
                     console.log('err name',$.trim($(this).val().length ));
                     console.log('err name',$(this).attr('name'));
                     $(this).addClass('required-warning');
-                    // valid_form = false;
+                    valid_form = false;
                 }
             });
+            // $(form_selector).find('select').each(function(){
+            //     if($(this).prop('value') && $.trim($(this).val()).length === 0 ){
+            //         console.log('err name',$(this).attr('name'));
+            //         console.log('err name',$.trim($(this).val().length ));
+            //         console.log('err name',$(this).attr('name'));
+            //         $(this).addClass('required-warning');
+            //         valid_form = false;
+            //     }
+            // });
             if(valid_form){
                 submit_form(form_selector,sucess_function);
                 $('.nav-tabs a[href="#menu2"]').tab('show')

@@ -13,7 +13,24 @@
 
 
         $('#save_story').on('click', function() {
-
+            var storyt = $('#story_title').val();
+            var storyd = $('#story_details').val();
+            var storyp = $('#upload-photo').val();
+            if(storyt == "") {
+                alert('Plz Write A Title');
+                
+                return;
+            }
+            if(storyd == "") {
+                alert('Plz Write A detail');
+                
+                return;
+            }
+            if(storyp == "") {
+                alert('Plz Add A Picture');
+                
+                return;
+            }
             var formData = new FormData();
             formData.append('memorial_id', memorial_id);
             // formData.append('memorial_id', '{!! $user_website->id !!}');
@@ -33,6 +50,8 @@
                 success: function(res) {
                     console.log('res', res)
                     $(".story_blk").append(get_story_html(res.response));
+                    $('input[type="text"],textarea').val('');
+                    $('input[type="file"],textarea').val('');
 
                 },
                 error: function(err) {
@@ -76,7 +95,8 @@
                         console.log(res.response.type,'type is here');
 
                     }
-                    
+                    $('input[type="hidden"],textarea').val('');
+
 
 
                 },
@@ -87,21 +107,45 @@
         }
 
         $('#save_media_audio').on('click', function() {
+            var aud = $('#file_upload').val();
+            if(aud == "") {
+                alert('Plz Write A Tribute');
+                
+                return;
+            }
             upload_file($('input[name="upld_aud"]')[0].files[0]);
         });
 
         $('#save_media_image').on('click', function() {
+            var img = $('#file_upload').val();
+            if(img == "") {
+                alert('Plz Write A Tribute');
+                
+                return;
+            }
             upload_file($('input[name="upld_file_hid"]').val());
         });
 
         $('#save_media_video').on('click', function() {
+            var vid = $('#file_upload').val();
+            if(vid == "") {
+                alert('Plz Write A Tribute');
+                
+                return;
+            }
             upload_file($('input[name="upld_vid"]')[0].files[0]);
         });
 
         $('#save_trib').on('click', function() {
+            var msg = $('#add_tibs').val();
+            if(msg == "") {
+                // alert('Plz Write A Tribute');
+                
+                return;
+            }
             var formData = new FormData();
             formData.append('memorial_id', memorial_id);
-            formData.append('details_show_var', $('#add_tibs').val());
+            formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             formData.append('type_var', $('#type_tribute').val());
 
@@ -117,6 +161,8 @@
                 success: function(res) {
                     console.log('res', res)
                     $(".add_tribute_append").append(get_review_html(res.response));
+                    $('input[type="text"],textarea').val('');
+                    $('input[type="hidden"],textarea').val('');
 
                     for (const value of formData.values()) {
                         console.log(value);

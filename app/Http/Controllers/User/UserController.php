@@ -44,6 +44,10 @@ class UserController extends Controller
     {
         return view('user.aboutus');
     }
+    public function privacy_policy()
+    {
+        return view('user.privacy');
+    }
     public function testimonials()
     {
         return view('user.testimonials');
