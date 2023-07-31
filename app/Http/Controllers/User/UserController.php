@@ -192,6 +192,9 @@ class UserController extends Controller
         $website_template_email = $user_email;
         $user_website = UserWebsite::with('style')->where('email', $website_template_email)->first();
         $web_variable = $user_website->web_variable;
+        
+        $user_website->total_views = $user_website->total_views+1;
+        $user_website->save();
         $tributes = Tributes_Arr::where('memorial_id', $user_website->id)->get()->toArray();
         $web_variable['tributes_arr'] = $this->set_attribute_arr_pics($tributes); //$tributes;
 
@@ -214,7 +217,8 @@ class UserController extends Controller
 
         $template_helper = new TemplateHelper($user_website, $web_variable);
         $html = $template_helper->create_html();
-        return view('user/dynamic_template/user_page', compact('html', 'user_website'));
+        // dd($web_variable);
+        return view('user/dynamic_template/user_page', compact('html', 'web_variable','user_website'));
     }
     public function storyform(Request $request)
     {

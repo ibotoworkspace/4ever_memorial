@@ -40,10 +40,10 @@
                     </div>
                     <div class="col-md-9">
                         <div class="nav_bar">
-                            <a href="">SIGN IN</a>
-                            <a href="">CREATE A NEW WEBSITE</a>
-                            <a href="">INVITE OTHERS</a>
-                            <a href="">CONTACT SUPPORT</a>
+                            {{-- <a href="">SIGN IN</a> --}}
+                            <a href="{!! asset('user/memorialform') !!}">CREATE A NEW WEBSITE</a>
+                            <a href="{!! asset('user/aboutus') !!}">ABOUT US</a>
+                            <a href="{!! asset('user/contactus') !!}">CONTACT SUPPORT</a>
                         </div>
                     </div>
                 </div>
@@ -658,7 +658,9 @@
                                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
                             </div>
                             <div class="fb_share_par">
-                                <p>Share on Facebook</p>
+                                <?php $url = 'http://localhost/4_ever_memories/public/user/get_memorial/asdsadsad@forevermemorial.com'; ?>
+                                <a class="facebook-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>">Share on Facebook</a>
+                                {{-- <p>Share on Facebook</p> --}}
                             </div>
                         </div>
                         <div class="rightBoxArea NotiPref">

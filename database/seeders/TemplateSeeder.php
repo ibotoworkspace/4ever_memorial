@@ -78,10 +78,9 @@ class TemplateSeeder extends Seeder
                                 </div>
                                 <div class="col-md-9">
                                     <div class="nav_bar">
-                                        <a href="">SIGN IN</a>
-                                        <a href="">CREATE A NEW WEBSITE</a>
-                                        <a href="">INVITE OTHERS</a>
-                                        <a href="">CONTACT SUPPORT</a>
+                                    <a href="' . $public_path . 'user/memorialform">CREATE A NEW WEBSITE</a>
+                                    <a href="' . $public_path . 'user/aboutus">ABOUT US</a>
+                                    <a href="' . $public_path . 'user/contactus">CONTACT SUPPORT</a>
                                     </div>
                                 </div>
                             </div>
@@ -166,13 +165,15 @@ class TemplateSeeder extends Seeder
                                                 aria-hidden="true"></i> Invite Now</a>
                                     </div>
                                     <div class="face_share">
-                                        <div class="fb_icon">
-                                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="fb_share_par">
-                                            <p>Share on Facebook</p>
-                                        </div>
+                                    <div class="fb_icon">
+                                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
                                     </div>
+                                    <div class="fb_share_par">
+                                        <?php $url = \'http://localhost/4_ever_memories/public/user/get_memorial/asdsadsad@forevermemorial.com\'; ?>
+                                        <a class=\"facebook-share\" target=\"_blank" href=\"https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>\">Share on Facebook</a>
+                                        {{-- <p>Share on Facebook</p> --}}
+                                    </div>
+                                </
                                     <div class="rightBoxArea NotiPref">
                                         <h3>Your notification preferences</h3>
                                         <p>Subscribe to get notified about new additions to this memorial.</p>
