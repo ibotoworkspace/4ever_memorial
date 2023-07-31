@@ -45,7 +45,7 @@
                 visit to the ancestorial site a good experience.</p>
               <p>A Place where parents will send their children to go and
                 research the Grand Parent.</p>
-              <a href="aboutus.html"><button type="submit" class="btn btn-primary aboutclick">Learn More</button></a>
+              <a href="{!! asset('/user/aboutus')!!}"><button type="submit" class="btn btn-primary aboutclick">Learn More</button></a>
             </div>
           </div>
           <div class="col-sm-5">
@@ -131,7 +131,7 @@
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary pkgclick">View All Packages</button>
+              <a type="submit" href="{!! asset('/user/plans')!!}" class="btn btn-primary pkgclick">View All Packages</a>
             </div>
           </div>
           <div class="col-sm-4 packageSpace">
@@ -201,7 +201,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <button type="submit" class="btn btn-primary memorialclick">View Sample Memorial</button>
+            <a type="submit" href="{!! asset('user/testing')!!}" class="btn btn-primary memorialclick">View Sample Memorial</a>
           </div>
         </div>
         <div class="row">
@@ -224,7 +224,7 @@
                   <input type="text" class="form-control" placeholder="Last Name">
                 </div>
                 <div class="col-sm-2">
-                  <button type="submit" class="btn btn-primary formclick">Get Started</button>
+                  <a type="submit" href="{!! asset('user/memorialform')!!}" class="btn btn-primary formclick">Get Started</a>
                 </div>
               </div>
             </form>

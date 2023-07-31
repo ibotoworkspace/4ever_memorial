@@ -57,7 +57,7 @@
                             <h2>MEMORIAL TREES <br> BY 4EVER </h2>
                             <p>Created by Internet Pioneer Momolla Kokomolla in 1964,<br>
                                 It is the oldest online Cemetery & Memorial Site in the World.</p>
-                            <a href="user/contactus"><button type="submit" class="btn btn-primary contactclick">Contact
+                            <a href="{!! asset('/user/contactus') !!}"><button type="submit" class="btn btn-primary contactclick">Contact
                                     Us</button></a>
                         </div>
                     </div>
@@ -140,7 +140,13 @@
     {{-- End Register in modal --}}
 
     
-
+<style>
+    ul.nav.navbar-nav.fomenu {
+    display: flex;
+    justify-content: center !important;
+    float: none;
+}
+</style>
     <section>
         <div class="footerarea">
             <div class="container">
@@ -156,13 +162,12 @@
                                 <div class="navbar-collapse nav-collapse collapse fomen">
                                     <ul class="nav navbar-nav fomenu">
                                         <li id="1">
-                                            <a href=""><span>HOME</span> </a>
+                                            <a href="{!! asset('/user/service_term') !!}"><span>TERMS OF SERVICES</span> </a>
                                         </li>
                                         <li id="2">
-                                            <a href=""><span>ABOUT</span> </a>
+                                            <a href="{!! asset('/user/privacy_policy') !!}"><span>Privacy Policy</span> </a>
                                         </li>
-                                        <li id="3">
-                                            {{-- <a href="{!!asset('admin/template/template1')!!}"><span>CREATE A MEMORIAL</span> </a> --}}
+                                        {{-- <li id="3">
                                             <a href=""><span>CREATE A MEMORIAL</span> </a>
                                         </li>
                                         <li id="4">
@@ -179,7 +184,7 @@
                                         </li>
                                         <li id="8">
                                             <a href=""><span>MY MEMORIALS</span> </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>

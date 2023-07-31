@@ -96,6 +96,7 @@
 
                     }
                     $('input[type="hidden"],textarea').val('');
+                    $('input[type="file"],textarea').val('');
 
 
 
