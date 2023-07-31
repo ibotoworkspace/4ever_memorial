@@ -45,14 +45,15 @@
         @endphp
         <div class="col-sm-4">
             <div class="topicons" >
-                <i class="fa fa-user-plus" style="{!!$signout!!}" aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i>
-                <i class="fa fa-sign-in"  style="{!!$signout!!}"aria-hidden="true" data-toggle="modal" data-target="#LoginModalCenter"> Sign</i>
-                <i class="fa fa-user-circle-o"  style="{!!$signin!!}"aria-hidden="true"data-target="#LoginModalCenter"><a href="{!!asset('user/logout')!!}"> LogOut </a></i>
+                
 
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <i class="fa fa-user-plus" style="{!!$signout!!}" aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i>
+                <i class="fa fa-sign-in"  style="{!!$signout!!}"aria-hidden="true" data-toggle="modal" data-target="#LoginModalCenter"> Sign</i>
+                <i class="fa fa-user-circle-o"  style="{!!$signin!!}"aria-hidden="true"data-target="#LoginModalCenter"><a href="{!!asset('user/logout')!!}"> LogOut </a></i>
             </div>
         </div>
     </div>
