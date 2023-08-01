@@ -161,7 +161,7 @@ class TemplateSeeder extends Seeder
                                             </li>
                                             <li><i class="fa fa-user-plus" aria-hidden="true"></i></li>
                                         </ul>
-                                        <a href="#" class="btn btn-primary btnInvite"><i class="fa fa-user-plus"
+                                        <a  class="btn btn-primary btnInvite" data-toggle="modal" data-target="#inviteModal"><i class="fa fa-user-plus"
                                                 aria-hidden="true"></i> Invite Now</a>
                                     </div>
                                     <div class="face_share">
@@ -169,26 +169,17 @@ class TemplateSeeder extends Seeder
                                         <i class="fa fa-facebook-square" aria-hidden="true"></i>
                                     </div>
                                     <div class="fb_share_par">
-                                        <?php $url = \'http://localhost/4_ever_memories/public/user/get_memorial/asdsadsad@forevermemorial.com\'; ?>
-                                        <a class=\"facebook-share\" target=\"_blank" href=\"https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>\">Share on Facebook</a>
-                                        {{-- <p>Share on Facebook</p> --}}
+                                        <?php $url = "' . $public_path . '/user/get_memorial/asdsadsad@forevermemorial.com"; ?>
+                                        <a class="facebook-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>">Share on Facebook</a>
                                     </div>
-                                </
-                                    <div class="rightBoxArea NotiPref">
-                                        <h3>Your notification preferences</h3>
-                                        <p>Subscribe to get notified about new additions to this memorial.</p>
-                                    </div>
+                                </div>
+                                
                                     <div class="phots">
                                         <p class="pht_para">137 Photos</p>
                                         <div class="imag_sec">
                                         <div class="contain side_slider">
                                     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-                                        <!-- Indicators -->
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                        </ol>
+                                      
 
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner">
@@ -212,11 +203,7 @@ class TemplateSeeder extends Seeder
                                         <h3>Recent updates</h3>
                                         {!!{recent_updates_show_htmlvar}!!}
                                     </div>
-                                    <div class="rightBoxArea NotiPref">
-                                        <h4>This website is administered by:
-                                            {!!{owner_user_var.name_var}!!}
-                                        </h4>
-                                    </div>
+                                    
                                     <div class="view_sec">
                                         <div class="flx">
                                             <div class="viw_icon">
@@ -225,15 +212,6 @@ class TemplateSeeder extends Seeder
                                             <div class="viw_para">
                                                 {!!{total_views_var}!!} Views
                                             </div>
-                                        </div>
-                                        <hr>
-                                        <div class="flx">
-
-                                            <div class="wrld_icon">
-                                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="wrld_par"> Open access</div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -271,6 +249,48 @@ class TemplateSeeder extends Seeder
                 <a href="#" class="float">
                     <i class="fa fa-chevron-up my-float" aria-hidden="true"></i>
                 </a>
+     
+  <!-- The Modal -->
+  <div class="modal fade" id="inviteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Invite Family and Friends</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        
+         <form action="">
+            <div class="form-group">
+              <label for="usr">Enter Email:</label>
+              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control" id="usr" name="username">
+            </div>
+            <div class="email_body">
+                In Loving Memory of [Name]
+                <br>
+                <br>
+    
+    Join us in celebrating the life of [Name] on our online memorial website. Share cherished memories, photos, and stories as we honor their beautiful legacy. Visit [URL] to pay tribute and keep [Name]\'s spirit alive.
+    
+    With love,
+    [Your Name]
+              </div>
+            
+            <button type="submit" class="btn btn-primary email_sub">Submit</button>
+          </form>
+          
+        </div>
+        
+       
+        
+      </div>
+    </div>
+  </div>
+  <!-- The Modal -->
             </body>
 
 

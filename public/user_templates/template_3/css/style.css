@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+.email_body {
+    border: solid 1px #beb28d;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    background-color: #f9f9f9;
+    color: gray;
+}
+
 .aud_box {
     border: solid 1px;
     border-style: dashed;
@@ -567,7 +576,7 @@ li.no-img i {
 li.contentLi {
     font-size: 19px;
     margin-left: 15px;
-    padding: 6px 6px;
+    padding: 16px 6px;
 }
 .RecentUpdate h5 {
     color: #7d5628;
@@ -616,6 +625,7 @@ h4.aaa:hover {
     height: 80px;
     padding-top: 15px;
     padding-left: 42px;
+    margin-bottom: 20px;
 }
 .fb_share_par {
     padding-left: 29px;
@@ -659,7 +669,6 @@ h4.aaa:hover {
 }
 .view_sec {
     background: #9ec5ca;
-    height: 167px;
     border: solid 1px;
     border-radius: 10px;
     border-color: #8ab1b6;

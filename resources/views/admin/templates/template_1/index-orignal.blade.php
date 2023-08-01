@@ -650,8 +650,8 @@
                                 </li>
                                 <li><i class="fa fa-user-plus" aria-hidden="true"></i></li>
                             </ul>
-                            <a href="#" class="btn btn-primary btnInvite"><i class="fa fa-user-plus"
-                                    aria-hidden="true"></i> Invite Now</a>
+                            <a  class="btn btn-primary btnInvite" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"
+                                aria-hidden="true"></i> Invite Now</a>
                         </div>
                         <div class="face_share">
                             <div class="fb_icon">
@@ -765,6 +765,9 @@
                     </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Open modal
+              </button>
     </section>
     <section class="footer_area">
         <div class="container-fluid">
@@ -794,9 +797,54 @@
         </div>
         </div>
     </section>
+   
     <a href="#" class="float">
         <i class="fa fa-chevron-up my-float" aria-hidden="true"></i>
     </a>
+
+    
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Invite Family and Friends</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        
+         <form action="">
+            <div class="form-group">
+              <label for="usr">Enter Email:</label>
+              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control" id="usr" name="username">
+            </div>
+            <div class="email_body">
+                In Loving Memory of [Name]
+                <br>
+                <br>
+    
+    Join us in celebrating the life of [Name] on our online memorial website. Share cherished memories, photos, and stories as we honor their beautiful legacy. Visit [URL] to pay tribute and keep [Name]'s spirit alive.
+    
+    With love,
+    [Your Name]
+              </div>
+            
+            <button type="submit" class="btn btn-primary email_sub">Submit</button>
+          </form>
+          
+        </div>
+        
+       
+        
+      </div>
+    </div>
+  </div>
+  <!-- The Modal -->
+
 </body>
 
 </html>
