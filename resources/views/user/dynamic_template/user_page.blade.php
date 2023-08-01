@@ -4,31 +4,61 @@
 <button id="btn1">add a story block</button>
 <script>
     var memorial_id = '{!! $user_website->id !!}';
-    var global_path = '{!! asset("/") !!}';
-
+    var global_path = '{!! asset('/') !!}';
+    var jsonString = '{!! json_encode($web_variable['gallery_photo_arr']) !!}';
+    var gallery_images = JSON.parse(jsonString);
+    console.log(gallery_images);
     $(document).ready(function() {
         // $("#btn1").click(function() {
         //     $(".add_tribute_append").append(review);
         // });
+
+        set_dynamic_values();
+
+        function set_dynamic_values() {
+            $('.viw_para').html('{!! $user_website->total_views !!} Views');
+            $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
+            var images = '';
+
+            for (var i = 0; i < gallery_images.length; i++) {
+                images = images + image_crousal(gallery_images[i].image_show_var, i);
+            }
+
+            // gallery_images.each(function(i,img){
+            //     images = images + image_crousal(img, i);
+
+            // })
+            $('.carousel-inner').html(images);
+        }
+
+        function image_crousal(img, i) {
+            var active = '';
+            if (i == 0) {
+                active = 'active';
+            }
+            return `
+            <div class="item ` + active + `"><img src="` + img + `" alt="responsive" style="width:100%; height: 100%;"></div>
+            `;
+        }
 
 
         $('#save_story').on('click', function() {
             var storyt = $('#story_title').val();
             var storyd = $('#story_details').val();
             var storyp = $('#upload-photo').val();
-            if(storyt == "") {
+            if (storyt == "") {
                 alert('Plz Write A Title');
-                
+
                 return;
             }
-            if(storyd == "") {
+            if (storyd == "") {
                 alert('Plz Write A detail');
-                
+
                 return;
             }
-            if(storyp == "") {
+            if (storyp == "") {
                 alert('Plz Add A Picture');
-                
+
                 return;
             }
             var formData = new FormData();
@@ -80,19 +110,19 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
-                    if(res.response.type == 'video' ){
+                    if (res.response.type == 'video') {
                         $(".vid_row").append(get_gallery_video_html(res.response));
-                        console.log(res.response.type,'type is here');
+                        console.log(res.response.type, 'type is here');
 
 
-                    }else  if(res.response.type == 'photo' ){
+                    } else if (res.response.type == 'photo') {
                         $(".gall_row").append(get_gallery_img_html(res.response));
-                        console.log(res.response.type,'type is here');
+                        console.log(res.response.type, 'type is here');
 
 
-                    }else{
+                    } else {
                         $(".uploaded_audio_area").append(get_gallery_audio_html(res.response));
-                        console.log(res.response.type,'type is here');
+                        console.log(res.response.type, 'type is here');
 
                     }
                     $('input[type="hidden"],textarea').val('');
@@ -109,9 +139,9 @@
 
         $('#save_media_audio').on('click', function() {
             var aud = $('.upld_audio').val();
-            if(aud == "") {
+            if (aud == "") {
                 // alert('Plz Write A Tribute');
-                
+
                 return;
             }
             upload_file($('input[name="upld_aud"]')[0].files[0]);
@@ -119,9 +149,9 @@
 
         $('#save_media_image').on('click', function() {
             var img = $('#file_upload').val();
-            if(img == "") {
+            if (img == "") {
                 // alert('Plz Write A Tribute');
-                
+
                 return;
             }
             upload_file($('input[name="upld_file_hid"]').val());
@@ -129,9 +159,9 @@
 
         $('#save_media_video').on('click', function() {
             var vid = $('.upld_video').val();
-            if(vid == "") {
+            if (vid == "") {
                 // alert('Plz Write A Tribute');
-                
+
                 return;
             }
             upload_file($('input[name="upld_vid"]')[0].files[0]);
@@ -139,9 +169,9 @@
 
         $('#save_trib').on('click', function() {
             var msg = $('#add_tibs').val();
-            if(msg == "") {
+            if (msg == "") {
                 // alert('Plz Write A Tribute');
-                
+
                 return;
             }
             var formData = new FormData();
@@ -244,7 +274,7 @@
 
 
     function get_story_html(response) {
-        
+
         var user_name_show_var = response.user_name_show_var;
         var date_show_var = response.date_show_var;
         var details_show_var = response.details_show_var;
@@ -292,9 +322,10 @@
     }
 
     function get_gallery_video_html(response) {
-        var image_show_var = `<video width="200" height="200" controls=""><source src="` + response.image_show_var + `" alt=""></video>`;
+        var image_show_var = `<video width="200" height="200" controls=""><source src="` + response.image_show_var +
+            `" alt=""></video>`;
         console.log(image_show_var, 'image');
-        
+
         var review = `
                     <div class="col-md-3 pic_gal_vid">
                     ` + image_show_var + ` 
@@ -303,16 +334,18 @@
         return review;
 
     }
-    function get_gallery_audio_html (response) {
+
+    function get_gallery_audio_html(response) {
         var image_show_var = response.image_show_var;
         var date_show_var = response.date_show_var;
-        var name_show_var = response.name_show_var ;
+        var name_show_var = response.name_show_var;
         console.log(image_show_var, 'image');
 
         var review = `
                                         <div class="uploaded_audio_box">
                                             
-                                            <h4><div class="new_tag">new</div>` + date_show_var + ` .by  ` + name_show_var + `</h4>
+                                            <h4><div class="new_tag">new</div>` + date_show_var + ` .by  ` +
+            name_show_var + `</h4>
                                             <audio controls autoplay>
                                                 <source src="` + image_show_var + `" type="audio/mpeg">
                                               </audio>

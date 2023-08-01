@@ -28,7 +28,7 @@ class UserTemplateHelper
         $user_website->style_id = $style->id;
         $user_website->web_html = $style->website_template->web_html;
 
-
+$user_owner=UserWebsite::with('user','style.website_template')->get();
 
         $user_website->style_id = $style->id;
         $user_website->web_variable = json_encode($style->web_variable);
@@ -36,18 +36,22 @@ class UserTemplateHelper
         $user_website->save();
 
         $web_variable = $style->web_variable;
-// dd($web_variable);
+// dd($web_variable);  user_memorial_tribute_htmlvar
         // $user 
         $web_variable['owner_user_var']['name_var'] = $user->name;
         $web_variable['owner_user_var']['full_name_var'] = $request->ad_name.' '.$request->ad_lastname;
         $web_variable['owner_user_var']['birth_var']= $request->b_year;
-
+        $web_variable['owner_user_var']['birth_var']= $request->b_year;
+      
         
         $web_variable['memorial_user_var']['name_var'] = $request->f_name;
         $web_variable['memorial_user_var']['full_name_var'] = $request->f_name.' '.$request->m_name.' '.$request->l_name;
         $web_variable['memorial_user_var']['birth_var'] = $request->b_year;
         $web_variable['memorial_user_var']['death_var'] = $request->p_year;
         $web_variable['memorial_user_var']['father_name_var'] = $request->l_name;
+        $web_variable['memorial_user_var']['city']= $request->b_city;
+        $web_variable['memorial_user_var']['country']= $request->b_country;
+        $web_variable['tribute_text_var'] = $request->life_tab_arr;
 
 // dd($web_variable);
 
@@ -80,6 +84,7 @@ class UserTemplateHelper
         $user_website->p_country = $request->p_country;
         $user_website->email = $request->email.'@forevermemorial.com';
         $user_website->visible_to_all = $request->visible_to_all;
+        
         $user_website->save();
 
         $user_website_life = new Life_Tab_Arr();

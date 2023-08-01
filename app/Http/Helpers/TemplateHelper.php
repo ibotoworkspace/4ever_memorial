@@ -80,7 +80,7 @@ class TemplateHelper
         $html_vars = $this->get_custom_variables_list($html,'_htmlvar');
         if($html_vars){
             foreach($html_vars as $index=>$html_var){
-                if($index == 'about_tab_htmlvar'&& !isset($this->variable_html[$index])){
+                if(!isset($this->variable_html[$index])){
                     dd($html_vars,$index,$this->variable_html);
                     // dd($this->variable_html[$index]);
                 }
