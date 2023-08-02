@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\TemplateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\StylingsController;
 use App\Http\Controllers\Admin\MemorialFormController;
+use App\Http\Controllers\reports\MemorialController;
 use App\Http\Controllers\Admin\UserController as Admin_UserController;
 use App\Http\Controllers\User\CommonServicesController;
 use App\Http\Controllers\User\UserController as User_UserController;
@@ -58,6 +59,15 @@ Route::get('admin/user/getUsers', [Admin_UserController::class, 'getUsers'])->na
 // Route::get('/user/contactus',[Admin_UserController::class, 'contactus'])->name('user.contactus');
 // Route::get('/user/blog',[Admin_UserController::class, 'blog'])->name('user.blog');
 Route::get('template',[Admin_UserController::class, 'template']);
+
+
+
+Route::get('admin/memorials/',[MemorialController::class, 'index'])->name('admin.memorials.index');
+Route::get('admin/memorials/getUsers', [MemorialController::class, 'getUsers'])->name('admin.memorials.getUsers');
+// Route::get('/user/aboutus',[MemorialController::class, 'aboutus'])->name('user.aboutus');
+// Route::get('/user/contactus',[MemorialController::class, 'contactus'])->name('user.contactus');
+// Route::get('/user/blog',[MemorialController::class, 'blog'])->name('user.blog');
+Route::get('template',[MemorialController::class, 'template']);
 
 
 
