@@ -226,19 +226,122 @@
 
                                 </div>
 
+                                <style>
+                                    .dropbtn {
+                                        background-color: #04AA6D;
+                                        color: white;
+                                        padding: 16px;
+                                        font-size: 16px;
+                                        border: none;
+                                    }
+
+                                    .dropdown {
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+
+                                    .dropdown-content {
+                                        display: none;
+                                        position: absolute;
+                                        background-color: #f1f1f1;
+                                        min-width: 160px;
+                                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                        z-index: 1;
+                                        border-radius: 0px 50px 50px 50px;
+                                    }
+
+                                    .dropdown-content a {
+                                        color: black;
+                                        padding: 12px 16px;
+                                        text-decoration: none;
+                                        display: block;
+                                    }
+
+                                    .dropdown-content a:hover {
+                                        background-color: #ddd;
+                                    }
+
+                                    .dropdown:hover .dropdown-content {
+                                        display: block;
+                                    }
+
+                                    .dropdown:hover .dropbtn {
+                                        /* background-color: #7dabc7; */
+                                    }
+                                </style>
                                 <div class="lev_tri">
 
                                     <input type="hidden" id="type_tribute" name="type_tribute">
                                     <h3>Leave a Tribute</h3>
                                     <div class="icon_list">
-                                        <button onclick="set_tribute('flower')" class="bt_no">
-                                            <div class="cand same">
-                                                <div class="ico_wri">
-                                                    <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
-                                                    <span class="sp">Light a Candle</span>
+                                        <div class="dropdown candle-select">
+                                            <button onclick="set_tribute('candle')" class="bt_no dropbtn">
+                                                <div class="cand same">
+                                                    <div class="ico_wri">
+                                                        <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                                                        <span class="sp">Light a Candle</span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            
+                                            {{--////////////////////////////// <div class="dropdown-content"> --}}
+                                            <div class="dropdown-content">
+                                                <div class="flx">
+                                                    <a href="#">
+                                                        <div class="cand same">
+                                                            <div class="ico_wri">
+                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/6.png') !!}" alt="relative">
+                                                                <span class="sp">Light a Candle</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#">
+                                                        <div class="cand same">
+                                                            <div class="ico_wri">
+                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/7.png') !!}" alt="relative">
+                                                                <span class="sp">Light a Candle</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#">
+                                                        <div class="cand same">
+                                                            <div class="ico_wri">
+                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/8.png') !!}" alt="relative">
+                                                                <span class="sp">Light a Candle</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="flx">
+                                                    <a href="#">
+                                                        <div class="cand same">
+                                                            <div class="ico_wri">
+                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/9.png') !!}" alt="relative">
+                                                                <span class="sp">Light a Candle</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#">
+                                                        <div class="cand same">
+                                                            <div class="ico_wri">
+                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/10.png') !!}" alt="relative">
+                                                                <span class="sp">Light a Candle</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#">
+                                                        <div class="cand same">
+                                                            <div class="ico_wri">
+                                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                                                                <span class="sp">Light a Candle</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </button>
+                                            {{--////////////////////////////// <div class="dropdown-content"> --}}
+
+                                        </div>
                                         <button class="bt_no">
                                             <div class="flower same">
                                                 <div class="ico_wri">
@@ -331,11 +434,11 @@
                                                         </label>
                                                         <input type="file" id="file_upload" class="upld_file">
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="publish_btn">
-                                                <button id ="save_media"class="btn btn-danger">Publish</button>
+                                                <button id="save_media" class="btn btn-danger">Publish</button>
                                             </div>
                                         </div>
                                         <div class="gallery">
@@ -481,20 +584,20 @@
 
                                     <div id="Audio" class="tab_galcontent">
                                         <div class="uploaded_audio_area">
-                                        <div class="uploaded_audio_box">
-                                            
-                                            <h4>January 21 .by Alexa Zelaya </h4>
-                                            <audio controls autoplay>
-                                                <source src="horse.mp3" type="audio/mpeg">
-                                              </audio>
+                                            <div class="uploaded_audio_box">
+
+                                                <h4>January 21 .by Alexa Zelaya </h4>
+                                                <audio controls autoplay>
+                                                    <source src="horse.mp3" type="audio/mpeg">
+                                                </audio>
                                             </div>
-                                        <div class="uploaded_audio_box">
-                                            <h4>January 21 .by Alexa Zelaya </h4>
-                                            <audio controls autoplay>
-                                                <source src="horse.mp3" type="audio/mpeg">
-                                              </audio>
+                                            <div class="uploaded_audio_box">
+                                                <h4>January 21 .by Alexa Zelaya </h4>
+                                                <audio controls autoplay>
+                                                    <source src="horse.mp3" type="audio/mpeg">
+                                                </audio>
                                             </div>
-                                            </div>
+                                        </div>
                                         <div class="audio_icon">
                                             <i class="fa fa-microphone" aria-hidden="true"></i>
                                         </div>
@@ -511,11 +614,11 @@
                                                     class="upld_audio">
 
                                                 <p>From Your Device</p>
-                                                
+
                                             </div>
 
                                         </div>
-                                        
+
                                     </div>
 
 
@@ -650,8 +753,8 @@
                                 </li>
                                 <li><i class="fa fa-user-plus" aria-hidden="true"></i></li>
                             </ul>
-                            <a  class="btn btn-primary btnInvite" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"
-                                aria-hidden="true"></i> Invite Now</a>
+                            <a class="btn btn-primary btnInvite" data-toggle="modal" data-target="#myModal"><i
+                                    class="fa fa-user-plus" aria-hidden="true"></i> Invite Now</a>
                         </div>
                         <div class="face_share">
                             <div class="fb_icon">
@@ -659,7 +762,9 @@
                             </div>
                             <div class="fb_share_par">
                                 <?php $url = 'http://localhost/4_ever_memories/public/user/get_memorial/asdsadsad@forevermemorial.com'; ?>
-                                <a class="facebook-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>">Share on Facebook</a>
+                                <a class="facebook-share" target="_blank"
+                                    href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>">Share on
+                                    Facebook</a>
                                 {{-- <p>Share on Facebook</p> --}}
                             </div>
                         </div>
@@ -765,9 +870,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Open modal
-              </button>
+          
     </section>
     <section class="footer_area">
         <div class="container-fluid">
@@ -797,53 +900,57 @@
         </div>
         </div>
     </section>
-   
+
     <a href="#" class="float">
         <i class="fa fa-chevron-up my-float" aria-hidden="true"></i>
     </a>
 
-    
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Invite Family and Friends</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-        
-         <form action="">
-            <div class="form-group">
-              <label for="usr">Enter Email:</label>
-              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control" id="usr" name="username">
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Invite Family and Friends</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <form action="">
+                        <div class="form-group">
+                            <label for="usr">Enter Email:</label>
+                            <input type="text"
+                                placeholder="example@mail.com,example2@mail.com,example3@mail.com......"
+                                class="form-control" id="usr" name="username">
+                        </div>
+                        <div class="email_body">
+                            In Loving Memory of [Name]
+                            <br>
+                            <br>
+
+                            Join us in celebrating the life of [Name] on our online memorial website. Share cherished
+                            memories, photos, and stories as we honor their beautiful legacy. Visit [URL] to pay tribute
+                            and keep [Name]'s spirit alive.
+
+                            With love,
+                            [Your Name]
+                        </div>
+
+                        <button type="submit" class="btn btn-primary email_sub">Submit</button>
+                    </form>
+
+                </div>
+
+
+
             </div>
-            <div class="email_body">
-                In Loving Memory of [Name]
-                <br>
-                <br>
-    
-    Join us in celebrating the life of [Name] on our online memorial website. Share cherished memories, photos, and stories as we honor their beautiful legacy. Visit [URL] to pay tribute and keep [Name]'s spirit alive.
-    
-    With love,
-    [Your Name]
-              </div>
-            
-            <button type="submit" class="btn btn-primary email_sub">Submit</button>
-          </form>
-          
         </div>
-        
-       
-        
-      </div>
     </div>
-  </div>
-  <!-- The Modal -->
+    <!-- The Modal -->
 
 </body>
 

@@ -106,8 +106,8 @@ class AdminController extends Controller
 
         $reports[] = [
 
-            'url' => 'admin/reports',
-            'title' => 'Reports ',
+            'url' => 'admin/memorials',
+            'title' => 'Memorials ',
 
         ];
         

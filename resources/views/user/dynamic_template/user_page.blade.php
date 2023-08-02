@@ -16,19 +16,80 @@
         set_dynamic_values();
 
         function set_dynamic_values() {
+            initial_values();
+            set_dynamic_tribute_images();
+        }
+
+        function initial_values(){
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
             var images = '';
-
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
             }
-
-            // gallery_images.each(function(i,img){
-            //     images = images + image_crousal(img, i);
-
-            // })
             $('.carousel-inner').html(images);
+        }
+
+        function set_dynamic_tribute_images() {
+            var dynamic_images = true;
+            var candles_html = '';
+            if (dynamic_images) {
+                candles_html = `                
+                <button class="bt_no dropbtn">
+                    <div class="cand same">
+                        <div class="ico_wri">
+                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                            <span class="sp">Light a Candle</span>
+                        </div>
+                    </div>
+                </button>
+                `;
+                // candles_html = candles_html + add_candles_list();
+                candles_html = add_candles_list()+candles_html ;
+            } else {
+
+                candles_html = `                
+                <button onclick="set_tribute('candle','{!! asset('user_templates/template_1/images/imgs/candle.png') !!}"')" class="bt_no ">
+                    <div class="cand same">
+                        <div class="ico_wri">
+                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                            <span class="sp">Light a Candle</span>
+                        </div>
+                    </div>
+                </button>
+                `;
+            }
+
+            console.log('candles_html',candles_html);
+            $('.candle-select').html(candles_html);
+        }
+
+        function add_candles_list(){
+            candle_list = `
+            <div class="dropdown-content">
+                <div class="flx">`;
+            var candle_arr = [
+                "{!! asset('user_templates/template_1/images/imgs/variations/6.png') !!}",
+                "{!! asset('user_templates/template_1/images/imgs/variations/7.png') !!}",
+                "{!! asset('user_templates/template_1/images/imgs/variations/8.png') !!}",
+                "{!! asset('user_templates/template_1/images/imgs/variations/9.png') !!}",
+                "{!! asset('user_templates/template_1/images/imgs/variations/10.png') !!}",
+                "{!! asset('user_templates/template_1/images/imgs/candle.png') !!}"
+            ];
+
+            $(candle_arr).each(function (index,candle) {
+                console.log('candles image',candle);
+                candle_list = candle_list+`                
+                
+                    <div class="cand same" onclick="set_tribute('candle','`+candle+`')">
+                        <div class="ico_wri">
+                            <img src="`+candle+`" alt="relative">
+                        </div>
+                    </div>
+                `;
+            })
+            candle_list = candle_list+`</div></div>`;
+            return candle_list;
         }
 
         function image_crousal(img, i) {
@@ -207,7 +268,7 @@
 
     });
 
-    function set_tribute(type_tribute) {
+    function set_tribute(type_tribute,tribute_image) {
 
         $('.same').removeClass('selected_tribute');
         var select_class = '';
@@ -221,6 +282,7 @@
         }
         $('.' + select_class).addClass('selected_tribute');
         $('#type_tribute').val(type_tribute);
+        $('#image_tribute').val(tribute_image);
     }
 
 
