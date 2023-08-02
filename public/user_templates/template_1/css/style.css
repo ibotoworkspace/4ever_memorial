@@ -21,6 +21,7 @@
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     /* border-radius: 0px 50px 50px 50px; */
+    top: -85px;
 
     border-radius: 5px;
 }
@@ -34,18 +35,19 @@
     border-top: 15px solid #f1f1f1;
     position: absolute;
     bottom: -15px;
-    left: 65px;
+    left: 37px;
 }
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    /* padding: 12px 16px; */
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: transparent;
+    border: 1px solid #ccc;
 }
 
 .dropdown:hover .dropdown-content {
@@ -309,8 +311,8 @@ button.bt_no {
     display: grid;
 }
 .same {
-    padding: 10px;
-    margin: 6px;
+    /* padding: 10px;
+    margin: 6px; */
     text-align: center;
 }
 .cand img {
@@ -341,12 +343,13 @@ ul.reviewSection img {
 }
 
 .selected_tribute{
-    background-color: #7dabc7;
+    /* background-color: #7dabc7; */
+    background-color: transparent;
     border-radius: 10px;
 }
 
-.cand:hover{
-    background-color: #7dabc7;
+.cand:hover {
+    background-color: transparent;
     border-radius: 10px;
 }
 .flower:hover{

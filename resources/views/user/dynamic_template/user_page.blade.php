@@ -80,13 +80,13 @@
             $(candle_arr).each(function (index,candle) {
                 console.log('candles image',candle);
                 candle_list = candle_list+`                
-                <a href="#">
-                    <div class="cand same">
+                
+                    <div class="cand same" onclick="set_tribute('candle','`+candle+`')">
                         <div class="ico_wri">
                             <img src="`+candle+`" alt="relative">
                         </div>
                     </div>
-                </a>`;
+                `;
             })
             candle_list = candle_list+`</div></div>`;
             return candle_list;
