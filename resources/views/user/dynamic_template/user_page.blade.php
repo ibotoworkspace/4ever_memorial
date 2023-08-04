@@ -24,6 +24,10 @@
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
             var images = '';
+            if(!gallery_images.length){
+                images = images + image_crousal('{!!asset("images/logo")!!}', 0);
+
+            }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
             }
