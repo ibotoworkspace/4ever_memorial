@@ -240,6 +240,7 @@
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             formData.append('type_var', $('#type_tribute').val());
+            formData.append('image_tribute', $('#image_tribute').val());
 
             $.ajax({
                 url: '{!! asset('user/tributeform') !!}',
