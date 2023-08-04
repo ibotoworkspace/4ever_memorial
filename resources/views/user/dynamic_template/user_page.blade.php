@@ -37,8 +37,8 @@
                 candles_html = `                
                 <button class="bt_no dropbtn">
                     <div class="cand same">
-                        <div class="ico_wri">
-                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                        <div class="ico_wri candle-select-icon">
+                            <img class="candle-select-icon-img" src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                 candles_html = `                
                 <button onclick="set_tribute('candle','{!! asset('user_templates/template_1/images/imgs/candle.png') !!}"')" class="bt_no ">
                     <div class="cand same">
-                        <div class="ico_wri">
-                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                        <div class="ico_wri candle-select-icon">
+                            <img candle-select-icon-img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -279,6 +279,7 @@
         // selected_tribute
         if (type_tribute == 'candle') {
             select_class = 'cand';
+            $('.candle-select-icon-img').attr('src',tribute_image);
         } else if (type_tribute == 'flower') {
             select_class = 'flower';
         } else { // feather
@@ -306,15 +307,20 @@
         var type_var = response.type_var;
         if (type_var == 'flower') {
             type_var =
-                '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
+                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
+                '<img src="' + $('#image_tribute').val() +'">';
+
             // '<img src="http://localhost/4_ever_memories/public/user_templates/template_1/images/imgs/flower.png">';
 
         } else if (type_var == 'candle') {
             type_var =
-                '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
+                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
+                '<img src="' + $('#image_tribute').val() +'">';
         } else {
             type_var =
-                '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
+                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
+                '<img src="' + $('#image_tribute').val() +'">';
+
         }
         var review = `
                     <div class="reviewBox">
