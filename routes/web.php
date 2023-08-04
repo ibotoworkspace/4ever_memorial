@@ -103,6 +103,7 @@ Route::get('admin/memoraials/gallery/{memorial_id}', [MemorialController::class,
 Route::post('admin/memorial/delete', [MemorialController::class, 'destroy_undestroy'])->name('admin.memorials.delete');
 Route::post('admin/memorial/restore/{id}', [MemorialController::class, 'restore'])->name('admin.memorials.restore');
 Route::post('admin/memorial/restore_gallery/{id}', [MemorialController::class, 'restore_gallery'])->name('admin.memorials.restore_gallery');
+Route::get('admin/memorial/invite_email', [MemorialController::class, 'invite_email'])->name('admin.memorials.invite_email');
 // Route::get('/user/aboutus',[MemorialController::class, 'aboutus'])->name('user.aboutus');
 // Route::get('/user/contactus',[MemorialController::class, 'contactus'])->name('user.contactus');
 // Route::get('/user/blog',[MemorialController::class, 'blog'])->name('user.blog');
