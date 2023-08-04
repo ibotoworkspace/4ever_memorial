@@ -19,21 +19,21 @@ return new class extends Migration
             $table->bigInteger('memorial_id')->nullable()->default(0);
             $table->bigInteger('package_id')->nullable()->default(0);
 
-            $table->string('secure_access')->nullable()->default(null);
-            $table->string('decease_bio')->nullable()->default(null);
-            $table->string('flower_donation')->nullable()->default(null);
-            $table->string('image_gallery')->nullable()->default(null);
-            $table->string('automated_anniversary_reminder')->nullable()->default(null);
-            $table->string('virtual_anniversary')->nullable()->default(null);
-            $table->string('tribute_notes')->nullable()->default(null);
-            $table->string('tribute_page')->nullable()->default(null);
-            $table->string('grave_img')->nullable()->default(null);
-            $table->string('link_to_grave_site')->nullable()->default(null);
-            $table->string('link_to_relative_page')->nullable()->default(null);
-            $table->string('link_wife_to_husband')->nullable()->default(null);
-            $table->string('merge_wife_and_husband')->nullable()->default(null);
-            $table->string('dedicated_page')->nullable()->default(null);
-            $table->string('search_by_name')->nullable()->default(null);
+            $table->boolean('secure_access')->nullable()->default(1);
+            $table->boolean('decease_bio')->nullable()->default(1);
+            $table->boolean('flower_donation')->nullable()->default(1);
+            $table->boolean('image_gallery')->nullable()->default(1);
+            $table->boolean('automated_anniversary_reminder')->nullable()->default(0);
+            $table->boolean('virtual_anniversary')->nullable()->default(0);
+            $table->boolean('tribute_notes')->nullable()->default(0);
+            $table->boolean('tribute_page')->nullable()->default(0);
+            $table->boolean('grave_img')->nullable()->default(0);
+            $table->boolean('link_to_grave_site')->nullable()->default(0);
+            $table->boolean('link_to_relative_page')->nullable()->default(0);
+            $table->boolean('link_wife_to_husband')->nullable()->default(0);
+            $table->boolean('merge_wife_and_husband')->nullable()->default(0);
+            $table->boolean('dedicated_page')->nullable()->default(0);
+            $table->boolean('search_by_name')->nullable()->default(0);
            
             $table->timestamps();
             $table->softDeletes();
