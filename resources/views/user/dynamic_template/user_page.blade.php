@@ -307,15 +307,20 @@
         var type_var = response.type_var;
         if (type_var == 'flower') {
             type_var =
-                '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
+                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
+                '<img src="' + $('#image_tribute').val() +'">';
+
             // '<img src="http://localhost/4_ever_memories/public/user_templates/template_1/images/imgs/flower.png">';
 
         } else if (type_var == 'candle') {
             type_var =
-                '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
+                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
+                '<img src="' + $('#image_tribute').val() +'">';
         } else {
             type_var =
-                '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
+                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
+                '<img src="' + $('#image_tribute').val() +'">';
+
         }
         var review = `
                     <div class="reviewBox">

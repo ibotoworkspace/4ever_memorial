@@ -242,6 +242,7 @@ class UserController extends Controller
         $tribute = new Tributes_Arr();
         $tribute->details_show_var = $request->details_show_var;
         $tribute->type_var = $request->type_var;
+        $tribute->image_show_var = $request->image_tribute;
         $tribute->image_tribute = $request->image_tribute;
         $tribute->memorial_id = $request->memorial_id;
         $tribute->user_id = $user->id;
