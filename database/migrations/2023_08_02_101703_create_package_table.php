@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('package', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable()->default(null);
-            // $table->string('write_tribute')->nullable()->default(null);
+            $table->text('details')->nullable()->default(null);
             $table->boolean('tribute_page')->nullable()->default(1);
 
             
