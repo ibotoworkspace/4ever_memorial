@@ -73,4 +73,7 @@ class MemorialController extends Controller
         ]);
         return $response;
     }
+    public function invite_email(){
+        return view('user.templates.email_temp');
+    }
 }
