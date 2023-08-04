@@ -1,6 +1,6 @@
 @extends('layouts.default_module')
 @section('module_name')
-MEMORIALS
+Gallery
 @stop
 
 
@@ -33,9 +33,9 @@ MEMORIALS
     <table class="fhgyt" id="userTableAppend" style="opacity: 0">
         <thead>
             <tr>
-                <th>Name</th>
                 <th>Image</th>
-                <th>Gallery</th>
+                <th>Type</th>
+                <th>View</th>
                 <th>Restore </th>
 
 
@@ -56,7 +56,7 @@ MEMORIALS
             function fetchRecords() {
 
                 $.ajax({
-                    url: '{!! asset('admin/memorials/getmemorials') !!}',
+                    url: "{!! asset('admin/memorials/get_gallery/'.$memorial_id) !!}",
                     type: 'get',
                     dataType: 'json',
                     success: function(response) {
@@ -68,24 +68,20 @@ MEMORIALS
                         console.log(response);
 
                         for (var i = 0; i < len; i++) {
-                            // if(response['data'][i].deleted_at){
-                            //     continue;
-                            // }
                             var id = response['data'][i].id;
-                            // var memorial_id = response['data'][i].memorial_id;
-                            var name = response['data'][i].f_name;
                             var image = `<img src="` +response['data'][i].image_show_var+ `" width="24%">`;
-                            var gallery =
+                            var type = response['data'][i].type;
+                            var view =
                             // `<a class="btn btn-info" href="{!! asset('admin/books/edit/` + id + `') !!}">Gallery</a>`;
-                            `<a class="btn btn-info" target="_blank" href="{!! asset('admin/memoraials/gallery/` + id + `') !!}">Gallery</a>`;
+                            `<a class="btn btn-info" target="_blank" href="` +response['data'][i].image_show_var+ `">View</a>`;
                             createModal({
                                 id: 'memorial_' + response['data'][i].id,
                                 header: '<h4>Restore</h4>',
                                 body: 'Do you want to continue ?',
                                 footer: `
-                                <button class="btn btn-danger" onclick="restore_request(` + response['data'][i].id + `)"
+                                <button class="btn btn-danger" onclick="delete_request(` + response['data'][i].id + `)"
                                 data-dismiss="modal">
-                                    Restore
+                                Restore
                                 </button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                 `,
@@ -105,9 +101,9 @@ MEMORIALS
 
                             // }
                             var tr_str = `<tr id='row_` + response['data'][i].id + `'>` +
-                                "<td>" + name + "</td>" +
                                 "<td>" + image + "</td>" +
-                                "<td>" + gallery + "</td>" +
+                                "<td>" + type + "</td>" +
+                                "<td>" + view + "</td>" +
                                 "<td>" + delete_btn + "</td>" +
 
 
@@ -134,10 +130,10 @@ MEMORIALS
             $('.set_msg_modal').html(msg);
         }
 
-        function restore_request(id) {
+        function delete_request(id) {
             $.ajax({
 
-                url: "{!! asset('admin/memorial/restore') !!}/" + id,
+                url: "{!! asset('admin/memorial/restore_gallery') !!}/" + id,
                 type: 'POST',
                 dataType: 'json',
                 data: {
@@ -148,7 +144,7 @@ MEMORIALS
                     if (response.status) {
                         var myTable = $('#userTableAppend').DataTable();
                         location.reload();
-                        myTable.row('.delete_btn_' + id).html('').draw();
+
                         // myTable.row('#row_' + id).remove().draw();
                     }
                 }
