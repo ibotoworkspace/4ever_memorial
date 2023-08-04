@@ -1003,6 +1003,20 @@ h6,
 /* main app area */
 .main-content {
   background: #f1f4f9;
+  background: url(../../images/skybg2.jpg) no-repeat;
+  background-size: cover;
+}
+.content-wrap {
+  background: #f1f4f9;
+  background: url(../../images/bgbg.png) no-repeat;
+  background-position: 97% 0%;
+}
+section.dash-tile.bg-warning.modules,
+section.dash-tile.bg-success.modules {
+  background-color: #46586385;
+  background: url(../../images/flowericon1.png) no-repeat;
+  background-size: contain;
+    background-position: 100% 10%;
 }
 .main-content .content-wrap .wrapper {
   padding: 15px;
@@ -2031,7 +2045,7 @@ aside > .fffix > footer .btn-xs.navbar-btn {
   /* border-radius: 24px; */
   /* width: 330px; */
   /* font-family: initial; */
-  color: white;
+  color: #000;
 }
 .dash-tile {
     position: relative;
@@ -2078,13 +2092,15 @@ section.layout {
   margin-bottom: 20px;
   margin-top: 10px;
 }
+section.dash-tile.bg-success.modules,
 section.dash-tile.bg-warning.modules {
-  background-color: #465863;
+  background-color: #46586385;
   max-height: 105px;
+  color:#fff;
 }
-
+section.dash-tile.bg-success.modules:hover,
 section.dash-tile.bg-warning.modules:hover {
-  background-color: #beb28d;
+  background-color: #beb28d88;
 }
 /* section.dash-tile.bg-warning.modules {
   font-family: emoji;
@@ -2100,7 +2116,7 @@ section.dash-tile.bg-warning.modules:hover {
 } */
 section.dash-tile.vvv {
   /* background-color: #4f5061; */
-  background-color: #465863;
+  background-color: #5f666b;
   border-radius: 24px;
   /* border-radius: 28px; */
   /* text-decoration: underline; */
@@ -2108,10 +2124,10 @@ section.dash-tile.vvv {
   color: aliceblue;
 }
 aside.sidebar.offscreen-left {
-  background-color:#465863;
+  background-color:#5f666b;
 }
 .bg-success:hover{
-  background-color:#beb28d
+  background-color:#beb28d88;
   ;
 }
 .bg-success a {
