@@ -25,7 +25,7 @@
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
             var images = '';
             if(!gallery_images.length){
-                images = images + image_crousal('{!!asset("images/logo")!!}', 0);
+                images = images + image_crousal('{!!asset("images/logo.png")!!}', 0);
 
             }
             for (var i = 0; i < gallery_images.length; i++) {
