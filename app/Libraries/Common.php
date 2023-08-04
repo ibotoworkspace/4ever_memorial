@@ -19,15 +19,17 @@ trait Common
             // dd($attribute);
             $attribute_arr[$key] = $attribute;
 
-            if($attribute['type_var'] == 'flower'){
-                $pic = asset('user_templates/template_1/images/imgs/flower.png');
-            }
-            elseif($attribute['type_var'] == 'candle'){
-                $pic = asset('user_templates/template_1/images/imgs/candle.png');
-            }
-            else{//feather
-                $pic = asset('user_templates/template_1/images/imgs/feather.png');
-            }
+            // if($attribute['type_var'] == 'flower'){
+            //     $pic = asset('user_templates/template_1/images/imgs/flower.png');
+            // }
+            // elseif($attribute['type_var'] == 'candle'){
+            //     $pic = asset('user_templates/template_1/images/imgs/candle.png');
+            // }
+            // else{//feather
+            //     $pic = asset('user_templates/template_1/images/imgs/feather.png');
+            // }
+            $pic = $attribute['image_tribute'];
+
             $attribute['image_show_var'] = $pic;
             $attribute_arr[$key]['image_show_var'] = $pic;
 
