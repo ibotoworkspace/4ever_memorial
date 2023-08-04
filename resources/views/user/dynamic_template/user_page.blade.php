@@ -37,8 +37,8 @@
                 candles_html = `                
                 <button class="bt_no dropbtn">
                     <div class="cand same">
-                        <div class="ico_wri">
-                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                        <div class="ico_wri candle-select-icon">
+                            <img class="candle-select-icon-img" src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -51,8 +51,8 @@
                 candles_html = `                
                 <button onclick="set_tribute('candle','{!! asset('user_templates/template_1/images/imgs/candle.png') !!}"')" class="bt_no ">
                     <div class="cand same">
-                        <div class="ico_wri">
-                            <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                        <div class="ico_wri candle-select-icon">
+                            <img candle-select-icon-img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -279,6 +279,7 @@
         // selected_tribute
         if (type_tribute == 'candle') {
             select_class = 'cand';
+            $('.candle-select-icon-img').attr('src',tribute_image);
         } else if (type_tribute == 'flower') {
             select_class = 'flower';
         } else { // feather
