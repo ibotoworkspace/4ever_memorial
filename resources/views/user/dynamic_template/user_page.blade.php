@@ -240,6 +240,7 @@
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             formData.append('type_var', $('#type_tribute').val());
+            formData.append('image_tribute', $('#image_tribute').val());
 
             $.ajax({
                 url: '{!! asset('user/tributeform') !!}',
@@ -269,6 +270,9 @@
     });
 
     function set_tribute(type_tribute,tribute_image) {
+
+        console.log('type tribute',type_tribute);
+        console.log('tribute_image tribute',tribute_image);
 
         $('.same').removeClass('selected_tribute');
         var select_class = '';

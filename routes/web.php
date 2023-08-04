@@ -32,8 +32,38 @@ Route::get('template',[Admin_UserController::class, 'template']);
 
 Route::get('admin/login',[AdminController::class, 'index']);
 Route::post('admin/checklogin',[AdminController::class, 'checklogin']);
-Route::get('admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
-Route::get('admin/logout',[AdminController::class, 'logout']);
+
+Route::group(['middleware' => 'admin_auth'], function () { //,'prefix'=>'admin'
+    Route::get('admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('admin/logout',[AdminController::class, 'logout']);
+
+    Route::get('admin/user/',[Admin_UserController::class, 'index'])->name('admin.user.index');
+    Route::get('admin/user/getUsers', [Admin_UserController::class, 'getUsers'])->name('admin.user.getUsers');
+    Route::get('template',[Admin_UserController::class, 'template']);
+    
+    
+    
+    Route::get('admin/memorials/',[MemorialController::class, 'index'])->name('admin.memorials.index');
+    Route::get('admin/memorials/getUsers', [MemorialController::class, 'getUsers'])->name('admin.memorials.getUsers');
+    // Route::get('/user/aboutus',[MemorialController::class, 'aboutus'])->name('user.aboutus');
+    // Route::get('/user/contactus',[MemorialController::class, 'contactus'])->name('user.contactus');
+    // Route::get('/user/blog',[MemorialController::class, 'blog'])->name('user.blog');
+    Route::get('template',[MemorialController::class, 'template']);
+    
+    
+    
+    /////////template
+    Route::get('admin/template',[TemplateController::class, 'index']);
+    Route::get('admin/template/template1',[TemplateController::class, 'template_1']);
+    Route::get('admin/template/template2',[TemplateController::class, 'template_2']);
+    Route::get('admin/template/template3',[TemplateController::class, 'template_3']);
+    Route::get('admin/template/template4',[TemplateController::class, 'template_4']);
+    // Route::get('admin/template/select_template',[TemplateController::class, 'select_template']); //testing
+    Route::get('user/template/select_template',[TemplateController::class, 'select_template']); //testing
+    Route::get('user/template/select_template/{user_website}',[TemplateController::class, 'select_template']); //testing
+    
+});
+
 
 
 
@@ -50,6 +80,10 @@ Route::post('user/tributeform',[User_UserController::class, 'tributeform'])->nam
 Route::get('user/get_tribute',[User_UserController::class, 'get_tribute'])->name('user.get_tribute'); //add story
 
 
+// Route::group(['middleware' => 'user.auth'], function () {
+    Route::post('user/adduser',[User_UserController::class, 'add_user'])->name('admin.user.add_user');
+
+// });
 
 
 
@@ -88,6 +122,7 @@ Route::get('user/template/select_template/{user_website}',[TemplateController::c
 
 
 Route::post('user/adduser',[User_UserController::class, 'add_user'])->name('admin.user.add_user');
+
 Route::get('user/testing',[User_UserController::class, 'index1111'])->name('admin.user.add_user');
 Route::get('user/testing2',[User_UserController::class, 'index2'])->name('admin.user.add_user');
 Route::get('user/testing3',[User_UserController::class, 'index3'])->name('admin.user.add_user');    
