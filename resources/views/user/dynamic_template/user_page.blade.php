@@ -270,6 +270,9 @@
 
     function set_tribute(type_tribute,tribute_image) {
 
+        console.log('type tribute',type_tribute);
+        console.log('tribute_image tribute',tribute_image);
+
         $('.same').removeClass('selected_tribute');
         var select_class = '';
         // selected_tribute
