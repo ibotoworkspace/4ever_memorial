@@ -42,7 +42,11 @@
     color: black;
     /* padding: 12px 16px; */
     text-decoration: none;
-    display: block;
+    /* display: block; */
+}
+
+.ico_wri:hover {
+    cursor: pointer;
 }
 
 .dropdown-content a:hover {
