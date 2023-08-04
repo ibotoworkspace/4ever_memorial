@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('tributes_arr', function (Blueprint $table) {
-            //
+            $table->string('image_tribute')->nullable()->default(0);
         });
     }
 

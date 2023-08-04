@@ -63,7 +63,12 @@ Route::get('template',[Admin_UserController::class, 'template']);
 
 
 Route::get('admin/memorials/',[MemorialController::class, 'index'])->name('admin.memorials.index');
-Route::get('admin/memorials/getUsers', [MemorialController::class, 'getUsers'])->name('admin.memorials.getUsers');
+Route::get('admin/memorials/getmemorials', [MemorialController::class, 'getmemorials'])->name('admin.memorials.getmemorials');
+Route::get('admin/memorials/get_gallery/{memorial_id}', [MemorialController::class, 'get_gallery'])->name('admin.memorials.get_gallery');
+Route::get('admin/memoraials/gallery/{memorial_id}', [MemorialController::class, 'gallery'])->name('admin.memorials.gallery');
+Route::post('admin/memorial/delete', [MemorialController::class, 'destroy_undestroy'])->name('admin.memorials.delete');
+Route::post('admin/memorial/restore/{id}', [MemorialController::class, 'restore'])->name('admin.memorials.restore');
+Route::post('admin/memorial/restore_gallery/{id}', [MemorialController::class, 'restore_gallery'])->name('admin.memorials.restore_gallery');
 // Route::get('/user/aboutus',[MemorialController::class, 'aboutus'])->name('user.aboutus');
 // Route::get('/user/contactus',[MemorialController::class, 'contactus'])->name('user.contactus');
 // Route::get('/user/blog',[MemorialController::class, 'blog'])->name('user.blog');

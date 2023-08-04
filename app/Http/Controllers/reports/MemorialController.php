@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\reports;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
+use App\Models\UserWebsite;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Request;
 
 class MemorialController extends Controller
@@ -11,11 +15,62 @@ class MemorialController extends Controller
         return view('admin.memorial_report.index');
 
     }
-    public function getUsers($id = 0){
-        $memorial = UserWebsite::orderby('id','asc')->select('*')->get();
+    public function getmemorials($id = 0){
+        $memorial = UserWebsite::withTrashed()->orderby('id','asc')->select('*')->get();
         $memorialData['data'] = $memorial;
-
+        // dd($memorialData);
         echo json_encode($memorialData);
                      
+    }
+    public function get_gallery($id = 0){
+        $gallery = Gallery::withTrashed()->where('memorial_id',$id)->orderby('id','asc')->get();
+        $galleryData['data'] = $gallery;
+        // dd($memorialData);
+        echo json_encode($galleryData);
+                     
+    }
+    public function gallery($memorial_id){
+        return view('admin.memorial_report.gallery',compact('memorial_id'));
+    }
+    public function destroy_undestroy($id)
+    {
+        $memorial = UserWebsite::find($id);
+        if ($memorial) {
+            UserWebsite::destroy($id);
+            $new_value = 'Activate';
+        } else {
+            UserWebsite::withTrashed()->find($id)->restore();
+            $new_value = 'Delete';
+        }
+        $response = Response::json([
+            "status" => true,
+            'action' => Config::get('constants.ajax_action.delete'),
+            'new_value' => $new_value
+        ]);
+        return $response;
+    }
+    public function restore($id)
+    {
+        UserWebsite::withTrashed()->find($id)->restore();
+
+        
+        $response = Response::json([
+            "status" => true,
+            'action' => Config::get('constants.ajax_action.delete'),
+            'new_value' => ''
+        ]);
+        return $response;
+    }
+    public function restore_gallery($id)
+    {
+        Gallery::withTrashed()->find($id)->restore();
+
+        
+        $response = Response::json([
+            "status" => true,
+            'action' => Config::get('constants.ajax_action.delete'),
+            'new_value' => ''
+        ]);
+        return $response;
     }
 }
