@@ -23,10 +23,10 @@
         function initial_values(){
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
+            $('.facebook-share').attr('href','https://www.facebook.com/sharer/sharer.php?u='+window.location.href);
             var images = '';
             if(!gallery_images.length){
                 images = images + image_crousal('{!!asset("images/logo.png")!!}', 0);
-
             }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
@@ -37,27 +37,72 @@
         function set_dynamic_tribute_images() {
             var dynamic_images = true;
             var candles_html = '';
+            var flowers_html = '';
+            var notes_html = '';
             if (dynamic_images) {
                 candles_html = `                
                 <button class="bt_no dropbtn">
                     <div class="cand same">
-                        <div class="ico_wri candle-select-icon">
-                            <img class="candle-select-icon-img" src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                        <div class="ico_wri">
+                            <img class="candle-select-icon-img" src="{!! asset('user_templates/images/candles/candle.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
                 </button>
                 `;
-                // candles_html = candles_html + add_candles_list();
+                flowers_html = `                
+                <button class="bt_no dropbtn">
+                    <div class="cand same">
+                        <div class="ico_wri">
+                            <img class="flower-select-icon-img" src="{!! asset('user_templates/images/flowers/flower.png') !!}" alt="relative">
+                            <span class="sp">Lay a Flower</span>
+                        </div>
+                    </div>
+                </button>
+                `;
+                notes_html = `                
+                <button class="bt_no dropbtn">
+                    <div class="cand same">
+                        <div class="ico_wri">
+                            <img class="feather-select-icon-img" src="{!! asset('user_templates/images/notes/feather.png') !!}" alt="relative">
+                            <span class="sp">Leave a Note</span>
+                        </div>
+                    </div>
+                </button>
+                `;
                 candles_html = add_candles_list()+candles_html ;
+                flowers_html = add_flowers_list()+flowers_html ;
+                notes_html = add_notes_feather_list()+notes_html ;
             } else {
 
                 candles_html = `                
-                <button onclick="set_tribute('candle','{!! asset('user_templates/template_1/images/imgs/candle.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('candle','{!! asset('user_templates/images/candles/candle.png') !!}"')" class="bt_no ">
                     <div class="cand same">
-                        <div class="ico_wri candle-select-icon">
-                            <img candle-select-icon-img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                        <div class="ico_wri">
+                            <img candle-select-icon-img src="{!! asset('user_templates/images/candles/candle.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
+                        </div>
+                    </div>
+                </button>
+                `;
+
+                flowers_html = `                
+                <button onclick="set_tribute('flower','{!! asset('user_templates/images/flowers/flower.png') !!}"')" class="bt_no ">
+                    <div class="cand same">
+                        <div class="ico_wri">
+                            <img flower-select-icon-img src="{!! asset('user_templates/images/flowers/flower.png') !!}" alt="relative">
+                            <span class="sp">Lay a Flower</span>
+                        </div>
+                    </div>
+                </button>
+                `;
+
+                notes_html = `                
+                <button onclick="set_tribute('feather','{!! asset('user_templates/images/notes/feather.png') !!}"')" class="bt_no ">
+                    <div class="cand same">
+                        <div class="ico_wri">
+                            <img feather-select-icon-img src="{!! asset('user_templates/images/notes/feather.png') !!}" alt="relative">
+                            <span class="sp">Leave a Note</span>
                         </div>
                     </div>
                 </button>
@@ -66,6 +111,8 @@
 
             console.log('candles_html',candles_html);
             $('.candle-select').html(candles_html);
+            $('.flower-select').html(flowers_html);
+            $('.feather-select').html(notes_html);
         }
 
         function add_candles_list(){
@@ -73,12 +120,12 @@
             <div class="dropdown-content">
                 <div class="flx">`;
             var candle_arr = [
-                "{!! asset('user_templates/template_1/images/imgs/variations/6.png') !!}",
-                "{!! asset('user_templates/template_1/images/imgs/variations/7.png') !!}",
-                "{!! asset('user_templates/template_1/images/imgs/variations/8.png') !!}",
-                "{!! asset('user_templates/template_1/images/imgs/variations/9.png') !!}",
-                "{!! asset('user_templates/template_1/images/imgs/variations/10.png') !!}",
-                "{!! asset('user_templates/template_1/images/imgs/candle.png') !!}"
+                "{!! asset('user_templates/images/candles/6.png') !!}",
+                "{!! asset('user_templates/images/candles/7.png') !!}",
+                "{!! asset('user_templates/images/candles/8.png') !!}",
+                "{!! asset('user_templates/images/candles/9.png') !!}",
+                "{!! asset('user_templates/images/candles/10.png') !!}",
+                "{!! asset('user_templates/images/candles/candle.png') !!}"
             ];
 
             $(candle_arr).each(function (index,candle) {
@@ -94,6 +141,62 @@
             })
             candle_list = candle_list+`</div></div>`;
             return candle_list;
+        }
+
+        function add_flowers_list(){
+            flower_list = `
+            <div class="dropdown-content">
+                <div class="flx">`;
+            var flowers_arr = [
+                "{!! asset('user_templates/images/flowers/6.png') !!}",
+                "{!! asset('user_templates/images/flowers/7.png') !!}",
+                "{!! asset('user_templates/images/flowers/8.png') !!}",
+                "{!! asset('user_templates/images/flowers/9.png') !!}",
+                "{!! asset('user_templates/images/flowers/10.png') !!}",
+                "{!! asset('user_templates/images/flowers/flower.png') !!}"
+            ];
+
+            $(flowers_arr).each(function (index,flower) {
+                console.log('flower image',flower);
+                flower_list = flower_list+`                
+                
+                    <div class="cand same" onclick="set_tribute('flower','`+flower+`')">
+                        <div class="ico_wri">
+                            <img src="`+flower+`" alt="relative">
+                        </div>
+                    </div>
+                `;
+            })
+            flower_list = flower_list+`</div></div>`;
+            return flower_list;
+        }
+        
+        function add_notes_feather_list(){
+            note_list = `
+            <div class="dropdown-content">
+                <div class="flx">`;
+            var notes_arr = [
+                "{!! asset('user_templates/images/notes/6.png') !!}",
+                "{!! asset('user_templates/images/notes/7.png') !!}",
+                "{!! asset('user_templates/images/notes/8.png') !!}",
+                "{!! asset('user_templates/images/notes/9.png') !!}",
+                "{!! asset('user_templates/images/notes/10.png') !!}",
+                "{!! asset('user_templates/images/notes/feather.png') !!}"
+            ];
+
+            $(notes_arr).each(function (index,note) {
+                console.log('note image',note);
+                note_list = note_list+`                
+                
+                    <div class="cand same" onclick="set_tribute('feather','`+note+`')">
+                        <div class="ico_wri">
+                            <img src="`+note+`" alt="relative">
+                        </div>
+                    </div>
+                `;
+            })
+            note_list = note_list+`</div></div>`;
+            return note_list;
         }
 
         function image_crousal(img, i) {
@@ -286,8 +389,12 @@
             $('.candle-select-icon-img').attr('src',tribute_image);
         } else if (type_tribute == 'flower') {
             select_class = 'flower';
+            $('.flower-select-icon-img').attr('src',tribute_image);
+
         } else { // feather
             select_class = 'feather';
+            $('.feather-select-icon-img').attr('src',tribute_image);
+
         }
         $('.' + select_class).addClass('selected_tribute');
         $('#type_tribute').val(type_tribute);
