@@ -26,9 +26,6 @@ class TemplateSeeder extends Seeder
         // $template->id = 1;
         $template->name = $template_name;
         $template->save();
-        $server = 'localhost://';
-        $server = 'https://demo.hatinco.com/4_ever_memories/public';
-        // $server = 'demo.hatinco.com://';
         // if(){}
         $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'http://localhost/4_ever_memories/public/';
@@ -53,6 +50,7 @@ class TemplateSeeder extends Seeder
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
                 <link rel="stylesheet" id="template_css_link" href="" />
                 <link rel="stylesheet" href="{!!{memorial_style_var.style_script_var}!!}" />
+                <link rel="stylesheet" href="'.$public_path.'user_templates/common.css" />
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
