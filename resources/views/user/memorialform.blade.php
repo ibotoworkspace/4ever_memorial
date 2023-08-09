@@ -85,6 +85,7 @@
                                                     {{-- name="prof_img" --}}
                                                     <input type="file"
                                                         class="form-control prof_box crop_upload_image"
+                                                        accept="image/*"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
                                                         aspect_ratio_height="9" upload_input_by_name="prof_img"  required>
 
@@ -160,7 +161,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image<i class="fa fa-asterisk staring" aria-hidden="true"></i> (Attach A Picture Regarding The
                                                     Life/Birth Of This Person)</label>
-                                                    <input type="file"
+                                                    <input type="file" accept="image/*"
                                                         class="form-control prof_box crop_upload_image"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
                                                         aspect_ratio_height="9" upload_input_by_name="life_image"  required>

@@ -17,8 +17,8 @@ class StylingSeeder extends Seeder
     public function run()
     {
         $image_path = asset('public').'/';
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
-        // $public_path = 'http://localhost/4_ever_memories/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        $public_path = 'http://localhost/4_ever_memories/public/';
 
         $template_name_arr = ['template_1','template_2','template_3','template_4'];
         $default_template = 'template_1';
@@ -56,17 +56,17 @@ class StylingSeeder extends Seeder
             $web_variable_std->recent_updates_show_arr[0]->number_var = 1;
             $web_variable_std->recent_updates_show_arr[0]->message_var = "added 1 tribute";
 
-            $web_variable_std->recent_updates_show_arr[1] = new \stdClass();
-            $web_variable_std->recent_updates_show_arr[1]->date_var = "February 3";
-            $web_variable_std->recent_updates_show_arr[1]->type_var = "photos";
-            $web_variable_std->recent_updates_show_arr[1]->number_var = 3;
-            $web_variable_std->recent_updates_show_arr[1]->message_var = "added 3 photos";
+            // $web_variable_std->recent_updates_show_arr[1] = new \stdClass();
+            // $web_variable_std->recent_updates_show_arr[1]->date_var = "February 3";
+            // $web_variable_std->recent_updates_show_arr[1]->type_var = "photos";
+            // $web_variable_std->recent_updates_show_arr[1]->number_var = 3;
+            // $web_variable_std->recent_updates_show_arr[1]->message_var = "added 3 photos";
 
-            $web_variable_std->recent_updates_show_arr[2] = new \stdClass();
-            $web_variable_std->recent_updates_show_arr[2]->date_var = "February 5";
-            $web_variable_std->recent_updates_show_arr[2]->type_var = "tribute";
-            $web_variable_std->recent_updates_show_arr[2]->number_var = 2;
-            $web_variable_std->recent_updates_show_arr[2]->message_var = "added 2 tributes";
+            // $web_variable_std->recent_updates_show_arr[2] = new \stdClass();
+            // $web_variable_std->recent_updates_show_arr[2]->date_var = "February 5";
+            // $web_variable_std->recent_updates_show_arr[2]->type_var = "tribute";
+            // $web_variable_std->recent_updates_show_arr[2]->number_var = 2;
+            // $web_variable_std->recent_updates_show_arr[2]->message_var = "added 2 tributes";
 
             $web_variable_std->icon_list_var = new \stdClass();
             $web_variable_std->icon_list_var->flower_image_var = $public_path . "user_templates/" . $default_template . "/images/imgs/flower.png";
@@ -215,13 +215,13 @@ class StylingSeeder extends Seeder
                 "story_htmlarr":  "<div class=\"story_tab\"><h3>{!!{story_arr.story_title_show_var}!!}</h3><p>{!!{story_arr.date_show_var}!!}. by{!!{story_arr.user_name_show_var}!!}</p> <img src=\"{!!{story_arr.image_show_var}!!}\" alt=\"relative\"><div class=\"story_para\"><p>{!!{story_arr.details_show_var}!!}</p><div class=\"whole\"><div class=\"flx\"><div class=\"share\"><i class=\"fa fa-share-alt-square\" aria-hidden=\"true\"></i></div><div class=\"chr_p\">Share</div></div></div></div></div>",
                 "story_tab_htmlvar":"<div id=\"stories\" class=\"tabcontent\"> <div class=\"add_stor\"> <div class=\"flx\"><div class=\"container\"> <div class=\"row\"> <div class=\"col-md-8\"><p>Share a special moment from {!!{memorial_user_var.name_var}!!} ’s  life</p></div><div class=\"col-md-4\"><a href=\"#story_title\"><div class=\"stor_bttn\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_Write a story </div></a></div></div></div></div></div><div class=\"story_blk\"> {!!{story_htmlarr}!!} </div><section class=\"story_add\"> <div class=\"contaiasner\"> <div class=\"row\"> <div class=\"share_story\"> <div class=\"heddd\"> <h2>Share a story</h2>  </div>  <div class=\"str_title\"> <input type=\"text\" class=\"form-control\" name=\"story_title_n\" id=\"story_title\" placeholder=\"Title (Optional)\">  </div>  <div class=\"str_textaea\"> <textarea class=\"form-control\" name=\"story_details_n\" rows=\"5\" id=\"story_details\"></textarea> </div>  <div class=\"by\"> <div class=\"dropdown\"> by ameer maavia<button class=\"dpbtn dropdown-toggle\" type=\"button\"  data-toggle=\"dropdown\">Change<span class=\"\"></span></button> <ul class=\"dropdown-menu dp_menue\"> <li><a href=\"#\">I am the author </a></li> <li><a href=\"#\">Posting on behalf of another person</a></li> </ul> </div> </div> <div class=\"attach\"> <div class=\"attch_hed\">  Attach a picture or video (optional): </div><div class=\"attch_icon_area\"><div class=\"attch_icon\"><label for=\"upload-photo\"><i class=\"fa fa-cloud-upload\" aria-hidden=\"true\"></i></label> <input type=\"file\" id=\"upload-photo\" class=\"up_ld_file crop_upload_image\" image_width=\"378\" image_height=\"226\" aspect_ratio_width=\"16\" aspect_ratio_height=\"9\" upload_input_by_name=\"story_image\"><p>Upload From Your Device</p></div>  </div> </div> <div class=\"publ_btn\"> <button id=\"save_story\" class=\"btn btn-danger\">Publish</button> </div></div></div></div></section></div>",
 
-                "recent_updates_show_htmlarr": "<ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{recent_updates_show_arr.message_var}!!}</li></ul>",
+                "recent_updates_show_htmlarr": "<ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi\">{!!{recent_updates_show_arr.message_var}!!}</li></ul><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi_vid\">{!!{recent_updates_show_arr.message_var}!!}</li></ul><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi_aud\">{!!{recent_updates_show_arr.message_var}!!}</li></ul><ul><li class=\"no-img\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i></li><li class=\"contentLi_Pic\">{!!{recent_updates_show_arr.message_var}!!}</li></ul>",
                 "recent_updates_show_htmlvar": "{!!{recent_updates_show_htmlarr}!!}",
                 
                 
                 "user_memorial_tribute_htmlvar": "<h3 class=\"about_heading\">Let the memory of {!!{memorial_user_var.name_var}!!} be with us forever.</h3><p><ul class=\"li_txt\"><li>Born on {!!{memorial_user_var.birth_var}!!} in {!!{memorial_user_var.city_var}!!}, {!!{memorial_user_var.country_var}!!}</li><li>Passed away on {!!{memorial_user_var.death_var}!!}</li></ul></p><div class=\"abt_txt\">{!!{tribute_text_var}!!} </div>",
 
-                "about_tab_htmlvar": "<div id=\"About\" class=\"tabcontent\"> {!!{user_memorial_tribute_htmlvar}!!} <div class=\"tributes\"><h1>Tributes</h1><a href=\"#add_tibs\"><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></a></div> <div class=\"tribute_blk add_tribute_append\">{!!{tributes_htmlarr}!!}</div><div class=\"lev_tri\"><h3 id=\"tibutes_add\">Leave a Tribute</h3><div class=\"icon_list\"><div class=\"dropdown candle-select\"><button onclick=\"set_tribute(`candle`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/candle.png'.'`)\" class=\"bt_no\"><div class=\"cand same\"><div class=\"ico_wri\"><img class=\"candle-select-icon-img\" src=\"{!!{icon_list_var.candel_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Light a Candle</span></div></div> </button></div><div class=\"dropdown flower-select\"><button onclick=\"set_tribute(`flower`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/flower.png'.'`)\" class=\"bt_no\"><div class=\"flower same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.flower_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Lay a Flower</span></div></div></button></div><div class=\"dropdown feather-select\"><button onclick=\"set_tribute(`feather`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/feather.png'.'`)\" class=\"bt_no\"><div class=\"feather same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.feather_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Leave a Note</span></div></div></button></div><input type=\"hidden\" id=\"type_tribute\" name=\"type_tribute\"><input type=\"hidden\" id=\"image_tribute\" name=\"image_tribute\"><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"add_tibs\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button id=\"save_trib\" class=\"btn btn-danger pbbttn\">Publish</button> </div></div> </div>",
+                "about_tab_htmlvar": "<div id=\"About\" class=\"tabcontent\"> {!!{user_memorial_tribute_htmlvar}!!} <div class=\"tributes\"><h1>Tributes</h1><a href=\"#add_tibs\"><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></a></div> <div class=\"tribute_blk add_tribute_append\">{!!{tributes_htmlarr}!!}</div><div class=\"lev_tri\"><h3 id=\"tibutes_add\">Leave a Tribute</h3><div class=\"icon_list\"><div class=\"dropdown candle-select\"><button onclick=\"set_tribute(`candle`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/candle.png'.'`)\" class=\"bt_no\"><div class=\"cand same\"><div class=\"ico_wri\"><img class=\"candle-select-icon-img\" src=\"{!!{icon_list_var.candel_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Light a Candle</span></div></div> </button></div><div class=\"dropdown flower-select\"><button onclick=\"set_tribute(`flower`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/flower.png'.'`)\" class=\"bt_no\"><div class=\"flower same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.flower_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Lay a Flower</span></div></div></button></div><div class=\"dropdown feather-select\"><button onclick=\"set_tribute(`feather`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/feather.png'.'`)\" class=\"bt_no\"><div class=\"feather same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.feather_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Leave a Note</span></div></div></button></div><input type=\"hidden\" id=\"type_tribute\" name=\"type_tribute\"><input type=\"hidden\" id=\"image_tribute\" name=\"image_tribute\"></div><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"add_tibs\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button id=\"save_trib\" class=\"btn btn-danger pbbttn\">Publish</button> </div></div></div> ",
 
 
 

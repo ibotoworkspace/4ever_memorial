@@ -1,7 +1,14 @@
 {!! $html !!}
 @include('partial_layouts.cropper.cropper_html')
-
-<button id="btn1">add a story block</button>
+{{-- {!!dd($gal_side->where('type','video'));!!} --}}
+<@php
+    $video_count =$gal_side->where('type','video')->count();
+    $picture_count =$gal_side->where('type','photo')->count();
+    $audio_count =$gal_side->where('type','audio')->count();
+    // $count = $counted->count();
+    // $count->where('type','video')
+    // dd( $counted);
+@endphp
 <script>
     var memorial_id = '{!! $user_website->id !!}';
     var global_path = '{!! asset('/') !!}';
@@ -21,6 +28,10 @@
         }
 
         function initial_values(){
+            // $('.contentLi_vid').html('added {!! $video_count !!} video(s)');
+            // $('.contentLi_Pic').html('added {!! $picture_count !!} photo(s)');
+            // $('.contentLi_aud').html('added {!! $audio_count !!} audio(s)');
+            $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
             $('.facebook-share').attr('href','https://www.facebook.com/sharer/sharer.php?u='+window.location.href);
@@ -44,7 +55,7 @@
                 <button class="bt_no dropbtn">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img class="candle-select-icon-img" src="{!! asset('user_templates/images/candles/candle.png') !!}" alt="relative">
+                            <img class="candle-select-icon-img" src="{!! asset('user_templates/images/candles/1.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -54,7 +65,7 @@
                 <button class="bt_no dropbtn">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img class="flower-select-icon-img" src="{!! asset('user_templates/images/flowers/flower.png') !!}" alt="relative">
+                            <img class="flower-select-icon-img" src="{!! asset('user_templates/images/flowers/1.png') !!}" alt="relative">
                             <span class="sp">Lay a Flower</span>
                         </div>
                     </div>
@@ -64,7 +75,7 @@
                 <button class="bt_no dropbtn">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img class="feather-select-icon-img" src="{!! asset('user_templates/images/notes/feather.png') !!}" alt="relative">
+                            <img class="feather-select-icon-img" src="{!! asset('user_templates/images/notes/1.png') !!}" alt="relative">
                             <span class="sp">Leave a Note</span>
                         </div>
                     </div>
@@ -76,10 +87,10 @@
             } else {
 
                 candles_html = `                
-                <button onclick="set_tribute('candle','{!! asset('user_templates/images/candles/candle.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('candle','{!! asset('user_templates/images/candles/1.png') !!}"')" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img candle-select-icon-img src="{!! asset('user_templates/images/candles/candle.png') !!}" alt="relative">
+                            <img candle-select-icon-img src="{!! asset('user_templates/images/candles/1.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -87,10 +98,10 @@
                 `;
 
                 flowers_html = `                
-                <button onclick="set_tribute('flower','{!! asset('user_templates/images/flowers/flower.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('flower','{!! asset('user_templates/images/flowers/1.png') !!}"')" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img flower-select-icon-img src="{!! asset('user_templates/images/flowers/flower.png') !!}" alt="relative">
+                            <img flower-select-icon-img src="{!! asset('user_templates/images/flowers/1.png') !!}" alt="relative">
                             <span class="sp">Lay a Flower</span>
                         </div>
                     </div>
@@ -98,10 +109,10 @@
                 `;
 
                 notes_html = `                
-                <button onclick="set_tribute('feather','{!! asset('user_templates/images/notes/feather.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('feather','{!! asset('user_templates/images/notes/1.png') !!}"')" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img feather-select-icon-img src="{!! asset('user_templates/images/notes/feather.png') !!}" alt="relative">
+                            <img feather-select-icon-img src="{!! asset('user_templates/images/notes/1.png') !!}" alt="relative">
                             <span class="sp">Leave a Note</span>
                         </div>
                     </div>
@@ -120,12 +131,21 @@
             <div class="dropdown-content">
                 <div class="flx">`;
             var candle_arr = [
+                "{!! asset('user_templates/images/candles/1.png') !!}",
+                "{!! asset('user_templates/images/candles/2.png') !!}",
+                "{!! asset('user_templates/images/candles/3.png') !!}",
+                "{!! asset('user_templates/images/candles/4.png') !!}",
+                "{!! asset('user_templates/images/candles/5.png') !!}",
                 "{!! asset('user_templates/images/candles/6.png') !!}",
                 "{!! asset('user_templates/images/candles/7.png') !!}",
                 "{!! asset('user_templates/images/candles/8.png') !!}",
                 "{!! asset('user_templates/images/candles/9.png') !!}",
                 "{!! asset('user_templates/images/candles/10.png') !!}",
-                "{!! asset('user_templates/images/candles/candle.png') !!}"
+                "{!! asset('user_templates/images/candles/11.png') !!}",
+                "{!! asset('user_templates/images/candles/12.png') !!}",
+                "{!! asset('user_templates/images/candles/13.png') !!}",
+                "{!! asset('user_templates/images/candles/14.png') !!}",
+                // "{!! asset('user_templates/images/candles/candle.png') !!}"
             ];
 
             $(candle_arr).each(function (index,candle) {
@@ -148,12 +168,26 @@
             <div class="dropdown-content">
                 <div class="flx">`;
             var flowers_arr = [
+                "{!! asset('user_templates/images/flowers/1.png') !!}",
+                "{!! asset('user_templates/images/flowers/2.png') !!}",
+                "{!! asset('user_templates/images/flowers/3.png') !!}",
+                "{!! asset('user_templates/images/flowers/4.png') !!}",
+                "{!! asset('user_templates/images/flowers/5.png') !!}",
                 "{!! asset('user_templates/images/flowers/6.png') !!}",
                 "{!! asset('user_templates/images/flowers/7.png') !!}",
                 "{!! asset('user_templates/images/flowers/8.png') !!}",
                 "{!! asset('user_templates/images/flowers/9.png') !!}",
                 "{!! asset('user_templates/images/flowers/10.png') !!}",
-                "{!! asset('user_templates/images/flowers/flower.png') !!}"
+                "{!! asset('user_templates/images/flowers/11.png') !!}",
+                "{!! asset('user_templates/images/flowers/12.png') !!}",
+                "{!! asset('user_templates/images/flowers/13.png') !!}",
+                "{!! asset('user_templates/images/flowers/14.png') !!}",
+                "{!! asset('user_templates/images/flowers/15.png') !!}",
+                "{!! asset('user_templates/images/flowers/16.png') !!}",
+                "{!! asset('user_templates/images/flowers/17.png') !!}",
+                "{!! asset('user_templates/images/flowers/18.png') !!}",
+                "{!! asset('user_templates/images/flowers/19.png') !!}",
+                // "{!! asset('user_templates/images/flowers/flower.png') !!}"
             ];
 
             $(flowers_arr).each(function (index,flower) {
@@ -176,12 +210,12 @@
             <div class="dropdown-content">
                 <div class="flx">`;
             var notes_arr = [
-                "{!! asset('user_templates/images/notes/6.png') !!}",
-                "{!! asset('user_templates/images/notes/7.png') !!}",
-                "{!! asset('user_templates/images/notes/8.png') !!}",
-                "{!! asset('user_templates/images/notes/9.png') !!}",
-                "{!! asset('user_templates/images/notes/10.png') !!}",
-                "{!! asset('user_templates/images/notes/feather.png') !!}"
+                "{!! asset('user_templates/images/notes/1.png') !!}",
+                "{!! asset('user_templates/images/notes/2.png') !!}",
+                "{!! asset('user_templates/images/notes/3.png') !!}",
+                "{!! asset('user_templates/images/notes/4.png') !!}",
+                "{!! asset('user_templates/images/notes/5.png') !!}",
+                // "{!! asset('user_templates/images/notes/feather.png') !!}"
             ];
 
             $(notes_arr).each(function (index,note) {
