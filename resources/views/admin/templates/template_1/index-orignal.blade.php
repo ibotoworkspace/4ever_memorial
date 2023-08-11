@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="{!! asset('user_templates/template_1/css/style.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('user_templates/common.css') !!}" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -283,8 +284,8 @@
                                                     </div>
                                                 </div>
                                             </button>
-                                            
-                                            {{--////////////////////////////// <div class="dropdown-content"> --}}
+
+                                            {{-- ////////////////////////////// <div class="dropdown-content"> --}}
                                             <div class="dropdown-content">
                                                 <div class="flx">
                                                     <a href="#">
@@ -339,7 +340,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            {{--////////////////////////////// <div class="dropdown-content"> --}}
+                                            {{-- ////////////////////////////// <div class="dropdown-content"> --}}
 
                                         </div>
                                         <button class="bt_no">
@@ -443,7 +444,8 @@
                                         </div>
                                         <div class="gallery">
                                             <div class="row">
-                                                <div class="col-md-3 pic_gal_img">
+                                                <div class="col-md-3 pic_gal_img"><a href="">
+                                                    </a>
                                                     <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
@@ -870,7 +872,7 @@
                     </div>
                 </div>
             </div>
-          
+
     </section>
     <section class="footer_area">
         <div class="container-fluid">
@@ -927,7 +929,7 @@
                                 placeholder="example@mail.com,example2@mail.com,example3@mail.com......"
                                 class="form-control" id="usr" name="username">
                         </div>
-                        <div class="email_body">
+                        {{-- <div class="email_body">
                             In Loving Memory of [Name]
                             <br>
                             <br>
@@ -938,11 +940,44 @@
 
                             With love,
                             [Your Name]
-                        </div>
+                        </div> --}}
 
-                        <button type="submit" class="btn btn-primary email_sub">Submit</button>
+                        {{-- <button type="submit" class="btn btn-primary email_sub">Submit</button> --}}
+                        <button type="button" class="btn btn-primary email_sub" data-toggle="modal"
+                            data-target="#success_Modal" data-dismiss="modal">Submit</button>
                     </form>
 
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+
+    <!-- The Modal -->
+    <div class="modal fade" id="success_Modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="icon_tick">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                    <div class="inite_Succ_hed">
+                       Success
+                    </div>
+                    <div class="inite_Succ_txt">
+                       An Invitation Has Been Sent Successfully.
+                    </div>
+                    <div class="mdl_btn">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
                 </div>
 
 

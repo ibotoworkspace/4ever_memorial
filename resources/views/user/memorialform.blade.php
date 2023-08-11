@@ -410,7 +410,7 @@
                                             <h2>Privacy options:</h2>
                                             <p>Would you like to share your memorial with others, or keep it private?
                                             </p>
-                                            <span class="braketdata">(This can be changed later.)</span><br>
+                                            {{-- <span class="braketdata">(This can be changed later.)</span><br> --}}
                                             <div class="form-group form-check memoreadio">
                                                 <input name="all_visitors" value="1" type="checkbox"
                                                     class="form-check-input only_one_check" id="exampleCheck1"
