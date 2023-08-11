@@ -1,5 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+.uploaded_audio_box .image-area_pic {
+    background-color: transparent!important;
+} 
+.uploaded_audio_box .image-area_pic .remove-image_pic {
+    top: -27px;
+    right: -19px;
+}
+
+.col-md-4.pic_gal_vid {
+    width: auto !important;
+}
+.pic_gal_img {
+    margin: 19px 0px !important;
+}
+.pic_gal_vid {
+    margin: 19px 0px;
+}
+
+.image-area_pic {
+    position: relative;
+    background: #333;
+  }
+  .image-area_pic img{
+    max-width: 100%;
+    height: auto;
+  }
+  .remove-image_pic {
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 10em;
+  padding: 2px 6px 3px;
+  text-decoration: none;
+  font: 700 21px/20px sans-serif;
+  background: #555;
+  border: 3px solid #fff;
+  color: #FFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-transition: background 0.5s;
+    transition: background 0.5s;
+  }
+  .remove-image_pic:hover {
+   background: #E54E4E;
+    padding: 3px 7px 5px;
+    top: -11px;
+  right: -11px;
+  }
+  .remove-image_pic:active {
+   background: #E54E4E;
+    top: -10px;
+  right: -11px;
+  }
+.del_bar {
+    font-size: 31px;
+    background: red;
+    text-align: center;
+    margin-bottom: -34px;
+    position: inherit;
+    opacity: 0.5;
+    color: white;
+    width: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.del_bar:hover {
+    display: block;
+}
+
+
+.mdl_btn button {
+    width: 85px;
+}
+.mdl_btn {
+    text-align: center;
+    margin: 15px 0px;
+}
+.inite_Succ_hed {
+    font-size: 34px;
+    text-align: center;
+    margin: 14px 0px;
+}
+.inite_Succ_txt {
+    text-align: center;
+}
+.icon_tick i {
+    border: solid 1px;
+    border-radius: 60px;
+}
+.icon_tick {
+    text-align: center;
+    font-size: 82px;
+    color: #38da38;
+
+}
+.flx_mob{
+    display: flex;
+}
+p.trib_para {
+    max-width: 400px;
+}
 .dropbtn {
     background-color: #04AA6D;
     color: white;
@@ -632,12 +734,8 @@ h4.aaa:hover {
 .gallery{
     display: flex;
 }
-.pic_gal_img{
-    margin: 19px;
-}
-.pic_gal_vid{
-    margin: 19px;
-}
+
+
 .fb_icon {
     color: #002bff;
     font-size: 53px;
@@ -1001,17 +1099,16 @@ body {font-family: Arial;}
     .slidsho_txt p {
         margin: 0 0 0px;
     }
-    .pic_gal_img {
+    /* .pic_gal_img {
         margin: 14px 3px;
-    }
-    .col-md-3.pic_gal_img img {
-        width: 279px;
+    } */
+    .col-md-4.pic_gal_img img {
         border-radius: 10px;
     }
     .pic_gal_vid {
         margin: 14px 3px;
     }
-    .col-md-3.pic_gal_vid img {
+    .col-md-4.pic_gal_vid img {
         width: 279px;
         border-radius: 10px;
     }
@@ -1076,5 +1173,16 @@ body {font-family: Arial;}
     margin: 10px;
     text-align: justify;
 }
-    
+.flx_mob {
+    height: 465px;
+    display: grid;
+    justify-content: center;
+    overflow: scroll;
+}
+p.trib_para {
+    max-width: 145px;
+}
+.image-area_pic video {
+    width: 100% !important;
+}
 }

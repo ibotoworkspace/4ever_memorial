@@ -1,10 +1,10 @@
 {!! $html !!}
 @include('partial_layouts.cropper.cropper_html')
 {{-- {!!dd($gal_side->where('type','video'));!!} --}}
-<@php
-    $video_count =$gal_side->where('type','video')->count();
-    $picture_count =$gal_side->where('type','photo')->count();
-    $audio_count =$gal_side->where('type','audio')->count();
+@php
+    $video_count = $gal_side->where('type', 'video')->count();
+    $picture_count = $gal_side->where('type', 'photo')->count();
+    $audio_count = $gal_side->where('type', 'audio')->count();
     // $count = $counted->count();
     // $count->where('type','video')
     // dd( $counted);
@@ -27,17 +27,18 @@
             set_dynamic_tribute_images();
         }
 
-        function initial_values(){
+        function initial_values() {
             // $('.contentLi_vid').html('added {!! $video_count !!} video(s)');
             // $('.contentLi_Pic').html('added {!! $picture_count !!} photo(s)');
             // $('.contentLi_aud').html('added {!! $audio_count !!} audio(s)');
             $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
-            $('.facebook-share').attr('href','https://www.facebook.com/sharer/sharer.php?u='+window.location.href);
+            $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + window.location
+                .href);
             var images = '';
-            if(!gallery_images.length){
-                images = images + image_crousal('{!!asset("images/logo.png")!!}', 0);
+            if (!gallery_images.length) {
+                images = images + image_crousal('{!! asset('images/logo.png') !!}', 0);
             }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
@@ -81,9 +82,9 @@
                     </div>
                 </button>
                 `;
-                candles_html = add_candles_list()+candles_html ;
-                flowers_html = add_flowers_list()+flowers_html ;
-                notes_html = add_notes_feather_list()+notes_html ;
+                candles_html = add_candles_list() + candles_html;
+                flowers_html = add_flowers_list() + flowers_html;
+                notes_html = add_notes_feather_list() + notes_html;
             } else {
 
                 candles_html = `                
@@ -120,16 +121,16 @@
                 `;
             }
 
-            console.log('candles_html',candles_html);
+            console.log('candles_html', candles_html);
             $('.candle-select').html(candles_html);
             $('.flower-select').html(flowers_html);
             $('.feather-select').html(notes_html);
         }
 
-        function add_candles_list(){
+        function add_candles_list() {
             candle_list = `
             <div class="dropdown-content">
-                <div class="flx">`;
+                <div class="flx_mob">`;
             var candle_arr = [
                 "{!! asset('user_templates/images/candles/1.png') !!}",
                 "{!! asset('user_templates/images/candles/2.png') !!}",
@@ -148,25 +149,25 @@
                 // "{!! asset('user_templates/images/candles/candle.png') !!}"
             ];
 
-            $(candle_arr).each(function (index,candle) {
-                console.log('candles image',candle);
-                candle_list = candle_list+`                
+            $(candle_arr).each(function(index, candle) {
+                console.log('candles image', candle);
+                candle_list = candle_list + `                
                 
-                    <div class="cand same" onclick="set_tribute('candle','`+candle+`')">
+                    <div class="cand same" onclick="set_tribute('candle','` + candle + `')">
                         <div class="ico_wri">
-                            <img src="`+candle+`" alt="relative">
+                            <img src="` + candle + `" alt="relative">
                         </div>
                     </div>
                 `;
             })
-            candle_list = candle_list+`</div></div>`;
+            candle_list = candle_list + `</div></div>`;
             return candle_list;
         }
 
-        function add_flowers_list(){
+        function add_flowers_list() {
             flower_list = `
             <div class="dropdown-content">
-                <div class="flx">`;
+                <div class="flx_mob">`;
             var flowers_arr = [
                 "{!! asset('user_templates/images/flowers/1.png') !!}",
                 "{!! asset('user_templates/images/flowers/2.png') !!}",
@@ -190,25 +191,25 @@
                 // "{!! asset('user_templates/images/flowers/flower.png') !!}"
             ];
 
-            $(flowers_arr).each(function (index,flower) {
-                console.log('flower image',flower);
-                flower_list = flower_list+`                
+            $(flowers_arr).each(function(index, flower) {
+                console.log('flower image', flower);
+                flower_list = flower_list + `                
                 
-                    <div class="cand same" onclick="set_tribute('flower','`+flower+`')">
+                    <div class="cand same" onclick="set_tribute('flower','` + flower + `')">
                         <div class="ico_wri">
-                            <img src="`+flower+`" alt="relative">
+                            <img src="` + flower + `" alt="relative">
                         </div>
                     </div>
                 `;
             })
-            flower_list = flower_list+`</div></div>`;
+            flower_list = flower_list + `</div></div>`;
             return flower_list;
         }
-        
-        function add_notes_feather_list(){
+
+        function add_notes_feather_list() {
             note_list = `
             <div class="dropdown-content">
-                <div class="flx">`;
+                <div class="flx_mob">`;
             var notes_arr = [
                 "{!! asset('user_templates/images/notes/1.png') !!}",
                 "{!! asset('user_templates/images/notes/2.png') !!}",
@@ -218,18 +219,18 @@
                 // "{!! asset('user_templates/images/notes/feather.png') !!}"
             ];
 
-            $(notes_arr).each(function (index,note) {
-                console.log('note image',note);
-                note_list = note_list+`                
+            $(notes_arr).each(function(index, note) {
+                console.log('note image', note);
+                note_list = note_list + `                
                 
-                    <div class="cand same" onclick="set_tribute('feather','`+note+`')">
+                    <div class="cand same" onclick="set_tribute('feather','` + note + `')">
                         <div class="ico_wri">
-                            <img src="`+note+`" alt="relative">
+                            <img src="` + note + `" alt="relative">
                         </div>
                     </div>
                 `;
             })
-            note_list = note_list+`</div></div>`;
+            note_list = note_list + `</div></div>`;
             return note_list;
         }
 
@@ -410,24 +411,24 @@
 
     });
 
-    function set_tribute(type_tribute,tribute_image) {
+    function set_tribute(type_tribute, tribute_image) {
 
-        console.log('type tribute',type_tribute);
-        console.log('tribute_image tribute',tribute_image);
+        console.log('type tribute', type_tribute);
+        console.log('tribute_image tribute', tribute_image);
 
         $('.same').removeClass('selected_tribute');
         var select_class = '';
         // selected_tribute
         if (type_tribute == 'candle') {
             select_class = 'cand';
-            $('.candle-select-icon-img').attr('src',tribute_image);
+            $('.candle-select-icon-img').attr('src', tribute_image);
         } else if (type_tribute == 'flower') {
             select_class = 'flower';
-            $('.flower-select-icon-img').attr('src',tribute_image);
+            $('.flower-select-icon-img').attr('src', tribute_image);
 
         } else { // feather
             select_class = 'feather';
-            $('.feather-select-icon-img').attr('src',tribute_image);
+            $('.feather-select-icon-img').attr('src', tribute_image);
 
         }
         $('.' + select_class).addClass('selected_tribute');
@@ -453,18 +454,18 @@
         if (type_var == 'flower') {
             type_var =
                 // '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
-                '<img src="' + $('#image_tribute').val() +'">';
+                '<img src="' + $('#image_tribute').val() + '">';
 
             // '<img src="http://localhost/4_ever_memories/public/user_templates/template_1/images/imgs/flower.png">';
 
         } else if (type_var == 'candle') {
             type_var =
                 // '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
-                '<img src="' + $('#image_tribute').val() +'">';
+                '<img src="' + $('#image_tribute').val() + '">';
         } else {
             type_var =
                 // '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
-                '<img src="' + $('#image_tribute').val() +'">';
+                '<img src="' + $('#image_tribute').val() + '">';
 
         }
         var review = `
@@ -530,8 +531,11 @@
         console.log(image_show_var, 'image');
 
         var review = `
-                    <div class="col-md-3 pic_gal_img">
-                    ` + image_show_var + ` 
+                    <div class="col-md-4 pic_gal_img">
+                        <div class="image-area_pic">
+                            ` + image_show_var + ` 
+                            <a class="remove-image_pic" href="#" style="display: inline;">&#215;</a>
+                        </div>
                     </div>
         `;
         return review;
@@ -544,8 +548,12 @@
         console.log(image_show_var, 'image');
 
         var review = `
-                    <div class="col-md-3 pic_gal_vid">
-                    ` + image_show_var + ` 
+                    <div class="col-md-4 pic_gal_vid">
+                        <div class="image-area_pic">
+
+                            ` + image_show_var + ` 
+                            <a class="remove-image_pic" href="#" style="display: inline;">&#215;</a>
+                        </div>
                     </div>
         `;
         return review;
@@ -560,12 +568,15 @@
 
         var review = `
                                         <div class="uploaded_audio_box">
+                                            <div class="image-area_pic">
                                             
                                             <h4><div class="new_tag">new</div>` + date_show_var + ` .by  ` +
             name_show_var + `</h4>
-                                            <audio controls autoplay>
+                                            <audio controls autostart="0" autostart="false" preload ="none" >
                                                 <source src="` + image_show_var + `" type="audio/mpeg">
                                               </audio>
+                                              <a class="remove-image_pic" href="#" style="display: inline;">&#215;</a>
+                                        </div>
                                         </div>
         `;
         return review;

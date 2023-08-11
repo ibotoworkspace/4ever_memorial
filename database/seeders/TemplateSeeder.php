@@ -269,7 +269,8 @@ class TemplateSeeder extends Seeder
             </div>
            
             
-            <button type="submit" class="btn btn-primary email_sub">Submit</button>
+            <button type="button" class="btn btn-primary email_sub" data-toggle="modal"
+            data-target="#success_Modal" data-dismiss="modal">Submit</button>
           </form>
           
         </div>
@@ -280,6 +281,34 @@ class TemplateSeeder extends Seeder
     </div>
   </div>
   <!-- The Modal -->
+  <div class="modal fade" id="success_Modal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+
+          <!-- Modal Header -->
+          
+
+          <!-- Modal body -->
+          <div class="modal-body">
+              <div class="icon_tick">
+                  <i class="fa fa-check" aria-hidden="true"></i>
+              </div>
+              <div class="inite_Succ_hed">
+                 Success
+              </div>
+              <div class="inite_Succ_txt">
+                 An Invitation Has Been Sent Successfully.
+              </div>
+              <div class="mdl_btn">
+                  <button class="btn btn-primary" data-dismiss="modal">OK</button>
+              </div>
+          </div>
+
+
+
+      </div>
+  </div>
+</div>
             </body>
 
 

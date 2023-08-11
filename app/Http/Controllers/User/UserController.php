@@ -237,24 +237,25 @@ class UserController extends Controller
 
         // dd($user_website->id,$gallery,$recent_updates_show_arr);
 
-        // $gallery_image = Gallery::where('memorial_id', $user_website->id)->where('type','photo')
-        // ->orderbydesc('id')->get()->toArray();
-        $gallery_image = $gallery->where('type','photo')
-        ->orderbydesc('id')->get();
-        $web_variable['gallery_photo_arr'] = $gallery_image->toArray();
+        $gallery_image = Gallery::where('memorial_id', $user_website->id)->where('type','photo')
+        ->orderbydesc('id')->get()->toArray();
+        // $gallery_image = $gallery->where('type','photo')
+        // ->orderbydesc('id')->get();
+        $web_variable['gallery_photo_arr'] = $gallery_image;
+        // $web_variable['gallery_photo_arr'] = $gallery_image->toArray();
+// dd($web_variable['gallery_photo_arr']);
+        $gallery_video = Gallery::where('memorial_id', $user_website->id)->where('type','video')
+        ->orderbydesc('id')->get()->toArray();
+        // $gallery_video = $gallery->where('type','video')
+        // ->orderbydesc('id')->get();
+        $web_variable['gallery_video_arr'] = $gallery_video;
 
-        // $gallery_video = Gallery::where('memorial_id', $user_website->id)->where('type','video')
-        // ->orderbydesc('id')->get()->toArray();
-        $gallery_video = $gallery->where('type','video')
-        ->orderbydesc('id')->get();
-        $web_variable['gallery_video_arr'] = $gallery_video->toArray();
-
-        // $gallery_audio = Gallery::where('memorial_id', $user_website->id)->where('type','audio')
-        // ->orderbydesc('id')->get()->toArray();
+        $gallery_audio = Gallery::where('memorial_id', $user_website->id)->where('type','audio')
+        ->orderbydesc('id')->get()->toArray();
         
-        $gallery_audio = $gallery->where('type','audio')
-        ->orderbydesc('id')->get();
-        $web_variable['gallery_audio_arr'] = $gallery_audio->toArray();
+        // $gallery_audio = $gallery->where('type','audio')
+        // ->orderbydesc('id')->get();
+        $web_variable['gallery_audio_arr'] = $gallery_audio;
 
         $web_variable['recent_updates_show_arr'] = $recent_updates_show_arr;
 
