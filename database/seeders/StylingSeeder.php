@@ -138,12 +138,14 @@ class StylingSeeder extends Seeder
 
             $web_variable_std->gallery_photo_arr = [];
             $web_variable_std->gallery_photo_arr[0] = new \stdClass();
+            $web_variable_std->gallery_photo_arr[0]->id = "1";
             $web_variable_std->gallery_photo_arr[0]->user_id = "1";
             $web_variable_std->gallery_photo_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/download.jpg";
 
 
             $web_variable_std->gallery_audio_arr = [];
             $web_variable_std->gallery_audio_arr[0] = new \stdClass();
+            $web_variable_std->gallery_photo_arr[0]->id = "2";
             $web_variable_std->gallery_audio_arr[0]->user_id = "1";
             $web_variable_std->gallery_audio_arr[0]->name_show_var =  "Alexa Zelaya";
             $web_variable_std->gallery_audio_arr[0]->date_show_var =  "January 21";
@@ -151,6 +153,7 @@ class StylingSeeder extends Seeder
 
             $web_variable_std->gallery_video_arr = [];
             $web_variable_std->gallery_video_arr[0] = new \stdClass();
+            $web_variable_std->gallery_video_arr[0]->id = "1";
             $web_variable_std->gallery_video_arr[0]->user_id = "1";
             $web_variable_std->gallery_video_arr[0]->image_show_var =  $public_path . "user_templates/" . $default_template . "/images/download.jpg";
 
@@ -229,8 +232,8 @@ class StylingSeeder extends Seeder
                 "life_tab_htmlvar":"<div id=\"Life\" class=\"tabcontent\">{!!{life_tab_htmlarr}!!}</div>",
 
 
-                "gallery_photo_htmlarr":  "<div class=\"col-md-4 pic_gal_img\"><div class=\"image-area_pic\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"><a class=\"remove-image_pic\" href=\"#\" style=\"display: inline;\">&#215;</a></div></div>",
-                "gallery_video_htmlarr":  "<div class=\"col-md-4 pic_gal_vid\"><div class=\"image-area_pic\"><video width=\"200\" height=\"200\" controls=\"\"><source src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"></video><a class=\"remove-image_pic\" href=\"#\" style=\"display: inline;\">&#215;</a></div></div>",
+                "gallery_photo_htmlarr":  "<div class=\"col-md-4 pic_gal_img remove_imgae{!!{gallery_photo_arr.id}!!}\"><div class=\"image-area_pic\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"><a class=\"remove-image_pic\" onclick=\"delete_request( {!!{gallery_photo_arr.id}!!} )\" style=\"display: inline;\">&#215;</a></div></div>",
+                "gallery_video_htmlarr":  "<div class=\"col-md-4 pic_gal_vid remove_vid`+ user_id +`\"><div class=\"image-area_pic\"><video width=\"200\" height=\"200\" controls=\"\"><source src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"></video><a class=\"remove-image_pic\" onclick=\"delete_request_vid(`+user_id+`)\"  style=\"display: inline;\">&#215;</a></div></div>",
                 "gallery_audio_htmlarr":  "<div class=\"uploaded_audio_box\"><div class=\"image-area_pic\"><p>{!!{gallery_audio_arr.date_show_var}!!} .by {!!{gallery_audio_arr.name_show_var}!!}</p><audio autostart=\"0\" autostart=\"false\" preload =\"none\" controls ><source src=\"{!!{gallery_audio_arr.image_show_var}!!}\" type=\"audio/mpeg\" /></audio><a class=\"remove-image_pic\" href=\"#\" style=\"display: inline;\">&#215;</a></div></div>",
 
 

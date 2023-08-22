@@ -17,7 +17,9 @@ use App\Models\User;
 use App\Models\UserWebsite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use DB;
 
@@ -365,5 +367,24 @@ class UserController extends Controller
 
 
     }
+    
+    public function destroy_undestroy($id)
+    {
+        $category = Gallery::find($id);
+        if ($category) {
+            Gallery::destroy($id);
+            $new_value = 'Activate';
+        } else {
+            Gallery::withTrashed()->find($id)->restore();
+            $new_value = 'Delete';
+        }
+        $response = Response::json([
+            "status" => true,
+            'action' => Config::get('constants.ajax_action.delete'),
+            'new_value' => $new_value
+        ]);
+        return $response;
+    }
+
 
 }
