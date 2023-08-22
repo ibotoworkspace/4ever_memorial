@@ -131,16 +131,16 @@
                     
 
                         <ul>
-                            <li class="no-img"><i class="fa fa-pencil-square" aria-hidden="true"></i></li><li class="contentLi"> {!!($trib_side);!!}tribute(s) added </li>
+                            <li class="no-img"><i class="fa fa-pencil-square" aria-hidden="true"></i></li><li class="contentLi"> {!!($trib_side);!!} tribute{!!($trib_side > 1 ? 's':'')!!} added </li>
                             </ul>
                         <ul>
-                            <li class="no-img"><i class="fa fa-video-camera" aria-hidden="true"></i></li><li class="contentLi"> {!!($video_count);!!}video(s) added </li>
+                            <li class="no-img"><i class="fa fa-video-camera" aria-hidden="true"></i></li><li class="contentLi"> {!!($video_count);!!} video{!!($video_count > 1 ? 's':'')!!} added </li>
                             </ul>
                         <ul>
-                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> {!!($picture_count);!!}photo(s) added </li>
+                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> {!!($picture_count);!!} photo{!!($picture_count > 1 ? 's':'')!!} added </li>
                             </ul>
                         <ul>
-                            <li class="no-img"><i class="fa fa-headphones" aria-hidden="true"></i></li><li class="contentLi"> {!!($audio_count);!!}audio(s) added </li>
+                            <li class="no-img"><i class="fa fa-headphones" aria-hidden="true"></i></li><li class="contentLi"> {!!($audio_count);!!} audio{!!($audio_count > 1 ? 's':'')!!} added </li>
                             </ul>
                         
 
