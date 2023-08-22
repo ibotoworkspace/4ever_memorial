@@ -1,6 +1,7 @@
 {!! $html !!}
+
 @include('partial_layouts.cropper.cropper_html')
-{{-- {!!dd($gal_side->where('type','video'));!!} --}}
+{{-- {!!dd($user_website->image_show_var);!!} --}}
 @php
     $video_count = $gal_side->where('type', 'video')->count();
     $picture_count = $gal_side->where('type', 'photo')->count();
@@ -15,9 +16,11 @@
     var jsonString = '{!! json_encode($web_variable['gallery_photo_arr']) !!}';
     var jsonString_vid = '{!! json_encode($web_variable['gallery_video_arr']) !!}';
     var jsonString_aud = '{!! json_encode($web_variable['gallery_audio_arr']) !!}';
+    var jsonString_recent = '{!! json_encode($web_variable['recent_updates_show_arr']) !!}';
     var gallery_images = JSON.parse(jsonString);
     var gallery_video_ = JSON.parse(jsonString_vid);
     var gallery_audio = JSON.parse(jsonString_aud);
+    var recent_show = JSON.parse(jsonString_recent);
     console.log(gallery_images);
     $(document).ready(function() {
         // $("#btn1").click(function() {
@@ -41,6 +44,8 @@
             $('.gall_row').html(get_imges(gallery_images));
             $('.vid_row').html(get_vids(gallery_video_));
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
+            $('.recent_area').html(get_recent(recent_show));
+            $('.profile_img').html(prof_img(recent_show));
             $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + window.location
                 .href);
             var images = '';
@@ -77,7 +82,8 @@
             for (let index = 0; index < video_arr.length; index++) {
 
                 images_html = images_html + `
-                    <div class=\"col-md-4 pic_gal_img remove_imgae` + video_arr[index].id + `\"><divclass=\"image-area_pic\"><video width=\"200\" height=\"200\" controls=\"\">
+                    <div class=\"col-md-4 pic_gal_vid remove_imgae` + video_arr[index].id + `\"><div class=\"image-area_pic\">
+                        <video width=\"200\" height=\"200\" controls=\"\">
                         <source src=\"` + video_arr[index].image_show_var +
                     `\"   alt=\"\"></video>
                                     <a class=\"remove-image_pic\" onclick=\"delete_request( '` + video_arr[
@@ -115,6 +121,37 @@
                 `;
 
             }
+            return images_html;
+        }
+        function get_recent(recent_arr) {
+
+            var images_html = '';
+            for (let index = 0; index < recent_arr.length; index++) {
+
+                images_html = images_html + `
+                    
+
+                        <ul>
+                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> ` + recent_arr[index].message_var + ` </li>
+                            </ul>
+                        
+
+                `;
+
+            }
+            return images_html;
+        }
+        function prof_img(recent_arr) {
+
+            var images_html = '';
+
+                images_html = images_html + `
+                    
+
+                            <img src="{!!($user_website->image_show_var);!!}" alt="relative" />
+
+                `;
+
             return images_html;
         }
 
