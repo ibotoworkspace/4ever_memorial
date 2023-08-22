@@ -126,21 +126,29 @@
         function get_recent(recent_arr) {
 
             var images_html = '';
-            for (let index = 0; index < recent_arr.length; index++) {
 
                 images_html = images_html + `
                     
 
                         <ul>
-                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> ` + recent_arr[index].message_var + ` </li>
+                            <li class="no-img"><i class="fa fa-pencil-square" aria-hidden="true"></i></li><li class="contentLi"> {!!($trib_side);!!} tribute{!!($trib_side > 1 ? 's':'')!!} added </li>
+                            </ul>
+                        <ul>
+                            <li class="no-img"><i class="fa fa-video-camera" aria-hidden="true"></i></li><li class="contentLi"> {!!($video_count);!!} video{!!($video_count > 1 ? 's':'')!!} added </li>
+                            </ul>
+                        <ul>
+                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> {!!($picture_count);!!} photo{!!($picture_count > 1 ? 's':'')!!} added </li>
+                            </ul>
+                        <ul>
+                            <li class="no-img"><i class="fa fa-headphones" aria-hidden="true"></i></li><li class="contentLi"> {!!($audio_count);!!} audio{!!($audio_count > 1 ? 's':'')!!} added </li>
                             </ul>
                         
 
                 `;
 
-            }
             return images_html;
         }
+
         function prof_img(recent_arr) {
 
             var images_html = '';
