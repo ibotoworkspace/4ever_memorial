@@ -142,3 +142,5 @@ Route::get('admin/stylings',[StylingsController::class, 'index']);
 
 Route::post('search/memorial',[User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
 Route::post('user/upload_gallery',[User_UserController::class, 'upload_gallery'])->name('user.upload_gallery_audio'); //search
+
+Route::post('user/delete/{id}',[User_UserController::class, 'destroy_undestroy'])->name('user.delete');

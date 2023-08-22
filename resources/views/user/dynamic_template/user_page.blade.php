@@ -13,7 +13,11 @@
     var memorial_id = '{!! $user_website->id !!}';
     var global_path = '{!! asset('/') !!}';
     var jsonString = '{!! json_encode($web_variable['gallery_photo_arr']) !!}';
+    var jsonString_vid = '{!! json_encode($web_variable['gallery_video_arr']) !!}';
+    var jsonString_aud = '{!! json_encode($web_variable['gallery_audio_arr']) !!}';
     var gallery_images = JSON.parse(jsonString);
+    var gallery_video_ = JSON.parse(jsonString_vid);
+    var gallery_audio = JSON.parse(jsonString_aud);
     console.log(gallery_images);
     $(document).ready(function() {
         // $("#btn1").click(function() {
@@ -34,6 +38,9 @@
             $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
             $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
+            $('.gall_row').html(get_imges(gallery_images));
+            $('.vid_row').html(get_vids(gallery_video_));
+            $('.uploaded_audio_area').html(get_auds(gallery_audio));
             $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + window.location
                 .href);
             var images = '';
@@ -45,6 +52,72 @@
             }
             $('.carousel-inner').html(images);
         }
+
+        function get_imges(images_arr) {
+
+            var images_html = '';
+            for (let index = 0; index < images_arr.length; index++) {
+
+                images_html = images_html + `
+                    <div class=\"col-md-4 pic_gal_img remove_imgae` + images_arr[index].id + `\"><div class=\"image-area_pic\">
+                        <img src=\"` + images_arr[index].image_show_var +
+                    `\"   alt=\"\"><a class=\"remove-image_pic\" onclick=\"delete_request( '` + images_arr[
+                        index].id + `' )\" style=\"display: inline;\">&#215;</a></div></div>
+
+                
+                `;
+
+            }
+            return images_html;
+        }
+
+        function get_vids(video_arr) {
+
+            var images_html = '';
+            for (let index = 0; index < video_arr.length; index++) {
+
+                images_html = images_html + `
+                    <div class=\"col-md-4 pic_gal_img remove_imgae` + video_arr[index].id + `\"><divclass=\"image-area_pic\"><video width=\"200\" height=\"200\" controls=\"\">
+                        <source src=\"` + video_arr[index].image_show_var +
+                    `\"   alt=\"\"></video>
+                                    <a class=\"remove-image_pic\" onclick=\"delete_request( '` + video_arr[
+                        index].id + `' )\" style=\"display: inline;\">&#215;</a></div></div>
+
+                    
+
+                
+                `;
+
+            }
+            return images_html;
+        }
+
+        function get_auds(audio_arr) {
+
+            var images_html = '';
+            for (let index = 0; index < audio_arr.length; index++) {
+
+                images_html = images_html + `
+                    
+
+                                            <div class=\"uploaded_audio_box remove_imgae` + audio_arr[index].id + `\"><div class=\"image-area_pic\">
+
+                            <p>ssss` + audio_arr[index].date_show_var + ` .by ` + audio_arr[index].name_show_var + `</p>
+
+                            <audio autostart=\"0\" autostart=\"false\" preload =\"none\" controls >
+
+                            <source src=\"` + audio_arr[index].image_show_var + `\" type=\"audio/mpeg\" />
+
+                            </audio><a class=\"remove-image_pic\"  onclick=\"delete_request( '` + audio_arr[
+                        index].id + `' )\"  style=\"display: inline;\">&#215;</a></div></div>
+
+                
+                `;
+
+            }
+            return images_html;
+        }
+
 
         function set_dynamic_tribute_images() {
             var dynamic_images = true;
@@ -528,13 +601,14 @@
 
     function get_gallery_img_html(response) {
         var image_show_var = `<img src="` + response.image_show_var + ` " alt="relative">`;
+        var user_id = response.id;
         console.log(image_show_var, 'image');
 
         var review = `
-                    <div class="col-md-4 pic_gal_img">
+                    <div class="col-md-4 pic_gal_img remove_imgae` + user_id + `" >
                         <div class="image-area_pic">
                             ` + image_show_var + ` 
-                            <a class="remove-image_pic" href="#" style="display: inline;">&#215;</a>
+                            <a class="remove-image_pic" onclick="delete_request(` + user_id + `)" style="display: inline;">&#215;</a>
                         </div>
                     </div>
         `;
@@ -542,17 +616,21 @@
 
     }
 
+
+
     function get_gallery_video_html(response) {
         var image_show_var = `<video width="200" height="200" controls=""><source src="` + response.image_show_var +
             `" alt=""></video>`;
+        var gallery_id = response.id;
+
         console.log(image_show_var, 'image');
 
         var review = `
-                    <div class="col-md-4 pic_gal_vid">
+                    <div class="col-md-4 pic_gal_vid remove_imgae` + gallery_id + `">
                         <div class="image-area_pic">
 
                             ` + image_show_var + ` 
-                            <a class="remove-image_pic" href="#" style="display: inline;">&#215;</a>
+                            <a class="remove-image_pic" onclick="delete_request(` + gallery_id + `)" style="display: inline;">&#215;</a>
                         </div>
                     </div>
         `;
@@ -564,10 +642,11 @@
         var image_show_var = response.image_show_var;
         var date_show_var = response.date_show_var;
         var name_show_var = response.name_show_var;
+        var gallery_id = response.id;
         console.log(image_show_var, 'image');
 
         var review = `
-                                        <div class="uploaded_audio_box">
+                                        <div class="uploaded_audio_box remove_imgae` + gallery_id + `">
                                             <div class="image-area_pic">
                                             
                                             <h4><div class="new_tag">new</div>` + date_show_var + ` .by  ` +
@@ -575,11 +654,54 @@
                                             <audio controls autostart="0" autostart="false" preload ="none" >
                                                 <source src="` + image_show_var + `" type="audio/mpeg">
                                               </audio>
-                                              <a class="remove-image_pic" href="#" style="display: inline;">&#215;</a>
+                                              <a class="remove-image_pic" onclick="delete_request(` + gallery_id + `)" style="display: inline;">&#215;</a>
                                         </div>
                                         </div>
         `;
         return review;
 
     }
+
+    // function delete_request(user_id){
+    //     alert(`"delete`+ user_id +`"`);
+    // }
+    function delete_request(gallery_id) {
+        $.ajax({
+
+            url: "{!! asset('user/delete') !!}/" + gallery_id,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                _token: '{!! @csrf_token() !!}'
+            },
+            success: function(response) {
+                console.log(response);
+                if (response.status) {
+
+                    $('.remove_imgae' + gallery_id).remove();
+
+                }
+            }
+        });
+    }
+
+    // function delete_request_vid(gallery_id) {
+    //     $.ajax({
+
+    //         url: "{!! asset('user/delete') !!}/" + gallery_id,
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: {
+    //             _token: '{!! @csrf_token() !!}'
+    //         },
+    //         success: function(response) {
+    //             console.log(response);
+    //             if (response.status) {
+
+    //                 $('.remove_vid' + user_id).remove();
+
+    //             }
+    //         }
+    //     });
+    // }
 </script>
