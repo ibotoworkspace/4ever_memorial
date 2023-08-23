@@ -386,16 +386,20 @@
                                     </div>
                                     <p class="fdgsdf">Anthony was born in September 1, 2004 via scheduled C-section at
                                         San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..</p>
-                                    <div class="whole">
-                                        <div class="flx">
-                                            <div class="share">
-                                                <i class="fa fa-share-alt-square" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="chr_p">
-                                                Share
+
+
+                                    <a class="shr_btn_md" data-toggle="modal" data-target="#inviteModal">
+                                        <div class="whole">
+                                            <div class="flx">
+                                                <div class="share">
+                                                    <i class="fa fa-share-alt-square" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="chr_p">
+                                                    Share
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
 
@@ -962,7 +966,7 @@
             <div class="modal-content">
 
                 <!-- Modal Header -->
-                
+
 
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -970,10 +974,10 @@
                         <i class="fa fa-check" aria-hidden="true"></i>
                     </div>
                     <div class="inite_Succ_hed">
-                       Success
+                        Success
                     </div>
                     <div class="inite_Succ_txt">
-                       An Invitation Has Been Sent Successfully.
+                        An Invitation Has Been Sent Successfully.
                     </div>
                     <div class="mdl_btn">
                         <button class="btn btn-primary" data-dismiss="modal">OK</button>

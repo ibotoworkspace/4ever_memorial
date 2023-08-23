@@ -27,8 +27,8 @@ class TemplateSeeder extends Seeder
         $template->name = $template_name;
         $template->save();
         // if(){}
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
-        // $public_path = 'http://localhost/4_ever_memories/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        $public_path = 'http://localhost/4_ever_memories/public/';
         // dd($pub);
         $template->web_html =
             '
@@ -256,7 +256,7 @@ class TemplateSeeder extends Seeder
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Invite Family and Friends</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal"></button>
         </div>
         
         <!-- Modal body -->
@@ -314,39 +314,40 @@ class TemplateSeeder extends Seeder
 
 
             <script>
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
-
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
                 }
-                document.getElementById("defaultOpen").click();
-            </script>
-            <script>
-                function openpic(evt, cityName) {
-                    var i, tab_galcontent, tab_gallinks;
-                    tab_galcontent = document.getElementsByClassName("tab_galcontent");
-                    for (i = 0; i < tab_galcontent.length; i++) {
-                        tab_galcontent[i].style.display = "none";
-                    }
-                    tab_gallinks = document.getElementsByClassName("tab_gallinks");
-                    for (i = 0; i < tab_gallinks.length; i++) {
-                        tab_gallinks[i].className = tab_gallinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].classList.remove("active"); // Remove "active" class from all tablinks
                 }
-                document.getElementById("defaultOpen").click();
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.classList.add("active"); // Add "active" class to the clicked tablink
+            }
+            document.getElementById("defaultOpen").click();
+        </script>
+        
+        <script>
+            function openpic(evt, cityName) {
+                var i, tab_galcontent, tab_gallinks;
+                tab_galcontent = document.getElementsByClassName("tab_galcontent");
+                for (i = 0; i < tab_galcontent.length; i++) {
+                    tab_galcontent[i].style.display = "none";
+                }
+                tab_gallinks = document.getElementsByClassName("tab_gallinks");
+                for (i = 0; i < tab_gallinks.length; i++) {
+                    tab_gallinks[i].classList.remove("active"); // Remove "active" class from all tab_gallinks
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.classList.add("active"); // Add "active" class to the clicked tab_gallink
+            }
+            document.getElementById("defaultOpen").click();
+        </script>
+        
 
-            </script>
             </html>
 
 
