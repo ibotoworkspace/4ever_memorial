@@ -413,6 +413,10 @@
 
         function upload_file(file) {
 
+            // if($('input[name="media_type"]').val() == ''){
+            //     return;
+            // }
+
             var formData = new FormData();
             formData.append('media_type', $('input[name="media_type"]').val());
             formData.append('upload_file', file);
@@ -446,7 +450,7 @@
                         console.log(res.response.type, 'type is here');
 
                     }
-                    $('input[type="hidden"],textarea').val('');
+                    // $('input[type="hidden"],textarea').val('');
                     $('input[type="file"],textarea').val('');
 
 
