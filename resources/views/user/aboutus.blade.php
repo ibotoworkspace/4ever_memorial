@@ -53,7 +53,7 @@ Our website also offers several ways for people to stay connected with those the
 
 4Ever Memorial is dedicated to providing a comfortable space for people suffering from grief or loss. Our team works relentlessly to ensure that this website continues to be a source of comfort and healing for all of its users. We would be honored if you choose to join us in honoring the memories of those we have lost. Thank you for taking the time to visit our website, and we hope it brings peace and comfort during this difficult time. 
 
-4Ever Memorial: a safe haven for ongoing reflection. An everlasting tribute to lost loved ones. A place to remember and keep their memories alive. Always by your side, even after death. Come pay tribute to us today at 4Ever Memorial
+4Ever Memorial: a safe haven for ongoing reflection. An everlasting tribute to lost loved ones. A place to remember and keep their memories alive. Always by your side, even after death. Come pay tribute to us today at 4Ever Memorial.
 </p>
 <img src="{!!asset('theme/user_theme/images/signature.png')!!}" class="img-responsive">
                 </div>

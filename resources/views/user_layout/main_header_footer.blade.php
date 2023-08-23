@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         <div class="lastfooter">
-                            <p>Copyright © 2022 4ever memory - Designed and Developed by <a href="https://hatinco.com/" target="_blank" class="minename">HAT-INC</a></p>
+                            <p>Copyright © <?php echo date("Y"); ?> 4ever memory - Designed and Developed by <a href="https://ibotoempire.com/" target="_blank" class="minename">Iboto-Empire</a></p>
                         </div>
                     </div>
                 </div>
