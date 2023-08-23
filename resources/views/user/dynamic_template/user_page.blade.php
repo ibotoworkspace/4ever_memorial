@@ -327,7 +327,7 @@
         function add_notes_feather_list() {
             note_list = `
             <div class="dropdown-content">
-                <div class="flx_mob">`;
+                <div class="flx_mob drop_icn">`;
             var notes_arr = [
                 "{!! asset('user_templates/images/notes/1.png') !!}",
                 "{!! asset('user_templates/images/notes/2.png') !!}",
@@ -341,7 +341,7 @@
                 console.log('note image', note);
                 note_list = note_list + `                
                 
-                    <div class="cand same" onclick="set_tribute('feather','` + note + `')">
+                    <div class="cand same not_icn_c" onclick="set_tribute('feather','` + note + `')">
                         <div class="ico_wri">
                             <img src="` + note + `" alt="relative">
                         </div>

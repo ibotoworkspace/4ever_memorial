@@ -438,8 +438,8 @@
                                                 <input name="agreement" value="1" type="checkbox"
                                                     class="form-check-input" id="exampleChaeck1"
                                                     onchange="activateButton(this)">
-                                                <label class="form-check-label" for="">I agree to <span
-                                                        class="linktext">Terms of Use</span></label>
+                                                <label class="form-check-label" for="">I agree to <a href="{!! asset('/user/service_term') !!}"><span
+                                                        class="linktext">Terms of Use</span></a></label>
                                             </div>
                                             <?php
                                             
