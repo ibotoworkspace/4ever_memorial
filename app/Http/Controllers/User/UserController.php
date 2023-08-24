@@ -387,4 +387,19 @@ class UserController extends Controller
     }
 
 
+    public function send_invite(){
+        $user = Auth::user();
+        $mail_data = UserWebsite::where('id', ' $user')->get();
+dd($mail_data);
+        $details = [
+            'to' => $mail_data->email,
+            'user_id' => $mail_data->id,
+            'from' => 'contactus@medical2.com',
+            'title' => 'Medical2',
+            'subject' => 'Reference Link From Medical2 Academy ',
+            "dated"  => date('d F, Y (l)'),
+            'new_password' =>  $mail_data->update_password_id,
+        ];
+
+    }
 }
