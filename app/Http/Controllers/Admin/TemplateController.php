@@ -13,7 +13,7 @@ class TemplateController extends Controller
 {
     public function template_1()
     {
-        return view('admin/templates/template_1/index-orignal');
+        return view('admin/templates/template_1/index1');
     }
     public function template_2()
     {

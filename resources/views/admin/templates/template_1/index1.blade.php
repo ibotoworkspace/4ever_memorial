@@ -16,7 +16,7 @@
                 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
                 <link rel="stylesheet" id="template_css_link" href="" />
-                <link rel="stylesheet" href="{!! asset('user_templates/template_3/css/style.css') !!}" />
+                <link rel="stylesheet" href="{!! asset('user_templates/template_1/css/style.css') !!}" />
                 <link rel="stylesheet" href="{!! asset('user_templates/common.css') !!}" />
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
