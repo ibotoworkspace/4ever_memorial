@@ -133,6 +133,9 @@ Route::post('user/memorial/privacy',[User_UserController::class, 'privacy'])->na
 Route::post('user/memorial/save_css',[User_UserController::class, 'save_css'])->name('user.memorial.save_css');
 
 
+Route::post('user/invite',[User_UserController::class, 'send_invite'])->name('user.send_invite');
+
+
 /////////category
 Route::get('admin/category',[CategoryController::class, 'index']);
 
