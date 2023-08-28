@@ -265,12 +265,11 @@ class TemplateSeeder extends Seeder
          <form action="">
             <div class="form-group">
               <label for="usr">Enter Email:</label>
-              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control" id="usr" name="username">
+              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control share_inveite_emails" id="usr" name="invite_email">
             </div>
            
             
-            <button type="button" class="btn btn-primary email_sub" data-toggle="modal"
-            data-target="#success_Modal" data-dismiss="modal">Submit</button>
+            <button type="button" class="btn btn-primary email_sub sumit_email">Submit</button>
           </form>
           
         </div>

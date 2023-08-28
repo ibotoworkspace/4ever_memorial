@@ -19,13 +19,12 @@
       padding: 20px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      /* background-image: url("../"); */
       background: url(../../images/headerimage.jpg) no-repeat;
-            background-size: cover;
+      background-size: cover;
     }
 
     .header {
-        background: url(../../images/headerimage.jpg) no-repeat;
+      background: url(../../images/headerimage.jpg) no-repeat;
       background-size: cover;
       color: #fff;
       padding: 20px;
@@ -57,7 +56,6 @@
       font-size: 18px;
       transition: background-color 0.3s ease;
       margin: 20px 0px;
-
     }
 
     .memorial-link:hover {
@@ -72,19 +70,18 @@
       <h1>In Loving Memory</h1>
     </div>
     <div class="invitation">
-      <p>Dear [Recipient's Name],</p>
-      <p>We invite you to join us in celebrating the life and cherished memories of our beloved [Name], who passed away
-        on [Date].</p>
+      <p>Dear {{ $details['to'] }},</p>
+      <p>We invite you to join us in celebrating the life and cherished memories of our beloved {{ $details['deceased_data']['f_name'] }}, who passed away
+        on {{ $details['deceased_data']['p_year'] }}.</p>
       <p>We have created a memorial website where friends and family can come together to share stories, photos, and
-        memories. It is a space to honor [Name]'s life and the impact [he/she] had on all of us.</p>
+        memories. It is a space to honor {{ $details['deceased_data']['f_name'] }}'s life and the impact {{ $details['deceased_data']['gender'] == 'male' ? 'he' : 'she' }} had on all of us.</p>
       <p>Please visit the memorial website using the link below:</p>
       <p style="text-align: center;">
-        <a href="[Memorial Website Link]" class="memorial-link">Visit Memorial Website</a>
+        <a href="https://stagging.hatinco.com/public/user/get_memorial/{{ $details['deceased_data']['email'] }}" class="memorial-link">Visit Memorial Website</a>
       </p>
-      <p>[Name]'s memory lives on through the stories we share, and we hope you can contribute to this tribute.</p>
+      <p>{{ $details['deceased_data']['f_name'] }}'s memory lives on through the stories we share, and we hope you can contribute to this tribute.</p>
       <p style="text-align: center;">With warmest regards,</p>
-      <p style="text-align: center;">[Your Name]</p>
-      <p style="text-align: center;">[Your Relationship to the Deceased]</p>
+      <p style="text-align: center;">{{ $details['deceased_data']['relation'] }}</p>
     </div>
   </div>
 </body>

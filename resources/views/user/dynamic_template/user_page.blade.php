@@ -1,7 +1,7 @@
 {!! $html !!}
-
+<input type="hidden" name="sndng_mail" value="{!! $user_website->id !!}">
 @include('partial_layouts.cropper.cropper_html')
-{{-- {!!dd($user_website->image_show_var);!!} --}}
+{{-- {!!dd($user_website->id);!!} --}}
 @php
     $video_count = $gal_side->where('type', 'video')->count();
     $picture_count = $gal_side->where('type', 'photo')->count();
@@ -34,6 +34,44 @@
             set_dynamic_tribute_images();
         }
 
+        // $('#save_trib').on('click', function() {
+
+        $('.sumit_email').on('click', function() {
+            // VAR url = '{!! asset('user/invite') !!}';
+            console.log('email sent');
+            var formData = new FormData();
+            formData.append('memorial_id', '{!! $user_website->id !!}');
+            formData.append('to_emails', $('.share_inveite_emails').val());
+            console.log('share email', $('.share_inveite_emails').val());
+
+
+
+            //   ajax
+            $.ajax({
+                url: "{{ asset('user/invite') }}",
+                type: 'POST',
+                dataType: 'json',
+                data: formData, // Send the FormData object directly
+                contentType: false, // Set contentType to false to prevent jQuery from processing the data
+                processData: false, // Set processData to false to prevent jQuery from converting the data to a query string
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Use headers to set the CSRF token
+                },
+                success: function(response) {
+                    console.log(response);
+                    if (response.status) {
+                        console.log('email sent');
+                    }
+                }
+            });
+
+            //   ajax
+
+
+        });
+
+
+
         function initial_values() {
             // $('.contentLi_vid').html('added {!! $video_count !!} video(s)');
             // $('.contentLi_Pic').html('added {!! $picture_count !!} photo(s)');
@@ -46,7 +84,8 @@
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
             $('.recent_area').html(get_recent(recent_show));
             $('.profile_img').html(prof_img(recent_show));
-            $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + window.location
+            $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' +
+                window.location
                 .href);
             var images = '';
             if (!gallery_images.length) {
@@ -66,7 +105,8 @@
                 images_html = images_html + `
                     <div class=\"col-md-4 pic_gal_img remove_imgae` + images_arr[index].id + `\"><div class=\"image-area_pic\">
                         <img src=\"` + images_arr[index].image_show_var +
-                    `\"   alt=\"\"><a class=\"remove-image_pic\" onclick=\"delete_request( '` + images_arr[
+                    `\"   alt=\"\"><a class=\"remove-image_pic\" onclick=\"delete_request( '` +
+                    images_arr[
                         index].id + `' )\" style=\"display: inline;\">&#215;</a></div></div>
 
                 
@@ -115,7 +155,7 @@
                             <source src=\"` + audio_arr[index].image_show_var + `\" type=\"audio/mpeg\" />
 
                             </audio><a class=\"remove-image_pic\"  onclick=\"delete_request( '` + audio_arr[
-                        index].id + `' )\"  style=\"display: inline;\">&#215;</a></div></div>
+                    index].id + `' )\"  style=\"display: inline;\">&#215;</a></div></div>
 
                 
                 `;
@@ -123,24 +163,25 @@
             }
             return images_html;
         }
+
         function get_recent(recent_arr) {
 
             var images_html = '';
 
-                images_html = images_html + `
+            images_html = images_html + `
                     
 
                         <ul>
-                            <li class="no-img"><i class="fa fa-pencil-square" aria-hidden="true"></i></li><li class="contentLi"> {!!($trib_side);!!} tribute{!!($trib_side > 1 ? 's':'')!!} added </li>
+                            <li class="no-img"><i class="fa fa-pencil-square" aria-hidden="true"></i></li><li class="contentLi"> {!! $trib_side !!} tribute{!! $trib_side > 1 ? 's' : '' !!} added </li>
                             </ul>
                         <ul>
-                            <li class="no-img"><i class="fa fa-video-camera" aria-hidden="true"></i></li><li class="contentLi"> {!!($video_count);!!} video{!!($video_count > 1 ? 's':'')!!} added </li>
+                            <li class="no-img"><i class="fa fa-video-camera" aria-hidden="true"></i></li><li class="contentLi"> {!! $video_count !!} video{!! $video_count > 1 ? 's' : '' !!} added </li>
                             </ul>
                         <ul>
-                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> {!!($picture_count);!!} photo{!!($picture_count > 1 ? 's':'')!!} added </li>
+                            <li class="no-img"><i class="fa fa-picture-o" aria-hidden="true"></i></li><li class="contentLi"> {!! $picture_count !!} photo{!! $picture_count > 1 ? 's' : '' !!} added </li>
                             </ul>
                         <ul>
-                            <li class="no-img"><i class="fa fa-headphones" aria-hidden="true"></i></li><li class="contentLi"> {!!($audio_count);!!} audio{!!($audio_count > 1 ? 's':'')!!} added </li>
+                            <li class="no-img"><i class="fa fa-headphones" aria-hidden="true"></i></li><li class="contentLi"> {!! $audio_count !!} audio{!! $audio_count > 1 ? 's' : '' !!} added </li>
                             </ul>
                         
 
@@ -153,10 +194,10 @@
 
             var images_html = '';
 
-                images_html = images_html + `
+            images_html = images_html + `
                     
 
-                            <img src="{!!($user_website->image_show_var);!!}" alt="relative" />
+                            <img src="{!! $user_website->image_show_var !!}" alt="relative" />
 
                 `;
 
@@ -446,7 +487,8 @@
 
 
                     } else {
-                        $(".uploaded_audio_area").append(get_gallery_audio_html(res.response));
+                        $(".uploaded_audio_area").append(get_gallery_audio_html(res
+                            .response));
                         console.log(res.response.type, 'type is here');
 
                     }
@@ -517,7 +559,8 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
-                    $(".add_tribute_append").append(get_review_html(res.response));
+                    $(".add_tribute_append").append(get_review_html(res
+                        .response));
                     $('input[type="text"],textarea').val('');
                     $('input[type="hidden"],textarea').val('');
 
@@ -668,7 +711,8 @@
 
 
     function get_gallery_video_html(response) {
-        var image_show_var = `<video width="200" height="200" controls=""><source src="` + response.image_show_var +
+        var image_show_var = `<video width="200" height="200" controls=""><source src="` + response
+            .image_show_var +
             `" alt=""></video>`;
         var gallery_id = response.id;
 
