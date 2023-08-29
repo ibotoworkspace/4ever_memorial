@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body class="bg-primary cover" style="background-image: url({{ asset('images/admin_back.jpg') }})">
+<body class="bg-primary cover" style="background-image: url({{ asset('theme/images/admin_back.jpg') }})">
 
     <div class="cover" ></div>
     {{-- <div class="cover" style="background-image: url({{asset('images/download.png')}})"></div> --}}
