@@ -19,12 +19,12 @@
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            background: url(../../images/headerimage.jpg) no-repeat;
+            background: url(https://stagging.hatinco.com/4_ever_memories/public/images/headerimage.jpg) no-repeat;
             background-size: cover;
         }
 
         .header {
-            background: url(../../images/headerimage.jpg) no-repeat;
+            background: url(https://stagging.hatinco.com/4_ever_memories/public/images/headerimage.jpg) no-repeat;
             background-size: cover;
             color: #fff;
             padding: 20px;
@@ -80,7 +80,7 @@
                 {{ $details['deceased_data']['gender'] == 'male' ? 'he' : 'she' }} had on all of us.</p>
             <p>Please visit the memorial website using the link below:</p>
             <p style="text-align: center;">
-                <a href="https://stagging.hatinco.com/public/user/get_memorial/{{ $details['deceased_data']['email'] }}"
+                <a href="https://stagging.hatinco.com/4_ever_memories/public/user/get_memorial/{{ $details['deceased_data']['email'] }}"
                     class="memorial-link">Visit Memorial Website</a>
             </p>
             <p>{{ $details['deceased_data']['f_name'] }}'s memory lives on through the stories we share, and we hope you
