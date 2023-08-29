@@ -71,7 +71,8 @@
     </div>
     <div class="invitation">
       <p>Dear {{ $details['to'] }},</p>
-      
+      <p>We invite you to join us in celebrating the life and cherished memories of our beloved {{ $details['deceased_data']['f_name'] }}, who passed away
+        on {{ $details['deceased_data']['p_year'] }}.</p>
     </div>
   </div>
 </body>
