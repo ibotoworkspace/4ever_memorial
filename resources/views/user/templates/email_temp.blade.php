@@ -66,7 +66,7 @@
 
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header" style=" color: #fff; text-align: center;  border-top-left-radius: 10px; border-top-right-radius: 10px; ">
             <h1>In Loving Memory</h1>
         </div>
         <div class="invitation">
