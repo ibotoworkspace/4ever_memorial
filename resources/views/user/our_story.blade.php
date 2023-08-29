@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="bannerdata aboutheading">
-                            <h1>BLOG</h1>
+                            <h1>Our success story at forever memorial</h1>
                         </div>
                     </div>
                 </div>
@@ -29,46 +29,35 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <div class="blogareadata">
-                            <img src="{!! asset('theme/user_theme/images/image1.jpg')!!}" class="img-responsive">
+                    <div class="blogareadata">
+                            <img src="{!! asset('theme/user_theme/images/image3.jpg')!!}" class="img-responsive">
                             <div class="blogertext">
-                                <h5>Childsadas Loss, Coping With Grief</h5>
-                                <h2>Coping with the grief of child loss can be a difficult and heartbreaking process. </h2>
-                                <h3>One-way parents may cope is by connecting with other people who have experienced similar losses. It is important to find both professional and informal support networks, such as bereavement groups or online forums. Talking openly about the pain of losing a child can help to ...</h3>
-                                <a  href="{!! asset('user/blog/child_loss')!!}" class="btn btn-primary blogclick">Read More ></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="blogareadataa">
-                                    <img src="{!! asset('theme/user_theme/images/image2.jpg')!!}" class="img-responsive">
-                                    <div class="blogertext">
-                                        <h5>Phenomenon Of Death</h5>
-                                        <h2>Death is an inevitable phenomenon in the world. It is a universal truth that no one can escape from death. </h2>
-                                        <h3>Death has been part of human life since time immemorial and it is something that we all must eventually face. There are many different beliefs and theories surrounding death, with cultures around the world having their own unique views on its ....</h3>
-                                        <a  href="{!! asset('user/blog/death')!!}" class="btn btn-primary blogclick">Read More ></a>
+                                        <h5>Our success story at forever memorial
+</h5>
+                                        <h2>Forever Memorial is a success story that began with a simple dream </h2>
+                                        <h3>to create an online memorial service for those who have passed away. What we created was much more than just an online space dedicated to remembrance. We developed a comprehensive platform that connects families, friends, and those who are grieving in meaningful ways. 
+
+Our journey began when our founder noticed the lack of support available to people dealing with loss. He wanted to bridge the gap between technology and grief, so he set out to create Forever Memorial—an engaging digital platform that offers personalized tributes, guest books, and other features designed to honor lost loved ones. 
+
+Since then, Forever Memorial has grown exponentially due to its unique ability to provide comfort and healing through technology. We’ve connected countless family members, friends, and those who are grieving in meaningful ways, allowing them to share memories and experiences together. 
+
+From a small startup to an award-winning business, Forever Memorial has come a long way. We have developed innovative tools that make the mourning process more bearable for all involved. Through our efforts, we continue to bridge the gap between technology and grief—connecting people from all over the world in profound ways. 
+
+We are excited about what the future holds for Forever Memorial as we strive to bring comfort and healing through technology each and every day. Our mission is simple: to enable people around the world to remember their loved ones with dignity and respect. With this goal in mind, we will continue to create meaningful experiences and be at the forefront of innovation within the memorial services industry. 
+
+The success of Forever Memorial has been a truly remarkable journey. It is a testament to how technology can bring people together in times of loss. We are proud to have made an impact on so many lives and look forward to furthering our mission for years to come. To quote our founder, “Forever Memorial is more than just an online space dedicated to remembrance; it’s a sanctuary for those who need it most.”  And that is why we do what we do. For all those missing their loved ones—we are here with you every step of the way. 
+
+We invite you to join us on this journey and experience the power of Forever Memorial. Thank you for being part of our success story.  Together, we can create a better future - one that helps people remember their loved ones in meaningful ways. We are Forever Memorial. Let’s continue to make an impact together.
+</h3>
+                                        
                                     </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-sm-6">
-                                <div class="blogareadataa">
-                                    <img src="{!! asset('theme/user_theme/images/image3.jpg')!!}" class="img-responsive">
-                                    <div class="blogertext">
-                                        <h5>Phenomenon Of Death</h5>
-                                        <h2>Lorem Ipsum is simply dummy text</h2>
-                                        <h3>Lorem Ipsum is simply dummy
-                                            text of the printing and typesetting industry. Lorem Ipsum
-                                            has been the industry's standard dummy text ever since the</h3>
-                                        <button type="button" class="btn btn-primary blogclickk">Read More ></button>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
+                      
                        
                     </div>
                     <div class="col-sm-4">
                         <div class=sideblogdata>
-                            <!-- <input type="email" class="form-control" id="Search" placeholder="Search Here!"> -->
+                            <!-- <input type="email" class="form-control" id="Search" placeholder="Search Here!">
                             <div class="sideblog">
                                 <img src="{!! asset('theme/user_theme/images/jacob-about.png')!!}" class="img-responsive">
                                 <p>Our success story is attributed
@@ -78,8 +67,8 @@
                                     that your success in your
                                     career path is ultimately our
                                     success as an organization.</p>
-                                    <a  href="{!! asset('user/blog/our_story')!!}" class="btn btn-primary blogclick">Read More ></a>
-                            </div>
+                                <button type="button" class="btn btn-primary blogclick">Learn More ></button>
+                            </div> -->
                             <div class="catagedata">
                                 <h3>Categories</h3>
                                 <div class="catclicks">

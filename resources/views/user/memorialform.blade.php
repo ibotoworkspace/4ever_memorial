@@ -147,7 +147,10 @@
                                                     <option value="does_not_apply">Does not apply </option>
                                                     <option value="military">Military Veteran </option>
                                                     <option value="first_responder">First Responder </option>
-                                                    <option value="covid">COVID-19 Victim </option>
+                                                    <option value="covid">Bishop</option>
+                                                    <option value="covid">Reverent</option>
+                                                    <option value="covid">Imam</option>
+                                                    <option value="covid">Father</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -257,7 +260,7 @@
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="examplemail">
-                                                        <p>@forevermemorial.com</p>
+                                                        <p>@4evermemorial.com</p>
                                                     </div>
                                                 </div>
 

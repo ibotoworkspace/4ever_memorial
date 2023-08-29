@@ -341,8 +341,7 @@ h4 {
     border-radius: 0px;
     font-size: 16px;
     font-weight: 500;
-    /* height: 40px; */
-    width: 13%;
+    height: 40px;    
     padding: 7px;
 }
 

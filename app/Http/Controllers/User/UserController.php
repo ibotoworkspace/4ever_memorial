@@ -68,6 +68,19 @@ class UserController extends Controller
     {
         return view('user.blog');
     }
+    public function child_loss()
+    {
+        return view('user.child_loss');
+    }
+    public function death()
+    {
+        return view('user.death');
+    }
+    public function our_story()
+    {
+        return view('user.our_story');
+    }
+
 
     public function register(Request $request)
     {

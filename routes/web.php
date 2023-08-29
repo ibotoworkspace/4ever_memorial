@@ -141,3 +141,8 @@ Route::get('admin/stylings',[StylingsController::class, 'index']);
 
 Route::post('search/memorial',[User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
 Route::post('user/upload_gallery',[User_UserController::class, 'upload_gallery'])->name('user.upload_gallery_audio'); //search
+
+///blog
+Route::get('user/blog/child_loss',[User_UserController::class, 'child_loss'])->name('user.child_loss'); 
+Route::get('user/blog/death',[User_UserController::class, 'death'])->name('user.death'); 
+Route::get('user/blog/our_story',[User_UserController::class, 'our_story'])->name('user.our_story'); 

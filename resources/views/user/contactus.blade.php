@@ -35,7 +35,7 @@
                                 <img src="{!! asset('theme/user_theme/images/email.png')!!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
-                                <p>info@4evermemory.com</p>
+                                <p>info@4evermemorial.com</p>
                             </div>
                         </div>
                         <div class="infobox">
@@ -43,7 +43,7 @@
                                 <img src="{!! asset('theme/user_theme/images/phone.png')!!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
-                                <p>0123456789</p>
+                                <p>+1909 559 9031</p>
                             </div>
                         </div>
                         <div class="infobox">
@@ -51,7 +51,11 @@
                                 <img src="{!! asset('theme/user_theme/images/location.png')!!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
-                                <p>4Forevermemory.com 817 Lorem 5th Ipsum, Lorem, L.P. 10003</p>
+                                <p>4Ever Memorial
+416 N. H. Street Suite 5, 
+San Bernardino
+CA 92410
+</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +64,7 @@
                     <div class="contactform">
                         <h2>Get In Touch With Us</h2>
                         <form>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="exampleFormControlSelect1">Type of inquiry*</label>
                                 <select class="form-control" id="exampleFormControlSelect1">
                                     <option>Make a Selection...</option>
@@ -70,7 +74,7 @@
                                     <option>4</option>
                                     <option>5</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enter Name*</label>
                                 <input type="text" class="form-control" id="text" aria-describedby="text"
