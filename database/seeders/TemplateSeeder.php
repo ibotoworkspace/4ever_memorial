@@ -17,21 +17,21 @@ class TemplateSeeder extends Seeder
     public function run()
     {
         $template_name = 'template_1';
-        $template = WebsiteTemplate::where('name',$template_name)->first();
+        $template = WebsiteTemplate::where('name', $template_name)->first();
 
-        if(!$template){
+        if (!$template) {
             $template = new WebsiteTemplate();
         }
-        $image_path = asset('public').'/';
+        $image_path = asset('public') . '/';
         // $template->id = 1;
         $template->name = $template_name;
         $template->save();
         // if(){}
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
-        // $public_path = 'http://localhost/4_ever_memories/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        $public_path = 'http://localhost/4_ever_memories/public/';
         // dd($pub);
         $template->web_html =
-        '
+            '
         <html>
 
             <head>
@@ -230,13 +230,10 @@ class TemplateSeeder extends Seeder
                             </div>
                             <div class="col-md-8">
                                 <div class="links">
-                                    <a href="">Memorial Websites</a>
-                                    <a href="">Affiliate</a>
-                                    <a href="">Resources</a>
-                                    <a href="">Terms of Use</a>
-                                    <a href="">Privacy Policy</a>
-                                    <a href="">Site Map</a>
-                                    <a href="">Contact Us</a>
+                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/search/memorial">Memorial Websites</a>
+                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/user/service_term">Terms of Use</a>
+                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/user/privacy_policy">Privacy Policy</a>
+                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/user/contactus">Contact Us</a>
                                 </div>
 
                             </div>
@@ -256,7 +253,7 @@ class TemplateSeeder extends Seeder
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Invite Family and Friends</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal"></button>
         </div>
         
         <!-- Modal body -->
@@ -265,20 +262,11 @@ class TemplateSeeder extends Seeder
          <form action="">
             <div class="form-group">
               <label for="usr">Enter Email:</label>
-              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control" id="usr" name="username">
+              <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control share_inveite_emails" id="usr" name="invite_email">
             </div>
-            <div class="email_body">
-                In Loving Memory of [Name]
-                <br>
-                <br>
-    
-    Join us in celebrating the life of [Name] on our online memorial website. Share cherished memories, photos, and stories as we honor their beautiful legacy. Visit [URL] to pay tribute and keep [Name]\'s spirit alive.
-    
-    With love,
-    [Your Name]
-              </div>
+           
             
-            <button type="submit" class="btn btn-primary email_sub">Submit</button>
+            <button type="button" class="btn btn-primary email_sub sumit_email">Submit</button>
           </form>
           
         </div>
@@ -289,171 +277,200 @@ class TemplateSeeder extends Seeder
     </div>
   </div>
   <!-- The Modal -->
+  <div class="modal fade" id="success_Modal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+
+          <!-- Modal Header -->
+          
+
+          <!-- Modal body -->
+          <div class="modal-body">
+              <div class="icon_tick">
+                  <i class="fa fa-check" aria-hidden="true"></i>
+              </div>
+              <div class="inite_Succ_hed">
+                 Success
+              </div>
+              <div class="inite_Succ_txt">
+                 An Invitation Has Been Sent Successfully.
+              </div>
+              <div class="mdl_btn">
+                  <button class="btn btn-primary" data-dismiss="modal">OK</button>
+              </div>
+          </div>
+
+
+
+      </div>
+  </div>
+</div>
             </body>
 
 
 
             <script>
-                function openCity(evt, cityName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none";
-                    }
-                    tablinks = document.getElementsByClassName("tablinks");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
-
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
                 }
-                document.getElementById("defaultOpen").click();
-            </script>
-            <script>
-                function openpic(evt, cityName) {
-                    var i, tab_galcontent, tab_gallinks;
-                    tab_galcontent = document.getElementsByClassName("tab_galcontent");
-                    for (i = 0; i < tab_galcontent.length; i++) {
-                        tab_galcontent[i].style.display = "none";
-                    }
-                    tab_gallinks = document.getElementsByClassName("tab_gallinks");
-                    for (i = 0; i < tab_gallinks.length; i++) {
-                        tab_gallinks[i].className = tab_gallinks[i].className.replace(" active", "");
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                    evt.currentTarget.className += " active";
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].classList.remove("active"); // Remove "active" class from all tablinks
                 }
-                document.getElementById("defaultOpen").click();
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.classList.add("active"); // Add "active" class to the clicked tablink
+            }
+            document.getElementById("defaultOpen").click();
+        </script>
+        
+        <script>
+            function openpic(evt, cityName) {
+                var i, tab_galcontent, tab_gallinks;
+                tab_galcontent = document.getElementsByClassName("tab_galcontent");
+                for (i = 0; i < tab_galcontent.length; i++) {
+                    tab_galcontent[i].style.display = "none";
+                }
+                tab_gallinks = document.getElementsByClassName("tab_gallinks");
+                for (i = 0; i < tab_gallinks.length; i++) {
+                    tab_gallinks[i].classList.remove("active"); // Remove "active" class from all tab_gallinks
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.classList.add("active"); // Add "active" class to the clicked tab_gallink
+            }
+            document.getElementById("defaultOpen").click();
+        </script>
+        
 
-            </script>
             </html>
 
 
         ';
-      $template->save();
-      $template = WebsiteTemplate::where('name',$template_name)->first();
-    //     $web_variable = '
-    //     {
-    //         "owner_user_var": {
-    //             "id": "03",
-    //             "name_var": "Anthony",
-    //             "full_name_var": "Anthony Joseph Bouslaiby",
-    //             "birth_var": "2004",
-    //             "death_var": "2022",
-    //             "father_name_var": "Anthony Father",
-    //             "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
-    //         },
-    //         "total_views_var": 90,
-    //         "recent_updates_show_arr": [{
-    //                 "date_var": "February 2",
-    //                 "type_var": "tribute",
-    //                 "number_var": 1,
-    //                 "message_var": "added 1 tribute"
-    //             },
-    //             {
-    //                 "date_var": "February 3",
-    //                 "type_var": "photos",
-    //                 "number_var": 3,
-    //                 "message_var": "added 3 photos"
-    //             },
-    //             {
-    //                 "date_var": "February 4",
-    //                 "type_var": "tribute",
-    //                 "number_var": 2,
-    //                 "message_var": "added 2 tributes"
-    //             }
-    //         ],
-    //         "icon_list_var": {
-       
-    //             "flower_image_var": "' . $public_path . 'user_templates/template_1/images/imgs/flower.png",
-    //             "candel_image_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
-    //             "feather_image_var": "' . $public_path . 'user_templates/template_1/images/imgs/feather.png"
-    //         },
-    //         "memorial_user_var": {
-    //             "id": "03",
-    //             "name_var": "Anthony",
-    //             "full_name_var": "Anthony Joseph Bouslaiby",
-    //             "birth_var": "2004",
-    //             "death_var": "2022",
-    //             "father_name_var": "Anthony Father",
-    //             "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
-    //         },
-    //         "memorial_style_var": {
-    //             "style_script_var": "' . $public_path . 'user_templates/template_1/css/style.css"
-    //         },
-    //         "tributes_arr": [{
-    //                 "user_name_show_var": "Maria Nashed",
-    //                 "type_var": "flower",
-    //                 "date_show_var": "January 23",
-    //                 "details_show_var": "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.",
-    //                 "date_var": "23/01/1990",
-    //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/flower.png"
-    //             },
-    //             {
-    //                 "user_id": 1,
-    //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
-    //                 "user_name_show_var": "Norice Mazmanian",
-    //                 "type_var": "candle",
-    //                 "date_show_var": "January 22",
-    //                 "details_show_var": "I remember one day after my bone marrow transplant. I was staying at my daughters house while recovering. I think my daughter had to go out and all of a sudden Anthony came to my room and pulled up a chair. No doubt he was told to make sure I didnot get out of bed. Anyway we started talking and I asked him about school and what he was learning. I think it was some scientific thing that he started explaining to me.",
-    //                 "date_var": "23/01/1993"
-    //             },
-    //             {
-    //                 "user_id": 1,
-    //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
-    //                 "user_name_show_var": "Adriana Villarreal",
-    //                 "type_var": "candle",
-    //                 "date_show_var": "January 21",
-    //                 "details_show_var": "Anthony was such a kind person he never made me feel left out nor ever judged me.",
-    //                 "date_var": "21/01/1995"
-    //             },
-    //             {
-    //                 "user_id": 1,
-    //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
-    //                 "user_name_show_var": "Norice Mazmanian",
-    //                 "type_var": "candle",
-    //                 "date_show_var": "January 22",
-    //                 "details_show_var": "Anthony was always precocious and asked every question ever. I loved his need to know more and more and to question. He always made me laugh. My favorite memories are long conversations with him. He could talk. And was so interesting. He was sweet and generous to everyone. He loved being in charge of projects and got any job done always wanting to do more. I miss his voice and laugh and \" yo, Mrs Johnson! You vibing?\" Anthony you will remain in my heart forever.",
-    //                 "date_var": "21/01/1997"
-    //             }
-    //         ],
-    //         "life_tab_arr": [{
-    //             "user_id": 1,
-    //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/baby_cot.png",
-    //             "details_show_var": "Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..."
-    //         }],
-    //         "gallery_photo_arr": [{
-    //             "user_id": 1,
-    //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
-    //         }],
-    //         "gallery_audio_arr": [{
-    //             "user_id": 1,
-    //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
-    //         }],
-    //         "gallery_video_arr": [{
-    //             "user_id": 1,
-    //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
-    //         }],
-    //         "slider_arr": [{
-    //             "num_var": 137,
-    //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
-    //         }],
-    //         "story_tab_arr": [{
-    //             "user_id": 1,
-    //             "story_title_show_var": "Story Title",
-    //             "user_name_show_var": "Alexa Zelaya",
-    //             "date_show_var": "January 21",
-    //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/baby_cot.png",
-    //             "details_show_var": "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony."
-                
-    //         }]
-    //     }
-    //     ';
+        $template->save();
+        $template = WebsiteTemplate::where('name', $template_name)->first();
+        //     $web_variable = '
+        //     {
+        //         "owner_user_var": {
+        //             "id": "03",
+        //             "name_var": "Anthony",
+        //             "full_name_var": "Anthony Joseph Bouslaiby",
+        //             "birth_var": "2004",
+        //             "death_var": "2022",
+        //             "father_name_var": "Anthony Father",
+        //             "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
+        //         },
+        //         "total_views_var": 90,
+        //         "recent_updates_show_arr": [{
+        //                 "date_var": "February 2",
+        //                 "type_var": "tribute",
+        //                 "number_var": 1,
+        //                 "message_var": "added 1 tribute"
+        //             },
+        //             {
+        //                 "date_var": "February 3",
+        //                 "type_var": "photos",
+        //                 "number_var": 3,
+        //                 "message_var": "added 3 photos"
+        //             },
+        //             {
+        //                 "date_var": "February 4",
+        //                 "type_var": "tribute",
+        //                 "number_var": 2,
+        //                 "message_var": "added 2 tributes"
+        //             }
+        //         ],
+        //         "icon_list_var": {
+
+        //             "flower_image_var": "' . $public_path . 'user_templates/template_1/images/imgs/flower.png",
+        //             "candel_image_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
+        //             "feather_image_var": "' . $public_path . 'user_templates/template_1/images/imgs/feather.png"
+        //         },
+        //         "memorial_user_var": {
+        //             "id": "03",
+        //             "name_var": "Anthony",
+        //             "full_name_var": "Anthony Joseph Bouslaiby",
+        //             "birth_var": "2004",
+        //             "death_var": "2022",
+        //             "father_name_var": "Anthony Father",
+        //             "image_var": "' . $public_path . 'user_templates/template_1/images/profile_pic.jpg"
+        //         },
+        //         "memorial_style_var": {
+        //             "style_script_var": "' . $public_path . 'user_templates/template_1/css/style.css"
+        //         },
+        //         "tributes_arr": [{
+        //                 "user_name_show_var": "Maria Nashed",
+        //                 "type_var": "flower",
+        //                 "date_show_var": "January 23",
+        //                 "details_show_var": "Anthony was an amazingly sweet friend. After class he would always walk me to my car and then I would drive him to his. We would always have a good time laughing at the way we pronounced Arabic words due to difference in dialect even though he knew little-to-no Arabic at all lol. I also remember how whenever I would ask for help on homework, he would always insist on teaching me how to do the problems fully in order for me to better.",
+        //                 "date_var": "23/01/1990",
+        //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/flower.png"
+        //             },
+        //             {
+        //                 "user_id": 1,
+        //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
+        //                 "user_name_show_var": "Norice Mazmanian",
+        //                 "type_var": "candle",
+        //                 "date_show_var": "January 22",
+        //                 "details_show_var": "I remember one day after my bone marrow transplant. I was staying at my daughters house while recovering. I think my daughter had to go out and all of a sudden Anthony came to my room and pulled up a chair. No doubt he was told to make sure I didnot get out of bed. Anyway we started talking and I asked him about school and what he was learning. I think it was some scientific thing that he started explaining to me.",
+        //                 "date_var": "23/01/1993"
+        //             },
+        //             {
+        //                 "user_id": 1,
+        //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
+        //                 "user_name_show_var": "Adriana Villarreal",
+        //                 "type_var": "candle",
+        //                 "date_show_var": "January 21",
+        //                 "details_show_var": "Anthony was such a kind person he never made me feel left out nor ever judged me.",
+        //                 "date_var": "21/01/1995"
+        //             },
+        //             {
+        //                 "user_id": 1,
+        //                 "image_show_var": "' . $public_path . 'user_templates/template_1/images/imgs/candle.png",
+        //                 "user_name_show_var": "Norice Mazmanian",
+        //                 "type_var": "candle",
+        //                 "date_show_var": "January 22",
+        //                 "details_show_var": "Anthony was always precocious and asked every question ever. I loved his need to know more and more and to question. He always made me laugh. My favorite memories are long conversations with him. He could talk. And was so interesting. He was sweet and generous to everyone. He loved being in charge of projects and got any job done always wanting to do more. I miss his voice and laugh and \" yo, Mrs Johnson! You vibing?\" Anthony you will remain in my heart forever.",
+        //                 "date_var": "21/01/1997"
+        //             }
+        //         ],
+        //         "life_tab_arr": [{
+        //             "user_id": 1,
+        //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/baby_cot.png",
+        //             "details_show_var": "Anthony was born in September 1, 2004 via scheduled C-section at San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..."
+        //         }],
+        //         "gallery_photo_arr": [{
+        //             "user_id": 1,
+        //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
+        //         }],
+        //         "gallery_audio_arr": [{
+        //             "user_id": 1,
+        //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
+        //         }],
+        //         "gallery_video_arr": [{
+        //             "user_id": 1,
+        //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
+        //         }],
+        //         "slider_arr": [{
+        //             "num_var": 137,
+        //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/download.jpg"
+        //         }],
+        //         "story_tab_arr": [{
+        //             "user_id": 1,
+        //             "story_title_show_var": "Story Title",
+        //             "user_name_show_var": "Alexa Zelaya",
+        //             "date_show_var": "January 21",
+        //             "image_show_var": "' . $public_path . 'user_templates/template_1/images/baby_cot.png",
+        //             "details_show_var": "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony."
+
+        //         }]
+        //     }
+        //     ';
         // $template->web_variable = $web_variable;
         $template->web_variable = '';
         $template->save();
-        $template = WebsiteTemplate::where('name',$template_name)->first();
+        $template = WebsiteTemplate::where('name', $template_name)->first();
 
         // $variable_html = '
         // {

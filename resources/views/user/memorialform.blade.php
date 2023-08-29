@@ -85,6 +85,7 @@
                                                     {{-- name="prof_img" --}}
                                                     <input type="file"
                                                         class="form-control prof_box crop_upload_image"
+                                                        accept="image/*"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
                                                         aspect_ratio_height="9" upload_input_by_name="prof_img"  required>
 
@@ -163,7 +164,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Image<i class="fa fa-asterisk staring" aria-hidden="true"></i> (Attach A Picture Regarding The
                                                     Life/Birth Of This Person)</label>
-                                                    <input type="file"
+                                                    <input type="file" accept="image/*"
                                                         class="form-control prof_box crop_upload_image"
                                                         image_width="378" image_height="226" aspect_ratio_width="16"
                                                         aspect_ratio_height="9" upload_input_by_name="life_image"  required>
@@ -412,7 +413,7 @@
                                             <h2>Privacy options:</h2>
                                             <p>Would you like to share your memorial with others, or keep it private?
                                             </p>
-                                            <span class="braketdata">(This can be changed later.)</span><br>
+                                            {{-- <span class="braketdata">(This can be changed later.)</span><br> --}}
                                             <div class="form-group form-check memoreadio">
                                                 <input name="all_visitors" value="1" type="checkbox"
                                                     class="form-check-input only_one_check" id="exampleCheck1"
@@ -440,8 +441,8 @@
                                                 <input name="agreement" value="1" type="checkbox"
                                                     class="form-check-input" id="exampleChaeck1"
                                                     onchange="activateButton(this)">
-                                                <label class="form-check-label" for="">I agree to <span
-                                                        class="linktext">Terms of Use</span></label>
+                                                <label class="form-check-label" for="">I agree to <a href="{!! asset('/user/service_term') !!}"><span
+                                                        class="linktext">Terms of Use</span></a></label>
                                             </div>
                                             <?php
                                             

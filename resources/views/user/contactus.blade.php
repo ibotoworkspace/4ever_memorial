@@ -36,6 +36,7 @@
                             </div>
                             <div class="infoboxtext">
                                 <p>info@4evermemorial.com</p>
+
                             </div>
                         </div>
                         <div class="infobox">
@@ -44,6 +45,7 @@
                             </div>
                             <div class="infoboxtext">
                                 <p>+1909 559 9031</p>
+
                             </div>
                         </div>
                         <div class="infobox">
@@ -56,6 +58,7 @@
 San Bernardino
 CA 92410
 </p>
+
                             </div>
                         </div>
                     </div>
