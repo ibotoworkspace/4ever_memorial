@@ -26,15 +26,17 @@
         .header {
             background: url(https://stagging.hatinco.com/4_ever_memories/public/images/headerimage.jpg) no-repeat;
             background-size: cover;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            color: #fff !important;
+            padding: 20px !important;
+            text-align: center !important;
+            border-top-left-radius: 10px !important;
+            border-top-right-radius: 10px !important;
         }
 
         .header h1 {
             margin: 0;
+            color: #fff !important;
+
         }
 
         .invitation {
