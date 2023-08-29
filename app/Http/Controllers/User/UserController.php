@@ -414,8 +414,7 @@ class UserController extends Controller
             'to' => $request->to_emails,
         
             'user_id' => $request->memorial_id,
-            'from' => 'ameer.maavia@gmail.com',
-            // 'from' => 'info@4_ever_memories.com',
+            'from' => 'info@4evermemorial.com',
             'title' => '4Ever',
             'subject' => 'INVITATION ',
             "dated"  => date('d F, Y (l)'),

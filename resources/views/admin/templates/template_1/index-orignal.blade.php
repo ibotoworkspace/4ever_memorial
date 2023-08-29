@@ -44,7 +44,7 @@
                         <div class="nav_bar">
                             {{-- <a href="">SIGN IN</a> --}}
                             <a href="{!! asset('user/memorialform') !!}">CREATE A NEW WEBSITE</a>
-                            <a href="{!! asset('user/aboutus') !!}">ABOUT US<i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <a href="{!! asset('user/aboutus') !!}">ABOUT US
 </a>
                             <a href="{!! asset('user/contactus') !!}">CONTACT SUPPORT</a>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="tab_area">
                             <div class="tab">
                                 <button class="tablinks" onclick="openCity(event, 'About')" id="defaultOpen">
-                                    ABOUT <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    ABOUT 
 
                                 </button>
                                 <button class="tablinks" onclick="openCity(event, 'Life')">

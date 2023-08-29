@@ -57,7 +57,7 @@ Regardless of individual beliefs, death is one of life's certainties that no one
                     </div>
                     <div class="col-sm-4">
                         <div class=sideblogdata>
-                            <input type="email" class="form-control" id="Search" placeholder="Search Here!">
+                            <!-- <input type="email" class="form-control" id="Search" placeholder="Search Here!"> -->
                             <div class="sideblog">
                                 <img src="{!! asset('theme/user_theme/images/jacob-about.png')!!}" class="img-responsive">
                                 <p>Our success story is attributed
