@@ -71,17 +71,7 @@
     </div>
     <div class="invitation">
       <p>Dear {{ $details['to'] }},</p>
-      <p>We invite you to join us in celebrating the life and cherished memories of our beloved {{ $details['deceased_data']['f_name'] }}, who passed away
-        on {{ $details['deceased_data']['p_year'] }}.</p>
-      <p>We have created a memorial website where friends and family can come together to share stories, photos, and
-        memories. It is a space to honor {{ $details['deceased_data']['f_name'] }}'s life and the impact {{ $details['deceased_data']['gender'] == 'male' ? 'he' : 'she' }} had on all of us.</p>
-      <p>Please visit the memorial website using the link below:</p>
-      <p style="text-align: center;">
-        <a href="https://stagging.hatinco.com/public/user/get_memorial/{{ $details['deceased_data']['email'] }}" class="memorial-link">Visit Memorial Website</a>
-      </p>
-      <p>{{ $details['deceased_data']['f_name'] }}'s memory lives on through the stories we share, and we hope you can contribute to this tribute.</p>
-      <p style="text-align: center;">With warmest regards,</p>
-      <p style="text-align: center;">{{ $details['deceased_data']['relation'] }}</p>
+      
     </div>
   </div>
 </body>
