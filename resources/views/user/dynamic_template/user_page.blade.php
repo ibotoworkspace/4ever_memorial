@@ -61,7 +61,7 @@
                     console.log(response);
                     if (response.status) {
                         console.log('email sent');
-                        // $('#success_Modal').modal('show');
+                        $('#success_Modal').modal('show');
                     }
                 }
             });
@@ -90,7 +90,7 @@
                 .href);
             var images = '';
             if (!gallery_images.length) {
-                images = images + image_crousal('{!! asset('images/logo.png') !!}', 0);
+                images = images + image_crousal('{!! asset('theme/images/logo_change.jpg') !!}', 0);
             }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);

@@ -391,30 +391,23 @@ class UserController extends Controller
 
 
     public function send_invite(Request $request){
-        // return $request;
-        // $user = Auth::user();
-        // $mail_data = UserWebsite::where('id', ' $user')->get();
+       
         $mail_data = UserWebsite::find($request->memorial_id);
-        // $invite_emails = $mail_data->email;
         $invite_emails = $request->to_emails;
 
 
-       
-      
-        // return $this->sendResponse(200, $tribute);// dd($request->all());
-// dd($mail_data);
+ 
         $details = [
             'to' => $request->to_emails,
-            // 'to' => 'ameer.maavia@gmail.com',
+        
             'user_id' => $request->memorial_id,
-            // 'user_id' => '3',
             'from' => 'ameer.maavia@gmail.com',
+            // 'from' => 'info@4_ever_memories.com',
             'title' => '4Ever',
             'subject' => 'INVITATION ',
             "dated"  => date('d F, Y (l)'),
             'deceased_data' => $mail_data
         ];
-        // return $details;
         Mail::to($request->to_emails)->send(new InviteEmail($details));
     }
 }

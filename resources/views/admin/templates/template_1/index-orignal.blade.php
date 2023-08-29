@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 </head>
 
 <body>
@@ -43,7 +44,8 @@
                         <div class="nav_bar">
                             {{-- <a href="">SIGN IN</a> --}}
                             <a href="{!! asset('user/memorialform') !!}">CREATE A NEW WEBSITE</a>
-                            <a href="{!! asset('user/aboutus') !!}">ABOUT US</a>
+                            <a href="{!! asset('user/aboutus') !!}">ABOUT US<i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
                             <a href="{!! asset('user/contactus') !!}">CONTACT SUPPORT</a>
                         </div>
                     </div>
@@ -75,7 +77,8 @@
                         <div class="tab_area">
                             <div class="tab">
                                 <button class="tablinks" onclick="openCity(event, 'About')" id="defaultOpen">
-                                    ABOUT
+                                    ABOUT <i class="fa fa-caret-down" aria-hidden="true"></i>
+
                                 </button>
                                 <button class="tablinks" onclick="openCity(event, 'Life')">
                                     LIFE
