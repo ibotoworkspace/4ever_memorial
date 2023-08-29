@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> Medical Panel LogIn</title>
+    <title> 4-Ever Admin Panel LogIn</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body class="bg-primary" style="background-image: url({{ asset('images/headerimage.jpg') }})">
+<body class="bg-primary cover" style="background-image: url({{ asset('images/admin_back.jpg') }})">
 
     <div class="cover" ></div>
     {{-- <div class="cover" style="background-image: url({{asset('images/download.png')}})"></div> --}}
@@ -29,7 +29,7 @@
     <div class="container box">
         <h3 align="center" style="color: white;
     font-size: 23px;
-    font-weight: 700;">Medical Panel LogIn</h3>
+    font-weight: 700;"> 4-Ever Admin Panel LogIn</h3>
         <br />
 
 
