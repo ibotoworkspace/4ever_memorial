@@ -40,7 +40,7 @@
                     <h3>MEMORIAL PACKAGES</h3>
                     <div class="col-sm-12">
                         <div class="plandata">
-                            <h4>STANDARD (15 MEMORIAL PACKAGE)</h4>
+                            <h4>STANDARD (15 MEMORIAL PAGES)</h4>
                             <p>Highly Secure With Password Login Access <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <p>Decease Bio <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <p>Flower Donation Page <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
