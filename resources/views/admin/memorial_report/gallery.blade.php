@@ -69,7 +69,15 @@ Gallery
 
                         for (var i = 0; i < len; i++) {
                             var id = response['data'][i].id;
-                            var image = `<img src="` +response['data'][i].image_show_var+ `" width="24%">`;
+                            // var image = `<img src="` +response['data'][i].image_show_var+ `" width="24%">`;
+                            var image = '';
+                            if(response['data'][i].type == 'photo'){
+                                image = '<i class="fa fa-picture-o" aria-hidden="true" class="admin_icon"></i>';
+                             }else if(response['data'][i].type == 'video'){
+                                image = '<i class="fa fa-video-camera" aria-hidden="true" class="admin_icon"></i>';
+                             }else {
+                                image = '<i class="fa fa-headphones" aria-hidden="true" class="admin_icon"></i>';
+                             };
                             var type = response['data'][i].type;
                             var view =
                             // `<a class="btn btn-info" href="{!! asset('admin/books/edit/` + id + `') !!}">Gallery</a>`;

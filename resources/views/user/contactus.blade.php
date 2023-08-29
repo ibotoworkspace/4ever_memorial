@@ -35,7 +35,7 @@
                                 <img src="{!! asset('theme/user_theme/images/email.png')!!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
-                                <p>info@4evermemory.com</p>
+                                <p>contactus@ibotoempire.com</p>
                             </div>
                         </div>
                         <div class="infobox">
@@ -43,7 +43,7 @@
                                 <img src="{!! asset('theme/user_theme/images/phone.png')!!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
-                                <p>0123456789</p>
+                                <p>+1(909) 559-9031</p>
                             </div>
                         </div>
                         <div class="infobox">
@@ -51,7 +51,8 @@
                                 <img src="{!! asset('theme/user_theme/images/location.png')!!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
-                                <p>4Forevermemory.com 817 Lorem 5th Ipsum, Lorem, L.P. 10003</p>
+                                <p>6101 Cherry Avenue Suite 102A Fontana,
+                                    CA 92336 USA</p>
                             </div>
                         </div>
                     </div>

@@ -58,7 +58,7 @@
                             <p>Virtual Anniversary Organize By 4Ever (Extra Cost) <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <p>Tribute Notes And Letters By Friends <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <div class="inerpkgclick">
-                                <button type="submit" class="btn btn-primary banclick">Buy Now</button>
+                                <button type="submit" {!!$signin_buy!!} class="btn btn-primary banclick">Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             <p>A. Wife Page Link To Husband Or Husband Page Link Wife <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <p>B. Husband Or Wife Memorials Merge Together <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <div class="inerpkgclick">
-                                <button type="submit" class="btn btn-primary banclick">Buy Now</button>
+                                <button type="submit" {!!$signin_buy!!} class="btn btn-primary banclick">Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                             <p>And All in Premium Plus <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <p>Search By Name For A Brief Information <span class="sidetick"><i class="fa fa-check" aria-hidden="true"></i></span></p>
                             <div class="inerpkgclick">
-                                <button type="submit" class="btn btn-primary banclick">Buy Now</button>
+                                <button type="submit" {!!$signin_buy!!} class="btn btn-primary banclick">Buy Now</button>
                             </div>
                         </div>
                     </div>
