@@ -61,6 +61,7 @@
                     console.log(response);
                     if (response.status) {
                         console.log('email sent');
+                        $('#success_Modal').modal('show');
                     }
                 }
             });

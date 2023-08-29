@@ -414,7 +414,7 @@ class UserController extends Controller
             "dated"  => date('d F, Y (l)'),
             'deceased_data' => $mail_data
         ];
-        return $details;
+        // return $details;
         Mail::to($request->to_emails)->send(new InviteEmail($details));
     }
 }
