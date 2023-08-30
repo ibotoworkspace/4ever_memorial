@@ -642,9 +642,9 @@
                                 Mailing Address:
                             </h5>
                             IBOTO EMPIRE
-                            416 N.H. Street Suites 5 San, Bernardino CA 92410 USA.
-                            San, Bernardino, California
-                            92410
+                            6101 Cherry Avenue Suite 102A
+                             Fontana,
+                            CA 92336 USA
                             </p>
                             <p>
                                 The data controller responsible for your personal information for the purposes of GDPR
@@ -656,15 +656,14 @@
 
                             </p>
                             <p>
-                                ibotoempire@gmail.com
-
+                                info@4evermemorials.com
                             </p>
                             <p>
                                 9095599031
                             </p>
                             <p>
-                                416 N.H. Street Suites 5 San, Bernardino CA 92410 USA.
-                            </p>
+                                6101 Cherry Avenue Suite 102A Fontana,
+                                CA 92336 USA                            </p>
 
 
 

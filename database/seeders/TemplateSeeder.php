@@ -76,7 +76,7 @@ class TemplateSeeder extends Seeder
                                 </div>
                                 <div class="col-md-9">
                                     <div class="nav_bar">
-                                    <a href="' . $public_path . 'user/memorialform">CREATE A NEW WEBSITE</a>
+                                    <a href="' . $public_path . 'user/memorialform">CREATE A NEW MEMORIAL</a>
                                     <a href="' . $public_path . 'user/aboutus">ABOUT US</a>
                                     <a href="' . $public_path . 'user/contactus">CONTACT SUPPORT</a>
                                     </div>

@@ -2,17 +2,17 @@
 
 @section('title')
     <title>4Year Project Contact-US</title>
-    @endsection
-    
+@endsection
+
 
 @section('headerfiles')
-    <link href="{!! asset('theme/user_theme/css/contactus.css')!!}" rel="stylesheet">
-    @endsection
+    <link href="{!! asset('theme/user_theme/css/contactus.css') !!}" rel="stylesheet">
+@endsection
 
-    @section('body')
+@section('body')
     <section>
         <div class="contacttopbanner">
-          @include('user_layout.components.banner_menu')
+            @include('user_layout.components.banner_menu')
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -32,7 +32,7 @@
                     <div class="contactdata conuniq">
                         <div class="infobox">
                             <div class="infoboximg">
-                                <img src="{!! asset('theme/user_theme/images/email.png')!!}" class="img-responsive">
+                                <img src="{!! asset('theme/user_theme/images/email.png') !!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
                                 <p>info@4evermemorial.com</p>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="infobox">
                             <div class="infoboximg">
-                                <img src="{!! asset('theme/user_theme/images/phone.png')!!}" class="img-responsive">
+                                <img src="{!! asset('theme/user_theme/images/phone.png') !!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
                                 <p>+1909 559 9031</p>
@@ -50,14 +50,13 @@
                         </div>
                         <div class="infobox">
                             <div class="infoboximg loca">
-                                <img src="{!! asset('theme/user_theme/images/location.png')!!}" class="img-responsive">
+                                <img src="{!! asset('theme/user_theme/images/location.png') !!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
                                 <p>4Ever Memorial
-416 N. H. Street Suite 5, 
-San Bernardino
-CA 92410
-</p>
+                                    6101 Cherry Avenue Suite 102A Fontana,
+                                    CA 92336 USA
+                                </p>
 
                             </div>
                         </div>
@@ -68,16 +67,16 @@ CA 92410
                         <h2>Get In Touch With Us</h2>
                         <form>
                             <!-- <div class="form-group">
-                                <label for="exampleFormControlSelect1">Type of inquiry*</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Make a Selection...</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div> -->
+                                    <label for="exampleFormControlSelect1">Type of inquiry*</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Make a Selection...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div> -->
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enter Name*</label>
                                 <input type="text" class="form-control" id="text" aria-describedby="text"
@@ -109,10 +108,4 @@ CA 92410
             </div>
         </div>
     </section>
-    @endsection
-
-
-
- 
-
-
+@endsection
