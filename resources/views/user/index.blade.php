@@ -34,14 +34,14 @@
             <div class="aboutdata">
               <h2>ABOUT US</h2>
               <p>We do not want to scare the custoners with graveyard,
-                We want to shoe how the can share postive Memory
+                We want to show how they can share postive Memory
                 with families and friends.</p>
-              <p>Went want to create a story that parents can
+              <p>We want to create a story that parents can
                 Tell-Grand children about Grandparent ancestorial.</p>
               <p>We are online (Virtual Site that will tell their past to the
                 present, and the future.)</p>
               <p>We Provide an interacting platform with pictures,
-                videos, audio, music, poems and all that will maketheir
+                videos, audio, music, poems and all that will make their
                 visit to the ancestorial site a good experience.</p>
               <p>A Place where parents will send their children to go and
                 research the Grand Parent.</p>
@@ -131,7 +131,7 @@
                   </div>
                 </div>
               </div>
-              <a type="submit" href="{!! asset('/user/plans')!!}" class="btn btn-primary pkgclick">View All Packages</a>
+              <a  href="{!! asset('/user/plans')!!}" class="btn btn-primary pkgclick">View All Packages</a>
             </div>
           </div>
           <div class="col-sm-4 packageSpace">
@@ -150,7 +150,8 @@
                 </ul>
               </div>
               <div class="btnPackage">
-                <button type="submit" class="btn btn-primary pkgbarclick">Buy Now</button>
+                <!-- <button type="submit" class="btn btn-primary pkgbarclick">Buy Now</button> -->
+                <a href="{!! asset('/user/plans')!!}" class="btn btn-primary pkgbarclick">Buy Now</a>
               </div>
             </div>
           </div>

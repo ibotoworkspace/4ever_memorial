@@ -110,9 +110,9 @@
                                 <li id="5">
                                   <a href="{!!asset('user/testimonials')!!}"><span>TESTIMONIALS</span> </a>
                                 </li>
-                                {{-- <li id="6">
+                                 <li id="6">
                                   <a href="{!!asset('user/blog')!!}"><span>BLOG</span> </a>
-                                </li> --}}
+                                </li> 
                                 <li id="7">
                                   <a href="{!!asset('user/contactus')!!}"><span>CONTACT</span> </a>
                                 </li>

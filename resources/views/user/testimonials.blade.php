@@ -32,31 +32,27 @@
                     <div class="col-sm-6">
                         <div class="testdataa">
                             <img src="{!! asset('images/quote.png') !!}" class="img-responsive">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt ut laoreet dolore magna aliquam
-                                erat volutpat. Ut wisi enim ad minim veniam,
-                                quis nostrud exerci tation ullamcorper suscipit
-                                lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-                                hendrerit in vulputate velit esse molestie conse</p>
-                            <div class="namearea">
+                            <p>At Forever Memorials, we are dedicated to providing the highest level of service and care for our customers. We understand that this can be a difficult time, which is why we strive to create memorialization products that honor and remember your loved ones in a thoughtful and meaningful way. 
+
+We take great pride in helping families find joy in their memories during such trying times. Our customers have found comfort in the beautiful memorial plaques, monuments, cenotaphs, ornaments, and other products we offer as an expression of love for their loved ones. We've heard countless stories about how our products have helped family members get through tough times and celebrate the life of their loved ones with dignity and respect. 
+</p>
+                            <!-- <div class="namearea">
                                 <h3>L</h3>
                                 <p>Lorem ipsum</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="testdataa">
                             <img src="{!! asset('images/quote.png') !!}" class="img-responsive">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt ut laoreet dolore magna aliquam
-                                erat volutpat. Ut wisi enim ad minim veniam,
-                                quis nostrud exerci tation ullamcorper suscipit
-                                lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-                                hendrerit in vulputate velit esse molestie conse</p>
-                            <div class="namearea">
+                            <p>Our goal is to help you create a lasting memorial that honors your loved one and provides comfort for their family and friends for years to come. We hope that the many positive testimonials from our customers will provide an indication of the care we take in the products we create, as well as the exceptional level of customer service you can expect at Forever Memorials. </br></br>
+
+If you are looking for a way to remember your loved one with respect and dignity, please contact us today to learn more about how Forever Memorials can help. We look forward to providing you with a thoughtful memorialization product that reflects the life of your loved one in a meaningful way.</br>   </br>
+</p>
+                            <!-- <div class="namearea">
                                 <h3>L</h3>
                                 <p>Lorem ipsum</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

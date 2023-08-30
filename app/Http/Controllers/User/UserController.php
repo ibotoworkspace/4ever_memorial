@@ -74,6 +74,19 @@ class UserController extends Controller
     {
         return view('user.blog');
     }
+    public function child_loss()
+    {
+        return view('user.child_loss');
+    }
+    public function death()
+    {
+        return view('user.death');
+    }
+    public function our_story()
+    {
+        return view('user.our_story');
+    }
+
 
     public function register(Request $request)
     {
@@ -401,8 +414,7 @@ class UserController extends Controller
             'to' => $request->to_emails,
         
             'user_id' => $request->memorial_id,
-            'from' => 'ameer.maavia@gmail.com',
-            // 'from' => 'info@4_ever_memories.com',
+            'from' => 'info@4evermemorial.com',
             'title' => '4Ever',
             'subject' => 'INVITATION ',
             "dated"  => date('d F, Y (l)'),

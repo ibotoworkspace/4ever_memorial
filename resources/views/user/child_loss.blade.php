@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="bannerdata aboutheading">
-                            <h1>BLOG</h1>
+                            <h1>Child Loss, Coping With Grief</h1>
                         </div>
                     </div>
                 </div>
@@ -29,41 +29,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <div class="blogareadata">
+                    <div class="blogareadata">
                             <img src="{!! asset('theme/user_theme/images/image1.jpg')!!}" class="img-responsive">
                             <div class="blogertext">
-                                <h5>Childsadas Loss, Coping With Grief</h5>
+                                <h5>Child Loss, Coping With Grief</h5>
                                 <h2>Coping with the grief of child loss can be a difficult and heartbreaking process. </h2>
-                                <h3>One-way parents may cope is by connecting with other people who have experienced similar losses. It is important to find both professional and informal support networks, such as bereavement groups or online forums. Talking openly about the pain of losing a child can help to ...</h3>
-                                <a  href="{!! asset('user/blog/child_loss')!!}" class="btn btn-primary blogclick">Read More ></a>
+                                <h3>One-way parents may cope is by connecting with other people who have experienced similar losses. It is important to find both professional and informal support networks, such as bereavement groups or online forums. Talking openly about the pain of losing a child can help to reduce feelings of isolation and loneliness. 
+
+It also helps to take care of one's physical health in times of grief, such as following a balanced diet, getting regular exercise, getting enough sleep, and avoiding alcohol or drugs. Taking time out for oneself can provide moments of respite from the sadness and despair that come with grieving the loss of a child. Activities like yoga, meditation, reading, listening to music, spending time with friends, or even just taking a long walk can all help to bring some peace and comfort.
+
+Finally, it is important to remember that there is no "right" way to grieve—everyone experiences grief differently and will find their own ways of coping. It is okay to cry, laugh, and feel a range of emotions. Taking each day at a time and finding new moments of joy can be helpful for those on the journey of grieving. There is no timeline for processing grief; it may take months or years before one can find acceptance and healing from this difficult experience. 
+</h3>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="blogareadataa">
-                                    <img src="{!! asset('theme/user_theme/images/image2.jpg')!!}" class="img-responsive">
-                                    <div class="blogertext">
-                                        <h5>Phenomenon Of Death</h5>
-                                        <h2>Death is an inevitable phenomenon in the world. It is a universal truth that no one can escape from death. </h2>
-                                        <h3>Death has been part of human life since time immemorial and it is something that we all must eventually face. There are many different beliefs and theories surrounding death, with cultures around the world having their own unique views on its ....</h3>
-                                        <a  href="{!! asset('user/blog/death')!!}" class="btn btn-primary blogclick">Read More ></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-sm-6">
-                                <div class="blogareadataa">
-                                    <img src="{!! asset('theme/user_theme/images/image3.jpg')!!}" class="img-responsive">
-                                    <div class="blogertext">
-                                        <h5>Phenomenon Of Death</h5>
-                                        <h2>Lorem Ipsum is simply dummy text</h2>
-                                        <h3>Lorem Ipsum is simply dummy
-                                            text of the printing and typesetting industry. Lorem Ipsum
-                                            has been the industry's standard dummy text ever since the</h3>
-                                        <button type="button" class="btn btn-primary blogclickk">Read More ></button>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
+                      
                        
                     </div>
                     <div class="col-sm-4">
