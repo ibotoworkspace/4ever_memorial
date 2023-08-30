@@ -421,5 +421,6 @@ class UserController extends Controller
             'deceased_data' => $mail_data
         ];
         Mail::to($request->to_emails)->send(new InviteEmail($details));
+        return $this->sendResponse(200);
     }
 }
