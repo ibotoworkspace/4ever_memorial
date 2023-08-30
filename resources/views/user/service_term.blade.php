@@ -38,7 +38,11 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="">
-                            <h3>Last Updated: 06/17/2023.</h3>
+                            <h3>Last Updated: <?php
+                                $hourdiff = 0; // Replace the 0 with your timezone difference (;
+                                $site = date(" d /F /Y ");
+                                echo $site;
+                                ?></h3>
                             <p class="head_type">
                                 PLEASE READ THE FOLLOWING TERMS OF SERVICE AGREEMENT
                                 CAREFULLY. BY ACCESSING OR USING OUR WEBSITE (THE "SITE")
@@ -54,7 +58,8 @@
                             <p>
                                 The present terms and conditions (this "Agreement" or "Terms") is a legal agreement between
                                 you and Iboto Empire (hereinafter " Ibotoempire"), a company duly organized and validly
-                                existing, located at 416 N.H. Street Suites 5, San, Bernardino, California 92410. This
+                                existing, located at 6101 Cherry Avenue Suite 102A Fontana,
+                                CA 92336 USA. This
                                 Agreement
                                 annuls and voids all previous agreements.
 
@@ -796,9 +801,10 @@
                             <p>
                                 Attn: Copyright Agent </p>
                             <p>
-                                416 N.H. Street Suites 5 </p>
+                                6101 Cherry Avenue Suite 102A Fontana,</p>
+                               
                             <p>
-                                San, Bernardino, California 92410 </p>
+                                CA 92336 USA </p>
                             <p>
                                 Telephone: 9093819095 </p>
                             <p>
@@ -879,15 +885,16 @@
                             <p>
                                 Mailing Address:</p>
                             <p>
-                                Iboto Empire</p>
+                                4 ever memorial</p>
                             <p>
-                                416 N.H. Street Suites 5</p>
+                                6101 Cherry Avenue Suite 102A Fontana,</p>
+                               
                             <p>
-                                San, Bernardino, California 92410</p>
+                                CA 92336 USA</p>
                             <p>
                                 Telephone: 9093819095</p>
                             <p>
-                                Email: ibotoempire@gmail.com
+                                Email: info@4evermemorials.com
                             </p>
                             <p class="head_type">
                                 SECTION 23 - GOVERNMENT REQUESTS

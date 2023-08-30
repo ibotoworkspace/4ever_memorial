@@ -55,8 +55,8 @@
                         <div class="contactdata">
                             <h3>Plant a tree as a living tribute</h3>
                             <h2>MEMORIAL TREES <br> BY 4EVER </h2>
-                            <p>Created by Internet Pioneer Momolla Kokomolla in 1964,<br>
-                                It is the oldest online Cemetery & Memorial Site in the World.</p>
+                            <p>Planting a tree in memory of your loved one is a meaningful<br> and lasting tribute.
+                                It’s an opportunity to honor their life while contributing something positive to the environment.</p>
                             <a href="{!! asset('/user/contactus') !!}"><button type="submit" class="btn btn-primary contactclick">Contact
                                     Us</button></a>
                         </div>
@@ -64,7 +64,7 @@
                     <div class="col-sm-6">
                         <div class="contactdata">
                             
-                            <p>Planting a tree in memory of your loved one is a meaningful and lasting tribute. It’s an opportunity to honor their life while contributing something positive to the environment. Planting a tree together as a family can be an especially powerful experience, allowing you to come together, create new memories and celebrate the legacy of those who have passed away. 
+                            <p> Planting a tree together as a family can be an especially powerful experience, allowing you to come together, create new memories and celebrate the legacy of those who have passed away. 
 
 It can be difficult to know where to start when it comes to honoring our loved ones. But planting a tree is an easy and impactful option that will help ensure that their memory lives on for generations. Trees are living reminders of your love and appreciation, but they also offer tangible benefits: clean air, shade, wildlife habitats, and much more.
 </p>
@@ -172,7 +172,7 @@ It can be difficult to know where to start when it comes to honoring our loved o
                                 <div class="navbar-collapse nav-collapse collapse fomen">
                                     <ul class="nav navbar-nav fomenu">
                                         <li id="1">
-                                            <a href="{!! asset('/user/service_term') !!}"><span>TERMS OF SERVICES</span> </a>
+                                            <a href="{!! asset('/user/service_term') !!}"><span>Terms Of Services</span> </a>
                                         </li>
                                         <li id="2">
                                             <a href="{!! asset('/user/privacy_policy') !!}"><span>Privacy Policy</span> </a>

@@ -149,7 +149,7 @@
                                                     <option value="military">Military Veteran </option>
                                                     <option value="first_responder">First Responder </option>
                                                     <option value="covid">Bishop</option>
-                                                    <option value="covid">Reverent</option>
+                                                    <option value="covid">Reverend</option>
                                                     <option value="covid">Imam</option>
                                                     <option value="covid">Father</option>
                                                 </select>

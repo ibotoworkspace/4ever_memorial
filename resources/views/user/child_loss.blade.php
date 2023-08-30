@@ -62,18 +62,15 @@ Finally, it is important to remember that there is no "right" way to grieve—ev
                             <div class="catagedata">
                                 <h3>Categories</h3>
                                 <div class="catclicks">
-                                    <button type="button" class="btn btn-primary catclick">Child Loss</button>
-                                    <button type="button" class="btn btn-primary catclick">Coping With Grief</button>
-                                    <button type="button" class="btn btn-primary catclick">End-of-life</button>
-                                    <button type="button" class="btn btn-primary catclick">Funeral Planning</button>
-                                    <button type="button" class="btn btn-primary catclick">Grief Counseling</button>
-                                    <button type="button" class="btn btn-primary catclick">Grief Experience</button>
-                                    <button type="button" class="btn btn-primary catclick">Grief Support</button>
-                                    <button type="button" class="btn btn-primary catclick">Holiday Grief</button>
-                                    <button type="button" class="btn btn-primary catclick">It Is Interesting</button>
-                                    <button type="button" class="btn btn-primary catclick">Online Memorials</button>
-                                    <button type="button" class="btn btn-primary catclick">Phenomenon Of Death </button>
-                                    <button type="button" class="btn btn-primary catclick">Widowed</button>
+                                    <a href="{!! asset('user/blog/child_loss')!!}" class="btn btn-primary catclick">Child Loss</a>
+                                    <a href="{!! asset('user/blog/child_loss')!!}" class="btn btn-primary catclick">Coping With Grief</a>
+                                    <a href="{!! asset('user/blog/death')!!}" class="btn btn-primary catclick">End-of-life</a>
+                                    <a href="{!! asset('user/blog/death')!!}" class="btn btn-primary catclick">Funeral Planning</a>
+                                    <a href="{!! asset('user/blog/child_loss')!!}" class="btn btn-primary catclick">Grief Counseling</a>
+                                    <a href="{!! asset('user/blog/child_loss')!!}" class="btn btn-primary catclick">Grief Experience</a>
+                                    <a href="{!! asset('user/blog/our_story')!!}" class="btn btn-primary catclick">It Is Interesting</a>
+                                    <a href="{!! asset('user/testing')!!}" class="btn btn-primary catclick">Online Memorials</a>
+                                    <a href="{!! asset('user/blog/death')!!}" class="btn btn-primary catclick">Phenomenon Of Death </a>
                                 </div>
                             </div>
                             <!-- <div class="populardata">

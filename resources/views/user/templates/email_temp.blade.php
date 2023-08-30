@@ -80,13 +80,12 @@
                 and
                 memories. It is a space to honor {{ $details['deceased_data']['f_name'] }}'s life and the impact
                 {{ $details['deceased_data']['gender'] == 'male' ? 'he' : 'she' }} had on all of us.</p>
-            <p>Please visit the memorial website using the link below:</p>
+            <p>Please visit the 4Evermemorial website using the link below:</p>
             <p style="text-align: center;">
                 <a href="https://stagging.hatinco.com/4_ever_memories/public/user/get_memorial/{{ $details['deceased_data']['email'] }}"
-                    class="memorial-link">Visit Memorial Website</a>
+                    class="memorial-link">Visit 4Evermemorial.com Website</a>
             </p>
-            <p>{{ $details['deceased_data']['f_name'] }}'s memory lives on through the stories we share, and we hope you
-                can contribute to this tribute.</p>
+            <p>{{ $details['deceased_data']['f_name'] }}'s memory lives on through our shared stories, and we hope you can contribute to this tribute.</p>
             <p style="text-align: center;">With warmest regards,</p>
             <p style="text-align: center;">{{ $details['deceased_data']['relation'] }}</p>
         </div>
