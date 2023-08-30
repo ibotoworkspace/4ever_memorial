@@ -230,10 +230,11 @@ class TemplateSeeder extends Seeder
                             </div>
                             <div class="col-md-8">
                                 <div class="links">
-                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/search/memorial">Memorial Websites</a>
-                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/user/service_term">Terms of Use</a>
-                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/user/privacy_policy">Privacy Policy</a>
-                                    <a href="https://stagging.hatinco.com/4_ever_memories/public/user/contactus">Contact Us</a>
+
+                                    <a href="'.$public_path.'/search/memorial">Memorial Websites</a>
+                                    <a href="'.$public_path.'/user/service_term">Terms of Use</a>
+                                    <a href="'.$public_path.'/user/privacy_policy">Privacy Policy</a>
+                                    <a href="'.$public_path.'/user/contactus">Contact Us</a>
                                 </div>
 
                             </div>
