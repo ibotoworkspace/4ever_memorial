@@ -1,5 +1,7 @@
-<?php 
-  $message = Session::get('error')  
+<?php
+$success_message = Session::get('success');
+//   $success_message='asdsad';
+$error_msg = Session::get('error');
 ?>
 @yield('title')
 <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('theme/user_theme/images/favicon.png') !!}" />
@@ -15,35 +17,37 @@
 
 <body>
 
-    @if (isset($message))
-        <div class="alert alert-danger">
+    @if (isset($error_msg))
+        {{-- {!!dd($login_error_msg)!!} --}}
+        <div class="alert alert-danger alt_area">
+            <span style="float: right " onclick="$(this).parent().remove();">X</span>
             <ul>
-                @foreach (Session::get('error')->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-
-    @endif
-    @if (isset($message))
-        <div class="alert alert-info">
-            <ul>
-                @foreach (Session::get('success')->all() as $success)
-                    <li>{{ $success }}</li>
-                @endforeach
+                {{-- @foreach (Session::get('login_error')->all() as $error) --}}
+                <li>{{ $error_msg }}</li>
+                {{-- @endforeach --}}
             </ul>
         </div>
     @endif
+    @if (isset($success_message))
+        <div class="alert alert-success alt_area">
+            <span style="float: right" onclick="$(this).parent().remove();">X</span>
+            <ul>
+                {{-- @foreach (Session::get('success')->all() as $success) --}}
+                <li>{{ $success_message }}</li>
+                {{-- @endforeach --}}
+            </ul>
+        </div>
+    @endif
 
 
 
-    
+
 
     @yield('body')
 
-{{-- Cropper Modal --}}
-@include('partial_layouts.cropper.cropper_html')
-{{-- End Cropper Modal --}}
+    {{-- Cropper Modal --}}
+    @include('partial_layouts.cropper.cropper_html')
+    {{-- End Cropper Modal --}}
 
 
 
@@ -56,19 +60,26 @@
                             <h3>Plant a tree as a living tribute</h3>
                             <h2>MEMORIAL TREES <br> BY 4EVER </h2>
                             <p>Planting a tree in memory of your loved one is a meaningful<br> and lasting tribute.
-                                It’s an opportunity to honor their life while contributing something positive to the environment.</p>
-                            <a href="{!! asset('/user/contactus') !!}"><button type="submit" class="btn btn-primary contactclick">Contact
+                                It’s an opportunity to honor their life while contributing something positive to the
+                                environment.</p>
+                            <a href="{!! asset('/user/contactus') !!}"><button type="submit"
+                                    class="btn btn-primary contactclick">Contact
                                     Us</button></a>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="contactdata">
-                            
-                            <p> Planting a tree together as a family can be an especially powerful experience, allowing you to come together, create new memories and celebrate the legacy of those who have passed away. 
 
-It can be difficult to know where to start when it comes to honoring our loved ones. But planting a tree is an easy and impactful option that will help ensure that their memory lives on for generations. Trees are living reminders of your love and appreciation, but they also offer tangible benefits: clean air, shade, wildlife habitats, and much more.
-</p>
-                           
+                            <p> Planting a tree together as a family can be an especially powerful experience, allowing
+                                you to come together, create new memories and celebrate the legacy of those who have
+                                passed away.
+
+                                It can be difficult to know where to start when it comes to honoring our loved ones. But
+                                planting a tree is an easy and impactful option that will help ensure that their memory
+                                lives on for generations. Trees are living reminders of your love and appreciation, but
+                                they also offer tangible benefits: clean air, shade, wildlife habitats, and much more.
+                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -149,14 +160,14 @@ It can be difficult to know where to start when it comes to honoring our loved o
     </div>
     {{-- End Register in modal --}}
 
-    
-<style>
-    ul.nav.navbar-nav.fomenu {
-    display: flex;
-    justify-content: center !important;
-    float: none;
-}
-</style>
+
+    <style>
+        ul.nav.navbar-nav.fomenu {
+            display: flex;
+            justify-content: center !important;
+            float: none;
+        }
+    </style>
     <section>
         <div class="footerarea">
             <div class="container">
@@ -200,7 +211,9 @@ It can be difficult to know where to start when it comes to honoring our loved o
                             </div>
                         </div>
                         <div class="lastfooter">
-                            <p>Copyright © <?php echo date("Y"); ?> 4ever memory - Designed and Developed by <a href="https://ibotoempire.com/" target="_blank" class="minename">Iboto-Empire</a></p>
+                            <p>Copyright © <?php echo date('Y'); ?> 4ever memory - Designed and Developed by <a
+                                    href="https://ibotoempire.com/" target="_blank" class="minename">Iboto-Empire</a>
+                            </p>
                         </div>
                     </div>
                 </div>
