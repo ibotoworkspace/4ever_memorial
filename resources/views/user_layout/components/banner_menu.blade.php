@@ -127,6 +127,31 @@
         </div>
     </div>
 </div>
+@php
+                $signin = '';
+                $signout = '';
+            if (Auth::user()) {
+                // dd('asddsdaasdasdsdaasassd');                
+                $signin = "display: block;";
+                $signout = "display: none;";
+            }
+            else{
+                $signin = "display: none;";
+                $signout = "display: block;";
+            }
+        @endphp
+        <div class="col-sm-4">
+            <div class="topicons mobile_nav" >
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <i class="fa fa-user-plus" style="{!!$signout!!}" aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i>
+                <i class="fa fa-sign-in"  style="{!!$signout!!}"aria-hidden="true" data-toggle="modal" data-target="#LoginModalCenter"> Sign</i>
+                <i class="fa fa-user-circle-o"  style="{!!$signin!!}"aria-hidden="true"data-target="#LoginModalCenter"><a href="{!!asset('user/logout')!!}"> LogOut </a></i>
+            </div>
+        </div>
+
 {{-- Sign in modal --}}
     <div class="modal fade" id="LoginModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="LoginModalCenterTitle" aria-hidden="true">

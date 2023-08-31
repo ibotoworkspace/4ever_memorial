@@ -125,10 +125,13 @@ class UserController extends Controller
         );
 
         if (Auth::attempt($user_data)) {
-            return redirect('/')->with('success', 'ThankYou ! You are successfully logged in');
+            // dd('succes');
+            return redirect('/')->with('success', '"Login successful. Welcome!"');
         } else {
-            return redirect()->back()->with('login_error', 'Wrong Login Details');
+            // dd('asd');
+            return redirect()->back()->with('error', 'Wrong Login Details');
         }
+        
     }
     function logout()
     {
