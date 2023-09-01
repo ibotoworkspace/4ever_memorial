@@ -1131,7 +1131,7 @@ body {font-family: Arial;}
     }
     .story_tab img {
         block-size: 225px;
-        margin-left: 18px;
+        margin-left: 0px;
         margin-bottom: 7px;
     }
     .add_stor {
