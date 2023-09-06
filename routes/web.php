@@ -79,16 +79,6 @@ Route::group(['middleware' => 'admin_auth'], function () { //,'prefix'=>'admin'
     // Route::get('/user/blog',[MemorialController::class, 'blog'])->name('user.blog');
 
 
-
-    Route::get('user/template/select_template', [TemplateController::class, 'select_template']); //testing
-    Route::get('user/template/select_template/{user_website}', [TemplateController::class, 'select_template']); //testing
-
-    Route::post('user/adduser', [User_UserController::class, 'add_user'])->name('admin.user.add_user');
-
-    Route::post('user/memorial/update_plan', [User_UserController::class, 'update_plan'])->name('user.plan.update');
-    Route::post('user/memorial/privacy', [User_UserController::class, 'privacy'])->name('user.memorial.privacy');
-    Route::post('user/memorial/save_css', [User_UserController::class, 'save_css'])->name('user.memorial.save_css');
-
     Route::post('user/invite', [User_UserController::class, 'send_invite'])->name('user.send_invite');
 
 
@@ -136,3 +126,13 @@ Route::post('user/tributeform',[User_UserController::class, 'tributeform'])->nam
 
 Route::get('user/get_tribute',[User_UserController::class, 'get_tribute'])->name('user.get_tribute'); //add story
 
+
+
+Route::get('user/template/select_template', [TemplateController::class, 'select_template']); //testing
+Route::get('user/template/select_template/{user_website}', [TemplateController::class, 'select_template']); //testing
+
+Route::post('user/adduser', [User_UserController::class, 'add_user'])->name('admin.user.add_user');
+
+Route::post('user/memorial/update_plan', [User_UserController::class, 'update_plan'])->name('user.plan.update');
+Route::post('user/memorial/privacy', [User_UserController::class, 'privacy'])->name('user.memorial.privacy');
+Route::post('user/memorial/save_css', [User_UserController::class, 'save_css'])->name('user.memorial.save_css');
