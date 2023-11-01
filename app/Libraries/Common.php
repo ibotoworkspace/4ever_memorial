@@ -126,7 +126,7 @@ trait Common
         $imgPath = public_path() . '/images/' . $type;
         $image->move($imgPath, $name);
         $remove_index = str_replace("index.php", "", $root);
-        return $remove_index . '/images/' . $type . '/' . $name;
+        return $remove_index . '/public/images/' . $type . '/' . $name;
     }
     // public function export_excel($report_name,$users){
 
