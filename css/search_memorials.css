@@ -1,0 +1,64 @@
+.memo_box {
+    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0px;
+    height: 380px;
+}
+
+.img_area img {
+    border-radius: 100px;
+    overflow: hidden;
+    width: 199px;
+    height: 200px;
+    margin-left: 54px;
+    border: solid #beb28d 1px;
+}
+.info_area h3 {
+    color: #a9a082;
+    font-weight: bold;
+}
+.flx {
+    display: flex;
+}
+.info_area {
+    text-align: center;
+}
+.info_area a {
+    color: #a59a7b;
+    font-weight: bold;
+}
+.info_area h4 {
+    color: #465863;
+}
+
+.box_hvr:hover {
+    box-shadow: -1px -1px 11px 13px rgba(204,204,204,1);
+    -webkit-box-shadow: -1px -1px 11px 13px rgba(204,204,204,1);
+    -moz-box-shadow: -1px -1px 11px 13px rgba(204,204,204,1);
+    -webkit-transition: all 2s ease-in;
+    transition: all 0.25s ease-in;
+}
+a.deco_no {
+    text-decoration: none;
+}
+.view_all {
+    float: right;
+}
+.view_all button {
+    background: #beb28d;
+    border: solid #beb28d 1px;
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    height: 45px;
+}
+.view_all button:hover , :focus ,:focus-visible ,:active {
+    background-color: white;
+    border: solid #beb28d 1px;
+    color: #beb28d;
+    font-weight: bold;
+}

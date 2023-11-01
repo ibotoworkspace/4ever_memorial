@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body,
+html {
+    font-size: 15px;
+    line-height: 1.4666666667;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.planbanner {
+    border-bottom: 5px none #2dafc3;
+    background-image: url(../images/plan_Header.jpg);
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+.plandata {
+    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+}
+.plandata p {
+    border-bottom: 1px solid #999999;
+    padding: 19px;
+    font-size: 18px;
+    color: #465863;
+    font-weight: 600;
+}
+.plandata h4 {
+    text-align: center;
+    background: #465863;
+    margin: 0 auto;
+    width: 60%;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.testdataarea h3 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 600;
+    color: #465863;
+    margin-bottom: 20px;
+}
+.testdataarea {
+    padding: 50px;
+}
+span.sidetick i {
+    float: right;
+    color: #beb28d;
+    font-size: 28px;
+    font-weight: 100;
+}
+.inerpkgclick {
+    text-align: center;
+}
+.banclick {
+    margin-top: 23px !important;
+    width: 20% !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+.topspace {
+    padding-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 480px) {
+   
+}

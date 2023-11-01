@@ -3,6 +3,11 @@
 /public/hot
 /public/images
 /public/storage
+/build
+/hot
+/images
+/storage
+
 /storage/*.key
 /vendor
 .env
