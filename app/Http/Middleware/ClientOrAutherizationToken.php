@@ -24,8 +24,6 @@ class ClientOrAutherizationToken
     public function handle($request, Closure $next)
     {
         $user = $this->validate_user($request);
-
-
         if ($user) {
             return $next($user);
         }
