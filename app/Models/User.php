@@ -45,4 +45,16 @@ class User extends Authenticatable
     // public function user(){
     //     return $this->hasOne('App\Models\User','id','user_id');
     // }
+    public static $rules_register = [
+      
+        'email' => 'required|email|unique:users',
+        // 'phone_no' => 'required|unique:users',
+        'password' => 'required'
+    ];
+    public static $rules = [
+        // 'name' => 'required|max:255',
+        'email' => 'required',
+        'password' => 'required'
+    ];
+
 }
