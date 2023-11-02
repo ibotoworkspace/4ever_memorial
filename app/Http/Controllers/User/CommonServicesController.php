@@ -26,7 +26,7 @@ class CommonServicesController extends Controller
         $imageName = uniqid() . '.png';
         $imageFullPath = $folderPath . $imageName;
         $su = file_put_contents($imageFullPath, $image_base64);
-        $image_path = asset('/images/' . $imageName);
+        $image_path = asset('/public/images/' . $imageName);
         return response()->json(['status'=>true,'success' => 'Crop Image Uploaded Successfully', 'image' => $image_path]);
     }
 
