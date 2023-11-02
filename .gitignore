@@ -3,6 +3,11 @@
 /public/hot
 /public/images
 /public/storage
+/build
+/hot
+/images
+/storage
+
 /storage/*.key
 /vendor
 .env
@@ -17,3 +22,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/4evermemorial

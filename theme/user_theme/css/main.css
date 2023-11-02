@@ -1,0 +1,847 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body,
+html {
+    font-size: 15px;
+    line-height: 1.4666666667;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+.topicons.mobile_nav {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Raleway', sans-serif;
+}
+.alt_area {
+    float: right;
+    width: 19%;
+    margin-top: 6px;
+}
+.topbanner {
+    border-bottom: 5px none #2dafc3;
+    background-image: url(../images/Header-image.jpg);
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contactarea {
+    border-bottom: 5px none #2dafc3;
+    background-image: url(../images/Plant-a-tree-as-a-living-tribute.jpg);
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logoarea img {
+    margin: 0 auto;
+    height: 60px;
+}
+
+.topinput input {
+    border-radius: 50px;
+    height: 42px;
+    color: black;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.topicons i {
+    color: white;
+    font-size: 16px;
+    margin: 20px 8px;
+    cursor: pointer;
+}
+
+.menucont {
+    background: #465863;
+}
+
+.container.top {
+    padding: 15px;
+}
+
+.menucont li a {
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 20px;
+}
+
+/* 
+.navmenu li a span {
+    margin: 15px 3px;
+} */
+
+
+.navmenu>li>a:hover {
+    text-decoration: none;
+    background-color: #beb28d;
+    color: white;
+}
+
+.bannerdata {
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+
+.bannerdata img {
+    margin: 0 auto;
+}
+
+.bannerdata h1 {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.bannerdata h1 {
+    font-size: 75px;
+    font-weight: 600;
+    letter-spacing: 7px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.bannerdata h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bannerdata h3 {
+    font-size: 25px;
+    line-height: 33px;
+    margin-top: 25px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.banclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    /* margin-bottom: 25px; */
+}
+
+.aboutarea {
+    padding: 50px;
+    background: white;
+}
+
+.aboutdata h2 {
+    color: #465863;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.aboutdata p {
+    color: #465863;
+    font-size: 20px;
+    margin-bottom: 27px;
+    font-weight: 400;
+    text-indent: 90px;
+}
+
+.aboutimg img {
+    margin: 0 auto;
+}
+
+.aboutclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 25%;
+    margin-top: 20px;
+}
+
+.pkgarea {
+    background: #465863;
+    padding: 50px;
+}
+
+.pkgcolab h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.qabox {
+    background: #ffffff !important;
+    color: #465863 !important;
+    height: 42px !important;
+    padding: 2px 11px !important;
+    border-radius: 0px !important;
+}
+
+.qabox h4 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.panel.panel-default {
+    border-radius: 0px !important;
+    margin-bottom: 15px !important;
+}
+
+.pkgclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 25%;
+    margin-top: 20px;
+}
+
+.pkgbarclick {
+    background: white;
+    border-color: white;
+    color: #beb28d;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 30%;
+    /* margin-top: 20px; */
+    margin-bottom: 30px;
+}
+
+.samplearea {
+    padding: 50px;
+    text-align: center;
+}
+
+.memorialhead h2 {
+    font-size: 55px;
+    font-weight: 700;
+    color: #465863;
+    margin-bottom: 40px;
+}
+
+.formdata h2 {
+    font-size: 55px;
+    font-weight: 700;
+    color: #465863;
+}
+
+.creatbox img {
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.creatbox h3 {
+    font-size: 24px;
+    color: #465863;
+    font-weight: 600;
+}
+
+.creatbox p {
+    color: #465863;
+    font-size: 19px;
+    margin-top: 19px;
+    font-weight: 400;
+}
+
+.memorialclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 25%;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+.formdata p {
+    color: #465863;
+    font-size: 25px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.formarea {
+    background: #eaeaea;
+    padding: 25px;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.formarea h4 {
+    color: #465863;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.formarea p {
+    font-size: 18px;
+    margin-top: 78px;
+    color: #727275;
+    font-weight: 600;
+}
+
+.formclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 100%;
+}
+
+.formarea input {
+    height: 42px;
+    border-radius: 0px;
+    color: #465863;
+    font-size: 14px;
+}
+
+.contactdata {
+    color: white;
+}
+
+.contactdata h3 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.contactdata h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.contactdata p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 22px;
+    margin-bottom: 35px;
+    line-height: 23px;
+}
+
+.contactclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;    
+    padding: 7px;
+}
+
+.contactarea {
+    padding: 50px;
+}
+
+.footerarea {
+    padding: 50px 50px 0px 50px;
+    background: #465863;
+}
+
+.footerlogo img {
+    margin: 0 auto;
+    height: 200px;
+}
+
+.minename {
+    color: #beb28d;
+    font-weight: 700;
+    text-decoration: none;
+}
+.topicons {
+    display: flex;
+    float: right;
+}
+    .topicons a {
+    color: white;
+}
+.txtar {
+    border: 1px solid black;
+}
+.minename:hover {
+    color: #beb28d;
+    text-decoration: none !important;
+}
+
+.footerlogo {
+    text-align: center;
+}
+
+.footerlogo i {
+    color: white;
+    font-size: 25px;
+    margin: 25px 13px;
+}
+
+.fomenu li a:hover {
+    color: #465863;
+}
+
+.fomenu li a {
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.fomenu li {
+    margin: 0px 14px;
+}
+
+.lastfooter p {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.PackagesSec {
+    padding: 50px 0px;
+}
+
+.packageBox h3 {
+    /* font-family: 'Roboto Slab', serif; */
+    /* padding: 15px 15px; */
+    /* padding-right: 63px; */
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0px;
+    /* min-height: 87px; */
+    /* padding-top: 20px; */
+    /* background: #0c0c0c; */
+    color: #fff;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 25px;
+}
+
+.packageBox {
+    background: #beb28d;
+    /* text-align: left; */
+    margin: 0px 0px;
+}
+
+.packagePrice {
+    /* font-family: 'Lora', serif; */
+    background: transparent;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.packageData {
+    padding: 30px;
+    height: 330px;
+}
+
+.packageData ul li {
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.packageData ul li:before {
+    content: "\f138";
+    color: green;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    left: 0;
+}
+
+.packageData ul {
+    list-style: none;
+    padding-left: 0px;
+    color: white;
+    margin-top: 15px;
+}
+
+.btnPackage .btnBrandArea {
+    background: #000;
+    color: #fff;
+    border: 1px solid #0171bb;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0px;
+    font-weight: 700;
+}
+
+.btnPackage {
+    text-align: center;
+}
+
+.wrap {
+    width: 100%;
+    height: 188px;
+    position: absolute;
+    top: -8px;
+    left: -7px;
+    overflow: hidden;
+}
+
+.wrap:before {
+    width: 40px;
+    height: 8px;
+    right: 100px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.wrap:after {
+    width: 8px;
+    height: 40px;
+    right: 0px;
+    top: 100px;
+    background: white;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.wrap:before,
+.wrap:after {
+    content: "";
+    position: absolute;
+}
+
+.ribbon6 {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 30px;
+    color: #465863;
+    right: -50px;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 1px dashed;
+    box-shadow: 0 0 0 3px white, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
+    background: white;
+    text-align: center;
+}
+
+.packageBox:hover {
+    transform: scale(1);
+    transition: 0s;
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.75);
+    margin: 0px 0px;
+}
+
+/* width */
+.packageData::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.packageData::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.packageData::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.packageData::-webkit-scrollbar-thumb:hover {
+    background: #0b77bf;
+}
+
+.packageSpace {
+    margin: 20px 0px;
+}
+
+.modhead h5 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.signmodaldata input {
+    height: 42px;
+    border-radius: 0px;
+    color: black;
+    font-size: 14px;
+}
+
+.mosubclick {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    width: 21%;
+    border-radius: 0px;
+    padding: 7px 0px;
+}
+
+.signmodaldata label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #423f3f;
+}
+
+.labelgroup {
+    display: flex;
+    margin-top: -15px;
+}
+
+.labelcd {
+    margin: 16px 8px !important;
+}
+
+.modhead {
+    background: #465863;
+    color: white;
+}
+
+@media only screen and (max-width : 480px) {
+
+    .container.top {
+        padding: 0px;
+    }
+
+    .logoArea img {
+        height: 50px;
+        margin: 15px 0px;
+    }
+
+    .threebar {
+        color: white;
+        margin-top: -65px;
+    }
+
+    .bannerdata {
+        text-align: center;
+        color: white;
+        padding: 25px;
+    }
+
+    .bannerdata h1 {
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: 7px;
+        margin-top: 8px;
+        margin-bottom: 30px;
+    }
+
+    .bannerdata h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 0px;
+    }
+
+    .bannerdata h3 {
+        font-size: 19px;
+        line-height: 28px;
+        margin-top: 25px;
+        font-weight: 500;
+        margin-bottom: 35px;
+    }
+
+    .aboutarea {
+        padding: 25px;
+        background: white;
+    }
+
+    .aboutdata p {
+        color: #465863;
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: 400;
+    }
+
+    .aboutclick {
+        background: #beb28d;
+        border-color: #beb28d;
+        color: white;
+        border-radius: 0px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .pkgarea {
+        background: #465863;
+        padding: 25px;
+    }
+
+    .pkgcolab h2 {
+        color: white;
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .qabox h4 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .pkgclick {
+        background: #beb28d;
+        border-color: #beb28d;
+        color: white;
+        border-radius: 0px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: auto;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .pkgbarclick {
+        background: white;
+        border-color: white;
+        color: #beb28d;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .samplearea {
+        padding: 25px;
+        text-align: center;
+    }
+
+    .memorialhead h2 {
+        font-size: 30px;
+        font-weight: 700;
+        color: #465863;
+        margin-bottom: 40px;
+    }
+
+    .creatbox img {
+        height: 70px;
+        margin: 0 auto;
+        margin-bottom: 0px;
+    }
+
+    .creatbox p {
+        color: #465863;
+        font-size: 19px;
+        margin-top: 10px;
+        font-weight: 400;
+    }
+
+    .creatbox {
+        margin-bottom: 25px;
+    }
+
+    .memorialclick {
+        background: #beb28d;
+        border-color: #beb28d;
+        color: white;
+        border-radius: 0px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    .formdata h2 {
+        font-size: 29px;
+        font-weight: 700;
+        color: #465863;
+    }
+
+    .formdata p {
+        color: #465863;
+        font-size: 20px;
+        margin-bottom: 30px;
+        font-weight: 500;
+    }
+
+    .formarea h4 {
+        color: #465863;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .formarea p {
+        font-size: 18px;
+        margin-top: 40px;
+        color: #727275;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+    .formarea input {
+        height: 35px;
+        border-radius: 0px;
+        color: #465863;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .formclick {
+        background: #beb28d;
+        border-color: #beb28d;
+        color: white;
+        border-radius: 0px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .contactclick {
+        background: #beb28d;
+        border-color: #beb28d;
+        color: white;
+        border-radius: 0px;
+        font-size: 16px;
+        font-weight: 500;
+        /* height: 40px; */
+        width: auto;
+        padding: 7px;
+    }
+
+    .contactarea {
+        padding: 25px;
+    }
+    .topicons.mobile_nav {
+        display: flex;
+    }
+}

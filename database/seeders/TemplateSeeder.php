@@ -27,7 +27,8 @@ class TemplateSeeder extends Seeder
         $template->name = $template_name;
         $template->save();
         // if(){}
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        $public_path = 'https://4evermemorial.com/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'http://localhost/4_ever_memories/public/';
         // dd($pub);
@@ -38,7 +39,7 @@ class TemplateSeeder extends Seeder
             <head>
                 <title>4 Ever Memorial</title>
                 <meta charset="utf-8" />
-                <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/4_ever_memories/public/theme/user_theme/images/favicon.png">
+                <link rel="icon" type="image/png" sizes="16x16" href="' . $public_path . 'theme/user_theme/images/favicon.png">
                 <meta name="viewport" content="width=device-width, initiam/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
                 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

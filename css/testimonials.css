@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body,
+html {
+    font-size: 15px;
+    line-height: 1.4666666667;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.testimonalpbanner {
+    border-bottom: 5px none #2dafc3;
+    background-image: url(../images/testi.jpg);
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.testdataa {
+    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+}
+.namearea {
+    display: flex;
+}
+.testdataarea {
+    padding: 50px;
+}
+.testdataa img {
+    height: 25px;
+    margin-bottom: 10px;
+}
+.testdataa p {
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 26px;
+    color: #465863;
+    font-weight: 500;
+}
+.namearea h3 {
+    background: #465863;
+    padding: 20px 27px;
+    color: white;
+    border-radius: 50px;
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 23px;
+}
+.namearea p {
+    font-size: 18px;
+    margin: 18px 15px;
+    color: black;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 480px) {
+    .testdataarea {
+        padding: 25px;
+    }
+    .testdataa {
+        margin-bottom: 30px;
+    }
+}

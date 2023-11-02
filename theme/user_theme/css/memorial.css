@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body,
+html {
+    font-size: 15px;
+    line-height: 1.4666666667;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.required-warning::placeholder {
+    color: red !important;
+    opacity: 1; /* Firefox */
+}
+
+.contacttopbanner {
+    border-bottom: 5px none #2dafc3;
+    background-image: url(../images/headerimage.jpg);
+    background-position: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mincardboxhght {
+    min-height: 225px !important;
+}
+.plandata h4 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 17px;
+}
+
+.plandata {
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 7px;
+    /* min-height: 366px; */
+    margin-top: 31px;
+}
+
+.plandata {
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 7px;
+}
+
+span.sidetick {
+    float: right;
+}
+
+.tabdata li {
+    width: 25%;
+    text-align: center;
+}
+
+.cardformarea {
+    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    background: #f7f7f7;
+    padding: 25px 60px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.detailcard {
+    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    background: #dddddd;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.cardformarea p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tabsarea {
+    padding: 50px;
+}
+
+.cardformarea h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #465863;
+    margin-bottom: 20px;
+}
+
+.cardformarea h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #465863;
+    margin-bottom: 20px;
+}
+
+.tabmenu li a {
+    background: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    color: #465863 !important;
+}
+
+.tabmenu li a:hover {
+    background: #beb28d !important;
+    color: white !important;
+}
+
+.tabmenu li a:active {
+    border: 0px solid !important;
+    background: #beb28d !important;
+}
+
+.tabmenu li a {
+    border: 0px solid !important;
+    padding: 15px 0px;
+    font-size: 15px;
+    background: transparent !important;
+}
+
+.tabmenu li a:visited {
+    background: #beb28d !important;
+}
+
+.linktext {
+    color: #beb28d;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tabmenu {
+    border-bottom: 0px solid !important;
+}
+
+.cardformarea input {
+    height: 42px;
+    border-radius: 4px;
+    border: 1px solid #465863;
+    color: #465863;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.cardformarea select {
+    height: 42px;
+    border-radius: 4px;
+    border: 1px solid #465863;
+    color: #465863;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.staring {
+    color: #fb6262;
+    font-size: 9px !important;
+}
+
+
+.cardformarea label {
+    color: #465863;
+    font-size: 15px;
+}
+
+.cardformarea h5 {
+    color: #465863;
+    font-size: 15px;
+    margin-bottom: 17px;
+    font-weight: 500;
+}
+
+.detailcard p {
+    font-style: italic;
+    color: #465863;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+.contclik {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+    width: 15%;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px;
+}
+
+.contclik:hover {
+    background: #beb28d;
+    border-color: #beb28d;
+    color: white;
+}
+
+.examplemail {
+    margin-top: 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #465863;
+    margin-left: -16px;
+
+}
+
+.option p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: -10px;
+    font-style: italic;
+}
+
+.braketdata {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: -10px;
+    font-style: italic;
+    color: #a52a2a8f;
+    margin-bottom: 20px;
+}
+
+.memoreadio {
+    display: flex;
+    background: #dddddd;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.memoreadio input {
+    width: 21px;
+    margin: 0px 5px;
+}
+
+.memoreadio p {
+    font-size: 14px;
+    margin: 12px 10px;
+    font-style: inherit;
+    margin-top: -2px;
+    color: #465863;
+}
+
+.optrad h6 {
+    margin: 9px 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #465863;
+}
+
+.confi label {
+    font-size: 13px;
+    position: relative;
+    top: -16px;
+}
+
+.confi input {
+    width: 18px;
+    margin: 0px 5px;
+}
+
+.confi {
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width : 480px) {
+    .tabsarea {
+        padding: 25px;
+    }
+
+    .tabmenu li a {
+        font-size: 9px;
+    }
+
+    .cardformarea {
+        padding: 25px 25px;
+    }
+
+    .cardformarea h2 {
+        font-size: 22px;
+    }
+
+    .contclik {
+        width: auto;
+    }
+
+    .memoreadio input {
+        width: 60px;
+    }
+
+    .optrad h6 {
+        font-size: 13px;
+    }
+
+    .memoreadio p {
+        font-size: 11px;
+    }
+
+    .confi {
+        margin-top: 25px;
+    }
+}
