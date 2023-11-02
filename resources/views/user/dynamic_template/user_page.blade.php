@@ -547,6 +547,9 @@
             formData.append('memorial_id', memorial_id);
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
+            if($('#type_tribute').val() == ''){
+                set_tribute('candle','{!! asset("user_templates/images/candles/1.png") !!}');
+            }
             formData.append('type_var', $('#type_tribute').val());
             formData.append('image_tribute', $('#image_tribute').val());
 
