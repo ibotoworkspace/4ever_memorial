@@ -13,14 +13,21 @@
     margin: 25px;
 }
 
-
+.line {
+    border: solid 1px;
+    height: 165px;
+}
 .img-bx {
     border: #beb28d solid 1px;
     height: 261px;
     margin: 19px 45px;
     border-radius: 36px;
     overflow: hidden;
-    filter: blur(2px);
+    /* filter: blur(2px); */
+    background: #1e3439;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 .plandatas {
     padding: 15px;
