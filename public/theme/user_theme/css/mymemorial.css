@@ -20,7 +20,9 @@
     margin: 19px 45px;
     border-radius: 36px;
     overflow: hidden;
-    filter: blur(2px);
+    /* filter: blur(2px); */
+    background: #1e3439;
+    color: white;
 }
 .plandatas {
     padding: 15px;
