@@ -81,9 +81,6 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-
-
-
         try {
             //Request input Validation
             $validation = Validator::make($request->all(), User::$rules);
