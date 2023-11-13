@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MemorialController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::group(['middleware' => 'auth.client_token'], function () {
 
-Route::post('login',[UserController::class, 'login']);
-Route::post('register',[UserController::class, 'register']);
-Route::post('forget_email',[UserController::class, 'sendForgetEmail']);
+    Route::post('login', [UserController::class, 'login']);
+    Route::post('register', [UserController::class, 'register']);
+    Route::post('forget_email', [UserController::class, 'sendForgetEmail']);
+
+
+});
+Route::group(['middleware' => 'auth.user_loggedin'], function () {
+
+    Route::post('memorials', [MemorialController::class, 'my_memorials']);
 
 
 });
