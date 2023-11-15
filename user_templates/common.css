@@ -615,7 +615,8 @@ ul.reviewSection {
     border: solid 1px;
     border-radius: 10px;
     margin-bottom: 36px;
-    height: 472px;
+    min-height: 472px;
+    height: auto;
 }
 
 
@@ -1069,7 +1070,7 @@ body {font-family: Arial;}
         font-size: 10px;
     }
     .icon_list {
-        display: flex;
+        display: block !important;
         margin-bottom: 15px;
     }
     .publish {

@@ -6,6 +6,7 @@ use App\Models\Styling;
 use App\Models\WebsiteTemplate;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Config;
 
 class StylingSeeder extends Seeder
 {
@@ -18,9 +19,10 @@ class StylingSeeder extends Seeder
     {
         $image_path = asset('public').'/';  
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
-        $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
+        // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'http://localhost/4_ever_memories/public/';
-
+        $public_path = Config::get('app.url').'/public/';
+        $url_path = Config::get('app.url');
 
         $template_name_arr = ['template_1','template_2','template_3','template_4'];
         $default_template = 'template_1';
