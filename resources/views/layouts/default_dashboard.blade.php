@@ -144,22 +144,22 @@ $reports = $admin_common->reports;
 
     <!-- build:js({.tmp,app}) scripts/app.min.js -->
 
-    <script src="{{ asset('theme/vendor/jquery/dist/jquery.js') }}"></script>
-    <script src="{{ asset('theme/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('theme/vendor/slimScroll/jquery.slimscroll.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery.easing/jquery.easing.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery_appear/jquery.appear.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery.placeholder.js') }}"></script>
-    <script src="{{ asset('theme/vendor/fastclick/lib/fastclick.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/slimScroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery.easing/jquery.easing.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery_appear/jquery.appear.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery.placeholder.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/fastclick/lib/fastclick.js') }}"></script>
     <!-- endbuild -->
 
     <!-- page level scripts -->
-    <script src="{{ asset('theme/vendor/blockUI/jquery.blockUI.js') }}"></script>
-    <script src="{{ asset('theme/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-    <script src="{{ asset('theme/data/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery.sparkline.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/blockUI/jquery.blockUI.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/bower-jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script src="{{ asset('public/theme/data/maps/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery.sparkline.js') }}"></script>
 
-    <script src="{{ asset('theme/vendor/jquery-countTo/jquery.countTo.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery-countTo/jquery.countTo.js') }}"></script>
    <!-- /page level scripts -->
 
     <!-- page script -->

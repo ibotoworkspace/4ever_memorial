@@ -13,10 +13,10 @@
 <script>
     var memorial_id = '{!! $user_website->id !!}';
     var global_path = '{!! asset('/') !!}';
-    var jsonString = '{!! json_encode($web_variable['gallery_photo_arr']) !!}';
-    var jsonString_vid = '{!! json_encode($web_variable['gallery_video_arr']) !!}';
-    var jsonString_aud = '{!! json_encode($web_variable['gallery_audio_arr']) !!}';
-    var jsonString_recent = '{!! json_encode($web_variable['recent_updates_show_arr']) !!}';
+    var jsonString = '{!! json_encode($web_variable["gallery_photo_arr"]) !!}';
+    var jsonString_vid = '{!! json_encode($web_variable["gallery_video_arr"]) !!}';
+    var jsonString_aud = '{!! json_encode($web_variable["gallery_audio_arr"]) !!}';
+    var jsonString_recent = '{!! json_encode($web_variable["recent_updates_show_arr"]) !!}';
     var gallery_images = JSON.parse(jsonString);
     var gallery_video_ = JSON.parse(jsonString_vid);
     var gallery_audio = JSON.parse(jsonString_aud);
@@ -80,7 +80,7 @@
             // $('.contentLi_aud').html('added {!! $audio_count !!} audio(s)');
             $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
-            $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
+            $('.pht_para').html('{!! count($web_variable["gallery_photo_arr"]) !!} Photos');
             $('.gall_row').html(get_imges(gallery_images));
             $('.vid_row').html(get_vids(gallery_video_));
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
@@ -91,7 +91,7 @@
                 .href);
             var images = '';
             if (!gallery_images.length) {
-                images = images + image_crousal('{!! asset('theme/images/logo_change.jpg') !!}', 0);
+                images = images + image_crousal('{!! asset("public/theme/images/logo_change.jpg") !!}', 0);
             }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
@@ -217,7 +217,7 @@
                 <button class="bt_no dropbtn">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img class="candle-select-icon-img" src="{!! asset('user_templates/images/candles/1.png') !!}" alt="relative">
+                            <img class="candle-select-icon-img" src="{!! asset('public/user_templates/images/candles/1.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -227,7 +227,7 @@
                 <button class="bt_no dropbtn">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img class="flower-select-icon-img" src="{!! asset('user_templates/images/flowers/1.png') !!}" alt="relative">
+                            <img class="flower-select-icon-img" src="{!! asset('public/user_templates/images/flowers/1.png') !!}" alt="relative">
                             <span class="sp">Lay a Flower</span>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                 <button class="bt_no dropbtn">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img class="feather-select-icon-img" src="{!! asset('user_templates/images/notes/1.png') !!}" alt="relative">
+                            <img class="feather-select-icon-img" src="{!! asset('public/user_templates/images/notes/1.png') !!}" alt="relative">
                             <span class="sp">Leave a Note</span>
                         </div>
                     </div>
@@ -249,10 +249,10 @@
             } else {
 
                 candles_html = `                
-                <button onclick="set_tribute('candle','{!! asset('user_templates/images/candles/1.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('candle','{!! asset('public/user_templates/images/candles/1.png') !!}"')" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img candle-select-icon-img src="{!! asset('user_templates/images/candles/1.png') !!}" alt="relative">
+                            <img candle-select-icon-img src="{!! asset('public/user_templates/images/candles/1.png') !!}" alt="relative">
                             <span class="sp">Light a Candle</span>
                         </div>
                     </div>
@@ -260,10 +260,10 @@
                 `;
 
                 flowers_html = `                
-                <button onclick="set_tribute('flower','{!! asset('user_templates/images/flowers/1.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('flower','{!! asset('public/user_templates/images/flowers/1.png') !!}"')" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img flower-select-icon-img src="{!! asset('user_templates/images/flowers/1.png') !!}" alt="relative">
+                            <img flower-select-icon-img src="{!! asset('public/user_templates/images/flowers/1.png') !!}" alt="relative">
                             <span class="sp">Lay a Flower</span>
                         </div>
                     </div>
@@ -271,10 +271,10 @@
                 `;
 
                 notes_html = `                
-                <button onclick="set_tribute('feather','{!! asset('user_templates/images/notes/1.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('feather','{!! asset('public/user_templates/images/notes/1.png') !!}"')" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
-                            <img feather-select-icon-img src="{!! asset('user_templates/images/notes/1.png') !!}" alt="relative">
+                            <img feather-select-icon-img src="{!! asset('public/user_templates/images/notes/1.png') !!}" alt="relative">
                             <span class="sp">Leave a Note</span>
                         </div>
                     </div>
@@ -293,21 +293,21 @@
             <div class="dropdown-content">
                 <div class="flx_mob">`;
             var candle_arr = [
-                "{!! asset('user_templates/images/candles/1.png') !!}",
-                "{!! asset('user_templates/images/candles/2.png') !!}",
-                "{!! asset('user_templates/images/candles/3.png') !!}",
-                "{!! asset('user_templates/images/candles/4.png') !!}",
-                "{!! asset('user_templates/images/candles/5.png') !!}",
-                "{!! asset('user_templates/images/candles/6.png') !!}",
-                "{!! asset('user_templates/images/candles/7.png') !!}",
-                "{!! asset('user_templates/images/candles/8.png') !!}",
-                "{!! asset('user_templates/images/candles/9.png') !!}",
-                "{!! asset('user_templates/images/candles/10.png') !!}",
-                "{!! asset('user_templates/images/candles/11.png') !!}",
-                "{!! asset('user_templates/images/candles/12.png') !!}",
-                "{!! asset('user_templates/images/candles/13.png') !!}",
-                "{!! asset('user_templates/images/candles/14.png') !!}",
-                // "{!! asset('user_templates/images/candles/candle.png') !!}"
+                "{!! asset('public/user_templates/images/candles/1.png') !!}",
+                "{!! asset('public/user_templates/images/candles/2.png') !!}",
+                "{!! asset('public/user_templates/images/candles/3.png') !!}",
+                "{!! asset('public/user_templates/images/candles/4.png') !!}",
+                "{!! asset('public/user_templates/images/candles/5.png') !!}",
+                "{!! asset('public/user_templates/images/candles/6.png') !!}",
+                "{!! asset('public/user_templates/images/candles/7.png') !!}",
+                "{!! asset('public/user_templates/images/candles/8.png') !!}",
+                "{!! asset('public/user_templates/images/candles/9.png') !!}",
+                "{!! asset('public/user_templates/images/candles/10.png') !!}",
+                "{!! asset('public/user_templates/images/candles/11.png') !!}",
+                "{!! asset('public/user_templates/images/candles/12.png') !!}",
+                "{!! asset('public/user_templates/images/candles/13.png') !!}",
+                "{!! asset('public/user_templates/images/candles/14.png') !!}",
+                // "{!! asset('public/user_templates/images/candles/candle.png') !!}"
             ];
 
             $(candle_arr).each(function(index, candle) {
@@ -330,26 +330,26 @@
             <div class="dropdown-content">
                 <div class="flx_mob">`;
             var flowers_arr = [
-                "{!! asset('user_templates/images/flowers/1.png') !!}",
-                "{!! asset('user_templates/images/flowers/2.png') !!}",
-                "{!! asset('user_templates/images/flowers/3.png') !!}",
-                "{!! asset('user_templates/images/flowers/4.png') !!}",
-                "{!! asset('user_templates/images/flowers/5.png') !!}",
-                "{!! asset('user_templates/images/flowers/6.png') !!}",
-                "{!! asset('user_templates/images/flowers/7.png') !!}",
-                "{!! asset('user_templates/images/flowers/8.png') !!}",
-                "{!! asset('user_templates/images/flowers/9.png') !!}",
-                "{!! asset('user_templates/images/flowers/10.png') !!}",
-                "{!! asset('user_templates/images/flowers/11.png') !!}",
-                "{!! asset('user_templates/images/flowers/12.png') !!}",
-                "{!! asset('user_templates/images/flowers/13.png') !!}",
-                "{!! asset('user_templates/images/flowers/14.png') !!}",
-                "{!! asset('user_templates/images/flowers/15.png') !!}",
-                "{!! asset('user_templates/images/flowers/16.png') !!}",
-                "{!! asset('user_templates/images/flowers/17.png') !!}",
-                "{!! asset('user_templates/images/flowers/18.png') !!}",
-                "{!! asset('user_templates/images/flowers/19.png') !!}",
-                // "{!! asset('user_templates/images/flowers/flower.png') !!}"
+                "{!! asset('public/user_templates/images/flowers/1.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/2.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/3.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/4.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/5.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/6.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/7.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/8.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/9.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/10.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/11.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/12.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/13.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/14.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/15.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/16.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/17.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/18.png') !!}",
+                "{!! asset('public/user_templates/images/flowers/19.png') !!}",
+                // "{!! asset('public/user_templates/images/flowers/flower.png') !!}"
             ];
 
             $(flowers_arr).each(function(index, flower) {
@@ -372,12 +372,12 @@
             <div class="dropdown-content">
                 <div class="flx_mob drop_icn">`;
             var notes_arr = [
-                "{!! asset('user_templates/images/notes/1.png') !!}",
-                "{!! asset('user_templates/images/notes/2.png') !!}",
-                "{!! asset('user_templates/images/notes/3.png') !!}",
-                "{!! asset('user_templates/images/notes/4.png') !!}",
-                "{!! asset('user_templates/images/notes/5.png') !!}",
-                // "{!! asset('user_templates/images/notes/feather.png') !!}"
+                "{!! asset('public/user_templates/images/notes/1.png') !!}",
+                "{!! asset('public/user_templates/images/notes/2.png') !!}",
+                "{!! asset('public/user_templates/images/notes/3.png') !!}",
+                "{!! asset('public/user_templates/images/notes/4.png') !!}",
+                "{!! asset('public/user_templates/images/notes/5.png') !!}",
+                // "{!! asset('public/user_templates/images/notes/feather.png') !!}"
             ];
 
             $(notes_arr).each(function(index, note) {
@@ -433,7 +433,7 @@
             formData.append('story_image', $('input[name="story_image"]').val());
 
             $.ajax({
-                url: '{!! asset('user/storyform') !!}',
+                url: '{!! asset("user/storyform") !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -467,7 +467,7 @@
             formData.append('memorial_id', memorial_id);
 
             $.ajax({
-                url: '{!! asset('user/upload_gallery') !!}',
+                url: '{!! asset("user/upload_gallery") !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -548,13 +548,13 @@
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             if($('#type_tribute').val() == ''){
-                set_tribute('candle','{!! asset("user_templates/images/candles/1.png") !!}');
+                set_tribute('candle','{!! asset("public/user_templates/images/candles/1.png") !!}');
             }
             formData.append('type_var', $('#type_tribute').val());
             formData.append('image_tribute', $('#image_tribute').val());
 
             $.ajax({
-                url: '{!! asset('user/tributeform') !!}',
+                url: '{!! asset("user/tributeform") !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -782,24 +782,4 @@
             }
         });
     }
-
-    // function delete_request_vid(gallery_id) {
-    //     $.ajax({
-
-    //         url: "{!! asset('user/delete') !!}/" + gallery_id,
-    //         type: 'POST',
-    //         dataType: 'json',
-    //         data: {
-    //             _token: '{!! @csrf_token() !!}'
-    //         },
-    //         success: function(response) {
-    //             console.log(response);
-    //             if (response.status) {
-
-    //                 $('.remove_vid' + user_id).remove();
-
-    //             }
-    //         }
-    //     });
-    // }
 </script>

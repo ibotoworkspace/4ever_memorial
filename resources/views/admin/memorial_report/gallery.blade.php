@@ -80,7 +80,6 @@ Gallery
                              };
                             var type = response['data'][i].type;
                             var view =
-                            // `<a class="btn btn-info" href="{!! asset('admin/books/edit/` + id + `') !!}">Gallery</a>`;
                             `<a class="btn btn-info" target="_blank" href="` +response['data'][i].image_show_var+ `">View</a>`;
                             createModal({
                                 id: 'memorial_' + response['data'][i].id,

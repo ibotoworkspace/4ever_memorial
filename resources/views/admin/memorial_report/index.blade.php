@@ -56,7 +56,7 @@ MEMORIALS
             function fetchRecords() {
 
                 $.ajax({
-                    url: '{!! asset('admin/memorials/getmemorials') !!}',
+                    url: '{!! asset("admin/memorials/getmemorials") !!}',
                     type: 'get',
                     dataType: 'json',
                     success: function(response) {
@@ -76,7 +76,6 @@ MEMORIALS
                             var name = response['data'][i].f_name;
                             var image = `<img src="` +response['data'][i].image_show_var+ `" width="24%">`;
                             var gallery =
-                            // `<a class="btn btn-info" href="{!! asset('admin/books/edit/` + id + `') !!}">Gallery</a>`;
                             `<a class="btn btn-info" target="_blank" href="{!! asset('admin/memoraials/gallery/` + id + `') !!}">Gallery</a>`;
                             createModal({
                                 id: 'memorial_' + response['data'][i].id,

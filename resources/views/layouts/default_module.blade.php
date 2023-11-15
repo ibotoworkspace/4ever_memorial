@@ -1,12 +1,12 @@
 @extends('layouts.default_header')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('theme/vendor/chosen_v1.4.0/chosen.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/vendor/datatables/media/css/jquery.dataTables.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/vendor/bootstrap-daterangepicker/daterangepicker-bs3.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/vendor/chosen_v1.4.0/chosen.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/vendor/datatables/media/css/jquery.dataTables.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/vendor/bootstrap-daterangepicker/daterangepicker-bs3.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="{{ asset('theme/vendor/datatables/media/css/jquery.dataTables.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/vendor/datatables/media/css/jquery.dataTables.css') }}">
 
     <script>
         window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.5.1.js"><\/script>');
@@ -84,29 +84,29 @@
     </div>
 
     <!-- build:js({.tmp,app}) scripts/app.min.js -->
-    <script src="{{ asset('theme/vendor/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery/dist/jquery.js') }}"></script>
     <!-- endbuild -->
 
     <!-- page level scripts -->
-    <script src="{{ asset('theme/vendor/chosen_v1.4.0/chosen.jquery.min.js') }}"></script>
-    <script src="{{ asset('theme/vendor/datatables/media/js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/chosen_v1.4.0/chosen.jquery.min.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/datatables/media/js/jquery.dataTables.js') }}"></script>
     <!-- /page level scripts -->
 
     <!-- page level scripts -->
-    <script src="{{ asset('theme/vendor/moment/moment.js') }}"></script>
-    <script src="{{ asset('theme/vendor/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <script src="{{ asset('theme/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jt.timepicker/jquery.timepicker.min.js') }}"></script>
-    <script src="{{ asset('theme/vendor/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js') }}"></script>
-    <script src="{{ asset('theme/vendor/bootstrap-colorpalette/js/bootstrap-colorpalette.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/moment/moment.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jt.timepicker/jquery.timepicker.min.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/bootstrap-colorpalette/js/bootstrap-colorpalette.js') }}"></script>
     <!-- /page level scripts -->
 
     <!-- page script -->
-    {{-- <script src="{{ asset('theme/scripts/pickers.js') }}"></script> --}}
+    {{-- <script src="{{ asset('public/theme/scripts/pickers.js') }}"></script> --}}
 
     <!-- page script -->
-    <script src="{{ asset('theme/scripts/bootstrap-datatables.js') }}"></script>
-    <script src="{{ asset('theme/scripts/table-edit.js') }}"></script>
+    <script src="{{ asset('public/theme/scripts/bootstrap-datatables.js') }}"></script>
+    <script src="{{ asset('public/theme/scripts/table-edit.js') }}"></script>
     <!-- /page script -->
 
 @stop
