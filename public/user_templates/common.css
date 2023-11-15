@@ -499,9 +499,8 @@ ul.reviewSection img {
     margin-top: 86px;
     text-align: center;
 }
-.cover_head h1
-{
-    font-size: 53px;
+.cover_head h1 {
+    font-size: 30px;
     letter-spacing: 0;
     font-weight: 400;
     line-height: 1.15em;
@@ -520,6 +519,8 @@ ul.reviewSection img {
 /* ////// */
 .tab {
     overflow: hidden;
+    display: flex;
+    margin-left: -5px;
     /* border: 1px solid #ccc; */
     /* background-color: #f1f1f1; */
     margin-top: -66px;
