@@ -63,6 +63,7 @@ $user_owner=UserWebsite::with('user','style.website_template')->get();
         $user_website->ad_lastname = $request->ad_lastname;
         $user_website->ad_email = $request->ad_email;
         $user_website->ad_pwd = $request->ad_pwd;
+        $user_website->full_name = $request->f_name??''.' '.$request->m_name??''.' '.$request->l_name??'';
         $user_website->f_name = $request->f_name;
         $user_website->m_name = $request->m_name;
         $user_website->l_name = $request->l_name;

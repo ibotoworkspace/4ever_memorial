@@ -69,7 +69,7 @@
                                                 </div>
                                             </div>
                                             <div class="line"></div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 top_on_box">
                                                 {{-- {!!dd($m)!!} --}}
                                                 <p>
                                                     <b>Name: </b> {!! ucwords($m->f_name) !!}
