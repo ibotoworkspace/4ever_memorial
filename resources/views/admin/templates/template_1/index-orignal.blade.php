@@ -14,8 +14,8 @@
         href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="{!! asset('user_templates/template_1/css/style.css') !!}" />
-    <link rel="stylesheet" href="{!! asset('user_templates/common.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('public/user_templates/template_1/css/style.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('public/user_templates/common.css') !!}" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo-area">
-                            <img src="{!! asset('user_templates/template_1/images/logo.png') !!}" class="img-fluid" alt="relative" />
+                            <img src="{!! asset('public/user_templates/template_1/images/logo.png') !!}" class="img-fluid" alt="relative" />
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-md-4 prf_img">
                     <div class="profile_img">
-                        <img src="{!! asset('user_templates/template_1/images/profile_pic.jpg') !!}" alt="relative" />
+                        <img src="{!! asset('public/user_templates/template_1/images/profile_pic.jpg') !!}" alt="relative" />
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}">
+                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/flower.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Maria Nashed</h3>
@@ -151,7 +151,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}">
+                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/flower.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Maria Nashed</h3>
@@ -173,7 +173,7 @@
                                         </div>
                                         <ul class="reviewSection" id="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
+                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/candle.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Norice Mazmanian</h3>
@@ -195,7 +195,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
+                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/candle.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Adriana Villarreal</h3>
@@ -211,7 +211,7 @@
                                         </div>
                                         <ul class="reviewSection">
                                             <li>
-                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}">
+                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/candle.png') !!}">
                                             </li>
                                             <li>
                                                 <h3>Wendi Johnson</h3>
@@ -282,7 +282,7 @@
                                             <button onclick="set_tribute('candle')" class="bt_no dropbtn">
                                                 <div class="cand same">
                                                     <div class="ico_wri">
-                                                        <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                                                        <img src="{!! asset('public/user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
                                                         <span class="sp">Light a Candle</span>
                                                     </div>
                                                 </div>
@@ -294,7 +294,7 @@
                                                     <a href="#">
                                                         <div class="cand same">
                                                             <div class="ico_wri">
-                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/6.png') !!}" alt="relative">
+                                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/variations/6.png') !!}" alt="relative">
                                                                 <span class="sp">Light a Candle</span>
                                                             </div>
                                                         </div>
@@ -302,7 +302,7 @@
                                                     <a href="#">
                                                         <div class="cand same">
                                                             <div class="ico_wri">
-                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/7.png') !!}" alt="relative">
+                                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/variations/7.png') !!}" alt="relative">
                                                                 <span class="sp">Light a Candle</span>
                                                             </div>
                                                         </div>
@@ -310,7 +310,7 @@
                                                     <a href="#">
                                                         <div class="cand same">
                                                             <div class="ico_wri">
-                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/8.png') !!}" alt="relative">
+                                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/variations/8.png') !!}" alt="relative">
                                                                 <span class="sp">Light a Candle</span>
                                                             </div>
                                                         </div>
@@ -320,7 +320,7 @@
                                                     <a href="#">
                                                         <div class="cand same">
                                                             <div class="ico_wri">
-                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/9.png') !!}" alt="relative">
+                                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/variations/9.png') !!}" alt="relative">
                                                                 <span class="sp">Light a Candle</span>
                                                             </div>
                                                         </div>
@@ -328,7 +328,7 @@
                                                     <a href="#">
                                                         <div class="cand same">
                                                             <div class="ico_wri">
-                                                                <img src="{!! asset('user_templates/template_1/images/imgs/variations/10.png') !!}" alt="relative">
+                                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/variations/10.png') !!}" alt="relative">
                                                                 <span class="sp">Light a Candle</span>
                                                             </div>
                                                         </div>
@@ -336,7 +336,7 @@
                                                     <a href="#">
                                                         <div class="cand same">
                                                             <div class="ico_wri">
-                                                                <img src="{!! asset('user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
+                                                                <img src="{!! asset('public/user_templates/template_1/images/imgs/candle.png') !!}" alt="relative">
                                                                 <span class="sp">Light a Candle</span>
                                                             </div>
                                                         </div>
@@ -349,7 +349,7 @@
                                         <button class="bt_no">
                                             <div class="flower same">
                                                 <div class="ico_wri">
-                                                    <img src="{!! asset('user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/imgs/flower.png') !!}" alt="relative">
                                                     <span class="sp">Lay a Flower</span>
                                                 </div>
                                             </div>
@@ -357,7 +357,7 @@
                                         <button class="bt_no">
                                             <div class="feather same">
                                                 <div class="ico_wri">
-                                                    <img src="{!! asset('user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/imgs/feather.png') !!}" alt="relative">
                                                     <span class="sp">Leave a Note</span>
                                                 </div>
                                             </div>
@@ -385,7 +385,7 @@
                                         </li>
                                     </ul>
                                     <div class="baby">
-                                        <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="">
+                                        <img src="{!! asset('public/user_templates/template_1/images/baby_cot.png') !!}" alt="">
                                     </div>
                                     <p class="fdgsdf">Anthony was born in September 1, 2004 via scheduled C-section at
                                         San Dimas Community Hospital in San Dimas. He was 8 lbs 10 oz..</p>
@@ -453,13 +453,13 @@
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img"><a href="">
                                                     </a>
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -469,13 +469,13 @@
                                         <div class="gallery">
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -484,26 +484,26 @@
                                         <div class="gallery">
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="gallery">
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -532,13 +532,13 @@
                                         <div class="gallery">
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
 
@@ -546,39 +546,39 @@
                                         <div class="gallery">
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gallery">
-                                            <div class="row">
-                                                <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                                </div>
-                                                <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
-                                                </div>
-                                                <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="gallery">
                                             <div class="row">
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                                 <div class="col-md-3 pic_gal_img">
-                                                    <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gallery">
+                                            <div class="row">
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
+                                                </div>
+                                                <div class="col-md-3 pic_gal_img">
+                                                    <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -660,7 +660,7 @@
                                         <h3>story title</h3>
                                         <p>
                                             January 21 . by Alexa Zelaya</p>
-                                        <img src="{!! asset('user_templates/template_1/images/baby_cot.png') !!}" alt="relative">
+                                        <img src="{!! asset('public/user_templates/template_1/images/baby_cot.png') !!}" alt="relative">
                                         <div class="story_para">
                                             <p>3rd floor of the library was always our go to if we wanted to "study"
                                                 (aka
@@ -797,15 +797,15 @@
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner">
                                             <div class="item active">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
+                                                <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
                                             </div>
 
                                             <div class="item">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
+                                                <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
                                             </div>
 
                                             <div class="item">
-                                                <img src="{!! asset('user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
+                                                <img src="{!! asset('public/user_templates/template_1/images/download.jpg') !!}" style="width:100%; height: 100%;">
                                             </div>
                                         </div>
 

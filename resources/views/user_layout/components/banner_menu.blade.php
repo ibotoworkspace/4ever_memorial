@@ -14,7 +14,7 @@
     <div class="row hidden-xs">
         <div class="col-sm-4">
             <div class="logoarea">
-                <img src="{!!asset('images/logo.png')!!}" class="img-responsive">
+                <img src="{!!asset('public/images/logo.png')!!}" class="img-responsive">
             </div>
         </div>
         <div class="col-sm-4">
@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-sm-2 col-xs-12 visible-xs">
                 <div class="logoArea">
-                    <a href="/"><img src="{!!asset('images/logo.png')!!}" class="img-responsive"></a>
+                    <a href="/"><img src="{!!asset('public/images/logo.png')!!}" class="img-responsive"></a>
                 </div>
             </div>
             <div class="col-sm-12 col-xs-12">

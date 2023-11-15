@@ -5,10 +5,10 @@
 @endsection
 
 @section('headerfiles')
-    <link rel="icon" type="image/png" sizes="16x16" href="{!! asset(' images/favicon.png') !!}" />
-    <link href="{!! asset('css/main.css') !!}" rel="stylesheet">
-    <link href="{!! asset('css/testimonials.css') !!}" rel="stylesheet">
-    <link href="{!! asset('css/view_memorial.css') !!}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('public/images/favicon.png') !!}" />
+    <link href="{!! asset('public/css/main.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/css/testimonials.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/css/view_memorial.css') !!}" rel="stylesheet">
 @endsection
 
 @section('body')
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="memo_img">
-                                <img src="{!! asset('images/memo1.png') !!}" class="img-responsive">
+                                <img src="{!! asset('public/images/memo1.png') !!}" class="img-responsive">
                             </div>
                         </div>
                     </div>

@@ -5,9 +5,9 @@
 <title>4Year Project</title>
 @endsection
     @section('headerfiles')
-    <link rel="icon" type="image/png" sizes="16x16" href="{!!asset('images/favicon.png')!!}" />
-    <link href="{!!asset('css/main.css')!!}" rel="stylesheet">
-    <link href="{!!asset('css/plan_features.css')!!}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{!!asset('public/images/favicon.png')!!}" />
+    <link href="{!!asset('public/css/main.css')!!}" rel="stylesheet">
+    <link href="{!!asset('public/css/plan_features.css')!!}" rel="stylesheet">
     @endsection
     @section('body')
     <section>

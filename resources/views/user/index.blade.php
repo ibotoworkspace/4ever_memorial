@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="bannerdata">
-              <img src="{!! asset('theme/user_theme/images/icon.png')!!}" class="img-responsive">
+              <img src="{!! asset('public/theme/user_theme/images/icon.png')!!}" class="img-responsive">
               <h1>4 EVER MEMORY</h1>
               <h2>Beautiful, Free Online Memorials & Tributes</h2>
               <h3>4Ever Virtual Cemetery online tributes are a simple way <br>
@@ -50,7 +50,7 @@
           </div>
           <div class="col-sm-5">
             <div class="aboutimg">
-              <img src="{!! asset('theme/user_theme/images/about-us.png')!!}" class="img-responsive">
+              <img src="{!! asset('public/theme/user_theme/images/about-us.png')!!}" class="img-responsive">
             </div>
           </div>
         </div>
@@ -173,28 +173,28 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="{!! asset('theme/user_theme/images/Create-A-Free.png')!!}" class="img-responsive">
+              <img src="{!! asset('public/theme/user_theme/images/Create-A-Free.png')!!}" class="img-responsive">
               <h3>Create a Free Memorial</h3>
               <p>by adding basic or detailed information</p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="{!! asset('theme/user_theme/images/Add-Unlimited.png')!!}" class="img-responsive">
+              <img src="public/theme/user_theme/images/Add-Unlimited.png')!!}" class="img-responsive">
               <h3>Add Unlimited Content</h3>
               <p>Including photos, videos and life history</p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="{!! asset('theme/user_theme/images/Share-story.png')!!}" class="img-responsive">
+              <img src="public/theme/user_theme/images/Share-story.png')!!}" class="img-responsive">
               <h3>Share Their Life Story</h3>
               <p>and allow others to collaborate and pay tribute</p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="{!! asset('theme/user_theme/images/Geotag-The-Final.png')!!}" class="img-responsive">
+              <img src="public/theme/user_theme/images/Geotag-The-Final.png')!!}" class="img-responsive">
               <h3>Geotag The Final Resting Place</h3>
               <p>for precise cemetery directions</p>
             </div>

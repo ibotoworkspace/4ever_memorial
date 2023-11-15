@@ -20,15 +20,15 @@ $admin_common = session()->get('admin_common');
 
     <!-- build:css({.tmp,app}) styles/app.min.css -->
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
-    <link rel="stylesheet" href="{{ asset('theme/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/sublime.css') }}">
-    <link rel="stylesheet" href="{{ asset('cssjs/myapp.css') }}">
-    <link rel="stylesheet" href="{{ asset('cssjs/jquery.timeentry.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/sublime.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/cssjs/myapp.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/cssjs/jquery.timeentry.css') }}">
     <!-- mobiscroll -->
-    <link rel="stylesheet" href="{{ asset('css/mobi/mobiscroll.jquery.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/mobi/mobiscroll.jquery.min.css') }}">
     <!--  -->
     {{-- Data Tables CSS --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
@@ -46,7 +46,7 @@ $admin_common = session()->get('admin_common');
     <![endif]-->
 
     <!-- load modernizer -->
-    <script src="{{ asset('theme/vendor/modernizr.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/modernizr.js') }}"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- css multiselect  -->
@@ -81,7 +81,7 @@ $admin_common = session()->get('admin_common');
 
                 <!-- logo -->
                 <a href="{{ asset('index.php/admin/dashboard') }}" class="navbar-brand">
-                    <img src="{{ asset('images/logo.png') }}" alt="">
+                    <img src="{{ asset('public/images/logo.png') }}" alt="">
                     <span class="heading-font"></span>
                 </a>
                 <!-- /logo -->
@@ -103,7 +103,7 @@ $admin_common = session()->get('admin_common');
 
                 <li class="off-right hidden-xs">
                     <a href="javascript:;" data-toggle="dropdown" class="no-hover">
-                        <img src="{{ asset('theme/images/avatar.jpg') }} " class="header-avatar img-circle"
+                        <img src="{{ asset('public/theme/images/avatar.jpg') }} " class="header-avatar img-circle"
                             alt="user" title="user">
                         {{--                    <span class="hidden-xs ml10">Welcome {!! $admin_common->name !!}</span> --}}
                         {{--                    <span class="hidden-xs ml10">Welcome {!! $admin_common->name !!}</span> --}}
@@ -235,16 +235,16 @@ $admin_common = session()->get('admin_common');
     <!-- build:js({.tmp,app}) scripts/app.min.js -->
     <!--   this file will be loaded individually for all files to avoide conficts  -->
     <!--   <script src="{{ asset('theme/vendor/jquery/dist/jquery.js') }}"></script> -->
-    {{-- <script src="{{ asset('cssjs/jQuery-2.1.4.min.js')  }}"></script> --}}
-    <script src="{{ asset('cssjs/jquery.plugin.js') }}"></script>
-    {{-- <script src="{{ asset('cssjs/jquery.timeentry.js')}}"></script> --}}
-    <script src="{{ asset('theme/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('theme/vendor/slimScroll/jquery.slimscroll.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery.easing/jquery.easing.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery_appear/jquery.appear.js') }}"></script>
-    <script src="{{ asset('theme/vendor/jquery.placeholder.js') }}"></script>
-    <script src="{{ asset('theme/vendor/fastclick/lib/fastclick.js') }}"></script>
-    <script src="{{ asset('cssjs/jquery.timeentry.js') }}"></script>
+    {{-- <script src="{{ asset('public/cssjs/jQuery-2.1.4.min.js')  }}"></script> --}}
+    <script src="{{ asset('public/cssjs/jquery.plugin.js') }}"></script>
+    {{-- <script src="{{ asset('public/cssjs/jquery.timeentry.js')}}"></script> --}}
+    <script src="{{ asset('public/theme/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/slimScroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery.easing/jquery.easing.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery_appear/jquery.appear.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/jquery.placeholder.js') }}"></script>
+    <script src="{{ asset('public/theme/vendor/fastclick/lib/fastclick.js') }}"></script>
+    <script src="{{ asset('public/cssjs/jquery.timeentry.js') }}"></script>
 
     {{-- Data Table Jquery & Ajax --}}
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
@@ -269,7 +269,7 @@ $admin_common = session()->get('admin_common');
 
     <!-- mobiscroll  -->
 
-    {{-- <script src="{{asset('mobi_js/mobiscroll.jquery.min.js')}}"></script> --}}
+    {{-- <script src="{{asset('public/mobi_js/mobiscroll.jquery.min.js')}}"></script> --}}
 
 
 
@@ -285,7 +285,7 @@ $admin_common = session()->get('admin_common');
 
 
     <!-- /template scripts -->
-    {{-- <script src="{{ asset('cssjs/map.js') }}"></script> --}}
+    {{-- <script src="{{ asset('public/cssjs/map.js') }}"></script> --}}
     {
     {{-- <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwD9jQSMyeJhuZfpMtlD6idB499MbMNI&libraries=places&callback=initAutocomplete"
@@ -299,8 +299,8 @@ $admin_common = session()->get('admin_common');
     <!-- /page script -->
 
     <!-- template scripts -->
-    <script src="{{ asset('theme/scripts/main.js') }}"></script>
-    <script src="{{ asset('theme/scripts/offscreen.js') }}"></script>
+    <script src="{{ asset('public/theme/scripts/main.js') }}"></script>
+    <script src="{{ asset('public/theme/scripts/offscreen.js') }}"></script>
     @include('layouts.myapp_js')
 
     <!-- /template scripts -->

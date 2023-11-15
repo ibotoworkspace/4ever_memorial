@@ -119,7 +119,7 @@ id="upload_image" style="display:block" /> --}}
 <!-- cropper open -->
 
 <!-- endbuild -->
-{{-- <script src="{{ asset('theme/vendor/parsleyjs/dist/parsley.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('public/theme/vendor/parsleyjs/dist/parsley.min.js') }}"></script> --}}
 {{-- <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" /> --}}
 <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet" />
 <script src="https://unpkg.com/cropperjs"></script>

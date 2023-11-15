@@ -43,10 +43,10 @@
     console.log('checking***********4')
 
     function add_slider_select_theme() {
-        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '{!! asset('user_templates/slider/css/slick.css') !!}'));
-        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '{!! asset('user_templates/slider/css/slick-theme.css') !!}'));
+        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '{!! asset("public/user_templates/slider/css/slick.css") !!}'));
+        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', '{!! asset("public/user_templates/slider/css/slick-theme.css") !!}'));
         $('body').append(get_slider_html());
-        $.getScript('{!! asset('user_templates/slider/js/slick.js') !!}', function() {
+        $.getScript('{!! asset("public/user_templates/slider/js/slick.js"public/) !!}', function() {
             $(".regular").slick({
                 dots: true,
                 infinite: true,

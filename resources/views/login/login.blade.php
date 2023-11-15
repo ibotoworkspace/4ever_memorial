@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="{{ asset('theme/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/styles/sublime.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/theme/styles/sublime.css') }}">
     <style type="text/css">
         .box {
             width: 600px;
@@ -21,10 +21,10 @@
     </style>
 </head>
 
-<body class="bg-primary cover" style="background-image: url({{ asset('theme/images/admin_back.jpg') }})">
+<body class="bg-primary cover" style="background-image: url({{ asset('public/theme/images/admin_back.jpg') }})">
 
     <div class="cover" ></div>
-    {{-- <div class="cover" style="background-image: url({{asset('images/download.png')}})"></div> --}}
+    {{-- <div class="cover" style="background-image: url({{asset('public/images/download.png')}})"></div> --}}
     <br />
     <div class="container box">
         <h3 align="center" style="color: white;
