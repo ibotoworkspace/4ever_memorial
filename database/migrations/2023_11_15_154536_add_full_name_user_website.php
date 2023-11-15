@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('access_token')->nullable()->default('');
+        Schema::table('user_website', function (Blueprint $table) {
+            $table->string('full_name')->nullable()->default('');
         });
     }
 
@@ -25,8 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };
