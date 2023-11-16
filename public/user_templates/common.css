@@ -607,15 +607,13 @@ ul.reviewSection {
     top: -9px;
     left: 39px;
 }
-.icon_list{
-    display: flex;
-}
 .lev_tri {
     padding: 20px;
     border: solid 1px;
     border-radius: 10px;
     margin-bottom: 36px;
-    height: 472px;
+    min-height: 472px;
+    height: auto;
 }
 
 
@@ -1006,7 +1004,10 @@ body {font-family: Arial;}
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
 
-
+    .tributes {
+        display: block;
+        justify-content: space-between;
+    }
     .logo-area {
         padding: 10px 57px;
         text-align: center;
@@ -1069,7 +1070,7 @@ body {font-family: Arial;}
         font-size: 10px;
     }
     .icon_list {
-        display: flex;
+        display: block;
         margin-bottom: 15px;
     }
     .publish {

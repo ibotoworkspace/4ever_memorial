@@ -6,6 +6,7 @@ use App\Models\Template;
 use App\Models\WebsiteTemplate;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Config;
 
 class TemplateSeeder extends Seeder
 {
@@ -18,20 +19,24 @@ class TemplateSeeder extends Seeder
     {
         $template_name = 'template_1';
         $template = WebsiteTemplate::where('name', $template_name)->first();
-
-        if (!$template) {
-            $template = new WebsiteTemplate();
+        if($template){
+            $template->forceDelete();
         }
+
+        // if (!$template) {
+            $template = new WebsiteTemplate();
+        // }
         $image_path = asset('public') . '/';
-        // $template->id = 1;
+        $template->id = 1;
         $template->name = $template_name;
         $template->save();
         // if(){}
-        $public_path = 'https://4evermemorial.com/public/';
+        // $public_path = 'https://4evermemorial.com/public/';
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'http://localhost/4_ever_memories/public/';
-        // dd($pub);
+        $public_path = Config::get('app.url').'/public/';
+        $url_path = Config::get('app.url').'/';
         $template->web_html =
             '
         <html>
@@ -76,11 +81,11 @@ class TemplateSeeder extends Seeder
                                     <img src="' . $public_path . 'user_templates/template_1/images/logo.png" alt="relative" />
                                     </div>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 hidden-xs">
                                     <div class="nav_bar">
-                                    <a href="' . $public_path . 'user/memorialform">CREATE A NEW MEMORIAL</a>
-                                    <a href="' . $public_path . 'user/aboutus">ABOUT US</a>
-                                    <a href="' . $public_path . 'user/contactus">CONTACT SUPPORT</a>
+                                    <a href="' . $url_path . 'user/memorialform">CREATE A NEW MEMORIAL</a>
+                                    <a href="' . $url_path . 'user/aboutus">ABOUT US</a>
+                                    <a href="' . $url_path . 'user/contactus">CONTACT SUPPORT</a>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +174,7 @@ class TemplateSeeder extends Seeder
                                         <i class="fa fa-facebook-square" aria-hidden="true"></i>
                                     </div>
                                     <div class="fb_share_par">
-                                        <?php $url = "' . $public_path . '/user/get_memorial/asdsadsad@forevermemorial.com"; ?>
+                                        <?php $url = "' . $url_path . '/user/get_memorial/asdsadsad@forevermemorial.com"; ?>
                                         <a class="facebook-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>">Share on Facebook</a>
                                     </div>
                                 </div>
@@ -220,7 +225,7 @@ class TemplateSeeder extends Seeder
                 </section>
                 <section class="footer_area">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row hidden-xs">
                             <div class="col-md-4">
                                 <div class="sdad">
                                     <h5 class="sdads">Follow us:</h5>
@@ -233,10 +238,10 @@ class TemplateSeeder extends Seeder
                             <div class="col-md-8">
                                 <div class="links">
 
-                                    <a href="'.$public_path.'/search/memorial">Memorial Websites</a>
-                                    <a href="'.$public_path.'/user/service_term">Terms of Use</a>
-                                    <a href="'.$public_path.'/user/privacy_policy">Privacy Policy</a>
-                                    <a href="'.$public_path.'/user/contactus">Contact Us</a>
+                                    <a href="'.$url_path.'/search/memorial">Memorial Websites</a>
+                                    <a href="'.$url_path.'/user/service_term">Terms of Use</a>
+                                    <a href="'.$url_path.'/user/privacy_policy">Privacy Policy</a>
+                                    <a href="'.$url_path.'/user/contactus">Contact Us</a>
                                 </div>
 
                             </div>

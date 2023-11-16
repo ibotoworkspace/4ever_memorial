@@ -23,6 +23,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         // My custom middleware for general information logging a
         \App\Http\Middleware\CustomLog::class,
+        \App\Http\Middleware\COROS::class,
     ];
 
     /**
@@ -38,6 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
         ],
 
         'api' => [
@@ -70,9 +72,10 @@ class Kernel extends HttpKernel
 
         // admin middleware
         'admin_auth' => \App\Http\Middleware\AdminAuth::class,
-         // User middleware
-         'user.auth' => \App\Http\Middleware\UserAuthCheck::class,
-         //Role_Middleware
+        // User middleware
+        'user.auth' => \App\Http\Middleware\UserAuthCheck::class,
+        'auth.user_loggedin' => \App\Http\Middleware\ValidateToken::class,
+        //Role_Middleware
         //  'role_auth' => \App\Http\Middleware\Role_Middleware::class,
     ];
 }
