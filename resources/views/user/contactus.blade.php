@@ -6,7 +6,7 @@
 
 
 @section('headerfiles')
-    <link href="{!! asset('theme/user_theme/css/contactus.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/theme/user_theme/css/contactus.css') !!}" rel="stylesheet">
 @endsection
 
 @section('body')
@@ -32,7 +32,7 @@
                     <div class="contactdata conuniq">
                         <div class="infobox">
                             <div class="infoboximg">
-                                <img src="{!! asset('theme/user_theme/images/email.png') !!}" class="img-responsive">
+                                <img src="{!! asset('public/theme/user_theme/images/email.png') !!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
                                 <p>info@4evermemorial.com</p>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="infobox">
                             <div class="infoboximg">
-                                <img src="{!! asset('theme/user_theme/images/phone.png') !!}" class="img-responsive">
+                                <img src="{!! asset('public/theme/user_theme/images/phone.png') !!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
                                 <p>+1909 559 9031</p>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="infobox">
                             <div class="infoboximg loca">
-                                <img src="{!! asset('theme/user_theme/images/location.png') !!}" class="img-responsive">
+                                <img src="{!! asset('public/theme/user_theme/images/location.png') !!}" class="img-responsive">
                             </div>
                             <div class="infoboxtext">
                                 <p>4Ever Memorial

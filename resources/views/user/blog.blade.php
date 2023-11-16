@@ -5,7 +5,7 @@
 @endsection
 
 @section('headerfiles')
-    <link href="{!! asset('theme/user_theme/css/blog.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/theme/user_theme/css/blog.css') !!}" rel="stylesheet">
 @endsection
 
 @section('body')
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-sm-8">
                         <div class="blogareadata">
-                            <img src="{!! asset('theme/user_theme/images/image1.jpg')!!}" class="img-responsive">
+                            <img src="{!! asset('public/theme/user_theme/images/image1.jpg')!!}" class="img-responsive">
                             <div class="blogertext">
                                 <h5>Childsadas Loss, Coping With Grief</h5>
                                 <h2>Coping with the grief of child loss can be a difficult and heartbreaking process. </h2>
@@ -42,7 +42,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="blogareadataa">
-                                    <img src="{!! asset('theme/user_theme/images/image2.jpg')!!}" class="img-responsive">
+                                    <img src="{!! asset('public/theme/user_theme/images/image2.jpg')!!}" class="img-responsive">
                                     <div class="blogertext">
                                         <h5>Phenomenon Of Death</h5>
                                         <h2>Death is an inevitable phenomenon in the world. It is a universal truth that no one can escape from death. </h2>
@@ -71,7 +71,7 @@
                         <div class=sideblogdata>
                             <!-- <input type="email" class="form-control" id="Search" placeholder="Search Here!"> -->
                             <div class="sideblog">
-                                <img src="{!! asset('theme/user_theme/images/jacob-about.png')!!}" class="img-responsive">
+                                <img src="{!! asset('public/theme/user_theme/images/jacob-about.png')!!}" class="img-responsive">
                                 <p>Our success story is attributed
                                     to the great confidence
                                     bestow on us by our various

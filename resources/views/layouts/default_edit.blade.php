@@ -127,9 +127,9 @@
       <!-- cropper open -->
       -
       <!-- build:js({.tmp,app}) scripts/app.min.js -->
-      <script src="{{ asset('theme/vendor/jquery/dist/jquery.js') }}"></script>
+      <script src="{{ asset('public/theme/vendor/jquery/dist/jquery.js') }}"></script>
       <!-- endbuild -->
-      <script src="{{ asset('theme/vendor/parsleyjs/dist/parsley.min.js') }}"></script>
+      <script src="{{ asset('public/theme/vendor/parsleyjs/dist/parsley.min.js') }}"></script>
 
       <!-- open=====uncmment kiya tha bd mai cropeer na chlne ki waja se -->
       <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
@@ -141,7 +141,7 @@
       <!-- build:js({.tmp,app}) scripts/app.min.js -->
 
       <!-- cropper close -->
-      <script src="{{ asset('theme/vendor/jquery/dist/jquery.js') }}"></script>
+      <script src="{{ asset('public/theme/vendor/jquery/dist/jquery.js') }}"></script>
       <!-- endbuild -->
-      <script src="{{ asset('theme/vendor/parsleyjs/dist/parsley.min.js') }}"></script>
+      <script src="{{ asset('public/theme/vendor/parsleyjs/dist/parsley.min.js') }}"></script>
   @stop

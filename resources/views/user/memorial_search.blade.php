@@ -4,10 +4,10 @@
 @endsection
 
 @section('headerfiles')
-    <link rel="icon" type="image/png" sizes="16x16" href="{!! asset(' images/favicon.png') !!}" />
-    <link href="{!! asset('css/main.css') !!}" rel="stylesheet">
-    <link href="{!! asset('css/testimonials.css') !!}" rel="stylesheet">
-    <link href="{!! asset('css/search_memorials.css') !!}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('public/images/favicon.png') !!}" />
+    <link href="{!! asset('public/css/main.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/css/testimonials.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/css/search_memorials.css') !!}" rel="stylesheet">
 @endsection
 
 @section('body')
@@ -33,7 +33,7 @@
                         <a href="" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img7.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset('public/images/prof_img7.jpg') !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>Anthony Joseph Blousby</h3>
@@ -49,7 +49,7 @@
                         <a href="" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img4.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset('public/images/prof_img4.jpg') !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>Anthony Joseph Blousby</h3>
@@ -65,7 +65,7 @@
                         <a href="" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img5.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset('public/images/prof_img5.jpg') !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>Anthony Joseph Blousby</h3>
@@ -83,7 +83,7 @@
                         <a href="" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img6.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset('public/images/prof_img6.jpg') !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>Anthony Joseph Blousby</h3>
@@ -99,7 +99,7 @@
                         <a href="" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img8.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset('public/images/prof_img8.jpg') !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>Anthony Joseph Blousby</h3>
@@ -115,7 +115,7 @@
                         <a href="" class="deco_no">
                             <div class="memo_box box_hvr">
                                 <div class="img_area">
-                                    <img src="{!! asset('images/prof_img9.jpg') !!}" class="img-responsive">
+                                    <img src="{!! asset('public/images/prof_img9.jpg') !!}" class="img-responsive">
                                 </div>
                                 <div class="info_area">
                                     <h3>Anthony Joseph Blousby</h3>

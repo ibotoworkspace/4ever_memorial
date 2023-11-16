@@ -4,7 +4,7 @@
 @endsection
 
 @section('headerfiles')
-    <link href="{!! asset('theme/user_theme/css/aboutus.css') !!}" rel="stylesheet">
+    <link href="{!! asset('public/theme/user_theme/css/aboutus.css') !!}" rel="stylesheet">
 @endsection
 
 @section('body')

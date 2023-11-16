@@ -4,7 +4,7 @@
 @endsection
 
 @section('headerfiles')
-<link href="{!!asset('theme/user_theme/css/aboutus.css')!!}" rel="stylesheet">
+<link href="{!!asset('public/theme/user_theme/css/aboutus.css')!!}" rel="stylesheet">
 @endsection
 
 @section('body')
@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-sm-5">
                         <div class="aboutimg">
-                            <img src="{!!asset('theme/user_theme/images/jacob.png')!!}" class="img-responsive">
+                            <img src="{!!asset('public/theme/user_theme/images/jacob.png')!!}" class="img-responsive">
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ Our website also offers several ways for people to stay connected with those the
 
 4Ever Memorial: a safe haven for ongoing reflection. An everlasting tribute to lost loved ones. A place to remember and keep their memories alive. Always by your side, even after death. Come pay tribute to us today at 4Ever Memorial.
 </p>
-<img src="{!!asset('theme/user_theme/images/signature.png')!!}" class="img-responsive">
+<img src="{!!asset('public/theme/user_theme/images/signature.png')!!}" class="img-responsive">
                 </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ Our website also offers several ways for people to stay connected with those the
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="aboutimg">
-                            <img src="{!!asset('theme/user_theme/images/mission.jpg')!!}" class="img-responsive">
+                            <img src="{!!asset('public/theme/user_theme/images/mission.jpg')!!}" class="img-responsive">
                         </div>
                         <div class="aboutdataa">
                             <h2>VISION</h2>
@@ -91,7 +91,7 @@ Our website also offers several ways for people to stay connected with those the
                                 objectives within their chosen career paths.</p>
                         </div>
                         <div class="aboutimg">
-                            <img src="{!!asset('theme/user_theme/images/vision.jpg')!!}" class="img-responsive">
+                            <img src="{!!asset('public/theme/user_theme/images/vision.jpg')!!}" class="img-responsive">
                         </div>
                     </div>
                 </div>

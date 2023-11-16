@@ -46,7 +46,7 @@
 
 
 <?php
-$image = asset('images/logo.png');
+$image = asset('public/images/logo.png');
 
 if (isset($courses)) {
 if ($courses->avatar) {

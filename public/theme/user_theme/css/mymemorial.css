@@ -12,8 +12,13 @@
     border-radius: 20px;
     margin: 25px;
 }
+.bx_bg img {
+    margin-top: 55px;
+}
 
-
+.top_on_box {
+    margin-top: 88px;
+}
 .img-bx {
     border: #beb28d solid 1px;
     height: 261px;
