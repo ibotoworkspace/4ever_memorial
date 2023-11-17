@@ -127,6 +127,7 @@ class TemplateSeeder extends Seeder
                                             <button class="tablinks" onclick="openCity(event, \'stories\')">
                                                 STORIES
                                             </button>
+                                            
                                         </div>
                                         {!!{about_tab_htmlvar}!!}
 
