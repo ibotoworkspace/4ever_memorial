@@ -24,12 +24,14 @@ Route::group(['middleware' => 'auth.client_token'], function () {
     Route::post('login', [UserController::class, 'login']);
     Route::post('register', [UserController::class, 'register']);
     Route::post('forget_email', [UserController::class, 'sendForgetEmail']);
-
-
 });
 Route::group(['middleware' => 'auth.user_loggedin'], function () {
 
     Route::post('memorials', [MemorialController::class, 'my_memorials']);
+    Route::post('create_memorial', [MemorialController::class, 'create_memorial']);
+    Route::get('get_templates', [MemorialController::class, 'get_templates']);
+
+    // Route::get('get_templates', [MemorialController::class, 'get_templates']);
 
 
 });
