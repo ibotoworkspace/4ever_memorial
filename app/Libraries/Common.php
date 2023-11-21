@@ -70,8 +70,6 @@ trait Common
     return $all_permissions;
 }
 
-
-
     public function prepare_excel($data , $field_not_required = []){
         $users = [];
         foreach ($data as $rec_key => $value){
@@ -87,35 +85,25 @@ trait Common
     public function time_to_timestamp($time){
 
         $time_arr =  explode(':',$time);
-        // dd( $time_arr);
         $time_hr = $time_arr[0];
         $time_min = $time_arr[1];
-
         $total_mins = ($time_hr * 60) + $time_min;
-        // dd(  $total_mins);
         $total_sec = $total_mins * 60;
         // $total_mili_sec = $total_sec * 1000;
         return $total_sec;
-
     }
 
     public function time_to_timestamp_group($time){
 
         $time_arr =  explode(':',$time);
-        // dd( $time_arr);
         $time_hr = $time_arr[0];
         $time_min = $time_arr[1];
-         //
          $gmt_sec = 300*60;
-         //
-
         $total_mins = ($time_hr * 60) + $time_min;
-        // dd(  $total_mins);
         $total_sec = $total_mins * 60;
         $total_sec_gmt_minus = $total_sec - $gmt_sec;
         // $total_mili_sec = $total_sec * 1000;
         return $total_sec_gmt_minus;
-
     }
 
     public function move_img_get_path($image,$root,$type,$image_name='')
@@ -128,15 +116,6 @@ trait Common
         $remove_index = str_replace("index.php", "", $root);
         return $remove_index . '/public/images/' . $type . '/' . $name;
     }
-    // public function export_excel($report_name,$users){
-
-    //     Excel::create($report_name, function ($excel) use ($users) {
-    //         $excel->sheet('Sheet 1', function ($sheet) use ($users) {
-    //             $sheet->fromArray($users);
-    //         });
-    //     })->export('xls');
-
-    // }
 
     function get_embeddedyoutube_url($url) {
         return preg_replace(
@@ -166,16 +145,5 @@ trait Common
 
             return $d;
           }
-
-        //   $distance = getDistance(56.130366, -106.34677099999, 57.223366, -106.34675644699);
-        //   if ($distance < 100) {
-        //     echo "Within 100 kilometer radius";
-        //   } else {
-        //     echo "Outside 100 kilometer radius";
-        //   }
-
-
-
-
 
 }

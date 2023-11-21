@@ -17,7 +17,6 @@ class UserTemplateHelper
         use  Common;
        public function save_memorial_user(Request $request,$user,$style){
         
-        $user = Auth::user();
         // $user->save();
 
         $user_memorial = new User();
@@ -34,13 +33,14 @@ $user_owner=UserWebsite::with('user','style.website_template')->get();
         $user_website->web_variable = json_encode($style->web_variable);
         $user_website->variable_html = json_encode($style->variable_html);
         $user_website->save();
-
+        $birth = $request->b_year ? explode('-',$request->b_year) :[]; // year/month/date
+        $passed = $request->p_year ? explode('-',$request->p_year):[]; // year/month/date
+        
         $web_variable = $style->web_variable;
-// dd($web_variable);  user_memorial_tribute_htmlvar
+        
         // $user 
         $web_variable['owner_user_var']['name_var'] = $user->name;
-        $web_variable['owner_user_var']['full_name_var'] = $request->ad_name.' '.$request->ad_lastname;
-        $web_variable['owner_user_var']['birth_var']= $request->b_year;
+        $web_variable['owner_user_var']['full_name_var'] = $user->first_name;
         $web_variable['owner_user_var']['birth_var']= $request->b_year;
       
         
@@ -52,8 +52,6 @@ $user_owner=UserWebsite::with('user','style.website_template')->get();
         $web_variable['memorial_user_var']['city']= $request->b_city;
         $web_variable['memorial_user_var']['country']= $request->b_country;
         $web_variable['tribute_text_var'] = $request->life_tab_arr;
-
-// dd($web_variable);
 
         $user_website->web_variable = json_encode($web_variable);
         $user_website->variable_html = $style->variable_html; // json_encode
@@ -71,21 +69,21 @@ $user_owner=UserWebsite::with('user','style.website_template')->get();
         $user_website->gender = $request->gender;
         $user_website->relation = $request->relation;
         $user_website->memorial_designation = $request->memorial_designation;
-        $user_website->b_year = $request->b_year;
+        $user_website->b_year = isset($birth[0])??'';
+        $user_website->b_month =  isset($birth[1])??'';
+        $user_website->b_day =  isset($birth[2])??'';
         $user_website->b_city = $request->b_city;
-        $user_website->b_month = $request->b_month;
         $user_website->b_state = $request->b_state;
-        $user_website->b_day = $request->b_day;
         $user_website->b_country = $request->b_country;        
-        $user_website->p_year = $request->p_year;
+        $user_website->p_year = isset($passed[0]) ?? '';
+        $user_website->p_month = isset($passed[1])?? '';
+        $user_website->p_day = isset($passed[2]) ?? '';
         $user_website->p_city = $request->p_city;
-        $user_website->p_month = $request->p_month;
         $user_website->p_state = $request->p_state;
-        $user_website->p_day = $request->p_day;
         $user_website->p_country = $request->p_country;
         $user_website->email = $request->email.'@4evermemorial.com';
-        $user_website->visible_to_all = $request->visible_to_all;
-        
+        $user_website->visible_to_all = $request->visible_to_all ?? 0;
+
         $user_website->save();
 
         $user_website_life = new Life_Tab_Arr();

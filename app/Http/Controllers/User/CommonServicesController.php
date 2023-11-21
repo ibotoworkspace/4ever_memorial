@@ -11,7 +11,27 @@ use File;
 
 class CommonServicesController extends Controller
 {
-    
+    public function upload_image(Request $request){
+        $validator = Validator::make($request->all(),[
+            'upload_file'=>'required|file'
+        ],[
+            'upload_file'=>'Please upload image'
+        ]);
+        
+        if(isset($request->pre_image)){
+            File::delete($request->pre_image);
+        }
+        if ($validator->fails()) {
+            return $this->sendResponse(500, null, $validator->messages()->all());
+        } else {
+            $file = $request->upload_file;
+            $root = $request->root();
+            $image_show_var = $this->move_img_get_path($file, $root, 'user');
+        }
+        $std_res = new \stdClass();
+        $std_res->image_url = $image_show_var;
+        return $this->sendResponse(200,$std_res);
+    }
 
     public function crop_image(Request $request)
     {
