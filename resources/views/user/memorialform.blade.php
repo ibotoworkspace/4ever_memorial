@@ -466,8 +466,6 @@
             </div>
         </div>
 
-        {{-- <button onclick="test()" >tesssssssssssssssssssss</button> --}}
-
         <form action="{!! asset('user/memorial/update_plan') !!}" method="post" id="update_plan_form">
             {!! csrf_field() !!}
             <input type="hidden" name="memorial_id" class="memorial_id">

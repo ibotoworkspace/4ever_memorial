@@ -138,10 +138,6 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/');
     }
-    // public function template(){
-    //     $template  = ModelsTemplate::find(1);
-    //     return view('user.template',compact('template'));
-    // }
     public function memorialform()
     {
         $user = Auth::user();
@@ -175,17 +171,9 @@ class UserController extends Controller
         $user_web->save();
         $styles = Styling::get();
         $default_style = $user_web->style;
-        // dd($user_web->web_variable);
-        // dd($default_style);
-        // dd($user_web);
         $template_helper = new TemplateHelper($user_web, $user_web->web_variable);
-        // dd($user_web,$user_web->web_variable);
         $html = $template_helper->create_html();
-        // dd($html);
         $styles_json = urlencode(json_encode($styles));
-        // $styles_json = json_encode($styles[0]);
-        // dd($styles_json);
-
         return view('user/dynamic_template/index', compact('html', 'styles_json', 'styles', 'default_style', 'memorial_id'));
 
     }
@@ -205,8 +193,6 @@ class UserController extends Controller
         $res->status = true;
         $res->redirect = asset('user/get_memorial/' . $user_website->email);
         return $this->sendResponse(200, $res);
-        // return redirect('user/get_memorial/'.$user_website->email);
-
     }
 
     public function get_memorial(Request $request, $user_email)
@@ -224,7 +210,6 @@ class UserController extends Controller
         $trib_side = $tributes_side ->count();
 
         $gal_side = Gallery::where('memorial_id', $user_website->id)->orderBy('created_at', 'ASC')->select('*')->get();
-        // $gal_side = $gallery_side ->count();
 
         $stories = Story_Tab_Arr::where('memorial_id', $user_website->id)->orderbydesc('id')->get()->toArray();
         $web_variable['story_arr'] = $stories; //$tributes;
@@ -241,53 +226,29 @@ class UserController extends Controller
 
         foreach ($latest_gallery as $key => $value) {
             $msg = '';
-            // dd($value); 
             $msg = $value->count.' '.$value->type.' added' ;
-            // $recent_updates_show_arr[$key] = new \stdClass();
-            // $recent_updates_show_arr[$key]->date_var = $value->selected_date;
-            // $recent_updates_show_arr[$key]->type_var = $value->type;
-            // $recent_updates_show_arr[$key]->message_var = $msg;
-
-            
-            // $recent_updates_show_arr[$key] = new \stdClass();
             $recent_updates_show_arr[$key]['date_var'] = $value->selected_date;
             $recent_updates_show_arr[$key]['type_var'] = $value->type;
             $recent_updates_show_arr[$key]['message_var'] = $msg;
         }
-
-
-        // dd($user_website->id,$gallery,$recent_updates_show_arr);
-
         $gallery_image = Gallery::where('memorial_id', $user_website->id)->where('type','photo')
         ->orderbydesc('id')->get()->toArray();
-        // $gallery_image = $gallery->where('type','photo')
-        // ->orderbydesc('id')->get();
         $web_variable['gallery_photo_arr'] = $gallery_image;
-        // $web_variable['gallery_photo_arr'] = $gallery_image->toArray();
-// dd($web_variable['gallery_photo_arr']);
         $gallery_video = Gallery::where('memorial_id', $user_website->id)->where('type','video')
         ->orderbydesc('id')->get()->toArray();
-        // $gallery_video = $gallery->where('type','video')
-        // ->orderbydesc('id')->get();
         $web_variable['gallery_video_arr'] = $gallery_video;
 
         $gallery_audio = Gallery::where('memorial_id', $user_website->id)->where('type','audio')
         ->orderbydesc('id')->get()->toArray();
-        
-        // $gallery_audio = $gallery->where('type','audio')
-        // ->orderbydesc('id')->get();
         $web_variable['gallery_audio_arr'] = $gallery_audio;
-
         $web_variable['recent_updates_show_arr'] = $recent_updates_show_arr;
 
         $template_helper = new TemplateHelper($user_website, $web_variable);
         $html = $template_helper->create_html();
-        // dd($web_variable);
         return view('user/dynamic_template/user_page', compact('html','trib_side', 'gal_side', 'web_variable','user_website'));
     }
     public function storyform(Request $request)
     {
-        // dd($request->all());
         $user = Auth::user();
         $story = new Story_Tab_Arr();
         $story->user_name_show_var = $user->first_name;
@@ -318,7 +279,6 @@ class UserController extends Controller
     }
     public function get_tribute(Request $request)
     {
-
         $tributes = Tributes_Arr::orderBy('created_at', 'ASC')->select('*')->get();
         $tributesData['data'] = $tributes;
         echo json_encode($tributesData);
@@ -333,34 +293,18 @@ class UserController extends Controller
         return $this->sendResponse(200, $trib_side);
 
     }
-
-
-
     public function my_memorials()
     {        $authuser = Auth::user();
         $aut_id = $authuser->id;
-        // dd($aut_id);
-
-
         $memorials = UserWebsite::with('style')->where('user_id', $aut_id)->orderBy('created_at', 'DESC')->get();
-        // $template = Styling::orderBy('created_at', 'DESC')->get();
-        // dd($memorials);
-
         return view('user.my_memorials', compact('memorials'));
 
     }
     public function search_memorial(Request $request)
     {
-        // $memorials = UserWebsite::with('style')->orderBy('created_at', 'DESC')->get();
         $email = $request->email ?? '';
-        // dd($email);
         $memorials = UserWebsite::where('email', 'like', '%' . $email . '%')->get();
         $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%')->get();
-        // $template = Styling::orderBy('created_at', 'DESC')->get();
-
-        // Session()->put($search_memorial, "Your Data Save Successfully !");  
-// dd($memorials);
-        // dd( Session()->get(1, $search_memorial));
         return view('user.view_memorial', compact('search_memorial', 'memorials'));
     }
 
@@ -383,8 +327,6 @@ class UserController extends Controller
         $gallery_aud->user_id = $user->id;
         $gallery_aud->save();
         return $this->sendResponse(200, $gallery_aud);
-
-
     }
     
     public function destroy_undestroy($id)
@@ -409,10 +351,6 @@ class UserController extends Controller
     public function send_invite(Request $request){
        
         $mail_data = UserWebsite::find($request->memorial_id);
-        $invite_emails = $request->to_emails;
-
-
- 
         $details = [
             'to' => $request->to_emails,
         
