@@ -1157,15 +1157,16 @@ body {
         margin: 10px 13px;
         padding: 2px 3px;
     }
-    .stor_bttn:hover {
-        /* background-color: #f3d0a6; */
-    }
+   
     .publ_btn {
         margin-left: 20%;
     }
     .attch_icon_area {
-        width: 312px;
-        margin: 10px;
+        margin-top: 10px;
+        width: 94%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .up_ld_file {
         margin-left: 43px;
