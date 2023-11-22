@@ -179,19 +179,8 @@ class UserController extends Controller
     }
     public function save_css(Request $request)
     {
-        $user_website = UserWebsite::find($request->user_website_id);
-        $user_website->style_id = $request->css_style_id;
-        $style = Styling::find($request->css_style_id);
-        $web_html = $style->website_template->web_html;
-
-        $web_html = str_replace('{!!{memorial_style_var.style_script_var}!!}', $style->css_files, $web_html);
-        $user_website->web_html = $web_html;
-
-
-        $user_website->save();
-        $res = new \stdClass();
-        $res->status = true;
-        $res->redirect = asset('user/get_memorial/' . $user_website->email);
+        $user_helper = new UserTemplateHelper();
+        $res = $user_helper->change_template($request,$request->user_website_id,$request->css_style_id);
         return $this->sendResponse(200, $res);
     }
 

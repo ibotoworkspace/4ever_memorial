@@ -14,7 +14,9 @@ class MemorialController extends Controller
     {
         $user = $request->attributes->get("user");
 
-        $memorials = UserWebsite::where("user_id", $user->id)->get();
+        $memorials = UserWebsite::where("user_id", $user->id)
+        ->latest()
+        ->get();
 
         return $this->sendResponse(200, $memorials);
     }
@@ -27,6 +29,11 @@ class MemorialController extends Controller
         $style = Styling::with('website_template')->first();
         $user_helper = new UserTemplateHelper();
         $user_web = $user_helper->save_memorial_user($request, $user, $style);
+
+        $res = $user_helper->change_template($request,$user_web->id,$request->template_id);
+        return $this->sendResponse(200, $res);
+
+        // template_id
 
         // $memorial = new UserWebsite();
         // $memorial->user_id = $user->id;
