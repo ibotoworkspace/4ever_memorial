@@ -1030,7 +1030,8 @@ body {font-family: Arial;}
         color: white;
     }
     .nav_back {
-        background-size: 1382%;
+        /* background-size: 1382%; */
+        background-size: cover;
     }
     .col-md-4.prf_img {
         padding: 0px 78px;
