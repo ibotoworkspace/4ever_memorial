@@ -67,7 +67,7 @@ a.btn.btn-lg.btn-primary.show-button {
         padding-right: 20px !important;
     }
     .about-h1 {
-        text-align: center ;
+        text-align: center;
     }
     .home-bar-text {
         font-size: 15px;
@@ -96,7 +96,6 @@ a.btn.btn-lg.btn-primary.show-button {
     .display-inline {
         display: inline-block !important;
     }
-
 }
 .login-container {
     background-color: rgba(128, 128, 128, 0.089);
@@ -119,17 +118,16 @@ a.btn.btn-lg.btn-primary.show-button {
 } */
 .login-btn-div {
     padding-top: 20px;
-   padding-bottom: 113px;
+    padding-bottom: 113px;
 }
 
 .login-button {
-    background-color: #104572 ;
+    background-color: #104572;
     color: white;
     border: #104572;
-
 }
 .show-button {
-    background-color: #104572 ;
+    background-color: #104572;
     color: white;
     border: #104572;
     height: 60px;
@@ -156,7 +154,6 @@ input {
     }
 }
 
-
 /* REGISTER SECTION */
 .register-section {
     padding-top: 20px;
@@ -179,5 +176,4 @@ input {
 .register-btn-div {
     padding-top: 20px;
     padding-bottom: 20px;
-
 }

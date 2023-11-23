@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\MemorialController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\User\CommonServicesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,12 +25,17 @@ Route::group(['middleware' => 'auth.client_token'], function () {
     Route::post('login', [UserController::class, 'login']);
     Route::post('register', [UserController::class, 'register']);
     Route::post('forget_email', [UserController::class, 'sendForgetEmail']);
-
-
 });
 Route::group(['middleware' => 'auth.user_loggedin'], function () {
 
     Route::post('memorials', [MemorialController::class, 'my_memorials']);
+    Route::post('create_memorial', [MemorialController::class, 'create_memorial']);
+    Route::get('get_templates', [MemorialController::class, 'get_templates']);
+    Route::post('upload_image', [CommonServicesController::class, 'upload_image']);
+
+    // Route::get('get_templates', [MemorialController::class, 'get_templates']);
 
 
 });
+
+Route::post('all_memorials', [MemorialController::class, 'all_memorials']);

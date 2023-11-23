@@ -36,9 +36,9 @@
 }
 
 .box_hvr:hover {
-    box-shadow: -1px -1px 11px 13px rgba(204,204,204,1);
-    -webkit-box-shadow: -1px -1px 11px 13px rgba(204,204,204,1);
-    -moz-box-shadow: -1px -1px 11px 13px rgba(204,204,204,1);
+    box-shadow: -1px -1px 11px 13px rgba(204, 204, 204, 1);
+    -webkit-box-shadow: -1px -1px 11px 13px rgba(204, 204, 204, 1);
+    -moz-box-shadow: -1px -1px 11px 13px rgba(204, 204, 204, 1);
     -webkit-transition: all 2s ease-in;
     transition: all 0.25s ease-in;
 }
@@ -56,7 +56,10 @@ a.deco_no {
     width: 150px;
     height: 45px;
 }
-.view_all button:hover , :focus ,:focus-visible ,:active {
+.view_all button:hover,
+:focus,
+:focus-visible,
+:active {
     background-color: white;
     border: solid #beb28d 1px;
     color: #beb28d;

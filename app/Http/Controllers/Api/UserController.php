@@ -29,7 +29,6 @@ class UserController extends Controller
     {
         try {
 
-            // dd($request->all());
             $validator = Validator::make($request->all(), User::$rules_register);
 
             if ($validator->fails()) {
@@ -38,36 +37,11 @@ class UserController extends Controller
 
                 $user = new User();
                 $user->first_name = $request->name;
-                $user->role_id = 2; // user id is 2 , influencer id is 3
-                // $user->father_name = 'fathername';
-                // $user->age = 'age';
-                // $user->gender = 'gender';
+                $user->role_id = 2;
                 $user->email = $request->email;
-                // $user->phone_no = $request->phone_no;
-                // $user->image = asset("theme/images/avatar.jpg");
                 $user->password = Hash::make($request->password);
                 $user->access_token = uniqid();
-                // $user->lat = $request->lat;
-                // $user->long = $request->long;
-
-             
                 $user->save();
-
-                // if ($user->role_id == 3) {
-                //     $influencer = new Influencer();
-                //     $influencer->user_id = $user->id;
-                //     $influencer->rate_per_reel = $request->rate_per_reel;
-                //     $influencer->lat = $request->lat;
-                //     $influencer->long = $request->long;
-                //     $influencer->save();
-
-                //     $influencer_category = new Influencer_category();
-                //     $influencer_category->user_id = $user->id;
-                //     $influencer_category->category_id = $request->category_id;
-                //     $influencer_category->influencer_id = $influencer->id;
-                //     $influencer_category->save();
-                // }
-
                 return $this->sendResponse(200, $user);
             }
         } catch (\Exception $e) {
@@ -104,12 +78,12 @@ class UserController extends Controller
                         'email' => $request->email,
                         'role_id' => 2
                     ])->get([
-                                'access_token',
-                                'id',
-                                // 'name',
-                                'email',
-                                'role_id',
-                            ])
+                        'access_token',
+                        'id',
+                        // 'name',
+                        'email',
+                        'role_id',
+                    ])
                         ->first();
 
                     $user->access_token = uniqid();
@@ -187,7 +161,5 @@ class UserController extends Controller
                 [$e->getMessage()]
             );
         }
-
-
     }
 }

@@ -23,7 +23,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         // My custom middleware for general information logging a
         \App\Http\Middleware\CustomLog::class,
-        \App\Http\Middleware\COROS::class,
+        // \App\Http\Middleware\COROS::class,
     ];
 
     /**
@@ -39,6 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\COROS::class,
 
         ],
 
@@ -46,6 +47,8 @@ class Kernel extends HttpKernel
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\COROS::class,
+
         ],
     ];
 
@@ -75,6 +78,7 @@ class Kernel extends HttpKernel
         // User middleware
         'user.auth' => \App\Http\Middleware\UserAuthCheck::class,
         'auth.user_loggedin' => \App\Http\Middleware\ValidateToken::class,
+        'login.access_token' => \App\Http\Middleware\AccessTokenLogin::class,
         //Role_Middleware
         //  'role_auth' => \App\Http\Middleware\Role_Middleware::class,
     ];

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');            
+            $table->bigIncrements('id');
             $table->string('first_name')->nullable()->default(null);
             $table->string('middle_name')->nullable()->default(null);
             $table->string('last_name')->nullable()->default(null);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('passed_away')->nullable()->default(null);
             $table->string('adderss', 250)->nullable()->default(null);
             $table->string('url', 250)->nullable()->default(null);
-            $table->string('password',250)->nullable()->default(null);
+            $table->string('password', 250)->nullable()->default(null);
             $table->integer('role_id')->default(0);
             $table->softDeletes();
             $table->rememberToken();
