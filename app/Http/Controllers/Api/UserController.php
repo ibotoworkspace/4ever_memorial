@@ -37,7 +37,7 @@ class UserController extends Controller
 
                 $user = new User();
                 $user->first_name = $request->name;
-                $user->role_id = 2; 
+                $user->role_id = 2;
                 $user->email = $request->email;
                 $user->password = Hash::make($request->password);
                 $user->access_token = uniqid();
@@ -78,12 +78,12 @@ class UserController extends Controller
                         'email' => $request->email,
                         'role_id' => 2
                     ])->get([
-                                'access_token',
-                                'id',
-                                // 'name',
-                                'email',
-                                'role_id',
-                            ])
+                        'access_token',
+                        'id',
+                        // 'name',
+                        'email',
+                        'role_id',
+                    ])
                         ->first();
 
                     $user->access_token = uniqid();
@@ -161,7 +161,5 @@ class UserController extends Controller
                 [$e->getMessage()]
             );
         }
-
-
     }
 }

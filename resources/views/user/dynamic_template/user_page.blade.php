@@ -3,20 +3,24 @@
 @include('partial_layouts.cropper.cropper_html')
 {{-- {!!dd($user_website->id);!!} --}}
 @php
-    $video_count = $gal_side->where('type', 'video')->count();
-    $picture_count = $gal_side->where('type', 'photo')->count();
-    $audio_count = $gal_side->where('type', 'audio')->count();
-    // $count = $counted->count();
-    // $count->where('type','video')
-    // dd( $counted);
+$video_count = $gal_side->where('type', 'video')->count();
+$picture_count = $gal_side->where('type', 'photo')->count();
+$audio_count = $gal_side->where('type', 'audio')->count();
+// $count = $counted->count();
+// $count->where('type','video')
+// dd( $counted);
 @endphp
 <script>
     var memorial_id = '{!! $user_website->id !!}';
-    var global_path = '{!! asset('/') !!}';
-    var jsonString = '{!! json_encode($web_variable['gallery_photo_arr']) !!}';
-    var jsonString_vid = '{!! json_encode($web_variable['gallery_video_arr']) !!}';
-    var jsonString_aud = '{!! json_encode($web_variable['gallery_audio_arr']) !!}';
-    var jsonString_recent = '{!! json_encode($web_variable['recent_updates_show_arr']) !!}';
+    var global_path = '{!! asset(' / ') !!}';
+    var jsonString = '{!! json_encode($web_variable['
+    gallery_photo_arr ']) !!}';
+    var jsonString_vid = '{!! json_encode($web_variable['
+    gallery_video_arr ']) !!}';
+    var jsonString_aud = '{!! json_encode($web_variable['
+    gallery_audio_arr ']) !!}';
+    var jsonString_recent = '{!! json_encode($web_variable['
+    recent_updates_show_arr ']) !!}';
     var gallery_images = JSON.parse(jsonString);
     var gallery_video_ = JSON.parse(jsonString_vid);
     var gallery_audio = JSON.parse(jsonString_aud);
@@ -82,7 +86,8 @@
             // $('.contentLi_aud').html('added {!! $audio_count !!} audio(s)');
             $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
-            $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
+            $('.pht_para').html('{!! count($web_variable['
+                gallery_photo_arr ']) !!} Photos');
             $('.gall_row').html(get_imges(gallery_images));
             $('.vid_row').html(get_vids(gallery_video_));
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
@@ -93,7 +98,8 @@
                 .href);
             var images = '';
             if (!gallery_images.length) {
-                images = images + image_crousal('{!! asset('public/theme/images/logo_change.jpg') !!}', 0);
+                images = images + image_crousal('{!! asset('
+                    public / theme / images / logo_change.jpg ') !!}', 0);
             }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
@@ -435,7 +441,8 @@
             formData.append('story_image', $('input[name="story_image"]').val());
 
             $.ajax({
-                url: '{!! asset('user/storyform') !!}',
+                url: '{!! asset('
+                user / storyform ') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -473,7 +480,8 @@
             formData.append('memorial_id', memorial_id);
 
             $.ajax({
-                url: '{!! asset('user/upload_gallery') !!}',
+                url: '{!! asset('
+                user / upload_gallery ') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -547,13 +555,15 @@
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             if ($('#type_tribute').val() == '') {
-                set_tribute('candle', '{!! asset('public/user_templates/images/candles/1.png') !!}');
+                set_tribute('candle', '{!! asset('
+                    public / user_templates / images / candles / 1. png ') !!}');
             }
             formData.append('type_var', $('#type_tribute').val());
             formData.append('image_tribute', $('#image_tribute').val());
 
             $.ajax({
-                url: '{!! asset('user/tributeform') !!}',
+                url: '{!! asset('
+                user / tributeform ') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',

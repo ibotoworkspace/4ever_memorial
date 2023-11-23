@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body,
 html {
     font-size: 15px;
     line-height: 1.4666666667;
     color: #000;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 .topbanner {
@@ -85,7 +85,7 @@ h4 {
     margin: 15px;
 } */
 
-.navmenu>li>a:hover {
+.navmenu > li > a:hover {
     text-decoration: none;
     background-color: #beb28d;
     color: white;
@@ -451,7 +451,7 @@ h4 {
     color: green;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
     padding-right: 10px;
     left: 0;
 }
@@ -606,8 +606,7 @@ h4 {
     color: white;
 }
 
-@media only screen and (max-width : 480px) {
-
+@media only screen and (max-width: 480px) {
     .container.top {
         padding: 0px;
     }

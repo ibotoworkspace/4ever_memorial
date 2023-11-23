@@ -18,6 +18,6 @@ class ClientSeeder extends Seeder
         Client::firstOrCreate(
             ['client_id' => '4evermemorial-app-mobile'],
             ['client_secret' => 'NGV2ZXJtZW1vcmlhbC1hcHAtbW9iaWxlOk5HVjJaWEp0WlcxdmNtbGhiQzFoY0hBdGJXOWlhV3hs']
-        ); 
-       }
+        );
+    }
 }

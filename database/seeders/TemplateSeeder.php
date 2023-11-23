@@ -327,10 +327,8 @@ class TemplateSeeder extends Seeder
       </div>
   </div>
 </div>
-            </body>
 
-
-
+</body>
             <script>
             function openCity(evt, cityName) {
                 var i, tabcontent, tablinks;

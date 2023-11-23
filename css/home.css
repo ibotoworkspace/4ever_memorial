@@ -1,15 +1,12 @@
-
-
-.productdetail{
+.productdetail {
     color: black;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 10px;
-
 }
 
-.productdetailHead{
-    border-bottom: 5px solid ;
+.productdetailHead {
+    border-bottom: 5px solid;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -21,7 +18,6 @@ img.myimg {
     max-height: 122px;
 }
 .col-12.pad-t2.pad-t2-for-responsive {
-
     color: red;
     background-color: red;
 }
@@ -34,10 +30,9 @@ a.btn.btn-md {
     color: white;
 }
 
-
-.txtorange{
-       color: #00C0F3;
-    font-size: 30px
+.txtorange {
+    color: #00c0f3;
+    font-size: 30px;
 }
 img.my_imger {
     max-width: 100%;
@@ -45,18 +40,14 @@ img.my_imger {
     margin-top: 27px;
 }
 
-
-
-.txtblack{
+.txtblack {
     color: #000;
     font-size: 15px;
-
 }
 
-.productdetailimg{
+.productdetailimg {
     border: 1px solid;
     /* width: 74%; */
-
 }
 
 img#product_img_color {
@@ -66,41 +57,80 @@ img#product_img_color {
 .btnadd2cart {
     vertical-align: baseline;
     margin-top: 27px;
-    background: #DF482B;
+    background: #df482b;
     color: #fff;
 }
 
-.modalbg{
+.modalbg {
     background-image: url(../images/bgmodal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.modalbg .btncontinuueshoping{
+.modalbg .btncontinuueshoping {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0e0f11+0,0d0d0d+20,0b0b0d+20,0c0c0c+34,0a0a0a+35,09090b+51,090909+57,070707+58,060709+91,050706+92,050706+100 */
-background: #0e0f11; /* Old browsers */
-background: -moz-linear-gradient(left,  #0e0f11 0%, #0d0d0d 20%, #0b0b0d 20%, #0c0c0c 34%, #0a0a0a 35%, #09090b 51%, #090909 57%, #070707 58%, #060709 91%, #050706 92%, #050706 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #0e0f11 0%,#0d0d0d 20%,#0b0b0d 20%,#0c0c0c 34%,#0a0a0a 35%,#09090b 51%,#090909 57%,#070707 58%,#060709 91%,#050706 92%,#050706 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #0e0f11 0%,#0d0d0d 20%,#0b0b0d 20%,#0c0c0c 34%,#0a0a0a 35%,#09090b 51%,#090909 57%,#070707 58%,#060709 91%,#050706 92%,#050706 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0f11', endColorstr='#050706',GradientType=1 ); /* IE6-9 */
+    background: #0e0f11; /* Old browsers */
+    background: -moz-linear-gradient(
+        left,
+        #0e0f11 0%,
+        #0d0d0d 20%,
+        #0b0b0d 20%,
+        #0c0c0c 34%,
+        #0a0a0a 35%,
+        #09090b 51%,
+        #090909 57%,
+        #070707 58%,
+        #060709 91%,
+        #050706 92%,
+        #050706 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        left,
+        #0e0f11 0%,
+        #0d0d0d 20%,
+        #0b0b0d 20%,
+        #0c0c0c 34%,
+        #0a0a0a 35%,
+        #09090b 51%,
+        #090909 57%,
+        #070707 58%,
+        #060709 91%,
+        #050706 92%,
+        #050706 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to right,
+        #0e0f11 0%,
+        #0d0d0d 20%,
+        #0b0b0d 20%,
+        #0c0c0c 34%,
+        #0a0a0a 35%,
+        #09090b 51%,
+        #090909 57%,
+        #070707 58%,
+        #060709 91%,
+        #050706 92%,
+        #050706 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0f11', endColorstr='#050706',GradientType=1 ); /* IE6-9 */
 
- color: #fff;
+    color: #fff;
 }
 
-.modalbg .btngotocart{
+.modalbg .btngotocart {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#da442c+0,de482d+22,dd482a+23,df4a2c+28,df482b+34,e14a2d+34,e0492a+35,e0492a+40,e24b2c+41,e24c29+50,e54f2c+65,e44e29+65,e74f2a+68,e54f2a+73,e85029+73,e9512a+75,e65129+77,e9512a+77,ea5229+82,e75228+82,eb532a+87,ec5528+100 */
-background: #00C0F3; /* Old browsers */
+    background: #00c0f3; /* Old browsers */
 
-color: #fff;
+    color: #fff;
 }
 
-.spanicon{
+.spanicon {
     border: 1px solid #fff;
     border-radius: 50%;
     padding: 5px;
     margin: 5px;
 }
-.spaniconblack{
+.spaniconblack {
     border: 1px solid #000;
     border-radius: 50%;
     padding: 5px;
@@ -113,7 +143,7 @@ color: #fff;
     cursor: pointer;
     /* outline: none; */
     color: white;
-    background: #00C0F3;
+    background: #00c0f3;
     border: none;
     border-radius: 7px;
     /* margin-top: 23px; */
@@ -132,20 +162,11 @@ a.btn.btn-sm.btn-primary.check-out-btn.my {
     color: #0099ff;
 }
 
-
-
-
-
-
-
-
-
 /* NAVIGATION*/
-
 
 .user-avatar-md {
     height: 32px;
-    width: 32px
+    width: 32px;
 }
 .menu {
     padding-left: 70px !important;
@@ -305,13 +326,13 @@ a.btn.btn-sm.btn-primary.check-out-btn.my {
 }
 
 /* CLOTHING SECTION*/
-    .clothing-section {
+.clothing-section {
     padding-top: 50px;
     padding-bottom: 50px;
-    }
-    .clothingImgs {
+}
+.clothingImgs {
     padding: 30px 0 30px 0;
-    }
+}
 @media only screen and (min-width: 301px) and (max-width: 321px) {
     .ipsum-text {
         background-color: rgba(0, 0, 0, 0.507);
@@ -726,7 +747,6 @@ a.btn.btn-sm.btn-primary.check-out-btn.my {
     }
 }
 
-
 /* SPECIAL DEALS*/
 .special-deals {
     background-image: url(../slicing/home-page-silicing/banner-2.jpg);
@@ -858,7 +878,7 @@ a.btn.btn-sm.btn-primary.check-out-btn.my {
         padding: 0px;
     }
     .text-sm small {
-        text-align: center ;
+        text-align: center;
         padding: 0px;
     }
     .services-menu {
@@ -948,7 +968,7 @@ a.btn.btn-sm.btn-primary.check-out-btn.my {
 
 /* FOOTER*/
 .footer {
-    padding: 50px 0 50px 0 ;
+    padding: 50px 0 50px 0;
     background-color: #101112;
     color: white;
     text-align: center;
