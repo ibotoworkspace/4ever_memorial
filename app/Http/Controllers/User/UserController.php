@@ -140,7 +140,6 @@ class UserController extends Controller
     }
     public function memorialform()
     {
-        $user = Auth::user();
         return view('user.memorialform');
     }
     public function add_user(Request $request)
