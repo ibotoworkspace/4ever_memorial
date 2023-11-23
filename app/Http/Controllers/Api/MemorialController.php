@@ -25,6 +25,21 @@ class MemorialController extends Controller
 
         return $this->sendResponse(200, $memorials);
     }
+    function all_memorials(Request $request)
+    {
+        $search = $request->search ?? '';
+
+        $memorials = UserWebsite::where('email','like','%'.$search.'%')
+        ->latest()
+        ->get();
+
+        $memorials = $memorials->transform(function($memorial){
+            $memorial->redirect = asset('user/get_memorial/'.$memorial->email);
+            return $memorial;
+        });
+
+        return $this->sendResponse(200, $memorials);
+    }
 
     function create_memorial(Request $request)
     {
