@@ -20,7 +20,7 @@
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
     .home-bar-text {
         font-size: small;
-    }   
+    }
     .home-bar-text img {
         width: 10%;
     }
@@ -41,12 +41,12 @@
         padding-right: 20px;
     }
     .about-h1 {
-        text-align: center ;
+        text-align: center;
     }
 }
 @media only screen and (max-width: 427px) {
     .about-h1 h1 {
-        font-size: 35px ;
+        font-size: 35px;
     }
     .home-bar-text {
         font-size: 20px;
@@ -74,9 +74,9 @@
     padding-right: 100px;
 }
 .map {
-    width:100%;
-    height:400% !important;
-    border:0;
+    width: 100%;
+    height: 400% !important;
+    border: 0;
 }
 @media only screen and (max-width: 767px) {
     .map-section-container {
@@ -84,12 +84,12 @@
         padding-right: 20px;
     }
     .map {
-        height:200% !important;
-    }   
+        height: 200% !important;
+    }
 }
 @media only screen and (max-width: 350px) {
     .map {
-        height:150% !important;
+        height: 150% !important;
     }
 }
 
@@ -145,7 +145,7 @@
 @media only screen and (max-width: 417px) {
     .textarea {
         margin: 10px auto 10px auto;
-    }   
+    }
 }
 @media only screen and (max-width: 350px) {
     .contact-form {

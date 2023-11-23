@@ -17,26 +17,26 @@ class StylingSeeder extends Seeder
      */
     public function run()
     {
-        $image_path = asset('public').'/';  
+        $image_path = asset('public') . '/';
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'http://localhost/4_ever_memories/public/';
-        $public_path = Config::get('app.url').'/public/';
+        $public_path = Config::get('app.url') . '/public/';
         $url_path = Config::get('app.url');
 
-        $template_name_arr = ['template_1','template_2','template_3','template_4'];
+        $template_name_arr = ['template_1', 'template_2', 'template_3', 'template_4'];
         $default_template = 'template_1';
 
-        foreach ($template_name_arr as $key=>$template_name_css_path) {
-            Styling::where('name',$template_name_css_path)->delete();
+        foreach ($template_name_arr as $key => $template_name_css_path) {
+            Styling::where('name', $template_name_css_path)->delete();
 
             $style = new Styling();
-            $style->id = ($key+1);
+            $style->id = ($key + 1);
             $style->name = $template_name_css_path;
             $web_template = WebsiteTemplate::first();
             $style->website_template_id = $web_template->id;
             $style->css_files = $public_path . 'user_templates/' . $template_name_css_path . '/css/style.css';
-            $style->template_image = $public_path . 'user_templates/slider/image/'. $template_name_css_path.'.png';
+            $style->template_image = $public_path . 'user_templates/slider/image/' . $template_name_css_path . '.png';
 
             $web_variable_std = new \stdClass();
 
@@ -177,7 +177,7 @@ class StylingSeeder extends Seeder
             $web_variable_std->story_arr[0]->image_show_var = $public_path . "user_templates/" . $default_template . "/images/baby_cot.png";
             $web_variable_std->story_arr[0]->details_show_var =  "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony.";
 
-         
+
             $web_variable_std->story_arr[1] = new \stdClass();
             $web_variable_std->story_arr[1]->user_id = "1";
             $web_variable_std->story_arr[1]->story_title_show_var =  "Story College";
@@ -186,7 +186,7 @@ class StylingSeeder extends Seeder
             $web_variable_std->story_arr[1]->image_show_var = $public_path . "user_templates/" . $default_template . "/images/baby_cot.png";
             $web_variable_std->story_arr[1]->details_show_var =  "10th floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony.";
 
-         
+
 
 
             // $web_variable_std->story_arr = [];
@@ -208,10 +208,10 @@ class StylingSeeder extends Seeder
             // $story_tab_std2->details_show_var =  "3rd floor of the library was always our go to if we wanted to study (aka gossip haha.) We shared so many nice chats here and always wanted to reservea study room but we were always too lazy to do that. We had find an empty onebut then get kicked out like 10 minutes later after someone who actuallyreserved it came in. All the memories at school hold a special place in myheart. I walk past the places we would hang out and think about everything.I am glad we went from high school to college. I am so grateful I got tospend my first quarter of college with someone as amazing as you, Anthony.";
             // $web_variable_std->story_arr[1] = $story_tab_std2;
 
- // "gallery_photo_htmlarr":"<div id=\"photo\" class=\"tab_galcontent\"> <div class=\"gall_top_bttn\"> <div class=\"flx\">  <div class=\"slidsho_txt\" > <label for=\"file_upload\" class=\"custom-file-upload\">  Add a Photo </label><input type=\"file\"  accept=\"image/*\" id=\"file_upload\" name=\"upld_file\" class=\"upld_file crop_upload_image\" image_width=\"378\" image_height=\"226\" aspect_ratio_width=\"16\" aspect_ratio_height=\"9\" upload_input_by_name=\"upld_file_hid\" ></div><div class=\"publish_btn\"><button id =\"save_media_image\"class=\"btn btn-danger\">Publish</button></div> </div> </div> <div class=\"gallery_img\"> <div class=\"row gall_row\"><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"></div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> </div></div></div>",
-                // "gallery_audio_htmlarr":"<div id=\"Audio\" class=\"tab_galcontent\"><div class=\"audio_icon\"><i class=\"fa fa-microphone\" aria-hidden=\"true\"></i></div><div class=\"add_audio\"> <div class=\"aud_head\"> Add Audio </div><div class=\"aud_box\"><label for=\"audio_upload\" class=\"custom-file-upload\"> <i class=\"fa fa-cloud-upload\" aria-hidden=\"true\"></i></label> <input type=\"file\" accept=\"audio/*\" id=\"file_upload\" id=\"audio_upload\" name=\"upld_aud\" class=\"upld_audio\" > <p>From Your Device</p> </div><div class=\"publishing_btn aud\"><button id =\"save_media_audio\"class=\"btn btn-danger\">Publish</button></div></div></div>",
-                // "gallery_video_htmlarr":"<div id=\"video\" class=\"tab_galcontent\"> <div class=\"gall_top_bttn\"> <div class=\"flx\">  <div class=\"slidsho_txt\" > <label for=\"file_upload\" class=\"custom-file-upload\">  Add a Video </label><input type=\"file\"  accept=\"video/*\" id=\"file_upload\"  id=\"vid_upload\" name=\"upld_vid\" class=\"upld_video\" ></div> <div class=\"publish_btn\"><button id =\"save_media_video\"class=\"btn btn-danger\">Publish</button></div></div> </div><div class=\"gallery_video\"><div class=\"row\"><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"> </div></div> </div></div>",
-                
+            // "gallery_photo_htmlarr":"<div id=\"photo\" class=\"tab_galcontent\"> <div class=\"gall_top_bttn\"> <div class=\"flx\">  <div class=\"slidsho_txt\" > <label for=\"file_upload\" class=\"custom-file-upload\">  Add a Photo </label><input type=\"file\"  accept=\"image/*\" id=\"file_upload\" name=\"upld_file\" class=\"upld_file crop_upload_image\" image_width=\"378\" image_height=\"226\" aspect_ratio_width=\"16\" aspect_ratio_height=\"9\" upload_input_by_name=\"upld_file_hid\" ></div><div class=\"publish_btn\"><button id =\"save_media_image\"class=\"btn btn-danger\">Publish</button></div> </div> </div> <div class=\"gallery_img\"> <div class=\"row gall_row\"><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\"   alt=\"\"></div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> <div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_photo_arr.image_show_var}!!}\" alt=\"\"> </div> </div></div></div>",
+            // "gallery_audio_htmlarr":"<div id=\"Audio\" class=\"tab_galcontent\"><div class=\"audio_icon\"><i class=\"fa fa-microphone\" aria-hidden=\"true\"></i></div><div class=\"add_audio\"> <div class=\"aud_head\"> Add Audio </div><div class=\"aud_box\"><label for=\"audio_upload\" class=\"custom-file-upload\"> <i class=\"fa fa-cloud-upload\" aria-hidden=\"true\"></i></label> <input type=\"file\" accept=\"audio/*\" id=\"file_upload\" id=\"audio_upload\" name=\"upld_aud\" class=\"upld_audio\" > <p>From Your Device</p> </div><div class=\"publishing_btn aud\"><button id =\"save_media_audio\"class=\"btn btn-danger\">Publish</button></div></div></div>",
+            // "gallery_video_htmlarr":"<div id=\"video\" class=\"tab_galcontent\"> <div class=\"gall_top_bttn\"> <div class=\"flx\">  <div class=\"slidsho_txt\" > <label for=\"file_upload\" class=\"custom-file-upload\">  Add a Video </label><input type=\"file\"  accept=\"video/*\" id=\"file_upload\"  id=\"vid_upload\" name=\"upld_vid\" class=\"upld_video\" ></div> <div class=\"publish_btn\"><button id =\"save_media_video\"class=\"btn btn-danger\">Publish</button></div></div> </div><div class=\"gallery_video\"><div class=\"row\"><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"><img src=\"{!!{gallery_video_arr.image_show_var}!!}\"  alt=\"\"></div><div class=\"col-md-3 pic_gal_img\"> <img src=\"{!!{gallery_video_arr.image_show_var}!!}\" alt=\"\"> </div></div> </div></div>",
+
             $style->web_variable = json_encode($web_variable_std);
             $style->variable_html = '';
             $style->save();
@@ -228,7 +228,7 @@ class StylingSeeder extends Seeder
                 
                 "user_memorial_tribute_htmlvar": "<h3 class=\"about_heading\">Let the memory of {!!{memorial_user_var.name_var}!!} be with us forever.</h3><p><ul class=\"li_txt\"><li>Born on {!!{memorial_user_var.birth_var}!!} in {!!{memorial_user_var.city_var}!!}, {!!{memorial_user_var.country_var}!!}</li><li>Passed away on {!!{memorial_user_var.death_var}!!}</li></ul></p><div class=\"abt_txt\">{!!{tribute_text_var}!!} </div>",
 
-                "about_tab_htmlvar": "<div id=\"About\" class=\"tabcontent\"> {!!{user_memorial_tribute_htmlvar}!!} <div class=\"tributes\"><h1>Tributes</h1><a href=\"#add_tibs\"><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></a></div> <div class=\"tribute_blk add_tribute_append\">{!!{tributes_htmlarr}!!}</div><div class=\"lev_tri\"><h3 id=\"tibutes_add\">Leave a Tribute</h3><div class=\"icon_list\"><div class=\"dropdown candle-select\"><button onclick=\"set_tribute(`candle`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/candle.png'.'`)\" class=\"bt_no\"><div class=\"cand same\"><div class=\"ico_wri\"><img class=\"candle-select-icon-img\" src=\"{!!{icon_list_var.candel_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Light a Candle</span></div></div> </button></div><div class=\"dropdown flower-select\"><button onclick=\"set_tribute(`flower`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/flower.png'.'`)\" class=\"bt_no\"><div class=\"flower same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.flower_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Lay a Flower</span></div></div></button></div><div class=\"dropdown feather-select\"><button onclick=\"set_tribute(`feather`,`'.$public_path . 'user_templates/' . $default_template . '/images/imgs/feather.png'.'`)\" class=\"bt_no\"><div class=\"feather same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.feather_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Leave a Note</span></div></div></button></div><input type=\"hidden\" id=\"type_tribute\" name=\"type_tribute\"><input type=\"hidden\" id=\"image_tribute\" name=\"image_tribute\"></div><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"add_tibs\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button id=\"save_trib\" class=\"btn btn-danger pbbttn\">Publish</button> </div></div></div> ",
+                "about_tab_htmlvar": "<div id=\"About\" class=\"tabcontent\"> {!!{user_memorial_tribute_htmlvar}!!} <div class=\"tributes\"><h1>Tributes</h1><a href=\"#add_tibs\"><button class=\"bt_trei\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i>_ Leave a Tribute</button></a></div> <div class=\"tribute_blk add_tribute_append\">{!!{tributes_htmlarr}!!}</div><div class=\"lev_tri\"><h3 id=\"tibutes_add\">Leave a Tribute</h3><div class=\"icon_list\"><div class=\"dropdown candle-select\"><button onclick=\"set_tribute(`candle`,`' . $public_path . 'user_templates/' . $default_template . '/images/imgs/candle.png' . '`)\" class=\"bt_no\"><div class=\"cand same\"><div class=\"ico_wri\"><img class=\"candle-select-icon-img\" src=\"{!!{icon_list_var.candel_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Light a Candle</span></div></div> </button></div><div class=\"dropdown flower-select\"><button onclick=\"set_tribute(`flower`,`' . $public_path . 'user_templates/' . $default_template . '/images/imgs/flower.png' . '`)\" class=\"bt_no\"><div class=\"flower same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.flower_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Lay a Flower</span></div></div></button></div><div class=\"dropdown feather-select\"><button onclick=\"set_tribute(`feather`,`' . $public_path . 'user_templates/' . $default_template . '/images/imgs/feather.png' . '`)\" class=\"bt_no\"><div class=\"feather same\"><div class=\"ico_wri\"><img src=\"{!!{icon_list_var.feather_image_var}!!}\" alt=\"relative\"><span class=\"sp\">Leave a Note</span></div></div></button></div><input type=\"hidden\" id=\"type_tribute\" name=\"type_tribute\"><input type=\"hidden\" id=\"image_tribute\" name=\"image_tribute\"></div><div class=\"txt_ara\"><textarea name=\"tribute\" id=\"add_tibs\" cols=\"86\" placeholder=\"Add your tribute here\"rows=\"6\"></textarea></div><div class=\"publish\"><button id=\"save_trib\" class=\"btn btn-danger pbbttn\">Publish</button> </div></div></div> ",
 
 
 

@@ -106,19 +106,20 @@ Route::post('user/memorial/privacy', [User_UserController::class, 'privacy'])->n
 Route::post('user/memorial/save_css', [User_UserController::class, 'save_css'])->name('user.memorial.save_css');
 
 Route::group(['middleware' => 'login.access_token'], function () { //,'prefix'=>'admin'
-// saave_memorial_user *********
-Route::get('user/memorialform', [User_UserController::class, 'memorialform'])->name('user.memorialform'); //index
-Route::get('user/get_memorial/{user_email}', [User_UserController::class, 'get_memorial']);
+    // saave_memorial_user *********
+    Route::get('user/memorialform', [User_UserController::class, 'memorialform'])->name('user.memorialform'); //index
+    Route::get('user/get_memorial/{user_email}', [User_UserController::class, 'get_memorial']);
     //save story
     Route::post('user/storyform', [User_UserController::class, 'storyform'])->name('user.storyform'); //add story
     Route::post('user/tributeform', [User_UserController::class, 'tributeform'])->name('user.tributeform'); //add tributeform
     Route::get('user/get_tribute', [User_UserController::class, 'get_tribute'])->name('user.get_tribute'); //get_tribute
     Route::post('user/invite', [User_UserController::class, 'send_invite'])->name('user.send_invite');
-    Route::post('search/memorial', [User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
     Route::post('user/upload_gallery', [User_UserController::class, 'upload_gallery'])->name('user.upload_gallery_audio'); //search
     Route::post('user/delete/{id}', [User_UserController::class, 'destroy_undestroy'])->name('user.delete');
 });
 ///blog
+Route::post('search/memorial', [User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
+
 Route::get('user/blog/child_loss', [User_UserController::class, 'child_loss'])->name('user.child_loss');
 Route::get('user/blog/death', [User_UserController::class, 'death'])->name('user.death');
 Route::get('user/blog/our_story', [User_UserController::class, 'our_story'])->name('user.our_story');

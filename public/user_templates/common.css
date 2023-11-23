@@ -468,7 +468,7 @@ ul.reviewSection img {
 .nav_back {
     background-repeat: no-repeat;
     background-position-x: -247px;
-    background-size: 133%;
+    background-size: 113%;
 }
 .nav_bar {
     float: right;
@@ -491,15 +491,16 @@ ul.reviewSection img {
     font-weight: 400;
     line-height: 1.15em;
 }
-
+.prf_img {
+    padding-top: 50px;
+}
 .profile_img {
     border: solid;
     width: 231px;
-    margin-top: 52px;
     border-radius: 5px;
+    margin: 0 auto;
     margin-bottom: 50px;
 }
-
 /* ////// */
 .tab {
     overflow: hidden;
@@ -1034,7 +1035,6 @@ body {
         color: white;
     }
     .nav_back {
- 
         background-size: cover;
     }
     .col-md-4.prf_img {
