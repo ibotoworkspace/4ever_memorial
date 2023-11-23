@@ -39,4 +39,3 @@ Route::group(['middleware' => 'auth.user_loggedin'], function () {
 });
 
 Route::post('all_memorials', [MemorialController::class, 'all_memorials']);
-

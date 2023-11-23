@@ -15,11 +15,11 @@ class MemorialController extends Controller
         $user = $request->attributes->get("user");
 
         $memorials = UserWebsite::where("user_id", $user->id)
-        ->latest()
-        ->get();
+            ->latest()
+            ->get();
 
-        $memorials = $memorials->transform(function($memorial){
-            $memorial->redirect = asset('user/get_memorial/'.$memorial->email);
+        $memorials = $memorials->transform(function ($memorial) {
+            $memorial->redirect = asset('user/get_memorial/' . $memorial->email);
             return $memorial;
         });
 
@@ -29,12 +29,12 @@ class MemorialController extends Controller
     {
         $search = $request->search ?? '';
 
-        $memorials = UserWebsite::where('email','like','%'.$search.'%')
-        ->latest()
-        ->get();
+        $memorials = UserWebsite::where('email', 'like', '%' . $search . '%@4evermemorial.com')
+            ->latest()
+            ->get();
 
-        $memorials = $memorials->transform(function($memorial){
-            $memorial->redirect = asset('user/get_memorial/'.$memorial->email);
+        $memorials = $memorials->transform(function ($memorial) {
+            $memorial->redirect = asset('user/get_memorial/' . $memorial->email);
             return $memorial;
         });
 
@@ -45,12 +45,12 @@ class MemorialController extends Controller
     {
         $user = $request->attributes->get("user");
 
-        
+
         $style = Styling::with('website_template')->first();
         $user_helper = new UserTemplateHelper();
         $user_web = $user_helper->save_memorial_user($request, $user, $style);
 
-        $res = $user_helper->change_template($request,$user_web->id,$request->template_id);
+        $res = $user_helper->change_template($request, $user_web->id, $request->template_id);
         return $this->sendResponse(200, $res);
 
         // template_id
@@ -85,7 +85,7 @@ class MemorialController extends Controller
     {
         // $user = $request->attributes->get("user");
 
-        $templates = Styling::get(['id','name','template_image']);
+        $templates = Styling::get(['id', 'name', 'template_image']);
 
         return $this->sendResponse(200, $templates);
     }

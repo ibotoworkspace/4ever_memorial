@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body,
 html {
     font-size: 15px;
     line-height: 1.4666666667;
     color: #000;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
 }
-
 
 .required-warning::placeholder {
     color: red !important;
@@ -166,7 +165,6 @@ span.sidetick {
     font-size: 9px !important;
 }
 
-
 .cardformarea label {
     color: #465863;
     font-size: 15px;
@@ -208,7 +206,6 @@ span.sidetick {
     font-weight: 500;
     color: #465863;
     margin-left: -16px;
-
 }
 
 .option p {
@@ -269,13 +266,7 @@ span.sidetick {
     margin-top: 50px;
 }
 
-
-
-
-
-
-
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width: 480px) {
     .tabsarea {
         padding: 25px;
     }
