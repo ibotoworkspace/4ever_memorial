@@ -13,10 +13,10 @@
 <script>
     var memorial_id = '{!! $user_website->id !!}';
     var global_path = '{!! asset('/') !!}';
-    var jsonString = '{!! json_encode($web_variable["gallery_photo_arr"]) !!}';
-    var jsonString_vid = '{!! json_encode($web_variable["gallery_video_arr"]) !!}';
-    var jsonString_aud = '{!! json_encode($web_variable["gallery_audio_arr"]) !!}';
-    var jsonString_recent = '{!! json_encode($web_variable["recent_updates_show_arr"]) !!}';
+    var jsonString = '{!! json_encode($web_variable['gallery_photo_arr']) !!}';
+    var jsonString_vid = '{!! json_encode($web_variable['gallery_video_arr']) !!}';
+    var jsonString_aud = '{!! json_encode($web_variable['gallery_audio_arr']) !!}';
+    var jsonString_recent = '{!! json_encode($web_variable['recent_updates_show_arr']) !!}';
     var gallery_images = JSON.parse(jsonString);
     var gallery_video_ = JSON.parse(jsonString_vid);
     var gallery_audio = JSON.parse(jsonString_aud);
@@ -63,13 +63,15 @@
                         console.log('email sent');
                         $('#success_Modal').modal('toggle');
                         // $('#success_Modal').modal('show');
+                    } else {
+                        show_error_modal_with_msg(response);
                     }
+                },
+                error: function(err) {
+                    console.log('form failed', err);
+                    show_error_modal_with_msg(null, 'Can not proceed now please try later');
                 }
             });
-
-            //   ajax
-
-
         });
 
 
@@ -80,7 +82,7 @@
             // $('.contentLi_aud').html('added {!! $audio_count !!} audio(s)');
             $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
-            $('.pht_para').html('{!! count($web_variable["gallery_photo_arr"]) !!} Photos');
+            $('.pht_para').html('{!! count($web_variable['gallery_photo_arr']) !!} Photos');
             $('.gall_row').html(get_imges(gallery_images));
             $('.vid_row').html(get_vids(gallery_video_));
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
@@ -91,7 +93,7 @@
                 .href);
             var images = '';
             if (!gallery_images.length) {
-                images = images + image_crousal('{!! asset("public/theme/images/logo_change.jpg") !!}', 0);
+                images = images + image_crousal('{!! asset('public/theme/images/logo_change.jpg') !!}', 0);
             }
             for (var i = 0; i < gallery_images.length; i++) {
                 images = images + image_crousal(gallery_images[i].image_show_var, i);
@@ -433,7 +435,7 @@
             formData.append('story_image', $('input[name="story_image"]').val());
 
             $.ajax({
-                url: '{!! asset("user/storyform") !!}',
+                url: '{!! asset('user/storyform') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -443,13 +445,17 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
-                    $(".story_blk").append(get_story_html(res.response));
-                    $('input[type="text"],textarea').val('');
-                    $('input[type="file"],textarea').val('');
-
+                    if (res.status) {
+                        $(".story_blk").append(get_story_html(res.response));
+                        $('input[type="text"],textarea').val('');
+                        $('input[type="file"],textarea').val('');
+                    } else {
+                        show_error_modal_with_msg(res);
+                    }
                 },
                 error: function(err) {
                     console.log('form failed', err);
+                    show_error_modal_with_msg(null, 'Can not proceed now please try later');
                 }
             })
         });
@@ -467,7 +473,7 @@
             formData.append('memorial_id', memorial_id);
 
             $.ajax({
-                url: '{!! asset("user/upload_gallery") !!}',
+                url: '{!! asset('user/upload_gallery') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -478,30 +484,23 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
+                    if (!res.status) {
+                        show_error_modal_with_msg(res);
+                        return;
+                    }
                     if (res.response.type == 'video') {
                         $(".vid_row").append(get_gallery_video_html(res.response));
-                        console.log(res.response.type, 'type is here');
-
-
                     } else if (res.response.type == 'photo') {
                         $(".gall_row").append(get_gallery_img_html(res.response));
-                        console.log(res.response.type, 'type is here');
-
-
                     } else {
                         $(".uploaded_audio_area").append(get_gallery_audio_html(res
                             .response));
-                        console.log(res.response.type, 'type is here');
-
                     }
-                    // $('input[type="hidden"],textarea').val('');
                     $('input[type="file"],textarea').val('');
-
-
-
                 },
                 error: function(err) {
                     console.log('form failed', err);
+                    show_error_modal_with_msg(null, 'Can not proceed now please try later');
                 }
             })
         }
@@ -547,14 +546,14 @@
             formData.append('memorial_id', memorial_id);
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
-            if($('#type_tribute').val() == ''){
-                set_tribute('candle','{!! asset("public/user_templates/images/candles/1.png") !!}');
+            if ($('#type_tribute').val() == '') {
+                set_tribute('candle', '{!! asset('public/user_templates/images/candles/1.png') !!}');
             }
             formData.append('type_var', $('#type_tribute').val());
             formData.append('image_tribute', $('#image_tribute').val());
 
             $.ajax({
-                url: '{!! asset("user/tributeform") !!}',
+                url: '{!! asset('user/tributeform') !!}',
                 method: 'POST',
                 data: formData,
                 dataType: 'JSON',
@@ -564,22 +563,40 @@
                 enctype: 'multipart/form-data',
                 success: function(res) {
                     console.log('res', res)
-                    $(".add_tribute_append").append(get_review_html(res
-                        .response));
-                    $('input[type="text"],textarea').val('');
-                    $('input[type="hidden"],textarea').val('');
-
+                    if (res.status) {
+                        $(".add_tribute_append").append(get_review_html(res
+                            .response));
+                        $('input[type="text"],textarea').val('');
+                        $('input[type="hidden"],textarea').val('');
+                    } else {
+                        show_error_modal_with_msg(res);
+                    }
                     for (const value of formData.values()) {
                         console.log(value);
                     }
                 },
                 error: function(err) {
                     console.log('form failed', err);
+                    show_error_modal_with_msg(null, 'Can not proceed now please try later');
                 }
             })
         });
 
     });
+
+    function show_error_modal_with_msg(res, custom_error) {
+        var error_msg = 'Can not submit now. Please Login again';
+        if (!res) {
+            error_msg = custom_error;
+        } else {
+            if (res && res.hasOwnProperty('error') && res.error.hasOwnProperty('message') && res.error.message.length) {
+                error_msg = res.error.message[0];
+            }
+        }
+
+        $('#errorText').text(error_msg);
+        $('#errorModal').modal('show');
+    }
 
     function set_tribute(type_tribute, tribute_image) {
 
@@ -623,20 +640,13 @@
         var type_var = response.type_var;
         if (type_var == 'flower') {
             type_var =
-                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/flower.png">';
                 '<img src="' + $('#image_tribute').val() + '">';
-
-            // '<img src="http://localhost/4_ever_memories/public/user_templates/template_1/images/imgs/flower.png">';
-
         } else if (type_var == 'candle') {
             type_var =
-                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/candle.png">';
                 '<img src="' + $('#image_tribute').val() + '">';
         } else {
             type_var =
-                // '<img src="' + global_path + '/user_templates/template_1/images/imgs/feather.png">';
                 '<img src="' + $('#image_tribute').val() + '">';
-
         }
         var review = `
                     <div class="reviewBox">
@@ -656,10 +666,7 @@
                     </div>
                     `;
         return review;
-
     }
-
-
 
     function get_story_html(response) {
 
@@ -693,7 +700,6 @@
         </div>
         `;
         return review;
-
     }
 
     function get_gallery_img_html(response) {
@@ -710,10 +716,7 @@
                     </div>
         `;
         return review;
-
     }
-
-
 
     function get_gallery_video_html(response) {
         var image_show_var = `<video width="200" height="200" controls=""><source src="` + response
@@ -733,7 +736,6 @@
                     </div>
         `;
         return review;
-
     }
 
     function get_gallery_audio_html(response) {
@@ -760,12 +762,8 @@
 
     }
 
-    // function delete_request(user_id){
-    //     alert(`"delete`+ user_id +`"`);
-    // }
     function delete_request(gallery_id) {
         $.ajax({
-
             url: "{!! asset('user/delete') !!}/" + gallery_id,
             type: 'POST',
             dataType: 'json',
@@ -778,7 +776,13 @@
 
                     $('.remove_imgae' + gallery_id).remove();
 
+                } else {
+                    show_error_modal_with_msg(response);
                 }
+            },
+            error: function(err) {
+                console.log('form failed', err);
+                show_error_modal_with_msg(null, 'Can not proceed now please try later');
             }
         });
     }

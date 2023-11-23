@@ -78,6 +78,7 @@ class Kernel extends HttpKernel
         // User middleware
         'user.auth' => \App\Http\Middleware\UserAuthCheck::class,
         'auth.user_loggedin' => \App\Http\Middleware\ValidateToken::class,
+        'login.access_token' => \App\Http\Middleware\AccessTokenLogin::class,
         //Role_Middleware
         //  'role_auth' => \App\Http\Middleware\Role_Middleware::class,
     ];

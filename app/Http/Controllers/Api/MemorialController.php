@@ -18,6 +18,11 @@ class MemorialController extends Controller
         ->latest()
         ->get();
 
+        $memorials = $memorials->transform(function($memorial){
+            $memorial->redirect = asset('user/get_memorial/'.$memorial->email);
+            return $memorial;
+        });
+
         return $this->sendResponse(200, $memorials);
     }
 

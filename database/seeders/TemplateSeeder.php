@@ -19,12 +19,12 @@ class TemplateSeeder extends Seeder
     {
         $template_name = 'template_1';
         $template = WebsiteTemplate::where('name', $template_name)->first();
-        if($template){
+        if ($template) {
             $template->forceDelete();
         }
 
         // if (!$template) {
-            $template = new WebsiteTemplate();
+        $template = new WebsiteTemplate();
         // }
         $image_path = asset('public') . '/';
         $template->id = 1;
@@ -35,8 +35,8 @@ class TemplateSeeder extends Seeder
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'https://stagging.hatinco.com/4_ever_memories/public/';
         // $public_path = 'http://localhost/4_ever_memories/public/';
-        $public_path = Config::get('app.url').'/public/';
-        $url_path = Config::get('app.url').'/';
+        $public_path = Config::get('app.url') . '/public/';
+        $url_path = Config::get('app.url') . '/';
         $template->web_html =
             '
         <html>
@@ -57,7 +57,7 @@ class TemplateSeeder extends Seeder
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
                 <link rel="stylesheet" id="template_css_link" href="" />
                 <link rel="stylesheet" href="{!!{memorial_style_var.style_script_var}!!}" />
-                <link rel="stylesheet" href="'.$public_path.'user_templates/common.css" />
+                <link rel="stylesheet" href="' . $public_path . 'user_templates/common.css" />
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
                 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -239,10 +239,10 @@ class TemplateSeeder extends Seeder
                             <div class="col-md-8">
                                 <div class="links">
 
-                                    <a href="'.$url_path.'/search/memorial">Memorial Websites</a>
-                                    <a href="'.$url_path.'/user/service_term">Terms of Use</a>
-                                    <a href="'.$url_path.'/user/privacy_policy">Privacy Policy</a>
-                                    <a href="'.$url_path.'/user/contactus">Contact Us</a>
+                                    <a href="' . $url_path . '/search/memorial">Memorial Websites</a>
+                                    <a href="' . $url_path . '/user/service_term">Terms of Use</a>
+                                    <a href="' . $url_path . '/user/privacy_policy">Privacy Policy</a>
+                                    <a href="' . $url_path . '/user/contactus">Contact Us</a>
                                 </div>
 
                             </div>
@@ -273,19 +273,32 @@ class TemplateSeeder extends Seeder
               <label for="usr">Enter Email:</label>
               <input type="text" placeholder="example@mail.com,example2@mail.com,example3@mail.com......" class="form-control share_inveite_emails" id="usr" name="invite_email">
             </div>
-           
-            
             <button type="button" class="btn btn-primary email_sub sumit_email">Submit</button>
-          </form>
-          
+          </form>          
         </div>
-        
-       
-        
       </div>
     </div>
   </div>
   <!-- The Modal -->
+
+  <!-- Error Modal -->
+  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="errorModalLabel">Error</h4>
+              </div>
+              <div class="modal-body">
+                  <p id="errorText"></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Error Modal -->
   <div class="modal fade" id="success_Modal">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -500,7 +513,5 @@ class TemplateSeeder extends Seeder
         $template->variable_html = '';
 
         $template->save();
-
     }
 }
-?>
