@@ -338,12 +338,12 @@ class UserController extends Controller
         $mail_data = UserWebsite::find($request->memorial_id);
         $details = [
             'to' => $request->to_emails,
-
             'user_id' => $request->memorial_id,
             'from' => 'info@4evermemorial.com',
             'title' => '4Ever',
             'subject' => 'INVITATION ',
             "dated"  => date('d F, Y (l)'),
+            'base_url' => Config::get('app.url'),
             'deceased_data' => $mail_data
         ];
         Mail::to($request->to_emails)->send(new InviteEmail($details));

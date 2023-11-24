@@ -49,7 +49,7 @@ class User extends Authenticatable
       
         'email' => 'required|email|unique:users',
         // 'phone_no' => 'required|unique:users',
-        'password' => 'required'
+        'password' => 'required|min:6'
     ];
     public static $rules = [
         // 'name' => 'required|max:255',
