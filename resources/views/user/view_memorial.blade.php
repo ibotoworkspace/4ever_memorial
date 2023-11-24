@@ -29,64 +29,58 @@
     <section>
         <div class="testdataarea">
             <div class="container memo_box">
+                @if (!count($memorials))
+                    <div class="box_underline box_hvr">
+                        <div class="row">
+                            <div class="col-md-4 left_box">
+                            </div>
+                            <div class="col-sm-6">
 
-
-            @if(!count($memorials))
-            <div class="box_underline box_hvr">
-                    <div class="row">
-                        <div class="col-md-4 left_box">
-                        </div>
-                        <div class="col-sm-6">
-                            
                                 <div class="">
                                     <div class="info_area1">
-                                       <h1> List is empty </h1>
+                                        <h1> List is empty </h1>
                                     </div>
                                 </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="memo_img">
-                                <img src="{!! asset('public/images/memo1.png') !!}" class="img-responsive">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="memo_img">
+                                    <img src="{!! asset('public/images/memo1.png') !!}" class="img-responsive">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
 
-            @endif
-                
-                @foreach($memorials as $m)
-                <div class="box_underline box_hvr">
-                    <div class="row">
-                        <div class="col-md-4 left_box">
-                            <div class="img_bx">
-                                <img src="{!! asset($m->image_show_var) !!}" class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="{!! asset('user/get_memorial/'.$m->email) !!}" class="deco_no">
-                                <div class="">
-                                    <div class="info_area1">
-                                        <h3>{!! ucwords($m->f_name) !!}{!! ucwords($m->m_name) !!}{!! ucwords($m->l_name) !!}</h3>
-                                        <h4>{!! ucwords($m->b_year) !!} - {!! ucwords($m->p_year) !!}</h4>
-                                        <a href="{!! asset('user/get_memorial/'.$m->email) !!}">
-                                            <p><i class="fa fa-globe" aria-hidden="true"></i>{!! ucwords($m->email) !!}</p>
-                                        </a>
-                                    </div>
+                @foreach ($memorials as $m)
+                    <div class="box_underline box_hvr">
+                        <div class="row">
+                            <div class="col-md-4 left_box">
+                                <div class="img_bx">
+                                    <img src="{!! asset($m->image_show_var) !!}" class="img-responsive">
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="memo_img">
-                                <img src="{!! asset('public/images/memo1.png') !!}" class="img-responsive">
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="{!! asset('user/get_memorial/' . $m->email) !!}" class="deco_no">
+                                    <div class="">
+                                        <div class="info_area1">
+                                            <h3>{!! ucwords($m->f_name) !!}{!! ucwords($m->m_name) !!}{!! ucwords($m->l_name) !!}</h3>
+                                            <h4>{!! ucwords($m->b_year) !!} - {!! ucwords($m->p_year) !!}</h4>
+                                            <a href="{!! asset('user/get_memorial/' . $m->email) !!}">
+                                                <p><i class="fa fa-globe" aria-hidden="true"></i>{!! ucwords($m->email) !!}
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="memo_img">
+                                    <img src="{!! asset('public/images/memo1.png') !!}" class="img-responsive">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
-                
-                
-
-
             </div>
         </div>
     </section>
