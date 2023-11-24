@@ -219,6 +219,7 @@ class UserController extends Controller
         $gallery_image = Gallery::where('memorial_id', $user_website->id)->where('type', 'photo')
             ->orderbydesc('id')->get()->toArray();
         $web_variable['gallery_photo_arr'] = $gallery_image;
+        
         $gallery_video = Gallery::where('memorial_id', $user_website->id)->where('type', 'video')
             ->orderbydesc('id')->get()->toArray();
         $web_variable['gallery_video_arr'] = $gallery_video;
@@ -230,6 +231,7 @@ class UserController extends Controller
 
         $template_helper = new TemplateHelper($user_website, $web_variable);
         $html = $template_helper->create_html();
+        
         return view('user/dynamic_template/user_page', compact('html', 'trib_side', 'gal_side', 'web_variable', 'user_website'));
     }
     public function storyform(Request $request)
