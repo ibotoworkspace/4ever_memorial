@@ -256,7 +256,7 @@
             } else {
 
                 candles_html = `                
-                <button onclick="set_tribute('candle','{!! asset('public/user_templates/images/candles/1.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('candle','{!! asset('public/user_templates/images/candles/1.png') !!}"',this)" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
                             <img candle-select-icon-img src="{!! asset('public/user_templates/images/candles/1.png') !!}" alt="relative">
@@ -267,7 +267,7 @@
                 `;
 
                 flowers_html = `                
-                <button onclick="set_tribute('flower','{!! asset('public/user_templates/images/flowers/1.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('flower','{!! asset('public/user_templates/images/flowers/1.png') !!}"',this)" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
                             <img flower-select-icon-img src="{!! asset('public/user_templates/images/flowers/1.png') !!}" alt="relative">
@@ -278,7 +278,7 @@
                 `;
 
                 notes_html = `                
-                <button onclick="set_tribute('feather','{!! asset('public/user_templates/images/notes/1.png') !!}"')" class="bt_no ">
+                <button onclick="set_tribute('feather','{!! asset('public/user_templates/images/notes/1.png') !!}"',this)" class="bt_no ">
                     <div class="cand same">
                         <div class="ico_wri">
                             <img feather-select-icon-img src="{!! asset('public/user_templates/images/notes/1.png') !!}" alt="relative">
@@ -321,8 +321,8 @@
                 console.log('candles image', candle);
                 candle_list = candle_list + `                
                 
-                    <div class="cand same" onclick="set_tribute('candle','` + candle + `')">
-                        <div class="ico_wri">
+                    <div class="cand same" onclick="set_tribute('candle','` + candle + `',this)">
+                        <div class="ico_wri icon_select">
                             <img src="` + candle + `" alt="relative">
                         </div>
                     </div>
@@ -363,7 +363,7 @@
                 console.log('flower image', flower);
                 flower_list = flower_list + `                
                 
-                    <div class="cand same" onclick="set_tribute('flower','` + flower + `')">
+                    <div class="cand same" onclick="set_tribute('flower','` + flower + `',this)">
                         <div class="ico_wri">
                             <img src="` + flower + `" alt="relative">
                         </div>
@@ -391,7 +391,7 @@
                 console.log('note image', note);
                 note_list = note_list + `                
                 
-                    <div class="cand same not_icn_c" onclick="set_tribute('feather','` + note + `')">
+                    <div class="cand same not_icn_c" onclick="set_tribute('feather','` + note + `',this)">
                         <div class="ico_wri">
                             <img src="` + note + `" alt="relative">
                         </div>
@@ -552,7 +552,7 @@
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             if ($('#type_tribute').val() == '') {
-                set_tribute('candle', `{!! asset('public/user_templates/images/candles/1.png') !!}`);
+                set_tribute('candle', `{!! asset('public/user_templates/images/candles/1.png') !!}`,this);
             }
             formData.append('type_var', $('#type_tribute').val());
             formData.append('image_tribute', $('#image_tribute').val());
@@ -603,10 +603,17 @@
         $('#errorModal').modal('show');
     }
 
-    function set_tribute(type_tribute, tribute_image) {
+    function set_tribute(type_tribute, tribute_image,e) {
 
         console.log('type tribute', type_tribute);
         console.log('tribute_image tribute', tribute_image);
+
+        $(e).parent('.flx_mob').find('.ico_wri').removeClass('icon_selected');
+        $(e).find('.ico_wri').addClass('icon_selected');
+
+    // $('.dropdown-content').css('display','none');
+    // $('.dropdown:hover .dropdown-content').css('display','block');
+        
 
         $('.same').removeClass('selected_tribute');
         var select_class = '';
