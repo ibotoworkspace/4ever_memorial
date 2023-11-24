@@ -28,6 +28,8 @@ class ForgotPass extends Mailable
      */
     public function build()
     {
-        return $this->markdown('users.email_template.forgot')->from($this->details['from']);
+        // return $this->markdown('user.templates.email_temp')->from($this->details['from']);
+
+        return $this->markdown('user.templates.forgot')->from($this->details['from']);
     }
 }

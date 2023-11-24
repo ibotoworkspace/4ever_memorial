@@ -71,26 +71,11 @@
 <body>
     <div class="container">
         <div class="header" style=" color: #fff; text-align: center;  border-top-left-radius: 10px; border-top-right-radius: 10px; ">
-            <h1>In Loving Memory</h1>
+            <h1>Password update</h1>
         </div>
         <div class="invitation">
-            <p>Dear {{ $details['to'] }},</p>
-            <p>We invite you to join us in celebrating the life and cherished memories of our beloved
-                {{ $details['deceased_data']['f_name'] }}, who passed away
-                on {{ $details['deceased_data']['p_year'] }}.
-            </p>
-            <p>We have created a memorial website where friends and family can come together to share stories, photos,
-                and
-                memories. It is a space to honor {{ $details['deceased_data']['f_name'] }}'s life and the impact
-                {{ $details['deceased_data']['gender'] == 'male' ? 'he' : 'she' }} had on all of us.
-            </p>
-            <p>Please visit the 4Evermemorial website using the link below:</p>
-            <p style="text-align: center;">
-                <a href="{!!$details['base_url']!!}/user/get_memorial/{{ $details['deceased_data']['email'] }}" class="memorial-link">Visit 4Evermemorial.com Website</a>
-            </p>
-            <p>{{ $details['deceased_data']['f_name'] }}'s memory lives on through our shared stories, and we hope you can contribute to this tribute.</p>
-            <p style="text-align: center;">With warmest regards,</p>
-            <p style="text-align: center;">{{ $details['deceased_data']['relation'] }}</p>
+            <p>Dear {{ $details['name'] }},</p>
+            <p>Your new password for {{ $details['email']}} is {{$details['new_password']}}.</p>
         </div>
     </div>
 </body>

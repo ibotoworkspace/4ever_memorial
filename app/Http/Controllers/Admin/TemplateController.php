@@ -7,28 +7,34 @@ use App\Http\Helpers\TemplateHelper;
 use App\Models\Styling;
 use App\Models\WebsiteTemplate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use stdClass;
 
 class TemplateController extends Controller
 {
     public function template_1()
     {
-        return view('admin/templates/template_1/index1');
+        $base_url = Config::get('app.url');
+        return view('admin/templates/template_1/index1',compact('base_url'));
     }
     public function template_2()
     {
-        return view('admin/templates/template_2/index');
+        $base_url = Config::get('app.url');
+        return view('admin/templates/template_2/index',compact('base_url'));
     }
     public function template_3()
     {
-        return view('admin/templates/template_3/index');
+        $base_url = Config::get('app.url');
+        return view('admin/templates/template_3/index',compact('base_url'));
     }
     public function template_4()
     {
-        return view('admin/templates/template_4/index');
+        $base_url = Config::get('app.url');
+        return view('admin/templates/template_4/index',compact('base_url'));
     }
     public function index(){
-        return view('admin/templates/template_index/index');
+        $base_url = Config::get('app.url');
+        return view('admin/templates/template_index/index',compact('base_url'));
     }
 
     public function template(Request $request)

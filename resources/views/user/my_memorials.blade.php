@@ -54,6 +54,27 @@
 
                         </ul>
                         <div class="tab-content barmainbox">
+                            @if (!count($memorials))
+                                <div class="box_underline box_hvr">
+                                    <div class="row">
+                                        <div class="col-md-4 left_box">
+                                        </div>
+                                        <div class="col-sm-6">
+            
+                                            <div class="">
+                                                <div class="info_area1">
+                                                    <h1> List is empty </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="memo_img">
+                                                <img src="{!! asset('public/images/memo1.png') !!}" class="img-responsive">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
 
                             @foreach ($memorials as $m)
                             <div class="col-sm-12 outer-bx">

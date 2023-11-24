@@ -57,7 +57,7 @@ class ValidateToken
         $client = $this->sendResponse(
             Config::get('error.code.UNAUTHORIZED_REQUEST'),
             [],
-            ['Please login again'],
+            ['Please login '],
             Config::get('error.code.UNAUTHORIZED_REQUEST')
         );
 

@@ -138,18 +138,20 @@ class UserController extends Controller
                     ['Email not found']
                 );
             }
-            $new_password = rand(10000, 99999);
+            $new_password = rand(100000, 999999);
             $user->password = Hash::make($new_password);
             $user->save();
             $details = [
-                // 'to' => $request->to_emails,
-                'to' => 'ameer.maavia@gmail.com',
+                'to' => $request->to_emails,
+                // 'to' => 'ameer.maavia@gmail.com',
 
+                'name' => $user->first_name,
                 'user_email' => $request->email,
                 'new_password' => $new_password,
                 'from' => 'info@4evermemorial.com',
                 'title' => '4evermemorial',
                 'subject' => 'Forgot Password ',
+                'base_url' => Config::get('app.url'),
                 "dated" => date('d F, Y (l)'),
             ];
             Mail::to($request->email)->send(new ForgotPass($details));
