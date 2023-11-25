@@ -64,6 +64,16 @@
     top: -10px;
     right: -11px;
 }
+.icon_select:hover {
+    border: 1px dotted;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.icon_selected {
+    border: 1px dotted;
+    cursor: pointer;
+    border-radius: 5px;
+}
 .del_bar {
     font-size: 31px;
     background: #e54e4e;
@@ -158,6 +168,8 @@ p.trib_para {
     overflow-y: hidden;
 }
 .ico_wri:hover {
+    border: 1px dotted;
+    border-radius: 5px;
     cursor: pointer;
 }
 
