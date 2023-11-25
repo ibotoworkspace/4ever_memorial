@@ -180,21 +180,21 @@
           </div>
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="public/theme/user_theme/images/Add-Unlimited.png')!!}" class="img-responsive">
+              <img src="{!! asset('public/theme/user_theme/images/Add-Unlimited.png')!!}" class="img-responsive">
               <h3>Add Unlimited Content</h3>
               <p>Including photos, videos and life history</p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="public/theme/user_theme/images/Share-story.png')!!}" class="img-responsive">
+              <img src="{!! asset('public/theme/user_theme/images/Share-story.png')!!}" class="img-responsive">
               <h3>Share Their Life Story</h3>
               <p>and allow others to collaborate and pay tribute</p>
             </div>
           </div>
           <div class="col-sm-3">
             <div class="creatbox">
-              <img src="public/theme/user_theme/images/Geotag-The-Final.png')!!}" class="img-responsive">
+              <img src="{!! asset('public/theme/user_theme/images/Geotag-The-Final.png')!!}" class="img-responsive">
               <h3>Geotag The Final Resting Place</h3>
               <p>for precise cemetery directions</p>
             </div>
