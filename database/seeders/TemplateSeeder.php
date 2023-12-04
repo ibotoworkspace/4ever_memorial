@@ -68,11 +68,13 @@ class TemplateSeeder extends Seeder
 
             <body>
                 <section class="nav_back">
+                <div class="ban_img">
                 <style>
                 .nav_back {
         background-image: url(' . $public_path . 'user_templates/template_1/images/cover.png);
     }
             </style>
+            </div>
                     <div class="nav_area">
                         <div class="container">
                             <div class="row">
