@@ -1,3 +1,6 @@
+<?php 
+// dd($user_website); 
+?>
 {!! $html !!}
 <input type="hidden" name="sndng_mail" value="{!! $user_website->id !!}">
 @include('partial_layouts.cropper.cropper_html')
@@ -93,8 +96,10 @@
             $('.vid_row').html(get_vids(gallery_video_));
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
             $('.recent_area').html(get_recent(recent_show));
-            $('.profile_img').html(prof_img(recent_show));
-            $('.ban_img').html(banner_img(recent_show));
+            $('.profile_img').html(prof_img(`{!!$user_website->image_show_var!!}`));
+            // $('.ban_img').html(banner_img(recent_show));
+  
+            $('.ban_img').css(' background-image',`{!!asset("public/user_templates/template_1/images/cover1.png")!!}`);
             $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' +
                 window.location
                 .href);
@@ -201,14 +206,15 @@
             return images_html;
         }
 
-        function prof_img(recent_arr) {
+        function prof_img(img) {
 
             var images_html = '';
+            console.log('asdasdas img ',img);
 
             images_html = images_html + `
                     
 
-                            <img src="{!! $user_website->image_show_var !!}" alt="relative" />
+                            <img class="asdasdasdas" src="`+img+`" alt="relative" />
 
                 `;
 
@@ -221,7 +227,7 @@
 
             images_html = images_html + `
                     
-            style>
+            <style>
                 .nav_back {
                     background-image: url(' . $public_path . 'user_templates/template_1/images/cover1.png);
                             }
@@ -392,7 +398,23 @@
             flower_list = flower_list + `</div></div>`;
             return flower_list;
         }
+        function toggleDropdown() {
+    var dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+}
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
         function add_notes_feather_list() {
             note_list = `
             <div class="dropdown-content">

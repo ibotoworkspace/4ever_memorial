@@ -477,11 +477,11 @@ ul.reviewSection img {
 .logo-area img {
     width: 175px;
 }
-.nav_back {
+/* .nav_back {
     background-repeat: no-repeat;
     background-position-x: -247px;
-    /* background-size: 113%; */
-}
+    background-size: 113%;
+} */
 .nav_bar {
     float: right;
     color: white;
