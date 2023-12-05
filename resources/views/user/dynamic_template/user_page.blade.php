@@ -1,3 +1,6 @@
+<?php 
+// dd($user_website); 
+?>
 {!! $html !!}
 <input type="hidden" name="sndng_mail" value="{!! $user_website->id !!}">
 @include('partial_layouts.cropper.cropper_html')
@@ -22,7 +25,8 @@
     var gallery_audio = JSON.parse(jsonString_aud);
     var recent_show = JSON.parse(jsonString_recent);
     console.log(gallery_images);
-    function hide_initially(){
+
+    function hide_initially() {
         $('.face_share').hide();
     }
     $(document).ready(function() {
@@ -87,12 +91,15 @@
             $('.contentLi').html('added {!! $trib_side !!} tribute(s)');
             $('.viw_para').html('{!! $user_website->total_views !!} Views');
 
-            $('.pht_para').html(`{!!count($web_variable['gallery_photo_arr'])!!}) Photos`);
+            $('.pht_para').html(`{!! count($web_variable['gallery_photo_arr']) !!}) Photos`);
             $('.gall_row').html(get_imges(gallery_images));
             $('.vid_row').html(get_vids(gallery_video_));
             $('.uploaded_audio_area').html(get_auds(gallery_audio));
             $('.recent_area').html(get_recent(recent_show));
-            $('.profile_img').html(prof_img(recent_show));
+            $('.profile_img').html(prof_img(`{!!$user_website->image_show_var!!}`));
+            // $('.ban_img').html(banner_img(recent_show));
+  
+            $('.ban_img').css(' background-image',`{!!asset("public/user_templates/template_1/images/cover1.png")!!}`);
             $('.facebook-share').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' +
                 window.location
                 .href);
@@ -199,14 +206,32 @@
             return images_html;
         }
 
-        function prof_img(recent_arr) {
+        function prof_img(img) {
+
+            var images_html = '';
+            console.log('asdasdas img ',img);
+
+            images_html = images_html + `
+                    
+
+                            <img class="asdasdasdas" src="`+img+`" alt="relative" />
+
+                `;
+
+            return images_html;
+        }
+
+        function banner_img(recent_arr) {
 
             var images_html = '';
 
             images_html = images_html + `
                     
-
-                            <img src="{!! $user_website->image_show_var !!}" alt="relative" />
+            <style>
+                .nav_back {
+                    background-image: url(' . $public_path . 'user_templates/template_1/images/cover1.png);
+                            }
+            </style>
 
                 `;
 
@@ -373,7 +398,23 @@
             flower_list = flower_list + `</div></div>`;
             return flower_list;
         }
+        function toggleDropdown() {
+    var dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.classList.toggle('show');
+}
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
         function add_notes_feather_list() {
             note_list = `
             <div class="dropdown-content">
@@ -552,7 +593,7 @@
             formData.append('details_show_var', msg);
             // formData.append('details_show_var', $('textarea[name="tribute"]').val());
             if ($('#type_tribute').val() == '') {
-                set_tribute('candle', `{!! asset('public/user_templates/images/candles/1.png') !!}`,this);
+                set_tribute('candle', `{!! asset('public/user_templates/images/candles/1.png') !!}`, this);
             }
             formData.append('type_var', $('#type_tribute').val());
             formData.append('image_tribute', $('#image_tribute').val());
@@ -603,7 +644,7 @@
         $('#errorModal').modal('show');
     }
 
-    function set_tribute(type_tribute, tribute_image,e) {
+    function set_tribute(type_tribute, tribute_image, e) {
 
         console.log('type tribute', type_tribute);
         console.log('tribute_image tribute', tribute_image);
@@ -611,9 +652,9 @@
         $(e).parent('.flx_mob').find('.ico_wri').removeClass('icon_selected');
         $(e).find('.ico_wri').addClass('icon_selected');
 
-    // $('.dropdown-content').css('display','none');
-    // $('.dropdown:hover .dropdown-content').css('display','block');
-        
+        // $('.dropdown-content').css('display','none');
+        // $('.dropdown:hover .dropdown-content').css('display','block');
+
 
         $('.same').removeClass('selected_tribute');
         var select_class = '';

@@ -1,3 +1,12 @@
+.nav_back {
+    background-image: url('https://4evermemorial.com/public/user_templates/template_1/images/cover.png');
+}
+.nav_back {
+    background-repeat: no-repeat;
+    /* background-position-x: -247px; */
+    /* background-size: 113%; */
+    background-size: cover;
+}
 .aud_box {
     color: #61809d;
 }
@@ -61,6 +70,7 @@ span.sp {
 
 .cover_head {
     color: #1f758f;
+    text-shadow: 2px 2px white;
 }
 .profile_img {
     color: #1f758f;

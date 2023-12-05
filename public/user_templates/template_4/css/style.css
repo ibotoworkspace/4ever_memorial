@@ -1,24 +1,29 @@
-
+.nav_back {
+    background-image: url("https://4evermemorial.com/public/user_templates/template_4/images/TimelineCovers.pro_stairs-down-to-the-beach-at-sunset-facebook-cover.jpg");
+}
+.nav_back {
+    background-repeat: no-repeat;
+    /* background-position-x: -247px; */
+    /* background-size: 113%; */
+    background-size: cover;
+}
 .aud_box {
     color: #61809d;
-   
 }
 .uploaded_audio_box {
     background-color: #edcaa1;
 }
 .add_audio {
     background: #9ec5ca;
-  
 }
 .lev_tri h3 {
     color: #2d516a;
 }
 .up_ld_file {
-    color: #275d7d; 
+    color: #275d7d;
 }
 .share_story {
     background-color: #9ec5ca;
-  
 }
 .dpbtn {
     color: #275d7d;
@@ -38,19 +43,16 @@
 }
 
 .attch_hed {
-   
     color: #275d7d;
 }
 .about_heading {
     color: #da5542;
-
 }
 .attch_icon_area {
     border: #96adbb solid 2px;
 }
 .attch_icon i {
     color: #275d7d;
-
 }
 
 .attch_icon p {
@@ -59,16 +61,15 @@
 span.sp {
     color: #2d516a;
 }
-.flower:hover{
-    background-color: #7dabc7;
-
-}
-.feather:hover{
+.flower:hover {
     background-color: #7dabc7;
 }
-
+.feather:hover {
+    background-color: #7dabc7;
+}
 .cover_head {
     color: #3ec57a;
+    text-shadow: 2px 2px #2f2f2f;
 }
 .profile_img {
     color: #3ec57a;
@@ -77,19 +78,17 @@ span.sp {
     color: #062745;
 }
 
-  .tab button:hover {
+.tab button:hover {
     color: #062745;
     background-color: #d5a553;
- 
 }
 .tab button.active {
     background-color: #f7f5e6;
 
     border-bottom-color: #f7f5e6;
-  }
+}
 
-
-  .tab_backg {
+.tab_backg {
     background-color: #f7cce8;
 }
 .about_heading {
@@ -99,7 +98,7 @@ span.sp {
 .back_sec {
     background-color: #f7f5e6;
 }
-.li_txt{
+.li_txt {
     color: #275d7d;
 }
 .abt_txt {
@@ -118,7 +117,6 @@ span.sp {
 .lev_tri {
     background-color: #9ec5ca;
     border-color: #123352;
-   
 }
 
 .footer_area {
@@ -141,7 +139,6 @@ span.sp {
 .phots {
     background-color: #9ec5ca;
     border-color: #8ab1b6;
-
 }
 .imag_sec {
     background: aliceblue;
@@ -168,8 +165,8 @@ span.sp {
 .tab_gal button:hover {
     background-color: #f7cce8;
     border-bottom-color: #c39b6b;
-  }
-  .tab_gal button.active {
+}
+.tab_gal button.active {
     border-bottom-color: #062745;
 }
 
@@ -183,7 +180,6 @@ span.sp {
 .aud_head {
     color: #2d4356;
 }
-
 
 .add_stor {
     border-color: #275d7d;
@@ -201,16 +197,15 @@ span.sp {
     border-color: #275d7d;
 }
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
     .nav_bar a:hover {
         background-color: #275d7d;
     }
     .links a:hover {
         background-color: #6e9096;
     }
-   
+
     .col-md-3.pic_gal_img img {
         border: #6e9096 solid 1px;
     }
@@ -218,20 +213,19 @@ span.sp {
     .col-md-3.pic_gal_vid img {
         border: #6e9096 solid 1px;
     }
-    
 
     .stor_bttn {
         border-color: #275d7d;
         background-color: #f7cce8;
-
     }
 
     .share_story {
         background-color: #9ec5ca;
     }
     .stor_bttn:hover {
-    background-color: #f3d0a6;
+        background-color: #f3d0a6;
     }
- 
-    
+    .nav_back {
+        background-position-x: -347px !important;
+    }
 }
