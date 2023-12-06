@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
-
+.profile_img img {
+    width: 100%;
+}
 .not_icn_c img {
     margin-right: 0px;
     margin-right: 67px !important;
@@ -528,7 +530,7 @@ ul.reviewSection img {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 19px 57px;
+    padding: 20px 7%;
     transition: 0.3s;
     font-size: 17px;
     font-weight: 500;
@@ -546,7 +548,6 @@ ul.reviewSection img {
     border-top-right-radius: 0px;
     color: solid;
     border-bottom: solid;
-
 }
 
 /* Style the tab content */
@@ -973,8 +974,9 @@ body {
 }
 
 .story_tab img {
-    width: 617px;
-    margin-left: 40px;
+    /* width: 617px; */
+    width: 100%;
+    /* margin-left: 40px; */
     margin-bottom: 40px;
     border: solid 1px;
     margin-top: 16px;
@@ -1154,6 +1156,7 @@ body {
         block-size: 225px;
         margin-left: 0px;
         margin-bottom: 7px;
+        width: 100%;
     }
     .add_stor {
         padding-left: 0px;
@@ -1215,5 +1218,8 @@ body {
     }
     .image-area_pic video {
         width: 100% !important;
+    }
+    .feather.same {
+        width: auto;
     }
 }

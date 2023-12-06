@@ -303,11 +303,17 @@ span.sidetick {
     .confi {
         margin-top: 25px;
     }
-    /* .nav>li>a {
+    .form_tab>li>a {
         padding: 0px !important;
     }
-    .nav {
+    .ul.nav.nav-tabs.tabmenu.form_tab {
+        /* display: flex !important;
+        justify-content: space-evenly !important; */
+        /* display: none; */
+    }
+    ul.nav.nav-tabs.tabmenu.form_tab {
+        /* display: none; */
         display: flex !important;
         justify-content: space-evenly !important;
-    } */
+    }
 }
