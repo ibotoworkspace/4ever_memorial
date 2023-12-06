@@ -110,7 +110,7 @@ class TemplateSeeder extends Seeder
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="tab_area">
-                                        <div class="tab">
+                                        <div class="tab tab_backg">
                                             <button class="tablinks" onclick="openCity(event, \'About\')" id="defaultOpen">
                                                 ABOUT
                                             </button>
