@@ -27,6 +27,25 @@
         width: 50%;
         margin: 0px 30%;
     }
+@media only screen and (max-width: 480px) {
+    .sliderimageselect {
+    width: auto;
+    padding: 3px;
+ 
+}
+.picbtnoverlap {
+    width: 100%;
+    margin: 0px 0px;
+    position: relative;
+}
+.view_btn {
+    margin: 5px 0px;
+}
+.picbtnoverlap button {
+    width: 100%;
+    padding: 1px;
+}
+}
 </style>
 
 <script>
@@ -69,7 +88,7 @@
                 .id + `')">
                                 Save
                             </button>    
-                            <button class="btn btn-success sliderimageselect " onclick="change_css('` + item
+                            <button class="btn btn-success sliderimageselect view_btn" onclick="change_css('` + item
                 .css_files + `')">
                                 View
                             </button>    

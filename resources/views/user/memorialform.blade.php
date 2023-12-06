@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="tabdata">
-                            <ul class="nav nav-tabs tabmenu">
+                            <ul class="nav nav-tabs tabmenu form_tab">
                                 <!-- <li class=""><a data-toggle="tab" href="#home">ACCOUNT DETAILS</a></li> -->
                                 <li><a data-toggle="tab" href="#menu1">ABOUT YOUR LOVED ONE</a></li>
                                 <li><a data-toggle="tab" href="#menu2">CHOOSE YOUR PLAN</a></li>
