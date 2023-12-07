@@ -270,7 +270,7 @@
                                                     <label for="exampleFormControlInput1">Memorial Name<i
                                                             class="fa fa-asterisk staring"
                                                             aria-hidden="true"></i></label>
-                                                    <input name="email" type="email" class="form-control"
+                                                    <input name="memorial_name" type="text" class="form-control"
                                                         id="exampleFormControlInput1"
                                                         placeholder="Write A Unique Memorial Name" required>
                                                 </div>
@@ -580,16 +580,30 @@
 
 
         function create_memorial(memorial_form, response) {
-            var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
+            try{
+                var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
             console.log('my_memorial', my_memorial);
             console.log('res 1', response);
+            response = 'asd';
             if (response.status) {
                 console.log('res 2', response);
-                // $(memorial_form + " input").val("");
-                // $(memorial_form + " textarea").val("");
                 user_memorial = response.response.user_memorial;
                 $('.memorial_id').val(user_memorial.id);
+                open_payment_plan_select();
+            } else {
+                console.log('res', response);
+                var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
+                console.log('eer',response.error.message[0]);
+                document.querySelector('#menu1 > div > form > h2').innerText  =error_msg;
             }
+            }
+            catch(err){
+                var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
+
+                document.querySelector('#menu1 > div > form > h2').innerText  =error_msg;
+
+            }
+            
         }
 
         function submit_update_plan(selected_plan_id) {
@@ -652,11 +666,12 @@
             if (valid_form) {
                 submit_form(form_selector, sucess_function);
                 // $('.nav-tabs a[href="#menu2"]').tab('show')
-                window.scrollTo(0, 400);
-                $('.nav-tabs a[href="#menu2"]').tab('show');
-
             }
+        }
 
+        function open_payment_plan_select() {
+            window.scrollTo(0, 400);
+            $('.nav-tabs a[href="#menu2"]').tab('show');
         }
     </script>
 
