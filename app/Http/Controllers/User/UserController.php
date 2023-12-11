@@ -29,8 +29,12 @@ use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller {
     public function index() {
-        return view('user.index');
+        $memorials = UserWebsite::orderBy('created_at', 'DESC')->take(6)->get();
+        return view('user.index', compact('memorials'));
     }
+
+    
+    
     public function index1111() {
         return view('admin.templates.template_1.index-orignal');
     }
@@ -282,6 +286,8 @@ class UserController extends Controller {
         // $search_memorial = UserWebsite::where('email', 'like', '%' . $email . '%@4evermemorial.com')->get();
         return view('user.view_memorial', compact('memorials'));
     }
+
+   
 
 
     public function upload_gallery(Request $request) {
