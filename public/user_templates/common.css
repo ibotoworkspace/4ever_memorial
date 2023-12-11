@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
-
+.profile_img img {
+    width: 100%;
+}
 .not_icn_c img {
     margin-right: 0px;
     margin-right: 67px !important;
@@ -141,7 +143,7 @@ p.trib_para {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     /* border-radius: 0px 50px 50px 50px; */
-    top: -85px;
+    top: -75px;
 
     border-radius: 5px;
 }
@@ -477,11 +479,11 @@ ul.reviewSection img {
 .logo-area img {
     width: 175px;
 }
-.nav_back {
+/* .nav_back {
     background-repeat: no-repeat;
     background-position-x: -247px;
     background-size: 113%;
-}
+} */
 .nav_bar {
     float: right;
     color: white;
@@ -528,7 +530,7 @@ ul.reviewSection img {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 19px 57px;
+    padding: 20px 7%;
     transition: 0.3s;
     font-size: 17px;
     font-weight: 500;
@@ -542,9 +544,10 @@ ul.reviewSection img {
 
 /* Create an active/current tablink class */
 .tab button.active {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     color: solid;
+    border-bottom: solid;
 }
 
 /* Style the tab content */
@@ -554,7 +557,7 @@ ul.reviewSection img {
     border-top: none;
 }
 .tab_backg {
-    height: 69px;
+    height: 66px;
 }
 .about_heading {
     font-family: Courgette, sans-serif;
@@ -971,8 +974,9 @@ body {
 }
 
 .story_tab img {
-    width: 617px;
-    margin-left: 40px;
+    /* width: 617px; */
+    width: 100%;
+    /* margin-left: 40px; */
     margin-bottom: 40px;
     border: solid 1px;
     margin-top: 16px;
@@ -1026,8 +1030,9 @@ body {
         justify-content: space-between;
     }
     .logo-area {
-        padding: 10px 57px;
         text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .nav_bar {
@@ -1048,6 +1053,9 @@ body {
     }
     .nav_back {
         background-size: cover;
+    }
+    .nav_area {
+        background-color: rgb(0 16 18 / 60%);
     }
     .col-md-4.prf_img {
         padding: 0px 78px;
@@ -1148,6 +1156,7 @@ body {
         block-size: 225px;
         margin-left: 0px;
         margin-bottom: 7px;
+        width: 100%;
     }
     .add_stor {
         padding-left: 0px;
@@ -1209,5 +1218,8 @@ body {
     }
     .image-area_pic video {
         width: 100% !important;
+    }
+    .feather.same {
+        width: auto;
     }
 }

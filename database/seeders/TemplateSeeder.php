@@ -68,11 +68,7 @@ class TemplateSeeder extends Seeder
 
             <body>
                 <section class="nav_back">
-                <style>
-                .nav_back {
-        background-image: url(' . $public_path . 'user_templates/template_1/images/cover.png);
-    }
-            </style>
+               
                     <div class="nav_area">
                         <div class="container">
                             <div class="row">
@@ -114,7 +110,7 @@ class TemplateSeeder extends Seeder
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="tab_area">
-                                        <div class="tab">
+                                        <div class="tab tab_backg">
                                             <button class="tablinks" onclick="openCity(event, \'About\')" id="defaultOpen">
                                                 ABOUT
                                             </button>

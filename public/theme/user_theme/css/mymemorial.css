@@ -44,3 +44,29 @@
 .banclick {
     width: 25%;
 }
+
+@media only screen and (max-width: 480px) {
+    .outer-bx {
+        padding: 30px 0px;
+        margin: 30px 5px;
+    }
+    .img-bx {
+        height: auto;
+        margin: auto;
+    }
+    .bx_bg img {
+        margin-top: 0px;
+    }
+    .top_on_box {
+        /* margin-top: 0px;
+        text-align: center; */
+        display: none;
+    }
+    .banclick {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .plandatas {
+        overflow: hidden;
+    }
+}

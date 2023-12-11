@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body,
 html {
     font-size: 15px;
     line-height: 1.4666666667;
     color: #000;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 .topicons.mobile_nav {
     display: none;
@@ -15,7 +15,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 .alt_area {
     float: right;
@@ -78,8 +78,7 @@ h4 {
     margin: 15px 3px;
 } */
 
-
-.navmenu>li>a:hover {
+.navmenu > li > a:hover {
     text-decoration: none;
     background-color: #beb28d;
     color: white;
@@ -348,7 +347,7 @@ h4 {
     border-radius: 0px;
     font-size: 16px;
     font-weight: 500;
-    height: 40px;    
+    height: 40px;
     padding: 7px;
 }
 
@@ -375,7 +374,7 @@ h4 {
     display: flex;
     float: right;
 }
-    .topicons a {
+.topicons a {
     color: white;
 }
 .txtar {
@@ -469,7 +468,7 @@ h4 {
     color: green;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
     padding-right: 10px;
     left: 0;
 }
@@ -624,8 +623,7 @@ h4 {
     color: white;
 }
 
-@media only screen and (max-width : 480px) {
-
+@media only screen and (max-width: 480px) {
     .container.top {
         padding: 0px;
     }
@@ -644,6 +642,7 @@ h4 {
         text-align: center;
         color: white;
         padding: 25px;
+        margin-top: 35px;
     }
 
     .bannerdata h1 {
@@ -843,5 +842,19 @@ h4 {
     }
     .topicons.mobile_nav {
         display: flex;
+    }
+    .alt_area {
+        float: none;
+        width: 100%;
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .alert {
+        padding: 15px;
+        margin-bottom: auto;
+        border: 1px solid transparent;
+        border-radius: 4px;
     }
 }
