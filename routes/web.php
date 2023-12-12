@@ -119,6 +119,7 @@ Route::group(['middleware' => 'login.access_token'], function () { //,'prefix'=>
 });
 ///blog
 Route::post('search/memorial', [User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
+Route::get('search/memorialss', [User_UserController::class, 'search_memorial'])->name('user.search_memorial'); //search
 
 Route::get('user/blog/child_loss', [User_UserController::class, 'child_loss'])->name('user.child_loss');
 Route::get('user/blog/death', [User_UserController::class, 'death'])->name('user.death');

@@ -64,13 +64,15 @@ class UserTemplateHelper
         $user_website->gender = $request->gender;
         $user_website->relation = $request->relation;
         $user_website->memorial_designation = $request->memorial_designation;
-        $user_website->b_year = isset($birth[0]) ?? '';
+        // $user_website->b_year = isset($birth[0]) ?? '';
+        $user_website->b_year = $request->b_year;
         $user_website->b_month =  isset($birth[1]) ?? '';
         $user_website->b_day =  isset($birth[2]) ?? '';
         $user_website->b_city = $request->b_city;
         $user_website->b_state = $request->b_state;
         $user_website->b_country = $request->b_country;
-        $user_website->p_year = isset($passed[0]) ?? '';
+        // $user_website->p_year = isset($passed[0]) ?? '';
+        $user_website->p_year = $request->p_year;
         $user_website->p_month = isset($passed[1]) ?? '';
         $user_website->p_day = isset($passed[2]) ?? '';
         $user_website->p_city = $request->p_city;
