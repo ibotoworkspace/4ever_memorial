@@ -26,7 +26,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="bg_gr_clr">
         <div class="container">
             <div class="">
                 <div class="hed_area">
@@ -64,9 +64,10 @@
                                             <div class="col-xs-12 col-sm-6 col-md-2">
                                                 <a href="{!! asset('user/get_memorial/' . $m->email) !!}"><img src="{!! asset($m->image_show_var) !!}"
                                                         class="img-responsive center-block imag_cover"></a>
-                                                <h4 class="text-center">{!! ucwords($m->f_name) !!}</h4>
-                                                <h5 class="text-center">{{ date('M j, Y', strtotime($m->b_year)) }} - {{ date('M j, Y', strtotime($m->p_year)) }}</h5>
-                                              </div>
+                                                <h4 class="text-center mem_name" style="font-weight: 700;">{!! ucwords($m->f_name) !!}</h4>
+                                                <h5 class="text-center">{{ date('M j, Y', strtotime($m->b_year)) }} -
+                                                    {{ date('M j, Y', strtotime($m->p_year)) }}</h5>
+                                            </div>
                                         </div>
                                     @endforeach
 
@@ -94,7 +95,10 @@
                         </p>
                     </footer> --}}
                     <hr class="sepr">
-                  
+                    <style>
+                     
+                    </style>
+
                     <script>
                         $(document).ready(function() {
 

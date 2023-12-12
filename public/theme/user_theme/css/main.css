@@ -762,7 +762,16 @@ i.fa.fa-times.cross_icn {
 .error_body {
     background-color: #ffffff; /* Adjust color as needed */
 }
+section.bg_gr_clr {
+    background-color: #beb28d;
+    color: #465863;
+}
 
+button.aboutclick.view_mre {
+    border: solid 1px #beb28d;
+    float: right;
+    background: #465b6c;
+}
 
 @media screen and (max-width: 992px) {
     #slider-control img {
