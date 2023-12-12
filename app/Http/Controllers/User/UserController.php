@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller {
     public function index() {
-        $memorials = UserWebsite::orderBy('created_at', 'DESC')->take(6)->get();
+        $memorials = UserWebsite::latest()->limit(20)->get();
         return view('user.index', compact('memorials'));
     }
 

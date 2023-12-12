@@ -70,21 +70,25 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Last Name<i
-                                                            class="fa fa-asterisk staring"
-                                                            aria-hidden="true"></i></label>
-                                                    <input type="text" required name="l_name" class="form-control"
-                                                        placeholder="Last Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
                                                     <label for="exampleInputEmail1">Middle Name<i
                                                             class="fa fa-asterisk staring"
                                                             aria-hidden="true"></i></label>
                                                     <input type="text" name="m_name" class="form-control"
                                                         placeholder="Middle Name" required>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-sm-6">
+
+                                                
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Last Name<i
+                                                            class="fa fa-asterisk staring"
+                                                            aria-hidden="true"></i></label>
+                                                    <input type="text" required name="l_name" class="form-control"
+                                                        placeholder="Last Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Deceased Profile Image<i
@@ -559,77 +563,24 @@
 <!-- Professional-Looking Bootstrap Modal Structure -->
 <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal-content error_content">
+            <div class="modal-header error_header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h5 class="modal-title" id="errorModalLabel"><i class="fa fa-times cross_icn" aria-hidden="true"></i></h5>
                 
             </div>
-            <div class="modal-body">
+            <div class="modal-body error_body">
                 <h3></h3>
                 <div id="error-message" class="alert alert-danger custom_alt" role="alert"></div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer error-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-
-<style>/* Custom Styles for the Error Modal */
- /* Custom Styles for the Professional-Looking Error Modal */
-#errorModal {
-    text-align: center;
-}
-
-#error-message {
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 16px;
-}
-.alert-danger {
-    color: #a94442;
-    background-color: white !important;
-    border-color: #ebccd1;
-    font-weight: bold;
-}
-.modal-content {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.modal-footer {
-    border-top: none;
-}
-i.fa.fa-times.cross_icn {
-    font-size: 67px;
-    color: red;
-    border: solid 1px;
-    border-radius: 81px;
-    width: 70px;
-    height: 70px;
-}
-
-/* Optional: Customize the close button */
-.close {
-    font-size: 1.5rem;
-}
-
-/* Optional: Customize modal header background */
-.modal-header {
-   
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-}
-
-/* Optional: Customize modal body background */
-.modal-body {
-    background-color: #ffffff; /* Adjust color as needed */
-}
-
-</style>
 
     @include('layouts.myapp_js')
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
@@ -660,7 +611,7 @@ i.fa.fa-times.cross_icn {
         console.log('my_memorial', my_memorial);
         console.log('res 1', response);
 
-        response = 'asd';
+        // response = 'asd';
 
         if (response.status) {
             console.log('res 2', response);
@@ -668,7 +619,7 @@ i.fa.fa-times.cross_icn {
             $('.memorial_id').val(user_memorial.id);
             open_payment_plan_select();
         } else {
-            console.log('res', response);
+            console.log('res1111sss',  response.error.message);
 
             var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
 
@@ -676,6 +627,8 @@ i.fa.fa-times.cross_icn {
             openErrorModal(error_msg);
         }
     } catch (err) {
+        console.log('wwwrrrrrrrres1111sss',  response.error.message);
+
         var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
 
         // Open the Bootstrap modal and display the error message
@@ -730,6 +683,9 @@ function openErrorModal(errorMessage) {
 
 
         function validate_submit_form(form_selector, sucess_function) {
+//             openErrorModal('asdsadsadsadasdsadsadsadasdsadsadsadasdsadsadsadasdsadsadsad');
+// return;
+
             var valid_form = true;
             $(form_selector).find('input').each(function() {
                 if ($(this).prop('required') && $.trim($(this).val()).length === 0) {
