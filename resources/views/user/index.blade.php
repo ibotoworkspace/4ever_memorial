@@ -18,7 +18,7 @@
                             <h3>4Ever Virtual Cemetery online tributes are a simple way <br>
                                 to preserve, celebrate and share a loved one's legacy.</h3>
                             <a class="btn btn-primary banclick" href="{!! asset('user/memorialform') !!}">
-                                Click here to create a memorial
+                                Create a memorial
                             </a>
                         </div>
                     </div>
@@ -64,7 +64,8 @@
                                             <div class="col-xs-12 col-sm-6 col-md-2">
                                                 <a href="{!! asset('user/get_memorial/' . $m->email) !!}"><img src="{!! asset($m->image_show_var) !!}"
                                                         class="img-responsive center-block imag_cover"></a>
-                                                <h4 class="text-center mem_name" style="font-weight: 700;">{!! ucwords($m->f_name) !!}</h4>
+                                                <h4 class="text-center mem_name" style="font-weight: 700;">
+                                                    {!! ucwords($m->f_name) !!}</h4>
                                                 <h5 class="text-center">{{ date('M j, Y', strtotime($m->b_year)) }} -
                                                     {{ date('M j, Y', strtotime($m->p_year)) }}</h5>
                                             </div>
@@ -95,9 +96,14 @@
                         </p>
                     </footer> --}}
                     <hr class="sepr">
-                    <style>
-                     
-                    </style>
+                    {{-- <style>
+                        section.bg_gr_clr {
+                            /* background-color: #beb28d; */
+                            color: wheat;
+                            background: rgb(190, 178, 141);
+                            background: linear-gradient(0deg, rgba(190, 178, 141, 1) 0%, rgba(70, 88, 99, 1) 100%);
+                        }
+                    </style> --}}
 
                     <script>
                         $(document).ready(function() {

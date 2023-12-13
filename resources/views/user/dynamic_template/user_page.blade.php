@@ -1,7 +1,102 @@
 <?php 
 // dd($user_website); 
 ?>
+
 {!! $html !!}
+{{-- Sign in modal --}}
+<div class="modal fade" id="LoginModalCenter" tabindex="-1" role="dialog"
+aria-labelledby="LoginModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header modhead">
+            <h5 class="modal-title" id="loginModalLongTitle">Sign in With Your Email</h5>
+        </div>
+        <div class="modal-body">
+            <div class="signmodaldata">
+                <form action="{!! asset('user/login') !!}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="email">Enter Your Email address :</label>
+                        <input type="email" name="email" class="form-control" id="email"
+                            aria-describedby="email" placeholder="email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Your Password :</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                            aria-describedby="password" placeholder="password">
+                    </div>
+                    <p class="reg_md">Dont have an account? <a aria-hidden="true" data-toggle="modal" data-target="#remodal">Register Now</a></p>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary mosubclick">Submit</button>
+                    </div>
+                </form>
+                {{-- <i  aria-hidden="true" data-toggle="modal" data-target="#remodal"> Registration</i> --}}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{{-- End Sign in modal --}}
+
+{{-- Register in modal --}}
+<div class="modal fade" id="remodal" tabindex="-1" role="dialog" aria-labelledby="LoginModalCenterTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header modhead">
+            <h5 class="modal-title" id="loginModalLongTitle">Register With Your Email</h5>
+        </div>
+        <div class="modal-body">
+            <div class="signmodaldata">
+                <form action="{!! asset('user/register') !!}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="email">Enter Name :</label>
+                        <input type="text" name="name" class="form-control" id="name"
+                            aria-describedby="email" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Enter Your Email address :</label>
+                        <input type="email" name="email" class="form-control" id="email"
+                            aria-describedby="email" placeholder="email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Your Password :</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                            aria-describedby="password" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Confirm Your Password :</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                            aria-describedby="password" placeholder="password">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary mosubclick">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{{-- End Register in modal --}}
+
+<script>
+    $(document).ready(function () {
+        var isAuthenticated = {!! Auth::check() ? 'true' : 'false' !!};
+
+        if (isAuthenticated) {
+            $('.signin').css('display', 'none');
+            $('.fa-user-circle-o').css('display', 'inline-flex');
+        } else {
+            $('.fa-user-circle-o').css('display', 'none');
+            $('.signin').css('display', 'inline-flex');
+        }
+    });
+</script>
 <input type="hidden" name="sndng_mail" value="{!! $user_website->id !!}">
 @include('partial_layouts.cropper.cropper_html')
 {{-- {!!dd($user_website->id);!!} --}}

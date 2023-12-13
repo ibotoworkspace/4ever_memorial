@@ -72,7 +72,8 @@ class UserTemplateHelper
         $user_website->b_state = $request->b_state;
         $user_website->b_country = $request->b_country;
         // $user_website->p_year = isset($passed[0]) ?? '';
-        $user_website->p_year = $request->p_year;
+        // $user_website->p_year = $request->p_year;
+        $user_website->p_year = isset($passed[0]) ? $passed[0] : '';
         $user_website->p_month = isset($passed[1]) ?? '';
         $user_website->p_day = isset($passed[2]) ?? '';
         $user_website->p_city = $request->p_city;
