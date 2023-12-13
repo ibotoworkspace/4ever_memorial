@@ -70,21 +70,25 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Last Name<i
-                                                            class="fa fa-asterisk staring"
-                                                            aria-hidden="true"></i></label>
-                                                    <input type="text" required name="l_name" class="form-control"
-                                                        placeholder="Last Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-
-                                                <div class="form-group">
                                                     <label for="exampleInputEmail1">Middle Name<i
                                                             class="fa fa-asterisk staring"
                                                             aria-hidden="true"></i></label>
                                                     <input type="text" name="m_name" class="form-control"
                                                         placeholder="Middle Name" required>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-sm-6">
+
+                                                
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Last Name<i
+                                                            class="fa fa-asterisk staring"
+                                                            aria-hidden="true"></i></label>
+                                                    <input type="text" required name="l_name" class="form-control"
+                                                        placeholder="Last Name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Deceased Profile Image<i
@@ -556,6 +560,28 @@
             </div>
         </div>
     </section> --}}
+<!-- Professional-Looking Bootstrap Modal Structure -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content error_content">
+            <div class="modal-header error_header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="errorModalLabel"><i class="fa fa-times cross_icn" aria-hidden="true"></i></h5>
+                
+            </div>
+            <div class="modal-body error_body">
+                <h3></h3>
+                <div id="error-message" class="alert alert-danger custom_alt" role="alert"></div>
+            </div>
+            <div class="modal-footer error-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     @include('layouts.myapp_js')
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
@@ -580,31 +606,44 @@
 
 
         function create_memorial(memorial_form, response) {
-            try{
-                var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
-            console.log('my_memorial', my_memorial);
-            console.log('res 1', response);
-            response = 'asd';
-            if (response.status) {
-                console.log('res 2', response);
-                user_memorial = response.response.user_memorial;
-                $('.memorial_id').val(user_memorial.id);
-                open_payment_plan_select();
-            } else {
-                console.log('res', response);
-                var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
-                console.log('eer',response.error.message[0]);
-                document.querySelector('#menu1 > div > form > h2').innerText  =error_msg;
-            }
-            }
-            catch(err){
-                var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
+    try {
+        var my_memorial = CKEDITOR.instances['summary_ckeditor'].getData();
+        console.log('my_memorial', my_memorial);
+        console.log('res 1', response);
 
-                document.querySelector('#menu1 > div > form > h2').innerText  =error_msg;
+        // response = 'asd';
 
-            }
-            
+        if (response.status) {
+            console.log('res 2', response);
+            user_memorial = response.response.user_memorial;
+            $('.memorial_id').val(user_memorial.id);
+            open_payment_plan_select();
+        } else {
+            console.log('res1111sss',  response.error.message);
+
+            var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
+
+            // Open the Bootstrap modal and display the error message
+            openErrorModal(error_msg);
         }
+    } catch (err) {
+        console.log('wwwrrrrrrrres1111sss',  response.error.message);
+
+        var error_msg = response?.error?.message?.[0] ?? 'Error creating memorial, contact admin';
+
+        // Open the Bootstrap modal and display the error message
+        openErrorModal(error_msg);
+    }
+}
+
+function openErrorModal(errorMessage) {
+    // Set the error message in the modal
+    $('#error-message').text(errorMessage);
+
+    // Open the Bootstrap modal
+    $('#errorModal').modal('show');
+}
+
 
         function submit_update_plan(selected_plan_id) {
             $('#plan_id').val(selected_plan_id);
@@ -644,6 +683,9 @@
 
 
         function validate_submit_form(form_selector, sucess_function) {
+//             openErrorModal('asdsadsadsadasdsadsadsadasdsadsadsadasdsadsadsadasdsadsadsad');
+// return;
+
             var valid_form = true;
             $(form_selector).find('input').each(function() {
                 if ($(this).prop('required') && $.trim($(this).val()).length === 0) {

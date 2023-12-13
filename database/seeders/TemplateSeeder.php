@@ -78,11 +78,13 @@ class TemplateSeeder extends Seeder
                                     </div>
                                 </div>
                                 <div class="col-md-9 hidden-xs">
-                                    <div class="nav_bar">
-                                    <a href="' . $url_path . 'user/memorialform">CREATE A NEW MEMORIAL</a>
-                                    <a href="' . $url_path . 'user/aboutus">ABOUT US</a>
-                                    <a href="' . $url_path . 'user/contactus">CONTACT SUPPORT</a>
-                                    </div>
+                                <div class="nav_bar">
+                                <a href="{{ $url_path }}user/memorialform">CREATE A NEW MEMORIAL</a>
+                                <a href="{{ $url_path }}user/aboutus">ABOUT US</a>
+                                <a href="{{ $url_path }}user/contactus">CONTACT SUPPORT</a>
+                                <i class="fa signin" style="display: none;" aria-hidden="true" data-toggle="modal" data-target="#LoginModalCenter"> SIGNIN</i>
+                                <i class="fa fa-user-circle-o" style="display: none;" aria-hidden="true"><a href="' . $url_path . 'user/logout" > LogOut </a></i>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -323,6 +325,7 @@ class TemplateSeeder extends Seeder
       </div>
   </div>
 </div>
+
 
 </body>
             <script>

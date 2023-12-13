@@ -29,8 +29,12 @@ use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller {
     public function index() {
-        return view('user.index');
+        $memorials = UserWebsite::latest()->limit(20)->get();
+        return view('user.index', compact('memorials'));
     }
+
+    
+    
     public function index1111() {
         return view('admin.templates.template_1.index-orignal');
     }
@@ -110,7 +114,7 @@ class UserController extends Controller {
 
         if(Auth::attempt($user_data)) {
             // dd('succes');
-            return redirect('/')->with('success', '"Login successful. Welcome!"');
+            return redirect()->back()->with('success', '"Login successful. Welcome!"');
         } else {
             // dd('asd');
             return redirect()->back()->with('error', 'Wrong Login Details');
@@ -118,7 +122,7 @@ class UserController extends Controller {
     }
     function logout() {
         Auth::logout();
-        return redirect('/');
+        return redirect()->back();
     }
     public function memorialform() {
         return view('user.memorialform');
@@ -283,6 +287,8 @@ class UserController extends Controller {
         return view('user.view_memorial', compact('memorials'));
     }
 
+   
+
 
     public function upload_gallery(Request $request) {
         $user = Auth::user();
@@ -322,10 +328,14 @@ class UserController extends Controller {
 
 
     public function send_invite(Request $request) {
+        if(!$request->to_emails){
+            return $this->sendResponse(500,null,['Enter Email address']);
+        }
 
+        $to_emails = explode(',', $request->to_emails);
         $mail_data = UserWebsite::find($request->memorial_id);
         $details = [
-            'to' => $request->to_emails,
+            'to' => $to_emails,
             'user_id' => $request->memorial_id,
             'from' => 'info@4evermemorial.com',
             'title' => '4Ever',

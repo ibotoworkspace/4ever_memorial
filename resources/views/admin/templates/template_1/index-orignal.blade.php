@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -30,6 +30,11 @@
         <style>
             .nav_back {
                 background-image: url(http://localhost/4_ever_memories/public/user_templates/template_1/images/cover.png);
+            }
+        </style>
+        <style>
+            .signin {
+                margin-left: 10px;
             }
         </style>
         <div class="nav_area">
@@ -40,18 +45,78 @@
                             <img src="{!! asset('public/user_templates/template_1/images/logo.png') !!}" class="img-fluid" alt="relative" />
                         </div>
                     </div>
+                    @php
+                        $signin = '';
+                        $signout = '';
+                        if (Auth::user()) {
+                            // dd('asddsdaasdasdsdaasassd');
+                            $signin = "display: inline-flex;";
+                            $signout = "display: none;";
+                        }
+                        else{
+                            $signin = "display: none;";
+                            $signout = "display: inline-flex;";
+                        }
+                    @endphp
                     <div class="col-md-9">
                         <div class="nav_bar">
                             {{-- <a href="">SIGN IN</a> --}}
                             <a href="{!! asset('user/memorialform') !!}">CREATE A NEW WEBSITE</a>
                             <a href="{!! asset('user/aboutus') !!}">ABOUT US
-</a>
-                            <a href="{!! asset('user/contactus') !!}">CONTACT SUPPORT</a>
+                            </a>
+                            <a href="{!! asset('user/contactus') !!}">CONTACT US</a>
+                           
+                            <i class="fa signin " style="{!! $signout !!}"aria-hidden="true" data-toggle="modal"
+                                data-target="#LoginModalCenter"> SIGIN</i>
+                            <i class="fa fa-user-circle-o" style="{!! $signin !!}"aria-hidden="true"
+                                data-target="#LoginModalCenter"><a href="{!! asset('user/logout') !!}"> LogOut </a></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+{{-- Sign in modal --}}
+<div class="modal fade" id="LoginModalCenter" tabindex="-1" role="dialog"
+aria-labelledby="LoginModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header modhead">
+            <h5 class="modal-title" id="loginModalLongTitle">Sign in With Your Email</h5>
+        </div>
+        <div class="modal-body">
+            <div class="signmodaldata">
+                <form action="{!! asset('user/login') !!}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="email">Enter Your Email address :</label>
+                        <input type="email" name="email" class="form-control" id="email"
+                            aria-describedby="email" placeholder="email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Your Password :</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                            aria-describedby="password" placeholder="password">
+                    </div>
+                    <p class="reg_md">Dont have an account? <a href="' . $url_path . '/search/memorial">Register Now</a></p>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary mosubclick">Submit</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{{-- End Sign in modal --}}
+
+
+
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8">
@@ -77,7 +142,7 @@
                         <div class="tab_area">
                             <div class="tab">
                                 <button class="tablinks" onclick="openCity(event, 'About')" id="defaultOpen">
-                                    ABOUT 
+                                    ABOUT
 
                                 </button>
                                 <button class="tablinks" onclick="openCity(event, 'Life')">
