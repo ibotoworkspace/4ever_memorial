@@ -992,6 +992,14 @@ body {
 .story_para {
     padding-right: 40px;
 }
+.modhead {
+    background: #465863;
+    color: white;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
     .profile_img {
