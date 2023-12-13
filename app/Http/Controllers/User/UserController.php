@@ -328,23 +328,29 @@ class UserController extends Controller {
 
 
     public function send_invite(Request $request) {
-        if(!$request->to_emails){
-            return $this->sendResponse(500,null,['Enter Email address']);
+        if (!$request->to_emails) {
+            return $this->sendResponse(500, null, ['Enter Email address']);
         }
-
+    
         $to_emails = explode(',', $request->to_emails);
         $mail_data = UserWebsite::find($request->memorial_id);
-        $details = [
-            'to' => $to_emails,
-            'user_id' => $request->memorial_id,
-            'from' => 'info@4evermemorial.com',
-            'title' => '4Ever',
-            'subject' => 'INVITATION ',
-            "dated" => date('d F, Y (l)'),
-            'base_url' => Config::get('app.url'),
-            'deceased_data' => $mail_data
-        ];
-        Mail::to($request->to_emails)->send(new InviteEmail($details));
+    
+        foreach ($to_emails as $email) {
+            $details = [
+                'to' => $email,
+                'user_id' => $request->memorial_id,
+                'from' => 'info@4evermemorial.com',
+                'title' => '4Ever',
+                'subject' => 'INVITATION ',
+                "dated" => date('d F, Y (l)'),
+                'base_url' => Config::get('app.url'),
+                'deceased_data' => $mail_data
+            ];
+    
+            Mail::to($email)->send(new InviteEmail($details));
+        }
+    
         return $this->sendResponse(200);
     }
+    
 }
