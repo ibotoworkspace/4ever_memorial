@@ -229,18 +229,18 @@ class TemplateSeeder extends Seeder
                                 <div class="sdad">
                                     <h5 class="sdads">Follow us:</h5>
                                     <div class="social">
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                       <a class="link_socl" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                       <a class="link_socl" href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="links">
 
-                                    <a href="' . $url_path . '/search/memorial">Memorial Websites</a>
-                                    <a href="' . $url_path . '/user/service_term">Terms of Use</a>
-                                    <a href="' . $url_path . '/user/privacy_policy">Privacy Policy</a>
-                                    <a href="' . $url_path . '/user/contactus">Contact Us</a>
+                                    <a href="' . $url_path . 'search/memorialss">Memorial Websites</a>
+                                    <a href="' . $url_path . 'user/service_term">Terms of Use</a>
+                                    <a href="' . $url_path . 'user/privacy_policy">Privacy Policy</a>
+                                    <a href="' . $url_path . 'user/contactus">Contact Us</a>
                                 </div>
 
                             </div>
