@@ -78,7 +78,7 @@ Our website also offers several ways for people to stay connected with those the
                                 vocational fields; in order to create a lasting,
                                 powerful, and global impact-not only for today,
                                 but for generations to come.</p>
-                                <p>This is just a brief of our vision</p>
+                        
                         </div>
                     </div>
                     <div class="col-sm-6">
